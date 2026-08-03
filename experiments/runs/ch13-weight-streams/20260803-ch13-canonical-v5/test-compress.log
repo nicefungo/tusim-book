@@ -1,0 +1,30 @@
++ timeout 90s /tmp/tusim-ch13-work.WJ8tkr/ch13-test-compress 
+  rle_all_same                                           PASS
+  rle_alternating                                        PASS
+  rle_mixed                                              PASS
+  rle_zeros                                              PASS
+  rle_single                                             PASS
+  rle_epsilon                                            PASS
+  compression_ratio                                      PASS
+  validate_corrupt                                       PASS
+  dma_integration                                        PASS
+  disabled                                               PASS
+  runtime_config                                         PASS
+  null_safety                                            PASS
+  large_sparse                                           PASS
+  adaptive_selects_raw                                   PASS
+  adaptive_selects_rle                                   PASS
+  adaptive_dma_config                                    PASS
+  adaptive_corruption                                    PASS
+  bitmap_random_sparse                                   PASS
+  bitmap_bit_patterns                                    PASS
+  adaptive_all_modes                                     PASS
+  bitmap_dma_config                                      PASS
+  decoder_profiles                                       PASS
+  bitmap_adaptive_cycles                                 PASS
+  decoder_runtime_config                                 PASS
+
+═══════════════════════════════════════════
+  Test Suite Complete
+  24/24 tests passed
+═══════════════════════════════════════════

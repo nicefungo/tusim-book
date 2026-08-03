@@ -20,6 +20,7 @@ This directory contains the source-backed technical/academic reference book for 
 - [Chapter 10 — DMA Descriptor Contracts and Tick-Driven Execution](manuscript/part-2-core/10-dma-descriptor-contracts-and-tick-driven-execution.md) — complete first draft; hash-guarded descriptor audit reproduced and independent architecture, evidence, and editorial reviews resolved
 - [Chapter 11 — Instruction Surfaces and Command-Queue Ordering](manuscript/part-2-core/11-instruction-surfaces-and-command-queue-ordering.md) — complete first draft; exact-pin instruction/queue audit and adversarial lifecycle probe reproduced; technical, editorial, and reproducibility findings resolved and independently re-reviewed
 - [Chapter 12 — Multi-Core Clusters and Interconnect Heuristic Estimates](manuscript/part-2-core/12-multi-core-clusters-and-interconnect-heuristics.md) — complete first draft; canonical-v5 evidence reseal passed; clean technical, editorial, and reproducibility re-review passed
+- [Chapter 13 — Weight Streams: Quantization, Structured Sparsity, and Compression](manuscript/part-2-core/13-weight-streams-quantization-sparsity-compression.md) — complete first draft; canonical-v8 evidence seal passed; skeptical pre-draft and independent technical/editorial/reproducibility review findings resolved
 
 ## Editorial foundations
 
@@ -28,7 +29,16 @@ This directory contains the source-backed technical/academic reference book for 
 - [Stable-snapshot source audit](source-audit.md)
 - [Fidelity matrix](fidelity-matrix.md)
 - [Verified foundation references](references/foundations.md)
-- Chapter source-and-claim ledgers referenced from the manuscript live under `notes/` (editorial working documents)
+- [Latest closed-session handoff — Chapter 11](notes/handoffs/2026-07-28-chapter-11.md)
+- [Previous closed-session handoff — Chapter 10](notes/handoffs/2026-07-27-chapter-10.md)
+- [Previous closed-session handoff — Chapter 9](notes/handoffs/2026-07-26-chapter-09.md)
+- [Previous closed-session handoff — Chapter 8](notes/handoffs/2026-07-25-chapter-08.md)
+- [Previous closed-session handoff — Chapter 7](notes/handoffs/2026-07-25-chapter-07.md)
+- [Previous closed-session handoff — Chapter 6](notes/handoffs/2026-07-25-chapter-06.md)
+- [Previous closed-session handoff — Chapter 5](notes/handoffs/2026-07-25-chapter-05.md)
+- [Previous closed-session handoff — Chapter 4](notes/handoffs/2026-07-25-chapter-04.md)
+- [Previous closed-session handoff — Chapter 3](notes/handoffs/2026-07-25-chapter-03.md)
+- [Previous handoff — Chapters 1–2](notes/handoffs/2026-07-25-chapters-01-02.md)
 
 ## Writing status
 
@@ -50,6 +60,7 @@ This directory contains the source-backed technical/academic reference book for 
 | Chapter 10 | complete 5,566-word first draft; canonical hash-guarded run reproduces 65/65 source checks, focused descriptor/scatter-gather/multicast evidence, the known 12/13 address-generator result, intentional unsafe-pipeline skip, and zero-failure custom probes; architecture, repository, evidence, and editorial blockers resolved |
 | Chapter 11 | complete 6,085-word first draft; canonical run reproduces 26 source hashes, 96 structural/reachability predicates, five static-link gates, queue 9/9, ISA 9/9, ASM PASS, scheduler 14/14, and a zero-failure adversarial probe; pre-draft and manuscript architecture/editorial/reproducibility findings resolved |
 | Chapter 12 | complete 6,893-word first draft; canonical-v5 reproduces 28 source hashes, 155 structural/reachability predicates, 183 total source checks, 16/16 focused multicore tests, forced 15/16 mutation failure, the exact heuristic counterexample, retained pre-draft validation, and outer bundle closure; clean technical, editorial, and reproducibility re-review passed |
+| Chapter 13 | complete 5,624-word first draft; canonical-v8 reproduces 25 source hashes, 138 structural/reachability predicates, 163 total source checks, 14/14 int-quant, 27/27 sparsity, 24/24 compress, forced 26/27 mutation failure, exact byte/estimate probe findings, retained pre-draft validation, and outer bundle closure; skeptical pre-draft review and independent technical/editorial/reproducibility review findings resolved |
 
 ## Evidence policy
 

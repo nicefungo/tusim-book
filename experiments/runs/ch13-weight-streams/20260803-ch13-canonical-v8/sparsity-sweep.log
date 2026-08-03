@@ -1,0 +1,23 @@
++ timeout 90s /tmp/tusim-ch13-work.HDgwLn/ch13-sparsity-sweep 
+Dense vs 2:4 Structured Sparsity Sweep
+Model: FP16 W/A, FP32 O, 16x16 PE, 256-bit DMA; DMA serialized; decode overlaps compute
+
+workload          dec/gc    dense cyc      2:4 cyc   speedup     W save    compute     decode
+small projection       1         2051         1952    1.051x      37.5%        515       1024
+small projection       4         2051         1443    1.421x      37.5%        515        256
+small projection      16         2051         1443    1.421x      37.5%        515         64
+square GEMM            1        12291         7811    1.574x      37.5%       4099       4096
+square GEMM            4        12291         7811    1.574x      37.5%       4099       1024
+square GEMM           16        12291         7811    1.574x      37.5%       4099        256
+narrow-N               1        34307        77312    0.444x      37.5%       8195      65536
+narrow-N               4        34307        28160    1.218x      37.5%       8195      16384
+narrow-N              16        34307        19971    1.718x      37.5%       8195       4096
+wide-N                 1        88067        54531    1.615x      37.5%      32771       8192
+wide-N                 4        88067        54531    1.615x      37.5%      32771       2048
+wide-N                16        88067        54531    1.615x      37.5%      32771        512
+large square           1       589827       321539    1.834x      37.5%     262147      65536
+large square           4       589827       321539    1.834x      37.5%     262147      16384
+large square          16       589827       321539    1.834x      37.5%     262147       4096
+
+Fidelity: analytical upper bound; no metadata fetch alignment, sparse-lane imbalance,
+pruning accuracy, decoder area/power, or compiler packing overhead is quantified.

@@ -1,0 +1,567 @@
+
+===== provenance before =====
+utc=2026-08-03T10:54:14Z
+book_root=/home/zxy/Workplace/books/tusim-book
+book_head=ff0bdc10fdc14c1b1c96ef3547b75392125bad49
+book_branch=main
+tusim_root=/home/zxy/Workplace/projects/tusim
+tusim_head=e918c80b6fce833cd1fcae97730fa841c2176f25
+tusim_branch=DETACHED
+tusim_status_bytes=0
+tusim_ignored_inventory_sha256=bb6aa62e0a80724a77579cdf4ec844acba8d5f59a1d3b4418d0025b4456415ab
+
+===== create pinned disposable source =====
++ git -C /home/zxy/Workplace/projects/tusim archive --format=tar --output=/tmp/tusim-ch13-archive.gM5ees.tar e918c80b6fce833cd1fcae97730fa841c2176f25 
+fb023fe79a0e7dafbf334848756e44127101f5fdb75c1004e2ed2712318b708f  source-at-pin.tar
++ tar -xf /tmp/tusim-ch13-archive.gM5ees.tar -C /tmp/tusim-ch13-work.HDgwLn 
+
+===== source and artifact input hashes =====
+304e1c846ddd2a465eb09427f4959dd02505a105546bb0b02e51d921c4c800ae  edition.yaml
+32953c1939bafa787fa5ab1f9a4d0140dae06a8d1f40f2aa082c2027e1413f10  experiments/ch13_source_audit.py
+38fa785e09752b15e6caa56f979197d0b5208b26ed0b6a19e6290d65805e289c  experiments/ch13_weight_stream_probe.c
+043613dce704cc1ebbf9c30e6caf306bbf11efd871008e3fc607e3050f591fd1  experiments/run_ch13_weight_stream_audit.sh
+5a7ad5ae96bfc785b4a280b7756c76bb8c0948ff2888ae0550f5f0b12517c395  experiments/ch13_predraft_validate.py
+12343addfa26d02a7e814d66d0bba7dd500fba0b4892b90272a5efcb90735c91  experiments/ch13-weight-streams-audit-2026-08-03.md
+6f05066d9944dd6c1a66e309820eb2461490a949b207a19b26cec24f6bff7ecd  notes/chapter-13-framing-and-evidence-plan.md
+20abf98c61ae8c3b4536383d24ae7a8f0d2442c0fdcd0f9faf28032dc2e99a8c  notes/chapter-13-source-and-claim-ledger.md
+3d8b02459d065f6cfd9b749553e9927652bf67951ccf58d10d4286c84225f7d2  references/foundations.md
+
+===== fail-closed source audit =====
++ python3 /home/zxy/Workplace/books/tusim-book/experiments/ch13_source_audit.py /tmp/tusim-ch13-work.HDgwLn e918c80b6fce833cd1fcae97730fa841c2176f25 
+HASH PASS Makefile 5249a0e077438a4e6f70c74936c185bb1c30105bb834b3f89ac6a78b32630fd2
+HASH PASS tu_cmodel/tu_int_quant.h d513d63750c44fb2e07fa0a6d281ad76d43220beb0758399744538595c6fe600
+HASH PASS tu_cmodel/tu_int_quant.c 7b20c382d4acb886ea59d82b539dec862e9f4d108e965550d3e98972fe38ba33
+HASH PASS tu_cmodel/sparsity/structured_2of4.h 0eeaceb51cd43d6d751e783cc35b7ff016a9798e76706c8908eb4d955ca3c7c4
+HASH PASS tu_cmodel/sparsity/structured_2of4.c 4111f8439780b83b312b6c80c83d1471d4e7e8d741defb3a671b83c8d0e83a05
+HASH PASS tu_cmodel/memory/weight_compress.h 441d3ec539cfc88ef98367494d5d50350dd8af5ee44fcec37541e46565b94fcb
+HASH PASS tu_cmodel/memory/weight_compress.c 26fa554d8b8a4e39b09ae27b6bb93720cc432e07a50f7936181eb7eab210c3eb
+HASH PASS tu_cmodel/infra/config.h 723deb631e83705ab80143dd251761c3b98ca692c5d1eefb243d47aca551913b
+HASH PASS tu_cmodel/infra/config.c 17b7919392d4a315022a129ce5bbdff301a2d3405af3163756b430b2b36dd12a
+HASH PASS tu_cmodel/tu_config.h 129d55ad55409bcd4b5dcae5007faa297c087d48a150a4a85073d66e49cbb45d
+HASH PASS tu_cmodel/tu_cmodel.c 542aa16f6f1561f0d55af05920e9922ed3c381a1ad193e6f2ecfca390a8b5059
+HASH PASS config/tu_config.json 6f9d292696b1ca5fa38ad3298e7f3a04c43095c0950f71dbe0c3c68b1f15f4db
+HASH PASS config/tu_config.yaml 9fb4d87753139a5857107a6fdf56006fcb5adbe95ad30e9f8430c2e5c145910e
+HASH PASS tests/test_int_quant.c 6359be5c6141f869c6143a21a106967e94a70adeb6fd3dd3481df121d293b7ef
+HASH PASS tests/test_sparsity.c 8d2e8a8e4fc17cea0abf569ecb49649cdf34abda763c635cd7955a8444d0c0af
+HASH PASS tests/test_compress.c 3da4de233bf2b7f87e69eb529d6162064e1aa3f9bc2575e320b78c1b47478cac
+HASH PASS tests/test_weight_compression_sweep.c 755ee98ba22775a8481e5ed60b4978e575e45d8a1882861a563e528d2f3065bd
+HASH PASS tests/test_sparsity_sweep.c 15a3804334b5fb9cc108598b971d9dec897dc27e0db89d21cd541334ce7c21f4
+HASH PASS tests/test_int8_sweep.c fa4db1454b4fd24dc2c36d30b1268805d97216f55cb2641924cf0cded3ab2bf2
+HASH PASS tests/test_framework.h a8bf7f5e2e5ce9c317f1e089bc28338b4bd298a8bec6c08f40c6a5f12bb979ef
+HASH PASS docs/exploration/weight-decoder-throughput.md 8300413868c6418ebdb4742b0c7e4ad8d39dea0680f00b969d38ddc60807357e
+HASH PASS docs/exploration/bitmap-weight-compression.md 5232b44ae6089b8da5e56c90a91747e38ba609edeef2c0e9567bf481526bfc84
+HASH PASS docs/exploration/structured-2of4-sweep.md 25299480d42a360b1ea20371d220b3bd2536d576fe573e36fbed65c0098dde28
+HASH PASS docs/exploration/weight-compression-rle-sweep.md 71fcaa2b2ce6079622309a3a7d2b3a1b7d43a6fe8e27779dd49d21da002267b0
+HASH PASS docs/exploration/int8-quantization-throughput.md f647f7a2b260133cd789bc049f3076c04a8a05ee2171a795385781a42f001958
+PREDICATE PASS archive-member-tu_int_quant.o
+PREDICATE PASS archive-member-sparsity-structured_2of4.o
+PREDICATE PASS archive-member-memory-weight_compress.o
+PREDICATE PASS focused-target-test-int-quant
+PREDICATE PASS focused-target-test-sparsity
+PREDICATE PASS focused-target-test-compress
+PREDICATE PASS focused-target-test-weight-compression-sweep
+PREDICATE PASS focused-target-test-sparsity-sweep
+PREDICATE PASS aggregate-includes-int-quant
+PREDICATE PASS aggregate-includes-sparsity
+PREDICATE PASS aggregate-excludes-compress
+PREDICATE PASS aggregate-excludes-weight-sweep
+PREDICATE PASS aggregate-excludes-sparsity-sweep
+PREDICATE PASS aggregate-excludes-int8-sweep
+PREDICATE PASS no-makefile-target-for-int8-sweep
+PREDICATE PASS quant-int8-type
+PREDICATE PASS quant-uint4-nibble-order
+PREDICATE PASS quant-affine-formula
+PREDICATE PASS quant-int8-range
+PREDICATE PASS quant-uint4-range
+PREDICATE PASS quant-int8-default-scale
+PREDICATE PASS quant-uint4-default-scale
+PREDICATE PASS quant-mma-tile-declared
+PREDICATE PASS quant-int8-round-then-shift
+PREDICATE PASS quant-int8-clamp
+PREDICATE PASS quant-symmetric-scale-amax-over-127
+PREDICATE PASS quant-all-zero-guard
+PREDICATE PASS quant-nibble-unpack
+PREDICATE PASS quant-nibble-pack-low
+PREDICATE PASS quant-nibble-pack-high
+PREDICATE PASS quant-standalone-no-runtime-conversion
+PREDICATE PASS quant-standalone-no-sparsity
+PREDICATE PASS sparsity-2of4-contract
+PREDICATE PASS sparsity-group-size
+PREDICATE PASS sparsity-nonzeros
+PREDICATE PASS sparsity-six-valid-masks
+PREDICATE PASS sparsity-mask-validity
+PREDICATE PASS sparsity-mma-declared
+PREDICATE PASS sparsity-estimator-declared
+PREDICATE PASS sparsity-overlap-assumption
+PREDICATE PASS sparsity-estimator-k-divisible
+PREDICATE PASS sparsity-estimator-zero-decoder-guard
+PREDICATE PASS sparsity-estimator-pe-guard
+PREDICATE PASS sparsity-halved-macs
+PREDICATE PASS sparsity-packed-weight-bytes
+PREDICATE PASS sparsity-decode-cycles
+PREDICATE PASS sparsity-total-with-overlap-core
+PREDICATE PASS sparsity-selection-flag
+PREDICATE PASS sparsity-estimator-no-queues
+PREDICATE PASS compress-frame-magic
+PREDICATE PASS compress-frame-version
+PREDICATE PASS compress-frame-header-bytes
+PREDICATE PASS compress-rle-enum
+PREDICATE PASS compress-bitmap-enum
+PREDICATE PASS compress-adaptive-enum
+PREDICATE PASS compress-rle-no-padding
+PREDICATE PASS compress-bitmap-header
+PREDICATE PASS compress-adaptive-raw-ties
+PREDICATE PASS compress-config-mapper
+PREDICATE PASS compress-estimator-declared
+PREDICATE PASS compress-decoder-bound-field
+PREDICATE PASS compress-estimator-bus-width-guard
+PREDICATE PASS compress-payload-dma-cycles
+PREDICATE PASS compress-decode-max
+PREDICATE PASS compress-decoder-bound-classifier
+PREDICATE PASS compress-overlap-total
+PREDICATE PASS compress-serial-total
+PREDICATE PASS compress-validate-exact-size
+PREDICATE PASS compress-validate-runs-bound
+PREDICATE PASS config-full-declares-compression-enabled
+PREDICATE PASS config-full-declares-compression-type
+PREDICATE PASS config-full-declares-decoder-width
+PREDICATE PASS config-full-declares-sparsity-enabled
+PREDICATE PASS config-full-declares-sparsity-2of4
+PREDICATE PASS config-full-declares-sparsity-decoder
+PREDICATE PASS runtime-config-excludes-compression-enabled
+PREDICATE PASS runtime-config-excludes-compression-type
+PREDICATE PASS runtime-config-excludes-sparsity-enabled
+PREDICATE PASS runtime-config-excludes-sparsity-2of4
+PREDICATE PASS runtime-converter-drops-compression_enabled
+PREDICATE PASS runtime-converter-drops-compression_type
+PREDICATE PASS runtime-converter-drops-sparsity_enabled
+PREDICATE PASS runtime-converter-drops-sparsity_2of4
+PREDICATE PASS runtime-converter-drops-sparsity_decoder_groups_per_cycle
+PREDICATE PASS runtime-converter-retains-pe_rows
+PREDICATE PASS runtime-converter-retains-pe_cols
+PREDICATE PASS runtime-converter-retains-icc_switching_mode
+PREDICATE PASS runtime-converter-retains-icc_router_latency_cycles
+PREDICATE PASS config-parses-compression-enabled
+PREDICATE PASS config-parses-adaptive-type
+PREDICATE PASS config-parses-sparsity-enabled
+PREDICATE PASS config-parses-sparsity-2of4
+PREDICATE PASS config-validates-compression-type
+PREDICATE PASS config-validates-unstructured-rejected
+PREDICATE PASS config-validates-enabled-requires-2of4
+PREDICATE PASS config-validates-2of4-requires-enabled
+PREDICATE PASS config-validates-decoder-nonzero
+PREDICATE PASS json-complete-weight-compression-defaults
+PREDICATE PASS json-complete-sparsity-defaults
+PREDICATE PASS yaml-weight-path-enabled
+PREDICATE PASS yaml-weight-path-structured_2of4
+PREDICATE PASS yaml-weight-path-decoder_groups_per_cycle
+PREDICATE PASS yaml-omits-weight-compression-block
+PREDICATE PASS int-quant-fail-closed-exit
+PREDICATE PASS int-quant-exercises-mma-tile
+PREDICATE PASS int-quant-14-distinct-test-calls
+PREDICATE PASS sparsity-fail-closed-exit
+PREDICATE PASS sparsity-test-exercises-estimator
+PREDICATE PASS sparsity-test-exercises-mma
+PREDICATE PASS sparsity-27-distinct-tests
+PREDICATE PASS compress-fail-closed-exit
+PREDICATE PASS compress-24-distinct-tests
+PREDICATE PASS compress-adaptive-all-modes-test
+PREDICATE PASS compress-decoder-profiles-test
+PREDICATE PASS compress-bitmap-adaptive-cycles-test
+PREDICATE PASS weight-sweep-links-codec
+PREDICATE PASS weight-sweep-calls-estimator
+PREDICATE PASS sparsity-sweep-links-module
+PREDICATE PASS sparsity-sweep-calls-estimator
+PREDICATE PASS int8-sweep-no-cmodel-include
+PREDICATE PASS int8-sweep-no-cmodel-dependency
+PREDICATE PASS int8-doc-analytical-label
+PREDICATE PASS decoder-doc-payload-only-overstates
+PREDICATE PASS decoder-doc-bus-width-breaks-even
+PREDICATE PASS bitmap-doc-placement-independent
+PREDICATE PASS sparsity-doc-decoder-requirement
+PREDICATE PASS rle-doc-adaptive-framing
+PREDICATE PASS exact-c-callers-compress-estimator
+PREDICATE PASS exact-c-callers-sparsity-estimator
+PREDICATE PASS exact-c-callers-compress-config-mapper
+PREDICATE PASS exact-c-callers-int8-mma-tile
+PREDICATE PASS exact-c-callers-int8-dot-product
+PREDICATE PASS exact-c-callers-sparsity-mma
+PREDICATE PASS exact-c-callers-compress-for-dma
+PREDICATE PASS direct-mma-avoids-tu_compress
+PREDICATE PASS direct-mma-avoids-tu_sparsity_2of4
+PREDICATE PASS direct-mma-avoids-tu_int8
+PREDICATE PASS direct-mma-avoids-tu_fp32_to_int8
+CH13_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=25 predicates=138 checks=163
+
+===== source-audit mutation control =====
+SOURCE_AUDIT_MUTATION PASS rc=1 restored=yes
+
+===== contained static archive build =====
++ make -C /tmp/tusim-ch13-work.HDgwLn -j2 libtucmodel.a 
+make: Entering directory '/tmp/tusim-ch13-work.HDgwLn'
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/dma_descriptor.o tu_cmodel/dma_descriptor.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/rounding.o tu_cmodel/rounding.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/fp8.o tu_cmodel/fp8.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tf32.o tu_cmodel/tf32.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/dram_model.o tu_cmodel/memory/dram_model.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/memory_hierarchy.o tu_cmodel/memory/memory_hierarchy.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/double_buffer.o tu_cmodel/memory/double_buffer.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/address_generator.o tu_cmodel/memory/address_generator.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_isa.o tu_cmodel/isa/tu_isa.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/elementwise_pipeline.o tu_cmodel/compute/elementwise_pipeline.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/normalization_engine.o tu_cmodel/compute/normalization_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/softmax_engine.o tu_cmodel/compute/softmax_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/convolution_engine.o tu_cmodel/compute/convolution_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/attention_engine.o tu_cmodel/compute/attention_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/pooling_engine.o tu_cmodel/compute/pooling_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/logging.o tu_cmodel/infra/logging.c
+tu_cmodel/infra/logging.c: In function ‘tu_trace_export_vcd’:
+tu_cmodel/infra/logging.c:229:17: warning: unused variable ‘comp_names’ [-Wunused-variable]
+  229 |     const char *comp_names[] = {
+      |                 ^~~~~~~~~~
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/json_reader.o tu_cmodel/infra/json_reader.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/config.o tu_cmodel/infra/config.c
+tu_cmodel/infra/config.c:62:13: warning: ‘parse_opt_uint’ defined but not used [-Wunused-function]
+   62 | static bool parse_opt_uint(const tu_json_value_t *obj, const char *key,
+      |             ^~~~~~~~~~~~~~
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_int_quant.o tu_cmodel/tu_int_quant.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/performance_counters.o tu_cmodel/perf/performance_counters.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/event_trace.o tu_cmodel/perf/event_trace.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/power_model.o tu_cmodel/perf/power_model.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/pipeline_controller.o tu_cmodel/compute/pipeline_controller.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/dataflow_registry.o tu_cmodel/compute/dataflow/dataflow_registry.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/dataflow_dispatcher.o tu_cmodel/compute/dataflow/dataflow_dispatcher.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/weight_stationary.o tu_cmodel/compute/dataflow/weight_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/output_stationary.o tu_cmodel/compute/dataflow/output_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/row_stationary.o tu_cmodel/compute/dataflow/row_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_core.o tu_cmodel/tu_core.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_cluster.o tu_cmodel/tu_cluster.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_status.o tu_cmodel/tu_status.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/tu_context.o tu_cmodel/infra/tu_context.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/weight_compress.o tu_cmodel/memory/weight_compress.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/sparsity/structured_2of4.o tu_cmodel/sparsity/structured_2of4.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_scheduler.o tu_cmodel/isa/tu_scheduler.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_liveness.o tu_cmodel/isa/tu_liveness.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/tu_debug.o tu_cmodel/infra/tu_debug.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/bindings/tu_dpi.o tu_cmodel/bindings/tu_dpi.c
+ar rcs libtucmodel.a tu_cmodel/tu_cmodel.o tu_cmodel/tu_asm.o tu_cmodel/tu_precision.o tu_cmodel/tu_sram.o tu_cmodel/tu_dma.o tu_cmodel/dma_descriptor.o tu_cmodel/rounding.o tu_cmodel/fp8.o tu_cmodel/tf32.o tu_cmodel/command_queue.o tu_cmodel/memory/dram_model.o tu_cmodel/memory/memory_hierarchy.o tu_cmodel/memory/double_buffer.o tu_cmodel/memory/address_generator.o tu_cmodel/isa/tu_isa.o tu_cmodel/compute/elementwise_pipeline.o tu_cmodel/compute/normalization_engine.o tu_cmodel/compute/softmax_engine.o tu_cmodel/compute/convolution_engine.o tu_cmodel/compute/attention_engine.o tu_cmodel/compute/pooling_engine.o tu_cmodel/infra/logging.o tu_cmodel/infra/json_reader.o tu_cmodel/infra/config.o tu_cmodel/tu_int_quant.o tu_cmodel/perf/performance_counters.o tu_cmodel/perf/event_trace.o tu_cmodel/perf/power_model.o tu_cmodel/compute/pipeline_controller.o tu_cmodel/compute/dataflow/dataflow_registry.o tu_cmodel/compute/dataflow/dataflow_dispatcher.o tu_cmodel/compute/dataflow/weight_stationary.o tu_cmodel/compute/dataflow/output_stationary.o tu_cmodel/compute/dataflow/row_stationary.o tu_cmodel/tu_core.o tu_cmodel/tu_cluster.o tu_cmodel/tu_status.o tu_cmodel/infra/tu_context.o tu_cmodel/memory/weight_compress.o tu_cmodel/sparsity/structured_2of4.o tu_cmodel/isa/tu_scheduler.o tu_cmodel/isa/tu_liveness.o tu_cmodel/infra/tu_debug.o tu_cmodel/bindings/tu_dpi.o
+make: Leaving directory '/tmp/tusim-ch13-work.HDgwLn'
+address_generator.o
+attention_engine.o
+command_queue.o
+config.o
+convolution_engine.o
+dataflow_dispatcher.o
+dataflow_registry.o
+dma_descriptor.o
+double_buffer.o
+dram_model.o
+elementwise_pipeline.o
+event_trace.o
+fp8.o
+json_reader.o
+logging.o
+memory_hierarchy.o
+normalization_engine.o
+output_stationary.o
+performance_counters.o
+pipeline_controller.o
+pooling_engine.o
+power_model.o
+rounding.o
+row_stationary.o
+softmax_engine.o
+structured_2of4.o
+tf32.o
+tu_asm.o
+tu_cluster.o
+tu_cmodel.o
+tu_context.o
+tu_core.o
+tu_debug.o
+tu_dma.o
+tu_dpi.o
+tu_int_quant.o
+tu_isa.o
+tu_liveness.o
+tu_precision.o
+tu_scheduler.o
+tu_sram.o
+tu_status.o
+weight_compress.o
+weight_stationary.o
+ARCHIVE_MEMBER PASS tu_int_quant.o
+ARCHIVE_MEMBER PASS structured_2of4.o
+ARCHIVE_MEMBER PASS weight_compress.o
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch13-work.HDgwLn -I/tmp/tusim-ch13-work.HDgwLn/tu_cmodel -o /tmp/tusim-ch13-work.HDgwLn/ch13-probe /home/zxy/Workplace/books/tusim-book/experiments/ch13_weight_stream_probe.c /tmp/tusim-ch13-work.HDgwLn/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch13-work.HDgwLn -I/tmp/tusim-ch13-work.HDgwLn/tu_cmodel -o /tmp/tusim-ch13-work.HDgwLn/ch13-test-int-quant /tmp/tusim-ch13-work.HDgwLn/tests/test_int_quant.c /tmp/tusim-ch13-work.HDgwLn/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch13-work.HDgwLn -I/tmp/tusim-ch13-work.HDgwLn/tu_cmodel -o /tmp/tusim-ch13-work.HDgwLn/ch13-test-sparsity /tmp/tusim-ch13-work.HDgwLn/tests/test_sparsity.c /tmp/tusim-ch13-work.HDgwLn/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch13-work.HDgwLn -I/tmp/tusim-ch13-work.HDgwLn/tu_cmodel -o /tmp/tusim-ch13-work.HDgwLn/ch13-test-compress /tmp/tusim-ch13-work.HDgwLn/tests/test_compress.c /tmp/tusim-ch13-work.HDgwLn/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch13-work.HDgwLn -I/tmp/tusim-ch13-work.HDgwLn/tu_cmodel -o /tmp/tusim-ch13-work.HDgwLn/ch13-weight-sweep /tmp/tusim-ch13-work.HDgwLn/tests/test_weight_compression_sweep.c /tmp/tusim-ch13-work.HDgwLn/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch13-work.HDgwLn -I/tmp/tusim-ch13-work.HDgwLn/tu_cmodel -o /tmp/tusim-ch13-work.HDgwLn/ch13-sparsity-sweep /tmp/tusim-ch13-work.HDgwLn/tests/test_sparsity_sweep.c /tmp/tusim-ch13-work.HDgwLn/libtucmodel.a -lm 
+STATIC_LINK_PASS ch13-probe
+STATIC_LINK_PASS ch13-test-int-quant
+STATIC_LINK_PASS ch13-test-sparsity
+STATIC_LINK_PASS ch13-test-compress
+STATIC_LINK_PASS ch13-weight-sweep
+STATIC_LINK_PASS ch13-sparsity-sweep
+
+===== focused test and mutation observation =====
++ timeout 90s /tmp/tusim-ch13-work.HDgwLn/ch13-test-int-quant 
+
+╔══════════════════════════════════════════════════╗
+║  TinyTU INT8/INT4 Quantization Tests (D2)       ║
+╚══════════════════════════════════════════════════╝
+
+  INT8 round-trip (0.0)                                   PASS
+  INT8 round-trip (6.35, symmetric)                       PASS
+  INT8 round-trip (-3.5, symmetric)                       PASS
+  INT8 batch conversion (16 elements)                     PASS
+  INT8 symmetric calibration (range [-5, 5])              PASS
+  INT8 asymmetric calibration (range [0, 10])             PASS
+  UINT4 pack/unpack round-trip (16 elements)              PASS
+  UINT4 quantize/dequantize round-trip                    PASS
+  INT8 dot product [1,2,3] · [4,5,6] = 32                PASS
+  INT8 dot product [127,127] · [127,127] = 32258         PASS
+  INT8 MMA tile (2x3x2)                                   PASS
+  INT8 MMA accumulate (adds to existing O)                PASS
+  Precision registry: INT8 entry exists                   PASS
+  Precision registry: INT4 entry exists                   PASS
+
+  14/14 tests passed
+
++ timeout 90s /tmp/tusim-ch13-work.HDgwLn/ch13-test-sparsity 
+
+=== 2:4 Structured Sparsity Tests ===
+
+  mask validation — valid masks                        PASS
+  mask validation — invalid masks                      PASS
+  mask popcount                                          PASS
+  mask nth-bit extraction                                PASS
+  pruning — basic magnitude selection                  PASS
+  pruning — with masks                                 PASS
+  pruning — negative values (magnitude-based)          PASS
+  encode/decode roundtrip — FP32                       PASS
+  encode/decode roundtrip — FP16                       PASS
+  compress/decompress — 8-element FP32                 PASS
+  sparse MMA — 2×2×4 small matrix                    PASS
+  sparse MMA — 4×4×8 matrix                          PASS
+  tiled sparse MMA — 8×8×16, tile 4×4×4            PASS
+  verify 2:4 pattern — valid sparse                    PASS
+  verify 2:4 pattern — too many non-zeros              PASS
+  sparsity ratio computation                             PASS
+  speedup for dense weights = 1.0                        PASS
+  edge case — single group (n=4)                       PASS
+  edge case — all positive equal magnitude             PASS
+  edge case — FP16 roundtrip with subnormals           PASS
+  2:4 sparsity with INT8 elements                        PASS
+  runtime config — dense default                       PASS
+  runtime config — parse 2:4 decoder throughput        PASS
+  runtime config — reject inconsistent and unsupported modesPASS
+  cycle estimate — config selects dense or 2:4         PASS
+  cycle estimate — decoder throughput can bottleneck   PASS
+  invalid group sizes and masks fail safely              PASS
+
+---
+Tests: 27 run, 27 passed, 0 failed
++ timeout 90s /tmp/tusim-ch13-work.HDgwLn/ch13-test-compress 
+  rle_all_same                                           PASS
+  rle_alternating                                        PASS
+  rle_mixed                                              PASS
+  rle_zeros                                              PASS
+  rle_single                                             PASS
+  rle_epsilon                                            PASS
+  compression_ratio                                      PASS
+  validate_corrupt                                       PASS
+  dma_integration                                        PASS
+  disabled                                               PASS
+  runtime_config                                         PASS
+  null_safety                                            PASS
+  large_sparse                                           PASS
+  adaptive_selects_raw                                   PASS
+  adaptive_selects_rle                                   PASS
+  adaptive_dma_config                                    PASS
+  adaptive_corruption                                    PASS
+  bitmap_random_sparse                                   PASS
+  bitmap_bit_patterns                                    PASS
+  adaptive_all_modes                                     PASS
+  bitmap_dma_config                                      PASS
+  decoder_profiles                                       PASS
+  bitmap_adaptive_cycles                                 PASS
+  decoder_runtime_config                                 PASS
+
+═══════════════════════════════════════════
+  Test Suite Complete
+  24/24 tests passed
+═══════════════════════════════════════════
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch13-work.HDgwLn -I/tmp/tusim-ch13-work.HDgwLn/tu_cmodel -o /tmp/tusim-ch13-work.HDgwLn/ch13-test-sparsity-mutant /tmp/tusim-ch13-work.HDgwLn/test_sparsity_mutant.c /tmp/tusim-ch13-work.HDgwLn/libtucmodel.a -lm 
+FOCUSED_TEST_MUTATION PASS rc=1 expected_failure=26/27
+
+===== linked sweep observations =====
++ timeout 90s /tmp/tusim-ch13-work.HDgwLn/ch13-weight-sweep 
+workload             profile  outW rleW bmpW   nnz  runs fmt   raw   rle   bmp adapt bound
+-------------------- -------- ---- ---- ---- ----- ----- --- ----- ----- ----- ----- -----
+alternating          serial      1    1    1  2048  4096 BMP   256  4096  4096  4096 DEC
+alternating          balanced    8    4    8  2048  4096 BMP   256  1024   512   512 DEC
+alternating          wide       16    8   16  2048  4096 BMP   256   769   256   256 DEC
+alternating          xwide      32   16   32  2048  4096 BMP   256   769   145   145 DMA
+random-zero-10%      serial      1    1    1  3685  3953 BMP   256  4096  4096  4096 DEC
+random-zero-10%      balanced    8    4    8  3685  3953 BMP   256   989   512   512 DEC
+random-zero-10%      wide       16    8   16  3685  3953 BMP   256   742   256   256 DEC
+random-zero-10%      xwide      32   16   32  3685  3953 BMP   256   742   247   248 DMA
+cluster-zero-10%     serial      1    1    1  3687   232 RLE   256  4096  4096  4096 DEC
+cluster-zero-10%     balanced    8    4    8  3687   232 RLE   256   512   512   512 DEC
+cluster-zero-10%     wide       16    8   16  3687   232 RLE   256   256   256   256 DEC
+cluster-zero-10%     xwide      32   16   32  3687   232 RLE   256   128   247   128 DEC
+random-zero-30%      serial      1    1    1  2881  3700 BMP   256  4096  4096  4096 DEC
+random-zero-30%      balanced    8    4    8  2881  3700 BMP   256   925   512   512 DEC
+random-zero-30%      wide       16    8   16  2881  3700 BMP   256   694   256   256 DEC
+random-zero-30%      xwide      32   16   32  2881  3700 BMP   256   694   197   197 DMA
+cluster-zero-30%     serial      1    1    1  2868   181 RLE   256  4096  4096  4096 DEC
+cluster-zero-30%     balanced    8    4    8  2868   181 RLE   256   512   512   512 DEC
+cluster-zero-30%     wide       16    8   16  2868   181 RLE   256   256   256   256 DEC
+cluster-zero-30%     xwide      32   16   32  2868   181 RLE   256   128   196   128 DEC
+random-zero-50%      serial      1    1    1  2053  3059 BMP   256  4096  4096  4096 DEC
+random-zero-50%      balanced    8    4    8  2053  3059 BMP   256   765   512   512 DEC
+random-zero-50%      wide       16    8   16  2053  3059 BMP   256   574   256   256 DEC
+random-zero-50%      xwide      32   16   32  2053  3059 BMP   256   574   145   146 DMA
+cluster-zero-50%     serial      1    1    1  2048   129 RLE   256  4096  4096  4096 DEC
+cluster-zero-50%     balanced    8    4    8  2048   129 RLE   256   512   512   512 DEC
+cluster-zero-50%     wide       16    8   16  2048   129 RLE   256   256   256   256 DEC
+cluster-zero-50%     xwide      32   16   32  2048   129 RLE   256   128   145   128 DEC
+random-zero-70%      serial      1    1    1  1243  2112 BMP   256  4096  4096  4096 DEC
+random-zero-70%      balanced    8    4    8  1243  2112 BMP   256   528   512   512 DEC
+random-zero-70%      wide       16    8   16  1243  2112 BMP   256   397   256   256 DEC
+random-zero-70%      xwide      32   16   32  1243  2112 BMP   256   397   128   128 DEC
+cluster-zero-70%     serial      1    1    1  1229    78 RLE   256  4096  4096  4096 DEC
+cluster-zero-70%     balanced    8    4    8  1229    78 RLE   256   512   512   512 DEC
+cluster-zero-70%     wide       16    8   16  1229    78 RLE   256   256   256   256 DEC
+cluster-zero-70%     xwide      32   16   32  1229    78 RLE   256   128   128   128 DEC
+random-zero-90%      serial      1    1    1   435   827 BMP   256  4096  4096  4096 DEC
+random-zero-90%      balanced    8    4    8   435   827 BMP   256   512   512   512 DEC
+random-zero-90%      wide       16    8   16   435   827 BMP   256   256   256   256 DEC
+random-zero-90%      xwide      32   16   32   435   827 BMP   256   156   128   128 DEC
+cluster-zero-90%     serial      1    1    1   410    27 RLE   256  4096  4096  4096 DEC
+cluster-zero-90%     balanced    8    4    8   410    27 RLE   256   512   512   512 DEC
+cluster-zero-90%     wide       16    8   16   410    27 RLE   256   256   256   256 DEC
+cluster-zero-90%     xwide      32   16   32   410    27 RLE   256   128   128   128 DEC
+all-zero             serial      1    1    1     0     1 RLE   256  4096  4096  4096 DEC
+all-zero             balanced    8    4    8     0     1 RLE   256   512   512   512 DEC
+all-zero             wide       16    8   16     0     1 RLE   256   256   256   256 DEC
+all-zero             xwide      32   16   32     0     1 RLE   256   128   128   128 DEC
++ timeout 90s /tmp/tusim-ch13-work.HDgwLn/ch13-sparsity-sweep 
+Dense vs 2:4 Structured Sparsity Sweep
+Model: FP16 W/A, FP32 O, 16x16 PE, 256-bit DMA; DMA serialized; decode overlaps compute
+
+workload          dec/gc    dense cyc      2:4 cyc   speedup     W save    compute     decode
+small projection       1         2051         1952    1.051x      37.5%        515       1024
+small projection       4         2051         1443    1.421x      37.5%        515        256
+small projection      16         2051         1443    1.421x      37.5%        515         64
+square GEMM            1        12291         7811    1.574x      37.5%       4099       4096
+square GEMM            4        12291         7811    1.574x      37.5%       4099       1024
+square GEMM           16        12291         7811    1.574x      37.5%       4099        256
+narrow-N               1        34307        77312    0.444x      37.5%       8195      65536
+narrow-N               4        34307        28160    1.218x      37.5%       8195      16384
+narrow-N              16        34307        19971    1.718x      37.5%       8195       4096
+wide-N                 1        88067        54531    1.615x      37.5%      32771       8192
+wide-N                 4        88067        54531    1.615x      37.5%      32771       2048
+wide-N                16        88067        54531    1.615x      37.5%      32771        512
+large square           1       589827       321539    1.834x      37.5%     262147      65536
+large square           4       589827       321539    1.834x      37.5%     262147      16384
+large square          16       589827       321539    1.834x      37.5%     262147       4096
+
+Fidelity: analytical upper bound; no metadata fetch alignment, sparse-lane imbalance,
+pruning accuracy, decoder area/power, or compiler packing overhead is quantified.
+
+===== fail-closed custom probe =====
++ timeout 90s /tmp/tusim-ch13-work.HDgwLn/ch13-probe 
+CH13_WEIGHT_STREAM_PROBE start
+INTQ default_scale=0.007874016 default_zp=0 qmin=-128 qmax=127
+INTQ sym_calib scale=1.000000000 zp=0
+INTQ conversions zero=0 p127=127 n128=-128 clamp=127,-128
+INTQ nibble byte=0x5A low=10 high=5
+INTQ dot=32
+INTQ mma o00=19 o01=22 o10=43 o11=50
+SPARSITY valid_masks=6
+SPARSITY prune groups=2 masks=0x5,0x9
+SPARSITY packed_fp16_128=160
+SPARSITY est128 dense_total=12291 sparse_total=7811 selected=7811 macs=2097152/1048576 wbytes=32768/20480 decode=4096
+SPARSITY estNarrow dense_total=34307 sparse_total=77312 decode=65536
+SPARSITY estWide sparse_total=19971 decode=4096
+COMPRESS rle_allzero_size=14
+COMPRESS rle_alt_size=776 raw=256
+COMPRESS bitmap_size=110 nnz=43
+COMPRESS adaptive_sparse_codec=2 size=126
+COMPRESS corrupt_rejected=1
+COMPRESS est_rle dma=1 decode=128 total=128 bound=1
+COMPRESS est_wide decode=8 total=8
+COMPRESS est_serial total=9
+COMPRESS cfgmap type=4 enabled=1 decoder=1
+CONFIG parsed compression=1 type=4 decoder=1 sparsity=1 two4=1 decgroups=4
+CONFIG validation rejections=4
+CONFIG runtime pe_rows=16 pe_cols=16 dma_bits=256 (compression/sparsity fields absent by struct design)
+CH13_PROBE SUMMARY failures=0
+EXPECTED_FINDING MATCH INTQ default_scale=0.007874016 default_zp=0 qmin=-128 qmax=127
+EXPECTED_FINDING MATCH INTQ sym_calib scale=1.000000000 zp=0
+EXPECTED_FINDING MATCH INTQ nibble byte=0x5A low=10 high=5
+EXPECTED_FINDING MATCH INTQ dot=32
+EXPECTED_FINDING MATCH INTQ mma o00=19 o01=22 o10=43 o11=50
+EXPECTED_FINDING MATCH SPARSITY valid_masks=6
+EXPECTED_FINDING MATCH SPARSITY prune groups=2 masks=0x5,0x9
+EXPECTED_FINDING MATCH SPARSITY packed_fp16_128=160
+EXPECTED_FINDING MATCH SPARSITY est128 dense_total=12291 sparse_total=7811 selected=7811 macs=2097152/1048576 wbytes=32768/20480 decode=4096
+EXPECTED_FINDING MATCH SPARSITY estNarrow dense_total=34307 sparse_total=77312 decode=65536
+EXPECTED_FINDING MATCH SPARSITY estWide sparse_total=19971 decode=4096
+EXPECTED_FINDING MATCH COMPRESS rle_allzero_size=14
+EXPECTED_FINDING MATCH COMPRESS rle_alt_size=776 raw=256
+EXPECTED_FINDING MATCH COMPRESS bitmap_size=110 nnz=43
+EXPECTED_FINDING MATCH COMPRESS adaptive_sparse_codec=2 size=126
+EXPECTED_FINDING MATCH COMPRESS corrupt_rejected=1
+EXPECTED_FINDING MATCH COMPRESS est_rle dma=1 decode=128 total=128 bound=1
+EXPECTED_FINDING MATCH COMPRESS est_wide decode=8 total=8
+EXPECTED_FINDING MATCH COMPRESS est_serial total=9
+EXPECTED_FINDING MATCH COMPRESS cfgmap type=4 enabled=1 decoder=1
+EXPECTED_FINDING MATCH CONFIG parsed compression=1 type=4 decoder=1 sparsity=1 two4=1 decgroups=4
+EXPECTED_FINDING MATCH CONFIG validation rejections=4
+EXPECTED_FINDING MATCH CONFIG runtime pe_rows=16 pe_cols=16 dma_bits=256
+EXPECTED_FINDING MATCH CH13_PROBE SUMMARY failures=0
+
+===== retained artifact manifest phase one =====
+304e1c846ddd2a465eb09427f4959dd02505a105546bb0b02e51d921c4c800ae  inputs/edition.yaml
+32953c1939bafa787fa5ab1f9a4d0140dae06a8d1f40f2aa082c2027e1413f10  inputs/experiments/ch13_source_audit.py
+38fa785e09752b15e6caa56f979197d0b5208b26ed0b6a19e6290d65805e289c  inputs/experiments/ch13_weight_stream_probe.c
+043613dce704cc1ebbf9c30e6caf306bbf11efd871008e3fc607e3050f591fd1  inputs/experiments/run_ch13_weight_stream_audit.sh
+5a7ad5ae96bfc785b4a280b7756c76bb8c0948ff2888ae0550f5f0b12517c395  inputs/experiments/ch13_predraft_validate.py
+12343addfa26d02a7e814d66d0bba7dd500fba0b4892b90272a5efcb90735c91  inputs/experiments/ch13-weight-streams-audit-2026-08-03.md
+6f05066d9944dd6c1a66e309820eb2461490a949b207a19b26cec24f6bff7ecd  inputs/notes/chapter-13-framing-and-evidence-plan.md
+20abf98c61ae8c3b4536383d24ae7a8f0d2442c0fdcd0f9faf28032dc2e99a8c  inputs/notes/chapter-13-source-and-claim-ledger.md
+3d8b02459d065f6cfd9b749553e9927652bf67951ccf58d10d4286c84225f7d2  inputs/references/foundations.md
+2893e24d56f12ac93abf90b8c1c10ccf906852ebe430c0ec8f0c29a492cd29f5  source-archive-sha256.txt
+b19f6a49c7f4553016f5352769659725a9c16ede3ddda7bc4bc093598fde9858  source-audit.log
+4d3827545bfdeda00e1e9341425df727b8537636a4137dcc72658d14341cc3c2  source-audit-mutation.log
+2018067c97b254b174e291fba31b46052aade365f00195b0c1d4314d3ad8e315  archive-members.txt
+4c9c734e4add52a93812c51bdc04018bfbc3e634356bf9ca7fc2657341929c39  input-hashes.txt
+7614e7588e340e6490796e5f20e44d000cb919681e30de807ef211c5f5899165  build.log
+064b950a3118ed125e612ce6d328417b10a642986872a3333720a73f11bc08d2  test-int-quant.log
+db9694e0edd2dc0a09458da095965e9495d07053e0ce86ca5290b2b4a4ac097d  test-sparsity.log
+f6046bd87df52874b07f7c56db43e81605cfa885df5ac911a277075db80c0a77  test-compress.log
+c199e17280445bd569c3199c0adbec5891ed6769e22579f18d10a4979456f0c3  test-sparsity-mutation.log
+8784ce1c6f9a164588830f98bb17ba41e345a07afd905ac9ca1bccfeea58a22c  weight-sweep.log
+78b2194a7967906ec74094186a692de172e668f4f1f39defb2b9ab547e96de91  sparsity-sweep.log
+94c173ae4febf77135fd99378c0176ff13a198c075b0634df3429599ed6c638b  ch13-probe.log
+
+===== provenance after =====
+TUSIM_POST PASS head=e918c80b6fce833cd1fcae97730fa841c2176f25 detached=yes tracked_and_untracked_clean=yes ignored_inventory_unchanged=yes
+edition.yaml: OK
+experiments/ch13_source_audit.py: OK
+experiments/ch13_weight_stream_probe.c: OK
+experiments/run_ch13_weight_stream_audit.sh: OK
+experiments/ch13_predraft_validate.py: OK
+experiments/ch13-weight-streams-audit-2026-08-03.md: OK
+notes/chapter-13-framing-and-evidence-plan.md: OK
+notes/chapter-13-source-and-claim-ledger.md: OK
+references/foundations.md: OK
+BOOK_POST PASS head=ff0bdc10fdc14c1b1c96ef3547b75392125bad49 branch=main inputs_unchanged=yes status_unchanged_outside_run=yes remote_unchanged=yes no_push_performed=yes
+
+===== result =====
+CH13_AUDIT_SNAPSHOT_MATCHED_EXPECTED_FINDINGS run_dir=/home/zxy/Workplace/books/tusim-book/experiments/runs/ch13-weight-streams/20260803-ch13-canonical-v8

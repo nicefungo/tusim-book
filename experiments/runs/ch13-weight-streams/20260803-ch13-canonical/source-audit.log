@@ -1,0 +1,165 @@
++ python3 /home/zxy/Workplace/books/tusim-book/experiments/ch13_source_audit.py /tmp/tusim-ch13-work.ji43Xy e918c80b6fce833cd1fcae97730fa841c2176f25 
+HASH PASS Makefile 5249a0e077438a4e6f70c74936c185bb1c30105bb834b3f89ac6a78b32630fd2
+HASH PASS tu_cmodel/tu_int_quant.h d513d63750c44fb2e07fa0a6d281ad76d43220beb0758399744538595c6fe600
+HASH PASS tu_cmodel/tu_int_quant.c 7b20c382d4acb886ea59d82b539dec862e9f4d108e965550d3e98972fe38ba33
+HASH PASS tu_cmodel/sparsity/structured_2of4.h 0eeaceb51cd43d6d751e783cc35b7ff016a9798e76706c8908eb4d955ca3c7c4
+HASH PASS tu_cmodel/sparsity/structured_2of4.c 4111f8439780b83b312b6c80c83d1471d4e7e8d741defb3a671b83c8d0e83a05
+HASH PASS tu_cmodel/memory/weight_compress.h 441d3ec539cfc88ef98367494d5d50350dd8af5ee44fcec37541e46565b94fcb
+HASH PASS tu_cmodel/memory/weight_compress.c 26fa554d8b8a4e39b09ae27b6bb93720cc432e07a50f7936181eb7eab210c3eb
+HASH PASS tu_cmodel/infra/config.h 723deb631e83705ab80143dd251761c3b98ca692c5d1eefb243d47aca551913b
+HASH PASS tu_cmodel/infra/config.c 17b7919392d4a315022a129ce5bbdff301a2d3405af3163756b430b2b36dd12a
+HASH PASS tu_cmodel/tu_config.h 129d55ad55409bcd4b5dcae5007faa297c087d48a150a4a85073d66e49cbb45d
+HASH PASS tu_cmodel/tu_cmodel.c 542aa16f6f1561f0d55af05920e9922ed3c381a1ad193e6f2ecfca390a8b5059
+HASH PASS config/tu_config.json 6f9d292696b1ca5fa38ad3298e7f3a04c43095c0950f71dbe0c3c68b1f15f4db
+HASH PASS config/tu_config.yaml 9fb4d87753139a5857107a6fdf56006fcb5adbe95ad30e9f8430c2e5c145910e
+HASH PASS tests/test_int_quant.c 6359be5c6141f869c6143a21a106967e94a70adeb6fd3dd3481df121d293b7ef
+HASH PASS tests/test_sparsity.c 8d2e8a8e4fc17cea0abf569ecb49649cdf34abda763c635cd7955a8444d0c0af
+HASH PASS tests/test_compress.c 3da4de233bf2b7f87e69eb529d6162064e1aa3f9bc2575e320b78c1b47478cac
+HASH PASS tests/test_weight_compression_sweep.c 755ee98ba22775a8481e5ed60b4978e575e45d8a1882861a563e528d2f3065bd
+HASH PASS tests/test_sparsity_sweep.c 15a3804334b5fb9cc108598b971d9dec897dc27e0db89d21cd541334ce7c21f4
+HASH PASS tests/test_int8_sweep.c fa4db1454b4fd24dc2c36d30b1268805d97216f55cb2641924cf0cded3ab2bf2
+HASH PASS tests/test_framework.h a8bf7f5e2e5ce9c317f1e089bc28338b4bd298a8bec6c08f40c6a5f12bb979ef
+HASH PASS docs/exploration/weight-decoder-throughput.md 8300413868c6418ebdb4742b0c7e4ad8d39dea0680f00b969d38ddc60807357e
+HASH PASS docs/exploration/bitmap-weight-compression.md 5232b44ae6089b8da5e56c90a91747e38ba609edeef2c0e9567bf481526bfc84
+HASH PASS docs/exploration/structured-2of4-sweep.md 25299480d42a360b1ea20371d220b3bd2536d576fe573e36fbed65c0098dde28
+HASH PASS docs/exploration/weight-compression-rle-sweep.md 71fcaa2b2ce6079622309a3a7d2b3a1b7d43a6fe8e27779dd49d21da002267b0
+HASH PASS docs/exploration/int8-quantization-throughput.md f647f7a2b260133cd789bc049f3076c04a8a05ee2171a795385781a42f001958
+PREDICATE PASS archive-member-tu_int_quant.o
+PREDICATE PASS archive-member-sparsity-structured_2of4.o
+PREDICATE PASS archive-member-memory-weight_compress.o
+PREDICATE PASS focused-target-test-int-quant
+PREDICATE PASS focused-target-test-sparsity
+PREDICATE PASS focused-target-test-compress
+PREDICATE PASS focused-target-test-weight-compression-sweep
+PREDICATE PASS focused-target-test-sparsity-sweep
+PREDICATE PASS aggregate-includes-int-quant
+PREDICATE PASS aggregate-includes-sparsity
+PREDICATE PASS aggregate-excludes-compress
+PREDICATE PASS aggregate-excludes-weight-sweep
+PREDICATE PASS aggregate-excludes-sparsity-sweep
+PREDICATE PASS aggregate-excludes-int8-sweep
+PREDICATE PASS no-makefile-target-for-int8-sweep
+PREDICATE PASS quant-int8-type
+PREDICATE PASS quant-uint4-nibble-order
+PREDICATE PASS quant-affine-formula
+PREDICATE PASS quant-int8-range
+PREDICATE PASS quant-uint4-range
+PREDICATE PASS quant-int8-default-scale
+PREDICATE PASS quant-uint4-default-scale
+PREDICATE PASS quant-mma-tile-declared
+PREDICATE PASS quant-int8-round-then-shift
+PREDICATE PASS quant-int8-clamp
+PREDICATE PASS quant-symmetric-scale-amax-over-127
+PREDICATE PASS quant-all-zero-guard
+PREDICATE PASS quant-nibble-unpack
+PREDICATE PASS quant-nibble-pack-low
+PREDICATE PASS quant-nibble-pack-high
+PREDICATE PASS quant-standalone-no-runtime-conversion
+PREDICATE PASS quant-standalone-no-sparsity
+PREDICATE PASS sparsity-2of4-contract
+PREDICATE PASS sparsity-group-size
+PREDICATE PASS sparsity-nonzeros
+PREDICATE PASS sparsity-six-valid-masks
+PREDICATE PASS sparsity-mask-validity
+PREDICATE PASS sparsity-mma-declared
+PREDICATE PASS sparsity-estimator-declared
+PREDICATE PASS sparsity-overlap-assumption
+PREDICATE PASS sparsity-estimator-k-divisible
+PREDICATE PASS sparsity-estimator-zero-decoder-guard
+PREDICATE PASS sparsity-estimator-pe-guard
+PREDICATE PASS sparsity-halved-macs
+PREDICATE PASS sparsity-packed-weight-bytes
+PREDICATE PASS sparsity-decode-cycles
+PREDICATE PASS sparsity-total-with-overlap-core
+PREDICATE PASS sparsity-selection-flag
+PREDICATE PASS sparsity-estimator-no-queues
+PREDICATE PASS compress-frame-magic
+PREDICATE PASS compress-frame-version
+PREDICATE PASS compress-frame-header-bytes
+PREDICATE PASS compress-rle-enum
+PREDICATE PASS compress-bitmap-enum
+PREDICATE PASS compress-adaptive-enum
+PREDICATE PASS compress-rle-no-padding
+PREDICATE PASS compress-bitmap-header
+PREDICATE PASS compress-adaptive-raw-ties
+PREDICATE PASS compress-config-mapper
+PREDICATE PASS compress-estimator-declared
+PREDICATE PASS compress-decoder-bound-field
+PREDICATE PASS compress-estimator-bus-width-guard
+PREDICATE PASS compress-payload-dma-cycles
+PREDICATE PASS compress-decode-max
+PREDICATE PASS compress-decoder-bound-classifier
+PREDICATE PASS compress-overlap-total
+PREDICATE PASS compress-serial-total
+PREDICATE PASS compress-validate-exact-size
+PREDICATE PASS compress-validate-runs-bound
+PREDICATE PASS config-full-declares-compression-enabled
+PREDICATE PASS config-full-declares-compression-type
+PREDICATE PASS config-full-declares-decoder-width
+PREDICATE PASS config-full-declares-sparsity-enabled
+PREDICATE PASS config-full-declares-sparsity-2of4
+PREDICATE PASS config-full-declares-sparsity-decoder
+PREDICATE PASS runtime-config-excludes-compression-enabled
+PREDICATE PASS runtime-config-excludes-compression-type
+PREDICATE PASS runtime-config-excludes-sparsity-enabled
+PREDICATE PASS runtime-config-excludes-sparsity-2of4
+PREDICATE PASS runtime-converter-drops-compression_enabled
+PREDICATE PASS runtime-converter-drops-compression_type
+PREDICATE PASS runtime-converter-drops-sparsity_enabled
+PREDICATE PASS runtime-converter-drops-sparsity_2of4
+PREDICATE PASS runtime-converter-drops-sparsity_decoder_groups_per_cycle
+PREDICATE PASS runtime-converter-retains-pe_rows
+PREDICATE PASS runtime-converter-retains-pe_cols
+PREDICATE PASS runtime-converter-retains-icc_switching_mode
+PREDICATE PASS runtime-converter-retains-icc_router_latency_cycles
+PREDICATE PASS config-parses-compression-enabled
+PREDICATE PASS config-parses-adaptive-type
+PREDICATE PASS config-parses-sparsity-enabled
+PREDICATE PASS config-parses-sparsity-2of4
+PREDICATE PASS config-validates-compression-type
+PREDICATE PASS config-validates-unstructured-rejected
+PREDICATE PASS config-validates-enabled-requires-2of4
+PREDICATE PASS config-validates-2of4-requires-enabled
+PREDICATE PASS config-validates-decoder-nonzero
+PREDICATE PASS json-complete-weight-compression-defaults
+PREDICATE PASS json-complete-sparsity-defaults
+PREDICATE PASS yaml-weight-path-enabled
+PREDICATE PASS yaml-weight-path-structured_2of4
+PREDICATE PASS yaml-weight-path-decoder_groups_per_cycle
+PREDICATE PASS yaml-omits-weight-compression-block
+PREDICATE PASS int-quant-fail-closed-exit
+PREDICATE PASS int-quant-exercises-mma-tile
+PREDICATE PASS int-quant-14-distinct-test-calls
+PREDICATE PASS sparsity-fail-closed-exit
+PREDICATE PASS sparsity-test-exercises-estimator
+PREDICATE PASS sparsity-test-exercises-mma
+PREDICATE PASS sparsity-27-distinct-tests
+PREDICATE PASS compress-fail-closed-exit
+PREDICATE PASS compress-24-distinct-tests
+PREDICATE PASS compress-adaptive-all-modes-test
+PREDICATE PASS compress-decoder-profiles-test
+PREDICATE PASS compress-bitmap-adaptive-cycles-test
+PREDICATE PASS weight-sweep-links-codec
+PREDICATE PASS weight-sweep-calls-estimator
+PREDICATE PASS sparsity-sweep-links-module
+PREDICATE PASS sparsity-sweep-calls-estimator
+PREDICATE PASS int8-sweep-no-cmodel-include
+PREDICATE PASS int8-sweep-no-cmodel-dependency
+PREDICATE PASS int8-doc-analytical-label
+PREDICATE PASS decoder-doc-payload-only-overstates
+PREDICATE PASS decoder-doc-bus-width-breaks-even
+PREDICATE PASS bitmap-doc-placement-independent
+PREDICATE PASS sparsity-doc-decoder-requirement
+PREDICATE PASS rle-doc-adaptive-framing
+PREDICATE PASS exact-c-callers-compress-estimator
+PREDICATE PASS exact-c-callers-sparsity-estimator
+PREDICATE PASS exact-c-callers-compress-config-mapper
+PREDICATE PASS exact-c-callers-int8-mma-tile
+PREDICATE PASS exact-c-callers-int8-dot-product
+PREDICATE PASS exact-c-callers-sparsity-mma
+PREDICATE PASS exact-c-callers-compress-for-dma
+PREDICATE PASS direct-mma-avoids-tu_compress
+PREDICATE PASS direct-mma-avoids-tu_sparsity_2of4
+PREDICATE PASS direct-mma-avoids-tu_int8
+PREDICATE PASS direct-mma-avoids-tu_fp32_to_int8
+CH13_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=25 predicates=138 checks=163

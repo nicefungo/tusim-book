@@ -1,0 +1,23 @@
++ timeout 90s /tmp/tusim-ch13-work.sYAkiN/ch13-test-int-quant 
+
+╔══════════════════════════════════════════════════╗
+║  TinyTU INT8/INT4 Quantization Tests (D2)       ║
+╚══════════════════════════════════════════════════╝
+
+  INT8 round-trip (0.0)                                   PASS
+  INT8 round-trip (6.35, symmetric)                       PASS
+  INT8 round-trip (-3.5, symmetric)                       PASS
+  INT8 batch conversion (16 elements)                     PASS
+  INT8 symmetric calibration (range [-5, 5])              PASS
+  INT8 asymmetric calibration (range [0, 10])             PASS
+  UINT4 pack/unpack round-trip (16 elements)              PASS
+  UINT4 quantize/dequantize round-trip                    PASS
+  INT8 dot product [1,2,3] · [4,5,6] = 32                PASS
+  INT8 dot product [127,127] · [127,127] = 32258         PASS
+  INT8 MMA tile (2x3x2)                                   PASS
+  INT8 MMA accumulate (adds to existing O)                PASS
+  Precision registry: INT8 entry exists                   PASS
+  Precision registry: INT4 entry exists                   PASS
+
+  14/14 tests passed
+

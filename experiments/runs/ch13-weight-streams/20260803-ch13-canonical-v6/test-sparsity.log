@@ -1,0 +1,34 @@
++ timeout 90s /tmp/tusim-ch13-work.eChr9T/ch13-test-sparsity 
+
+=== 2:4 Structured Sparsity Tests ===
+
+  mask validation — valid masks                        PASS
+  mask validation — invalid masks                      PASS
+  mask popcount                                          PASS
+  mask nth-bit extraction                                PASS
+  pruning — basic magnitude selection                  PASS
+  pruning — with masks                                 PASS
+  pruning — negative values (magnitude-based)          PASS
+  encode/decode roundtrip — FP32                       PASS
+  encode/decode roundtrip — FP16                       PASS
+  compress/decompress — 8-element FP32                 PASS
+  sparse MMA — 2×2×4 small matrix                    PASS
+  sparse MMA — 4×4×8 matrix                          PASS
+  tiled sparse MMA — 8×8×16, tile 4×4×4            PASS
+  verify 2:4 pattern — valid sparse                    PASS
+  verify 2:4 pattern — too many non-zeros              PASS
+  sparsity ratio computation                             PASS
+  speedup for dense weights = 1.0                        PASS
+  edge case — single group (n=4)                       PASS
+  edge case — all positive equal magnitude             PASS
+  edge case — FP16 roundtrip with subnormals           PASS
+  2:4 sparsity with INT8 elements                        PASS
+  runtime config — dense default                       PASS
+  runtime config — parse 2:4 decoder throughput        PASS
+  runtime config — reject inconsistent and unsupported modesPASS
+  cycle estimate — config selects dense or 2:4         PASS
+  cycle estimate — decoder throughput can bottleneck   PASS
+  invalid group sizes and masks fail safely              PASS
+
+---
+Tests: 27 run, 27 passed, 0 failed

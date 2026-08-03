@@ -1,0 +1,27 @@
++ timeout 90s /tmp/tusim-ch13-work.HDgwLn/ch13-probe 
+CH13_WEIGHT_STREAM_PROBE start
+INTQ default_scale=0.007874016 default_zp=0 qmin=-128 qmax=127
+INTQ sym_calib scale=1.000000000 zp=0
+INTQ conversions zero=0 p127=127 n128=-128 clamp=127,-128
+INTQ nibble byte=0x5A low=10 high=5
+INTQ dot=32
+INTQ mma o00=19 o01=22 o10=43 o11=50
+SPARSITY valid_masks=6
+SPARSITY prune groups=2 masks=0x5,0x9
+SPARSITY packed_fp16_128=160
+SPARSITY est128 dense_total=12291 sparse_total=7811 selected=7811 macs=2097152/1048576 wbytes=32768/20480 decode=4096
+SPARSITY estNarrow dense_total=34307 sparse_total=77312 decode=65536
+SPARSITY estWide sparse_total=19971 decode=4096
+COMPRESS rle_allzero_size=14
+COMPRESS rle_alt_size=776 raw=256
+COMPRESS bitmap_size=110 nnz=43
+COMPRESS adaptive_sparse_codec=2 size=126
+COMPRESS corrupt_rejected=1
+COMPRESS est_rle dma=1 decode=128 total=128 bound=1
+COMPRESS est_wide decode=8 total=8
+COMPRESS est_serial total=9
+COMPRESS cfgmap type=4 enabled=1 decoder=1
+CONFIG parsed compression=1 type=4 decoder=1 sparsity=1 two4=1 decgroups=4
+CONFIG validation rejections=4
+CONFIG runtime pe_rows=16 pe_cols=16 dma_bits=256 (compression/sparsity fields absent by struct design)
+CH13_PROBE SUMMARY failures=0

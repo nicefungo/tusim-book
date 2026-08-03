@@ -1,0 +1,24 @@
+inputs/edition.yaml: OK
+inputs/experiments/ch13_source_audit.py: OK
+inputs/experiments/ch13_weight_stream_probe.c: OK
+inputs/experiments/run_ch13_weight_stream_audit.sh: OK
+inputs/experiments/ch13_predraft_validate.py: OK
+inputs/experiments/ch13-weight-streams-audit-2026-08-03.md: OK
+inputs/notes/chapter-13-framing-and-evidence-plan.md: OK
+inputs/notes/chapter-13-source-and-claim-ledger.md: OK
+inputs/references/foundations.md: OK
+source-archive-sha256.txt: OK
+source-audit.log: OK
+source-audit-mutation.log: OK
+archive-members.txt: OK
+input-hashes.txt: OK
+build.log: OK
+test-int-quant.log: OK
+test-sparsity.log: OK
+test-compress.log: OK
+test-sparsity-mutation.log: OK
+weight-sweep.log: OK
+sparsity-sweep.log: OK
+ch13-probe.log: OK
+transcript.log: OK
+FINALIZED_RUN PASS run_dir=/home/zxy/Workplace/books/tusim-book/experiments/runs/ch13-weight-streams/20260803-ch13-canonical-v5 manifest=/home/zxy/Workplace/books/tusim-book/experiments/runs/ch13-weight-streams/20260803-ch13-canonical-v5/sha256-retained.txt transcript_sha256=1854e9934a4c9187e741a6eea3ce4eb385329b13185a857de97da82d956b1f01
