@@ -1,0 +1,24 @@
++ timeout 30s /tmp/tusim-ch11-work.Smmaro/ch11-test-scheduler 
+
+===========================================
+  Compiler Scheduling Pass Tests (Gap C2)
+===========================================
+
+  TEST empty sequence ... PASS
+  TEST single instruction ... PASS
+  TEST DMA load → MMA dependency (RAW) ... PASS
+  TEST independent DMA loads reordered ... PASS
+  TEST DMA → MMA → DMA store pipeline ... PASS
+  TEST complex DAG construction ... PASS
+  TEST ASAP/ALAP mobility computation ... PASS
+  TEST barrier insertion analysis ... PASS
+  TEST policy comparison (balanced vs ASAP vs ALAP) ... PASS
+  TEST large sequence stress test (64 instrs) ... PASS
+  TEST validation detects dependency violations ... PASS
+  TEST instructions with no SRAM access ... PASS
+  TEST double-buffered tile pipeline scheduling ... PASS
+  TEST config override (no DMA hoisting, ASAP policy) ... PASS
+
+-------------------------------------------
+  Results: 14/14 passed
+-------------------------------------------

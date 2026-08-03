@@ -1,0 +1,24 @@
+experiments/ch10_source_audit.py: OK
+experiments/ch10_data_movement_probe.c: OK
+experiments/ch10_extended_probe.c: OK
+experiments/run_ch10_data_movement_audit.sh: OK
+experiments/ch10_predraft_validate.py: OK
+experiments/ch10-dma-descriptor-audit-2026-07-27.md: OK
+notes/chapter-10-framing-and-evidence-plan.md: OK
+notes/chapter-10-source-and-claim-ledger.md: OK
+notes/chapter-10-skeptical-review-dispositions.md: OK
+references/foundations.md: OK
+experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/archive-members.txt: OK
+experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/input-hashes.txt: OK
+experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/ch10-agen.log: OK
+experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/ch10-cmdq.log: OK
+experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/ch10-cmodel.log: OK
+experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/ch10-config.log: OK
+experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/ch10-dma.log: OK
+experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/ch10-double-buffer.log: OK
+experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/ch10-extended.log: OK
+experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/ch10-multicast.log: OK
+experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/ch10-probe.log: OK
+experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/ch10-scatter-gather.log: OK
+experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/transcript.log: OK
+FINALIZED_RUN PASS run_dir=/home/zxy/Workplace/books/tusim-book/experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard manifest=/home/zxy/Workplace/books/tusim-book/experiments/runs/ch10-dma-contracts/20260727T223000Z-hashguard/sha256-retained.txt transcript_sha256=4434868ad6894209c5c32113d116050c18dfce284ad1195771b6a4d227ada3f3

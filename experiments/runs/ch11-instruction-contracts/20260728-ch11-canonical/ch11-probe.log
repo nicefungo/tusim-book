@@ -1,0 +1,75 @@
++ timeout 30s /tmp/tusim-ch11-work.Smmaro/ch11-probe 
+TU CMDQ: unknown opcode 19
+TU CMDQ: unknown opcode 19
+EW: too many ops in fused chain (9 > 8)
+ISA sizeof=12 opcode_count_sentinel=128 named_slots=68 unknown_slots=60
+ISA native_bytes=10 a5 22 11 44 33 66 55 aa 99 88 77
+CHECK PASS: instruction object is 12 bytes
+CHECK PASS: catalog has exact 128-slot sentinel, 68 named slots, and 60 unknown slots
+CHECK PASS: audit host is little-endian
+CHECK PASS: native packed-object bytes match the audited little-endian ABI snapshot
+CHECK PASS: reserved control-range slot 0x0f is category UNKNOWN
+CHECK PASS: generic SRAM query defaults reserved slot 0x0f to true
+CHECK PASS: synchronous queue created at requested capacity
+CHECK PASS: submit returns command ID rather than documented zero
+CHECK PASS: synchronous submit executes despite missing dependency
+CHECK PASS: completed synchronous command remains counted in queue depth
+CHECK PASS: command gets signal ID but signal registry remains empty
+CHECK PASS: declared CONV2D faults in command-queue dispatcher
+CHECK PASS: faulted command is separate from completed counter
+CHECK PASS: unknown command status is reported as COMPLETED
+CHECK PASS: wait on unknown command reports success
+CHECK PASS: third synchronous command accepted
+CHECK PASS: fourth synchronous command accepted
+CHECK PASS: queue rejects after lifetime submissions reach capacity
+CHECK PASS: synchronous sync is a no-op and does not retire completed commands
+SYNC_QUEUE count=4 submitted=4 completed=3 faulted=1 signal_count=0 current_cycle=0
+CHECK PASS: reset reuses command ID 1
+CHECK PASS: reset does not restart next signal ID
+CHECK PASS: stale pre-reset command ID aliases the new command with reused ID
+RESET_IDS old_cmd=1 new_cmd=1 old_signal=1 new_signal=5
+CHECK PASS: tick-driven queue created
+CHECK PASS: tick-driven submit auto-ticks and completes ready NOP in submit call
+CHECK PASS: auto-tick advances one cycle but does not retire queue storage
+CHECK PASS: later tick reports no execution and still does not retire completed command
+CHECK PASS: missing dependency is assumed already completed in tick-driven mode
+CHECK PASS: completion timestamp is the executor tick, with no service duration
+CHECK PASS: tick-driven completion signal registry also remains empty
+ASYNC_QUEUE count=2 submitted=2 completed=2 faulted=0 signal_count=0 current_cycle=3
+CHECK PASS: barrier probe queue created
+CHECK PASS: barrier probe creates retained faulted predecessor
+CHECK PASS: command before barrier remains pending on faulted dependency
+CHECK PASS: bounded wait times out on retained fault dependency
+CHECK PASS: barrier submission succeeds
+CHECK PASS: barrier completes while an earlier command remains pending
+CHECK PASS: post-barrier command completes before earlier pending command
+ASYNC_BARRIER fault=3 pre=0 barrier=2 post=2 count=4 cycle=6
+CHECK PASS: elementwise boundary queue created
+CHECK PASS: nine-operation elementwise descriptor is admitted
+CHECK PASS: downstream fused helper rejects count above eight but queue still reports COMPLETED
+ELEMENTWISE_BOUNDARY count=9 status=2 completed=1 faulted=0
+CHECK PASS: scheduler emits all three instructions
+SCHED_BARRIER output=DMA.LOAD,NOP,BARRIER valid=1 hoisted=0 inserted=0 cycles=9
+CHECK PASS: post-barrier independent DMA can be emitted before barrier
+CHECK PASS: list scheduler clears reported hoist and insertion counts
+CHECK PASS: scheduler DAG builds for DMA-MMA-store sequence
+SCHED_INSERT_ANALYSIS counted=0 graph_nodes=3
+CHECK PASS: barrier insertion analysis does not insert an instruction
+CHECK PASS: positive barrier-analysis graph builds
+CHECK PASS: barrier analysis reports one hazard without inserting a node
+CHECK PASS: full scheduler erases positive barrier-analysis report and emits no added instruction
+SCHED_POSITIVE_INSERT direct=1 run=0 input_nodes=2 output_nodes=2
+CHECK PASS: positive DMA-hoist analysis graph builds
+CHECK PASS: DMA-hoist analysis reports one candidate without moving graph nodes
+CHECK PASS: full scheduler erases positive DMA-hoist report
+SCHED_POSITIVE_HOIST direct=1 run=0 input_nodes=3 output_nodes=3
+CHECK PASS: 17-predecessor barrier graph builds without rejection
+CHECK PASS: barrier silently retains only 16 of 17 requir[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+TU ASM error line 1: unknown instruction: BARRIER
+
+ed predecessor edges
+SCHED_DENSE_BARRIER prior=17 retained_preds=16 max_deps=16
+ASM expanded_mnemonic_rc=-1
+CHECK PASS: legacy text interpreter rejects expanded BARRIER mnemonic
+CH11_PROBE SUMMARY failures=0

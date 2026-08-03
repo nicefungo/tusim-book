@@ -1,0 +1,23 @@
+
+===========================================
+  Address Generator Tests (Gap M3)
+===========================================
+
+  TEST linear addressing ... PASS
+  TEST strided 2D addressing ... PASS
+  TEST strided 3D addressing ... PASS
+  TEST tiled 2D addressing ... PASS
+  TEST im2col addressing ... PASS
+  TEST block interleaved addressing ... PASS
+  TEST transposed (column-major) addressing ... FAIL: col 0, row 1
+  expected 272, got 268
+  TEST bulk address generation ... PASS
+  TEST contiguous range generation ... PASS
+  TEST im2col dimension computation ... PASS
+  TEST tiling computation ... PASS
+  TEST inline address helpers ... PASS
+  TEST im2col single address computation ... PASS
+
+-------------------------------------------
+  Results: 12/13 passed, 1 FAILED
+-------------------------------------------

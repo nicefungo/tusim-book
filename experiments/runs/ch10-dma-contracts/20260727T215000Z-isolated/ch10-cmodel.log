@@ -1,0 +1,63 @@
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 32×32 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 8×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 32×32 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 2×2 PE, 6 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×3 PE, 24 KB SRAM, dataflow=weight_stationary
+TinyTU CModel — Parameterized Test Suite
+=========================================
+Compile-time TU_PE_ROWS=16 TU_PE_COLS=16 (default)
+
+  FP16 round-trip (1.0)                                  PASS
+  FP16 round-trip (0.0)                                  PASS
+  FP16 round-trip (-2.5)                                 PASS
+  FP16 round-trip (65504.0 — max fp16)                 PASS
+  FP16 round-trip (subnormal: 1e-8, flush-to-zero)       PASS
+  FP16 round-trip (NaN)                                  PASS
+  FP16 round-trip (+Inf)                                 PASS
+
+--- MMA Identity (parameterized PE dimensions) ---
+  MMA identity 16x16 (16×16 PE)                         PASS
+  MMA identity 32x32 (32×32 PE)                         PASS
+  MMA identity 16x16 (8×8 PE)                           PASS
+  MMA identity 32x16 (16×16 PE)                         PASS
+  MMA identity 16x16 (4×8 PE)                           PASS
+  MMA identity 48x48 (16×16 PE)                         PASS
+  MMA identity 20x20 (16×16 PE)                         PASS
+
+--- MMA Known Values ---
+  MMA 32×8 (all-0.5 W, all-2.0 A → 16.0)              PASS
+
+--- MMA Bias ---
+  MMA 16×16×16 with bias (zero W/A)                    PASS
+
+--- Runtime Config ---
+  Runtime config: 32×32 PE array                        PASS
+
+--- Small PE Array ---
+  MMA 4×4×4 with 2×2 PE array                         PASS
+
+--- Edge Cases ---
+  MMA 7×5×9 (non-multiple-of-tile, 4×3 PE)            PASS
+
+═══════════════════════════════════════════
+  19/19 tests passed
+═══════════════════════════════════════════

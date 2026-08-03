@@ -1,0 +1,504 @@
++ timeout 90s /tmp/tusim-ch12-work.YjG0RK/ch12-test-multicore 
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 2 cores, topology=none
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 2 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [6] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [7] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [8] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [9] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [10] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [11] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [12] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [13] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [14] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [15] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 16 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [6] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [7] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [8] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [9] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [10] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [11] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [12] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [13] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [14] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [15] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [6] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [7] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [8] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [9] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [10] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [11] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [12] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [13] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [14] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [15] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 16 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [6] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [7] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [8] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [9] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [10] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [11] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [12] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [13] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [14] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [15] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 2 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+
+=== TU Multi-Core Cluster Tests (Gap A5) ===
+
+  TEST 1: core lifecycle ... PASS
+  TEST 2: core DMA load/store ... PASS
+  TEST 3: core MMA (identity) ... PASS
+  TEST 4: core state isolation ... PASS
+  TEST 5: cluster ring creation ... PASS
+  TEST 6: cluster mesh creation ... PASS
+  TEST 7: hop distance ... PASS
+  TEST 8: neighbor discovery ... PASS
+  TEST 9: ICC send ... PASS
+  TEST 10: ICC switching timing modes ... PASS
+  TEST 11: ICC simultaneous shared-link contention ... PASS
+  TEST 12: ICC deterministic mesh routing XY/YX ... PASS
+  TEST 13: ICC broadcast ... PASS
+  TEST 14: all-reduce sum ... PASS
+  TEST 15: barrier sync ... PASS
+  TEST 16: SPMD execution ... PASS
+
+=== Results: 16/16 passed, 0 failed ===

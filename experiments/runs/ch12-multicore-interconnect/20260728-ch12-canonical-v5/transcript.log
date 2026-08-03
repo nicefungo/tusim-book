@@ -1,0 +1,1734 @@
+
+===== provenance before =====
+utc=2026-07-28T07:05:06Z
+book_root=/home/zxy/Workplace/books/tusim-book
+book_head=1c5a9d0e069a237aa067630a7d7f4e7b8672f545
+book_branch=main
+book_remotes=0
+tusim_root=/home/zxy/Workplace/projects/tusim
+tusim_head=e918c80b6fce833cd1fcae97730fa841c2176f25
+tusim_branch=DETACHED
+tusim_status_bytes=0
+tusim_ignored_inventory_sha256=bb6aa62e0a80724a77579cdf4ec844acba8d5f59a1d3b4418d0025b4456415ab
+
+===== create pinned disposable source =====
++ git -C /home/zxy/Workplace/projects/tusim archive --format=tar --output=/tmp/tusim-ch12-archive.3PCMOx.tar e918c80b6fce833cd1fcae97730fa841c2176f25 
+fb023fe79a0e7dafbf334848756e44127101f5fdb75c1004e2ed2712318b708f  source-at-pin.tar
++ tar -xf /tmp/tusim-ch12-archive.3PCMOx.tar -C /tmp/tusim-ch12-work.snMARI 
+
+===== source and artifact input hashes =====
+304e1c846ddd2a465eb09427f4959dd02505a105546bb0b02e51d921c4c800ae  edition.yaml
+f63b72f071a55798bf103552ef188aec4f411fa06a005a4da0b1339141e2734a  experiments/ch12_source_audit.py
+c985fe82829392f5fbd468310a41b7ee701f0d45a0ff140858708636e3d2adb6  experiments/ch12_multicore_interconnect_probe.c
+64c3e518e6e2640afa841200edd0fc75cf4d667c2edfe68cc8427468f7bbe147  experiments/run_ch12_multicore_interconnect_audit.sh
+1c2ee5de1a43d124edfe71e3d015ce6be3abd90ddcb60d42c51248ea920704aa  experiments/ch12_predraft_validate.py
+a8a12b0434cc7725b2afc3d1cabf7fad599dbddc09ff67262ad0d1b92722ae4d  experiments/ch12-multicore-interconnect-audit-2026-07-28.md
+b6e7687f30a0b033990b6d0d83594aeda3ef64ecc587b1bdf980c98585ed9849  notes/chapter-12-framing-and-evidence-plan.md
+44d996e9c3e75650be7124e8bb754b82370b72a9b5c5b4416adfc3994689750e  notes/chapter-12-source-and-claim-ledger.md
+5f3930fba8bf948123d13df9f33d050fad99b0f6ea132e19f15f24a3323fb29d  notes/chapter-12-skeptical-review-dispositions.md
+3d8b02459d065f6cfd9b749553e9927652bf67951ccf58d10d4286c84225f7d2  references/foundations.md
+9397944e6c4f7f1ecd0d778f52cbde2c56966108c4470c998c9602c703761465  notes/chapter-12-independent-manuscript-review-dispositions.md
+
+===== fail-closed source audit =====
++ python3 /home/zxy/Workplace/books/tusim-book/experiments/ch12_source_audit.py /tmp/tusim-ch12-work.snMARI e918c80b6fce833cd1fcae97730fa841c2176f25 
+HASH PASS Makefile 5249a0e077438a4e6f70c74936c185bb1c30105bb834b3f89ac6a78b32630fd2
+HASH PASS tu_cmodel/tu_core.c 0e4b3c6e206465748ae2d3d2e9871f3a6542a61cd1ddcddfff6886b9ed1f0eeb
+HASH PASS tu_cmodel/tu_core.h dc5c22065fb65be4353585ccbfd3bec6c9b9d70e976a51e87169bac79dd164e9
+HASH PASS tu_cmodel/tu_cluster.c 7c968e95ba0a88fcc27f803be6aa337161bfa691505cdd39b01146252fa77b36
+HASH PASS tu_cmodel/tu_cluster.h 1d8749ce994058c0d23804f365a62c57ceda23eebc721bc62797542e165bebf5
+HASH PASS tu_cmodel/tu_cmodel.c 542aa16f6f1561f0d55af05920e9922ed3c381a1ad193e6f2ecfca390a8b5059
+HASH PASS tu_cmodel/tu_cmodel.h 416a0d20776825498217ff5d4382f07ccb2ac9689bbe6c70cacd1bf13e7725af
+HASH PASS tu_cmodel/tu_config.h 129d55ad55409bcd4b5dcae5007faa297c087d48a150a4a85073d66e49cbb45d
+HASH PASS tu_cmodel/tu_sram.c 5a6ffcdd3f63c9c015bd628b5c44ded951785a128685b413b6db680f5d1753c0
+HASH PASS tu_cmodel/tu_sram.h aa62a942c83bfded4644c26eabf37acb815b7ac2883b53f6b3b8a585df4123d5
+HASH PASS tu_cmodel/infra/config.c 17b7919392d4a315022a129ce5bbdff301a2d3405af3163756b430b2b36dd12a
+HASH PASS tu_cmodel/infra/config.h 723deb631e83705ab80143dd251761c3b98ca692c5d1eefb243d47aca551913b
+HASH PASS config/tu_config.json 6f9d292696b1ca5fa38ad3298e7f3a04c43095c0950f71dbe0c3c68b1f15f4db
+HASH PASS config/tu_config.yaml 9fb4d87753139a5857107a6fdf56006fcb5adbe95ad30e9f8430c2e5c145910e
+HASH PASS scripts/gen_config.py 5eab235067eaf6d5785352e48ef00417a18f5b0d05b25f40a82719e11bf8634a
+HASH PASS tests/test_multicore.c aaf516bb2f7080ea057ee4cd75405478fc84dbb571d490bdda605dbb8ae3dd4e
+HASH PASS tests/test_config.c e2bf7d9a1bbac06863e3b8c372fa1cb854927fc1aeb73a08c79e08cd3f1db821
+HASH PASS tests/test_interconnect_contention_sweep.c 1380fe1284b8a3a8c11104c160538d6ef95ea18f6eac168be08aeedd2de3567a
+HASH PASS tests/test_interconnect_routing_sweep.c 75179c70b04bc98b65ed9b647aaa36e847f415c90ee94e62b9b435492baefba4
+HASH PASS tests/test_interconnect_topology_sweep.c 1222f166b8bf45248e8ed8ca57cbd47452471dad994bda754558089b4bdb24ee
+HASH PASS tests/test_interconnect_switching_sweep.c bd19e7762e5514122e1d7cdf5c79cf918f658a1c1b2caeb7e97b45de66cbdc01
+HASH PASS tests/test_multicore_scaling_sweep.c c164c20c9fed6fa8f9c873131438cccb470a53e3c6d0149f3fd9db1be6b66259
+HASH PASS docs/multicore-cluster.md 6612f4cd499a0c9ac2e28ede0d88fdfa842bea9dd793c55ec86a561cd9adb3d4
+HASH PASS docs/exploration/interconnect-contention-traffic-matrix.md 6e20ca4908446609dbcc265d15c702e3bfa441a812022e24fede2f36b34e629c
+HASH PASS docs/exploration/interconnect-mesh-routing-order.md fdf869c066d27c77f005d42cc6680ff90e7d9ca4597cadc8b68cac100c585ae6
+HASH PASS docs/exploration/interconnect-switching-modes.md c2a28844527aca8c6afed9111da810e54a6825f82f1362b2b1369f8507dd529b
+HASH PASS docs/exploration/interconnect-topology-sweep.md 60754c76d3655835e52869d5da05305a5c8a8dfb185cb0bc4eed396222310315
+HASH PASS docs/exploration/multicore-scaling-gemm256.md 7bdf0ddac330db3734df92824106c21976f3e95d192972bb0c8aeb49fcef4682
+PREDICATE PASS archive-member-tu_core.o
+PREDICATE PASS archive-member-tu_cluster.o
+PREDICATE PASS archive-member-infra/config.o
+PREDICATE PASS focused-target-test-multicore
+PREDICATE PASS focused-target-test-config
+PREDICATE PASS focused-target-test-interconnect-contention-sweep
+PREDICATE PASS focused-target-test-interconnect-routing-sweep
+PREDICATE PASS aggregate-includes-multicore
+PREDICATE PASS aggregate-includes-config
+PREDICATE PASS quick-excludes-multicore
+PREDICATE PASS quick-excludes-config
+PREDICATE PASS core-stores-state-snapshot
+PREDICATE PASS core-declares-icc-buffer
+PREDICATE PASS core-default-singleton
+PREDICATE PASS core-create-reuses-global-init
+PREDICATE PASS core-copies-global-state
+PREDICATE PASS core-clears-global-state
+PREDICATE PASS global-state-swap-in-helper
+PREDICATE PASS global-state-swap-out-helper
+PREDICATE PASS core-wrapper-reaches-tu_run_asm
+PREDICATE PASS core-wrapper-reaches-tu_cmdq_sync_all
+PREDICATE PASS core-wrapper-reaches-tu_dma_load_w
+PREDICATE PASS core-wrapper-reaches-tu_dma_load_a
+PREDICATE PASS core-wrapper-reaches-tu_dma_store_o
+PREDICATE PASS core-wrapper-reaches-tu_mma
+PREDICATE PASS no-core-thread-launch
+PREDICATE PASS doc-claims-no-shared-mutable-state
+PREDICATE PASS doc-claims-simultaneous-spmd-start
+PREDICATE PASS doc-claims-barrier-rendezvous
+PREDICATE PASS standalone-report-implies-topology-barrier-effect
+PREDICATE PASS cluster-count-range
+PREDICATE PASS constructor-no-topology-lower-bound-check
+PREDICATE PASS constructor-no-topology-upper-bound-check
+PREDICATE PASS mesh-ceiling-columns
+PREDICATE PASS constructor-no-mesh-rows-upper-bound
+PREDICATE PASS constructor-no-overflow-safe-mesh-ceiling
+PREDICATE PASS cluster-creates-core-snapshots
+PREDICATE PASS runtime-declares-icc_switching_mode
+PREDICATE PASS cluster-consumes-icc_switching_mode
+PREDICATE PASS runtime-declares-icc_contention_mode
+PREDICATE PASS cluster-consumes-icc_contention_mode
+PREDICATE PASS runtime-declares-icc_mesh_routing_mode
+PREDICATE PASS cluster-consumes-icc_mesh_routing_mode
+PREDICATE PASS runtime-declares-icc_link_bytes_per_cycle
+PREDICATE PASS cluster-consumes-icc_link_bytes_per_cycle
+PREDICATE PASS runtime-declares-icc_router_latency_cycles
+PREDICATE PASS cluster-consumes-icc_router_latency_cycles
+PREDICATE PASS ring-shortest-distance
+PREDICATE PASS mesh-manhattan-distance
+PREDICATE PASS cut-through-equation
+PREDICATE PASS store-forward-equation
+PREDICATE PASS ring-clockwise-tie
+PREDICATE PASS mesh-route-order
+PREDICATE PASS stale-header-lower-bound-claim
+PREDICATE PASS stale-header-blocking-claim
+PREDICATE PASS stale-header-latency-result-claim
+PREDICATE PASS stale-header-rendezvous-claim
+PREDICATE PASS shared-link-heuristic-equation
+PREDICATE PASS shared-score-no-overflow-guard
+PREDICATE PASS link-service-unchecked-addition
+PREDICATE PASS message-size-u32-bounds-link-load
+PREDICATE PASS message-count-u32-bounds-link-load
+PREDICATE PASS send-host-temporary
+PREDICATE PASS send-immediate-read
+PREDICATE PASS send-immediate-write
+PREDICATE PASS send-destination-cycle-update
+PREDICATE PASS send-does-not-consume-tag
+PREDICATE PASS send-does-not-consume-blocking
+PREDICATE PASS send-does-not-consume-latency_cycles
+PREDICATE PASS send-32bit-offset-addition
+PREDICATE PASS send-no-overflow-safe-source-span-check
+PREDICATE PASS send-no-overflow-safe-destination-span-check
+PREDICATE PASS send-additive-cycle-sum
+PREDICATE PASS broadcast-sequential-loop
+PREDICATE PASS broadcast-reuses-send
+PREDICATE PASS allreduce-32bit-size-product
+PREDICATE PASS allreduce-no-explicit-region-bounds
+PREDICATE PASS allreduce-host-core-order-sum
+PREDICATE PASS allreduce-host-writeback
+PREDICATE PASS allreduce-bypasses-send
+PREDICATE PASS allreduce-no-cycle-accounting
+PREDICATE PASS allreduce-gather-message-count
+PREDICATE PASS barrier-fixed-roundtrip
+PREDICATE PASS barrier-updates-stat-count
+PREDICATE PASS barrier-lifecycle-counter-unused
+PREDICATE PASS barrier-topology-independent
+PREDICATE PASS spmd-serial-loop
+PREDICATE PASS spmd-reaches-legacy-asm
+PREDICATE PASS spmd-no-thread-launch
+PREDICATE PASS header-concurrency-claim-present
+PREDICATE PASS printed-bandwidth-implicit-1ghz
+PREDICATE PASS declared-bandwidth-field-unused-in-implementation
+PREDICATE PASS full-config-parser-assigns-multicore_enabled
+PREDICATE PASS full-config-parser-assigns-num_cores
+PREDICATE PASS full-config-parser-assigns-interconnect_mode
+PREDICATE PASS runtime-converter-drops-multicore_enabled
+PREDICATE PASS runtime-converter-drops-num_cores
+PREDICATE PASS runtime-converter-drops-interconnect_mode
+PREDICATE PASS runtime-converter-retains-icc_switching_mode
+PREDICATE PASS runtime-converter-retains-icc_contention_mode
+PREDICATE PASS runtime-converter-retains-icc_mesh_routing_mode
+PREDICATE PASS runtime-converter-retains-icc_link_bytes_per_cycle
+PREDICATE PASS runtime-converter-retains-icc_router_latency_cycles
+PREDICATE PASS full-config-validates-link-width
+PREDICATE PASS full-config-validates-route-order
+PREDICATE PASS json-complete-multicore-values
+PREDICATE PASS yaml-multicore-enabled
+PREDICATE PASS yaml-multicore-num_cores
+PREDICATE PASS yaml-multicore-interconnect
+PREDICATE PASS yaml-multicore-switching
+PREDICATE PASS yaml-multicore-contention
+PREDICATE PASS yaml-multicore-mesh_routing
+PREDICATE PASS yaml-multicore-link_bytes_per_cycle
+PREDICATE PASS yaml-multicore-router_latency_cycles
+PREDICATE PASS yaml-multicore-cache_coherence
+PREDICATE PASS generator-reads-multicore-map
+PREDICATE PASS generator-emits-enabled
+PREDICATE PASS generator-emits-core-count
+PREDICATE PASS generator-emits-topology
+PREDICATE PASS generator-emits-switching
+PREDICATE PASS generator-emits-contention
+PREDICATE PASS generator-emits-route-order
+PREDICATE PASS generator-emits-link-width
+PREDICATE PASS generator-emits-router-latency
+PREDICATE PASS sram-bounds-only-reports
+PREDICATE PASS sram-bounds-does-not-abort
+PREDICATE PASS sram-bounds-does-not-return-status
+PREDICATE PASS bulk-read-calls-reporting-check
+PREDICATE PASS bulk-read-proceeds-to-memcpy
+PREDICATE PASS bulk-write-calls-reporting-check
+PREDICATE PASS bulk-write-proceeds-to-memcpy
+PREDICATE PASS focused-multicore-16-distinct-test-calls
+PREDICATE PASS focused-multicore-fail-closed-exit
+PREDICATE PASS spmd-named-test-uses-direct-mma
+PREDICATE PASS spmd-named-test-does-not-call-spmd-api
+PREDICATE PASS focused-discriminating-==15
+PREDICATE PASS focused-discriminating-==79
+PREDICATE PASS focused-discriminating-==207
+PREDICATE PASS focused-discriminating-==133
+PREDICATE PASS focused-discriminating-==606&&yx.estimated_cycles==222
+PREDICATE PASS exact-c-callers-traffic-estimator
+PREDICATE PASS exact-c-callers-transfer-estimator
+PREDICATE PASS exact-c-callers-hop-distance
+PREDICATE PASS exact-c-callers-send
+PREDICATE PASS exact-c-callers-broadcast
+PREDICATE PASS exact-c-callers-allreduce
+PREDICATE PASS exact-c-callers-barrier
+PREDICATE PASS exact-c-callers-spmd-implementation-only
+PREDICATE PASS exact-c-callers-cluster-constructor
+PREDICATE PASS standalone-sweep-does-not-include-cmodel-test_interconnect_topology_sweep
+PREDICATE PASS standalone-sweep-does-not-call-cluster-test_interconnect_topology_sweep
+PREDICATE PASS standalone-sweep-does-not-include-cmodel-test_interconnect_switching_sweep
+PREDICATE PASS standalone-sweep-does-not-call-cluster-test_interconnect_switching_sweep
+PREDICATE PASS linked-sweep-calls-estimator-test_interconnect_contention_sweep
+PREDICATE PASS linked-sweep-calls-estimator-test_interconnect_routing_sweep
+CH12_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=28 predicates=155 checks=183
+
+===== source-audit mutation control =====
+SOURCE_AUDIT_MUTATION PASS rc=1 restored=yes
+
+===== contained static archive build =====
++ make -C /tmp/tusim-ch12-work.snMARI -j2 libtucmodel.a 
+make: Entering directory '/tmp/tusim-ch12-work.snMARI'
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/dma_descriptor.o tu_cmodel/dma_descriptor.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/rounding.o tu_cmodel/rounding.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/fp8.o tu_cmodel/fp8.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tf32.o tu_cmodel/tf32.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/dram_model.o tu_cmodel/memory/dram_model.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/memory_hierarchy.o tu_cmodel/memory/memory_hierarchy.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/double_buffer.o tu_cmodel/memory/double_buffer.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/address_generator.o tu_cmodel/memory/address_generator.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_isa.o tu_cmodel/isa/tu_isa.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/elementwise_pipeline.o tu_cmodel/compute/elementwise_pipeline.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/normalization_engine.o tu_cmodel/compute/normalization_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/softmax_engine.o tu_cmodel/compute/softmax_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/convolution_engine.o tu_cmodel/compute/convolution_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/attention_engine.o tu_cmodel/compute/attention_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/pooling_engine.o tu_cmodel/compute/pooling_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/logging.o tu_cmodel/infra/logging.c
+tu_cmodel/infra/logging.c: In function ‘tu_trace_export_vcd’:
+tu_cmodel/infra/logging.c:229:17: warning: unused variable ‘comp_names’ [-Wunused-variable]
+  229 |     const char *comp_names[] = {
+      |                 ^~~~~~~~~~
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/json_reader.o tu_cmodel/infra/json_reader.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/config.o tu_cmodel/infra/config.c
+tu_cmodel/infra/config.c:62:13: warning: ‘parse_opt_uint’ defined but not used [-Wunused-function]
+   62 | static bool parse_opt_uint(const tu_json_value_t *obj, const char *key,
+      |             ^~~~~~~~~~~~~~
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_int_quant.o tu_cmodel/tu_int_quant.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/performance_counters.o tu_cmodel/perf/performance_counters.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/event_trace.o tu_cmodel/perf/event_trace.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/power_model.o tu_cmodel/perf/power_model.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/pipeline_controller.o tu_cmodel/compute/pipeline_controller.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/dataflow_registry.o tu_cmodel/compute/dataflow/dataflow_registry.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/dataflow_dispatcher.o tu_cmodel/compute/dataflow/dataflow_dispatcher.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/weight_stationary.o tu_cmodel/compute/dataflow/weight_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/output_stationary.o tu_cmodel/compute/dataflow/output_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/row_stationary.o tu_cmodel/compute/dataflow/row_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_core.o tu_cmodel/tu_core.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_cluster.o tu_cmodel/tu_cluster.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_status.o tu_cmodel/tu_status.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/tu_context.o tu_cmodel/infra/tu_context.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/weight_compress.o tu_cmodel/memory/weight_compress.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/sparsity/structured_2of4.o tu_cmodel/sparsity/structured_2of4.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_scheduler.o tu_cmodel/isa/tu_scheduler.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_liveness.o tu_cmodel/isa/tu_liveness.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/tu_debug.o tu_cmodel/infra/tu_debug.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/bindings/tu_dpi.o tu_cmodel/bindings/tu_dpi.c
+ar rcs libtucmodel.a tu_cmodel/tu_cmodel.o tu_cmodel/tu_asm.o tu_cmodel/tu_precision.o tu_cmodel/tu_sram.o tu_cmodel/tu_dma.o tu_cmodel/dma_descriptor.o tu_cmodel/rounding.o tu_cmodel/fp8.o tu_cmodel/tf32.o tu_cmodel/command_queue.o tu_cmodel/memory/dram_model.o tu_cmodel/memory/memory_hierarchy.o tu_cmodel/memory/double_buffer.o tu_cmodel/memory/address_generator.o tu_cmodel/isa/tu_isa.o tu_cmodel/compute/elementwise_pipeline.o tu_cmodel/compute/normalization_engine.o tu_cmodel/compute/softmax_engine.o tu_cmodel/compute/convolution_engine.o tu_cmodel/compute/attention_engine.o tu_cmodel/compute/pooling_engine.o tu_cmodel/infra/logging.o tu_cmodel/infra/json_reader.o tu_cmodel/infra/config.o tu_cmodel/tu_int_quant.o tu_cmodel/perf/performance_counters.o tu_cmodel/perf/event_trace.o tu_cmodel/perf/power_model.o tu_cmodel/compute/pipeline_controller.o tu_cmodel/compute/dataflow/dataflow_registry.o tu_cmodel/compute/dataflow/dataflow_dispatcher.o tu_cmodel/compute/dataflow/weight_stationary.o tu_cmodel/compute/dataflow/output_stationary.o tu_cmodel/compute/dataflow/row_stationary.o tu_cmodel/tu_core.o tu_cmodel/tu_cluster.o tu_cmodel/tu_status.o tu_cmodel/infra/tu_context.o tu_cmodel/memory/weight_compress.o tu_cmodel/sparsity/structured_2of4.o tu_cmodel/isa/tu_scheduler.o tu_cmodel/isa/tu_liveness.o tu_cmodel/infra/tu_debug.o tu_cmodel/bindings/tu_dpi.o
+make: Leaving directory '/tmp/tusim-ch12-work.snMARI'
+address_generator.o
+attention_engine.o
+command_queue.o
+config.o
+convolution_engine.o
+dataflow_dispatcher.o
+dataflow_registry.o
+dma_descriptor.o
+double_buffer.o
+dram_model.o
+elementwise_pipeline.o
+event_trace.o
+fp8.o
+json_reader.o
+logging.o
+memory_hierarchy.o
+normalization_engine.o
+output_stationary.o
+performance_counters.o
+pipeline_controller.o
+pooling_engine.o
+power_model.o
+rounding.o
+row_stationary.o
+softmax_engine.o
+structured_2of4.o
+tf32.o
+tu_asm.o
+tu_cluster.o
+tu_cmodel.o
+tu_context.o
+tu_core.o
+tu_debug.o
+tu_dma.o
+tu_dpi.o
+tu_int_quant.o
+tu_isa.o
+tu_liveness.o
+tu_precision.o
+tu_scheduler.o
+tu_sram.o
+tu_status.o
+weight_compress.o
+weight_stationary.o
+ARCHIVE_MEMBER PASS tu_core.o
+ARCHIVE_MEMBER PASS tu_cluster.o
+ARCHIVE_MEMBER PASS config.o
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch12-work.snMARI -I/tmp/tusim-ch12-work.snMARI/tu_cmodel -o /tmp/tusim-ch12-work.snMARI/ch12-probe /home/zxy/Workplace/books/tusim-book/experiments/ch12_multicore_interconnect_probe.c /tmp/tusim-ch12-work.snMARI/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch12-work.snMARI -I/tmp/tusim-ch12-work.snMARI/tu_cmodel -o /tmp/tusim-ch12-work.snMARI/ch12-test-multicore /tmp/tusim-ch12-work.snMARI/tests/test_multicore.c /tmp/tusim-ch12-work.snMARI/libtucmodel.a -lm 
+/tmp/tusim-ch12-work.snMARI/tests/test_multicore.c: In function ‘test_core_isolation’:
+/tmp/tusim-ch12-work.snMARI/tests/test_multicore.c:179:23: warning: unused variable ‘out2’ [-Wunused-variable]
+  179 |     fp16_t out1[256], out2[256];
+      |                       ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_multicore.c:179:12: warning: unused variable ‘out1’ [-Wunused-variable]
+  179 |     fp16_t out1[256], out2[256];
+      |            ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_multicore.c: In function ‘test_spmd_execution’:
+/tmp/tusim-ch12-work.snMARI/tests/test_multicore.c:591:12: warning: variable ‘a_data’ set but not used [-Wunused-but-set-variable]
+  591 |     fp16_t a_data[16];
+      |            ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_multicore.c:582:12: warning: variable ‘a_ones’ set but not used [-Wunused-but-set-variable]
+  582 |     fp16_t a_ones[16];
+      |            ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_multicore.c:571:17: warning: unused variable ‘program’ [-Wunused-variable]
+  571 |     const char *program =
+      |                 ^~~~~~~
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch12-work.snMARI -I/tmp/tusim-ch12-work.snMARI/tu_cmodel -o /tmp/tusim-ch12-work.snMARI/ch12-test-config /tmp/tusim-ch12-work.snMARI/tests/test_config.c /tmp/tusim-ch12-work.snMARI/libtucmodel.a -lm 
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c: In function ‘main’:
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:36:9: note: in expansion of macro ‘CHECK’
+   36 |         CHECK(err == TU_JSON_OK && root.type == TU_JSON_INT && root.int_val == 42, "int parse");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:45:9: note: in expansion of macro ‘CHECK’
+   45 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:46:9: note: in expansion of macro ‘CHECK’
+   46 |         CHECK(root.type == TU_JSON_DOUBLE && root.double_val > 3.14 && root.double_val < 3.15, "double");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:55:9: note: in expansion of macro ‘CHECK’
+   55 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:57:9: note: in expansion of macro ‘CHECK’
+   57 |         CHECK(s && len == 12 && strncmp(s, "hello, world", 12) == 0, "string");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:66:9: note: in expansion of macro ‘CHECK’
+   66 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:68:9: note: in expansion of macro ‘CHECK’
+   68 |         CHECK(s && len == 13 && strncmp(s, "hello\nworld\t!", 13) == 0, "escapes");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:76:9: note: in expansion of macro ‘CHECK’
+   76 |         CHECK(tu_json_parse("true", &r, NULL, 0) == TU_JSON_OK && r.type == TU_JSON_BOOL && r.bool_val, "true");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:78:9: note: in expansion of macro ‘CHECK’
+   78 |         CHECK(tu_json_parse("false", &r, NULL, 0) == TU_JSON_OK && r.type == TU_JSON_BOOL && !r.bool_val, "false");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:80:9: note: in expansion of macro ‘CHECK’
+   80 |         CHECK(tu_json_parse("null", &r, NULL, 0) == TU_JSON_OK && r.type == TU_JSON_NULL, "null");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:89:9: note: in expansion of macro ‘CHECK’
+   89 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK && root.type == TU_JSON_ARRAY, "parse");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:90:9: note: in expansion of macro ‘CHECK’
+   90 |         CHECK(root.array.count == 4, "count");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:91:9: note: in expansion of macro ‘CHECK’
+   91 |         CHECK(root.array.items[0].int_val == 1, "idx0");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:92:9: note: in expansion of macro ‘CHECK’
+   92 |         CHECK(root.array.items[1].int_val == 2, "idx1");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:93:9: note: in expansion of macro ‘CHECK’
+   93 |         CHECK(root.array.items[2].int_val == 3, "idx2");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:94:9: note: in expansion of macro ‘CHECK’
+   94 |         CHECK(tu_json_as_string(&root.array.items[3], NULL) != NULL, "idx3");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:103:9: note: in expansion of macro ‘CHECK’
+  103 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:104:9: note: in expansion of macro ‘CHECK’
+  104 |         CHECK(root.object.count == 3, "count");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:107:9: note: in expansion of macro ‘CHECK’
+  107 |         CHECK(v && v->int_val == 32, "rows");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:110:9: note: in expansion of macro ‘CHECK’
+  110 |         CHECK(v && v->int_val == 32, "cols");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:114:9: note: in expansion of macro ‘CHECK’
+  114 |         CHECK(s && len == 6 && strncmp(s, "TinyTU", 6) == 0, "name");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:117:9: note: in expansion of macro ‘CHECK’
+  117 |         CHECK(v == NULL, "missing");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:127:9: note: in expansion of macro ‘CHECK’
+  127 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:131:9: note: in expansion of macro ‘CHECK’
+  131 |         CHECK(c && c->int_val == 99, "nested");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:140:9: note: in expansion of macro ‘CHECK’
+  140 |         CHECK(tu_json_parse(json, &root, NULL, 0) != TU_JSON_OK, "should fail");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:151:9: note: in expansion of macro ‘CHECK’
+  151 |         CHECK(cfg.pe_rows == 16, "pe_rows");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:152:9: note: in expansion of macro ‘CHECK’
+  152 |         CHECK(cfg.pe_cols == 16, "pe_cols");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:153:9: note: in expansion of macro ‘CHECK’
+  153 |         CHECK(cfg.sram_w_size_kb == 128, "w_size");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:154:9: note: in expansion of macro ‘CHECK’
+  154 |         CHECK(cfg.sram_a_size_kb == 64, "a_size");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:155:9: note: in expansion of macro ‘CHECK’
+  155 |         CHECK(cfg.sram_o_size_kb == 64, "o_size");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:156:9: note: in expansion of macro ‘CHECK’
+  156 |         CHECK(cfg.dma_bus_width_bits == 256, "bus");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:157:9: note: in expansion of macro ‘CHECK’
+  157 |         CHECK(cfg.cycle_model == 2, "cycle");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:158:9: note: in expansion of macro ‘CHECK’
+  158 |         CHECK(cfg.counters_enabled, "counters");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:159:9: note: in expansion of macro ‘CHECK’
+  159 |         CHECK(cfg.dataflow_mode == 0, "dataflow");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:190:9: note: in expansion of macro ‘CHECK’
+  190 |         CHECK(tu_config_load_string(json, &cfg, NULL, 0) == 0, "load");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:191:9: note: in expansion of macro ‘CHECK’
+  191 |         CHECK(cfg.pe_rows == 32, "rows");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:192:9: note: in expansion of macro ‘CHECK’
+  192 |         CHECK(cfg.pe_cols == 32, "cols");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:193:9: note: in expansion of macro ‘CHECK’
+  193 |         CHECK(cfg.dataflow_mode == 1, "dataflow=OS");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:194:9: note: in expansion of macro ‘CHECK’
+  194 |         CHECK(cfg.sram_w_size_kb == 256, "w_size");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:195:9: note: in expansion of macro ‘CHECK’
+  195 |         CHECK(cfg.sram_num_banks == 64, "banks");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:196:9: note: in expansion of macro ‘CHECK’
+  196 |         CHECK(cfg.sram_bank_width == 8, "bank_width");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:197:9: note: in expansion of macro ‘CHECK’
+  197 |         CHECK(cfg.dma_bus_width_bits == 512, "dma_bus");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:198:9: note: in expansion of macro ‘CHECK’
+  198 |         CHECK(cfg.dma_async_mode, "async");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:205:9: note: in expansion of macro ‘CHECK’
+  205 |         CHECK(tu_config_load("config/tu_config.json", &cfg, NULL, 0) == 0, "load_file");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:206:9: note: in expansion of macro ‘CHECK’
+  206 |         CHECK(cfg.pe_rows == 16, "rows");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:207:9: note: in expansion of macro ‘CHECK’
+  207 |         CHECK(cfg.pe_cols == 16, "cols");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:208:9: note: in expansion of macro ‘CHECK’
+  208 |         CHECK(cfg.dma_bus_width_bits == 256, "bus");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:216:9: note: in expansion of macro ‘CHECK’
+  216 |         CHECK(tu_config_validate(&cfg, NULL, 0) == 0, "valid default");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:225:9: note: in expansion of macro ‘CHECK’
+  225 |         CHECK(tu_config_validate(&cfg, NULL, 0) != 0, "should reject pe_rows=0");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:234:9: note: in expansion of macro ‘CHECK’
+  234 |         CHECK(tu_config_validate(&cfg, NULL, 0) != 0, "should reject bank_width=3");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:243:9: note: in expansion of macro ‘CHECK’
+  243 |         CHECK(tu_config_validate(&cfg, NULL, 0) != 0, "should reject bus=100");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:255:9: note: in expansion of macro ‘CHECK’
+  255 |         CHECK(tu_config_load_string(json, &cfg, NULL, 0) == 0, "ICC config parse");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:256:9: note: in expansion of macro ‘CHECK’
+  256 |         CHECK(cfg.icc_switching_mode == TU_ICC_SWITCH_CUT_THROUGH, "switching mode");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:257:9: note: in expansion of macro ‘CHECK’
+  257 |         CHECK(cfg.icc_contention_mode == TU_ICC_CONTENTION_SHARED_LINK, "contention mode");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:258:9: note: in expansion of macro ‘CHECK’
+  258 |         CHECK(cfg.icc_mesh_routing_mode == TU_ICC_MESH_ROUTE_YX, "mesh routing mode");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:259:9: note: in expansion of macro ‘CHECK’
+  259 |         CHECK(cfg.icc_link_bytes_per_cycle == 32, "link width");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:260:9: note: in expansion of macro ‘CHECK’
+  260 |         CHECK(cfg.icc_router_latency_cycles == 3, "router latency");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:262:9: note: in expansion of macro ‘CHECK’
+  262 |         CHECK(rt.icc_switching_mode == TU_ICC_SWITCH_CUT_THROUGH, "runtime switching");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:263:9: note: in expansion of macro ‘CHECK’
+  263 |         CHECK(rt.icc_contention_mode == TU_ICC_CONTENTION_SHARED_LINK, "runtime contention");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:264:9: note: in expansion of macro ‘CHECK’
+  264 |         CHECK(rt.icc_mesh_routing_mode == TU_ICC_MESH_ROUTE_YX, "runtime mesh routing");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:265:9: note: in expansion of macro ‘CHECK’
+  265 |         CHECK(rt.icc_link_bytes_per_cycle == 32, "runtime link width");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:273:9: note: in expansion of macro ‘CHECK’
+  273 |         CHECK(tu_config_load_string(
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:276:9: note: in expansion of macro ‘CHECK’
+  276 |         CHECK(strstr(err, "switching") != NULL, "wrong switch validation error");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:277:9: note: in expansion of macro ‘CHECK’
+  277 |         CHECK(tu_config_load_string(
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:281:9: note: in expansion of macro ‘CHECK’
+  281 |         CHECK(tu_config_load_string(
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:284:9: note: in expansion of macro ‘CHECK’
+  284 |         CHECK(strstr(err, "contention") != NULL, "wrong contention validation error");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:285:9: note: in expansion of macro ‘CHECK’
+  285 |         CHECK(tu_config_load_string(
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:288:9: note: in expansion of macro ‘CHECK’
+  288 |         CHECK(strstr(err, "mesh_routing") != NULL, "wrong mesh routing validation error");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:300:9: note: in expansion of macro ‘CHECK’
+  300 |         CHECK(rt.pe_rows == 32, "rt_rows");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:301:9: note: in expansion of macro ‘CHECK’
+  301 |         CHECK(rt.pe_cols == 64, "rt_cols");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:302:9: note: in expansion of macro ‘CHECK’
+  302 |         CHECK(rt.sram_w_size == 256 * 1024, "rt_w_size");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:313:9: note: in expansion of macro ‘CHECK’
+  313 |         CHECK(err == 0, "init");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:314:9: note: in expansion of macro ‘CHECK’
+  314 |         CHECK(g_tu.rt_cfg.pe_rows == 8, "rt_pe_rows");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:315:9: note: in expansion of macro ‘CHECK’
+  315 |         CHECK(g_tu.rt_cfg.pe_cols == 8, "rt_pe_cols");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:337:9: note: in expansion of macro ‘CHECK’
+  337 |         CHECK(max_err < 0.1f, "mma result close to 16.0");
+      |         ^~~~~
+/tmp/tusim-ch12-work.snMARI/tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch12-work.snMARI -I/tmp/tusim-ch12-work.snMARI/tu_cmodel -o /tmp/tusim-ch12-work.snMARI/ch12-contention-sweep /tmp/tusim-ch12-work.snMARI/tests/test_interconnect_contention_sweep.c /tmp/tusim-ch12-work.snMARI/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch12-work.snMARI -I/tmp/tusim-ch12-work.snMARI/tu_cmodel -o /tmp/tusim-ch12-work.snMARI/ch12-routing-sweep /tmp/tusim-ch12-work.snMARI/tests/test_interconnect_routing_sweep.c /tmp/tusim-ch12-work.snMARI/libtucmodel.a -lm 
+STATIC_LINK_PASS ch12-probe
+STATIC_LINK_PASS ch12-test-multicore
+STATIC_LINK_PASS ch12-test-config
+STATIC_LINK_PASS ch12-contention-sweep
+STATIC_LINK_PASS ch12-routing-sweep
+
+===== focused test and mutation observation =====
++ timeout 90s /tmp/tusim-ch12-work.snMARI/ch12-test-multicore 
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 2 cores, topology=none
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 2 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [6] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [7] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [8] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [9] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [10] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [11] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [12] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [13] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [14] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [15] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 16 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [6] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [7] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [8] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [9] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [10] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [11] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [12] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [13] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [14] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [15] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [6] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [7] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [8] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [9] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [10] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [11] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [12] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [13] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [14] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [15] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 16 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [6] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [7] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [8] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [9] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [10] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [11] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [12] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [13] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [14] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [15] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 2 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+
+=== TU Multi-Core Cluster Tests (Gap A5) ===
+
+  TEST 1: core lifecycle ... PASS
+  TEST 2: core DMA load/store ... PASS
+  TEST 3: core MMA (identity) ... PASS
+  TEST 4: core state isolation ... PASS
+  TEST 5: cluster ring creation ... PASS
+  TEST 6: cluster mesh creation ... PASS
+  TEST 7: hop distance ... PASS
+  TEST 8: neighbor discovery ... PASS
+  TEST 9: ICC send ... PASS
+  TEST 10: ICC switching timing modes ... PASS
+  TEST 11: ICC simultaneous shared-link contention ... PASS
+  TEST 12: ICC deterministic mesh routing XY/YX ... PASS
+  TEST 13: ICC broadcast ... PASS
+  TEST 14: all-reduce sum ... PASS
+  TEST 15: barrier sync ... PASS
+  TEST 16: SPMD execution ... PASS
+
+=== Results: 16/16 passed, 0 failed ===
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch12-work.snMARI -I/tmp/tusim-ch12-work.snMARI/tu_cmodel -o /tmp/tusim-ch12-work.snMARI/ch12-test-multicore-mutant /tmp/tusim-ch12-work.snMARI/test_multicore_mutant.c /tmp/tusim-ch12-work.snMARI/libtucmodel.a -lm 
+/tmp/tusim-ch12-work.snMARI/test_multicore_mutant.c: In function ‘test_core_isolation’:
+/tmp/tusim-ch12-work.snMARI/test_multicore_mutant.c:179:23: warning: unused variable ‘out2’ [-Wunused-variable]
+  179 |     fp16_t out1[256], out2[256];
+      |                       ^~~~
+/tmp/tusim-ch12-work.snMARI/test_multicore_mutant.c:179:12: warning: unused variable ‘out1’ [-Wunused-variable]
+  179 |     fp16_t out1[256], out2[256];
+      |            ^~~~
+/tmp/tusim-ch12-work.snMARI/test_multicore_mutant.c: In function ‘test_spmd_execution’:
+/tmp/tusim-ch12-work.snMARI/test_multicore_mutant.c:591:12: warning: variable ‘a_data’ set but not used [-Wunused-but-set-variable]
+  591 |     fp16_t a_data[16];
+      |            ^~~~~~
+/tmp/tusim-ch12-work.snMARI/test_multicore_mutant.c:582:12: warning: variable ‘a_ones’ set but not used [-Wunused-but-set-variable]
+  582 |     fp16_t a_ones[16];
+      |            ^~~~~~
+/tmp/tusim-ch12-work.snMARI/test_multicore_mutant.c:571:17: warning: unused variable ‘program’ [-Wunused-variable]
+  571 |     const char *program =
+      |                 ^~~~~~~
+FOCUSED_TEST_MUTATION PASS rc=1 expected_failure=15/16
+
+===== configuration-suite qualification =====
+CONFIG_SUITE_QUALIFIED nonzero_rc=134 icc_case_passed=yes later_init_mma_case_did_not_complete=yes
+
+===== linked sweep observations =====
++ timeout 60s /tmp/tusim-ch12-work.snMARI/ch12-contention-sweep 
+Interconnect contention sweep: cut-through, 16 B/cycle, 5 cycles/router, 4096 B/message
+cores topo  traffic    msgs  ideal   shared  penalty bottlnk link
+8     RING  neighbor   8     261     261     1.00    256     0->1
+8     RING  hotspot    7     276     1044    3.78    1024    7->0
+8     RING  all-to-all 56    276     2580    9.35    2560    0->1
+8     MESH  neighbor   8     276     276     1.00    256     0->1
+8     MESH  hotspot    7     276     1044    3.78    1024    4->0
+8     MESH  all-to-all 56    276     2068    7.49    2048    1->2
+16    RING  neighbor   16    261     261     1.00    256     0->1
+16    RING  hotspot    15    296     2088    7.05    2048    15->0
+16    RING  all-to-all 240   296     9256    31.27   9216    0->1
+16    MESH  neighbor   16    286     286     1.00    256     0->1
+16    MESH  hotspot    15    286     3102    10.85   3072    4->0
+16    MESH  all-to-all 240   286     4126    14.43   4096    1->2
++ timeout 60s /tmp/tusim-ch12-work.snMARI/ch12-routing-sweep 
+Mesh routing sweep: cut-through, shared links, 16 B/cycle, 5 cycles/router, 4096 B/message
+mesh      traffic            rt msgs  cycles  bottlnk link
+3   x3    top-row->left-col  XY 4     1044    1024    0->3
+3   x3    top-row->left-col  YX 4     532     512     1->4
+3   x3    left-col->bottom   XY 4     532     512     0->1
+3   x3    left-col->bottom   YX 4     1044    1024    3->6
+3   x3    all-to-all         XY 72    1556    1536    0->1
+3   x3    all-to-all         YX 72    1556    1536    0->1
+4   x4    top-row->left-col  XY 9     2334    2304    0->4
+4   x4    top-row->left-col  YX 9     798     768     1->5
+4   x4    left-col->bottom   XY 9     798     768     0->1
+4   x4    left-col->bottom   YX 9     2334    2304    8->12
+4   x4    all-to-all         XY 240   4126    4096    1->2
+4   x4    all-to-all         YX 240   4126    4096    1->2
+
+===== fail-closed custom probe =====
++ timeout 90s /tmp/tusim-ch12-work.snMARI/ch12-probe 
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+CHECK PASS: full multicore JSON parses and validates
+CHECK PASS: full config retains enable, count, and mesh request
+CHECK PASS: runtime converter retains five ICC fields
+CHECK PASS: cluster count and topology come from explicit constructor arguments
+CHECK PASS: cluster consumes five converted ICC fields
+CONFIG parsed_enabled=1 parsed_cores=8 parsed_topology=2 cluster_cores=4 cluster_topology=1 sw=2 contention=1 route=1 link=32 router=7
+CHECK PASS: three switching equations match exact three-hop values
+CHECK PASS: zero-byte estimate is zero
+CHECK PASS: hand-built zero link width is retained and rejected by estimator
+EQUATIONS legacy=15 cut=79 store=207
+CHECK PASS: send cluster created
+CHECK PASS: send performs immediate byte-identical O-SRAM copy
+CHECK PASS: send leaves tag, false blocking flag, and latency field unchanged
+CHECK PASS: send accumulates exact message byte and isolated-cycle stats
+CHECK PASS: send adds estimate only to destination core
+SEND blocking=0 descriptor_latency=999 stats_messages=1 stats_bytes=16 stats_cycles=15 dst_delta=15
+CHECK PASS: same directed link exposes shared serialization heuristic
+CHECK PASS: disjoint directed links retain isolated maximum
+CHECK PASS: ideal-parallel ignores shared-link accumulation
+TRAFFIC same=133 disjoint=69 ideal=69 bottleneck=128 link=0->1
+CHECK PASS: disjoint long route proves combined global-max sum is only a heuristic
+HEURISTIC_COUNTEREXAMPLE isolated=94 bottleneck=128 estimated=158 shared_pair_term=133 link=0->1
+CHECK PASS: XY first pattern estimated
+CHECK PASS: YX first pattern estimated
+CHECK PASS: XY transpose estimated
+CHECK PASS: YX transpose estimated
+CHECK PASS: transpose reverses deterministic route-order winner
+ROUTES patternA_XY=606 patternA_YX=222 patternB_XY=222 patternB_YX=606
+CHECK PASS: collective cluster created
+CHECK PASS: broadcast returns success
+CHECK PASS: broadcast bytes reach destination
+CHECK PASS: broadcast bytes reach destination
+CHECK PASS: broadcast bytes reach destination
+CHECK PASS: broadcast stats sum three immediate sends
+CHECK PASS: all-reduce returns success
+CHECK PASS: all-reduce host sum written to each core
+CHECK PASS: all-reduce host sum written to each core
+CHECK PASS: all-reduce host sum written to each core
+CHECK PASS: all-reduce host sum written to each core
+CHECK PASS: all-reduce counts gather messages/bytes but no cycles
+CHECK PASS: all-reduce adds no per-core estimated cycles
+CHECK PASS: barrier returns success
+CHECK PASS: barrier adds fixed twice-router-latency, updates stats, and leaves lifecycle counter zero
+COLLECTIVES broadcast_messages=3 broadcast_bytes=24 broadcast_cycles=23 allreduce_message_delta=3 allreduce_byte_delta=36 allreduce_cycle_delta=0 barrier_delta=10 barrier_state=0
+CH12_PROBE SUMMARY failures=0
+EXPECTED_FINDING MATCH CONFIG parsed_enabled=1 parsed_cores=8 parsed_topology=2 cluster_cores=4 cluster_topology=1 sw=2 contention=1 route=1 link=32 router=7
+EXPECTED_FINDING MATCH EQUATIONS legacy=15 cut=79 store=207
+EXPECTED_FINDING MATCH SEND blocking=0 descriptor_latency=999 stats_messages=1 stats_bytes=16 stats_cycles=15 dst_delta=15
+EXPECTED_FINDING MATCH TRAFFIC same=133 disjoint=69 ideal=69 bottleneck=128 link=0->1
+EXPECTED_FINDING MATCH HEURISTIC_COUNTEREXAMPLE isolated=94 bottleneck=128 estimated=158 shared_pair_term=133 link=0->1
+EXPECTED_FINDING MATCH ROUTES patternA_XY=606 patternA_YX=222 patternB_XY=222 patternB_YX=606
+EXPECTED_FINDING MATCH COLLECTIVES broadcast_messages=3 broadcast_bytes=24 broadcast_cycles=23 allreduce_message_delta=3 allreduce_byte_delta=36 allreduce_cycle_delta=0 barrier_delta=10 barrier_state=0
+EXPECTED_FINDING MATCH CH12_PROBE SUMMARY failures=0
+
+===== retained artifact manifest phase one =====
+304e1c846ddd2a465eb09427f4959dd02505a105546bb0b02e51d921c4c800ae  inputs/edition.yaml
+f63b72f071a55798bf103552ef188aec4f411fa06a005a4da0b1339141e2734a  inputs/experiments/ch12_source_audit.py
+c985fe82829392f5fbd468310a41b7ee701f0d45a0ff140858708636e3d2adb6  inputs/experiments/ch12_multicore_interconnect_probe.c
+64c3e518e6e2640afa841200edd0fc75cf4d667c2edfe68cc8427468f7bbe147  inputs/experiments/run_ch12_multicore_interconnect_audit.sh
+1c2ee5de1a43d124edfe71e3d015ce6be3abd90ddcb60d42c51248ea920704aa  inputs/experiments/ch12_predraft_validate.py
+a8a12b0434cc7725b2afc3d1cabf7fad599dbddc09ff67262ad0d1b92722ae4d  inputs/experiments/ch12-multicore-interconnect-audit-2026-07-28.md
+b6e7687f30a0b033990b6d0d83594aeda3ef64ecc587b1bdf980c98585ed9849  inputs/notes/chapter-12-framing-and-evidence-plan.md
+44d996e9c3e75650be7124e8bb754b82370b72a9b5c5b4416adfc3994689750e  inputs/notes/chapter-12-source-and-claim-ledger.md
+5f3930fba8bf948123d13df9f33d050fad99b0f6ea132e19f15f24a3323fb29d  inputs/notes/chapter-12-skeptical-review-dispositions.md
+3d8b02459d065f6cfd9b749553e9927652bf67951ccf58d10d4286c84225f7d2  inputs/references/foundations.md
+9397944e6c4f7f1ecd0d778f52cbde2c56966108c4470c998c9602c703761465  inputs/notes/chapter-12-independent-manuscript-review-dispositions.md
+2893e24d56f12ac93abf90b8c1c10ccf906852ebe430c0ec8f0c29a492cd29f5  source-archive-sha256.txt
+a07a03d195c010166adbdc0e60aab0090a9273845421f08160d8040b8dfcde46  source-audit.log
+4115609f1f2ce0ead5d653cc5660e474785c577048fced14f075db449c48fa21  source-audit-mutation.log
+2018067c97b254b174e291fba31b46052aade365f00195b0c1d4314d3ad8e315  archive-members.txt
+a96d32bde0e36c1217d5d16824b4c1d00b77eb146a73797a7bdb1be0918ef84e  input-hashes.txt
+30b2b9a1e0c19ae3a996853586d5cea1fcce47bf5f5a1090d0d6ca9e3760b2cc  build.log
+9f9eaea1be4b74fe12a15d4fa080604000ba44bab3f7091a8b883e92d00348db  test-multicore.log
+f40faf06bea0e991c817f3f55c16be7b8e56e764161653be75ed1ee2bbeb05bf  test-multicore-mutation.log
+0dd221aadb2ee0ff62a5c00420459d248011382c3bb452fd9c274c1b339776dd  test-config.log
+d6651539dd2e8cf0abbec653b43a924b80c71adb78c90a4d0135af8d0e86db2a  contention-sweep.log
+902cc62396858a0a2e4ee50026df43ed2f782240e5b19736da1c48b34b65a728  routing-sweep.log
+e7f1f11e9fcdef24b47c528d9033e869d990f4e466b1d8156f011c1592de32f5  ch12-probe.log
+
+===== provenance after =====
+TUSIM_POST PASS head=e918c80b6fce833cd1fcae97730fa841c2176f25 detached=yes tracked_and_untracked_clean=yes ignored_inventory_unchanged=yes
+edition.yaml: OK
+experiments/ch12_source_audit.py: OK
+experiments/ch12_multicore_interconnect_probe.c: OK
+experiments/run_ch12_multicore_interconnect_audit.sh: OK
+experiments/ch12_predraft_validate.py: OK
+experiments/ch12-multicore-interconnect-audit-2026-07-28.md: OK
+notes/chapter-12-framing-and-evidence-plan.md: OK
+notes/chapter-12-source-and-claim-ledger.md: OK
+notes/chapter-12-skeptical-review-dispositions.md: OK
+references/foundations.md: OK
+notes/chapter-12-independent-manuscript-review-dispositions.md: OK
+BOOK_POST PASS head=1c5a9d0e069a237aa067630a7d7f4e7b8672f545 branch=main inputs_unchanged=yes status_unchanged_outside_run=yes remotes=0
+
+===== result =====
+CH12_AUDIT_SNAPSHOT_MATCHED_EXPECTED_FINDINGS run_dir=/home/zxy/Workplace/books/tusim-book/experiments/runs/ch12-multicore-interconnect/20260728-ch12-canonical-v5

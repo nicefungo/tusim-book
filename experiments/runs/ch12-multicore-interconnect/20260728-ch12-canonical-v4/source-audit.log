@@ -1,0 +1,185 @@
++ python3 /home/zxy/Workplace/books/tusim-book/experiments/ch12_source_audit.py /tmp/tusim-ch12-work.XzajuF e918c80b6fce833cd1fcae97730fa841c2176f25 
+HASH PASS Makefile 5249a0e077438a4e6f70c74936c185bb1c30105bb834b3f89ac6a78b32630fd2
+HASH PASS tu_cmodel/tu_core.c 0e4b3c6e206465748ae2d3d2e9871f3a6542a61cd1ddcddfff6886b9ed1f0eeb
+HASH PASS tu_cmodel/tu_core.h dc5c22065fb65be4353585ccbfd3bec6c9b9d70e976a51e87169bac79dd164e9
+HASH PASS tu_cmodel/tu_cluster.c 7c968e95ba0a88fcc27f803be6aa337161bfa691505cdd39b01146252fa77b36
+HASH PASS tu_cmodel/tu_cluster.h 1d8749ce994058c0d23804f365a62c57ceda23eebc721bc62797542e165bebf5
+HASH PASS tu_cmodel/tu_cmodel.c 542aa16f6f1561f0d55af05920e9922ed3c381a1ad193e6f2ecfca390a8b5059
+HASH PASS tu_cmodel/tu_cmodel.h 416a0d20776825498217ff5d4382f07ccb2ac9689bbe6c70cacd1bf13e7725af
+HASH PASS tu_cmodel/tu_config.h 129d55ad55409bcd4b5dcae5007faa297c087d48a150a4a85073d66e49cbb45d
+HASH PASS tu_cmodel/tu_sram.c 5a6ffcdd3f63c9c015bd628b5c44ded951785a128685b413b6db680f5d1753c0
+HASH PASS tu_cmodel/tu_sram.h aa62a942c83bfded4644c26eabf37acb815b7ac2883b53f6b3b8a585df4123d5
+HASH PASS tu_cmodel/infra/config.c 17b7919392d4a315022a129ce5bbdff301a2d3405af3163756b430b2b36dd12a
+HASH PASS tu_cmodel/infra/config.h 723deb631e83705ab80143dd251761c3b98ca692c5d1eefb243d47aca551913b
+HASH PASS config/tu_config.json 6f9d292696b1ca5fa38ad3298e7f3a04c43095c0950f71dbe0c3c68b1f15f4db
+HASH PASS config/tu_config.yaml 9fb4d87753139a5857107a6fdf56006fcb5adbe95ad30e9f8430c2e5c145910e
+HASH PASS scripts/gen_config.py 5eab235067eaf6d5785352e48ef00417a18f5b0d05b25f40a82719e11bf8634a
+HASH PASS tests/test_multicore.c aaf516bb2f7080ea057ee4cd75405478fc84dbb571d490bdda605dbb8ae3dd4e
+HASH PASS tests/test_config.c e2bf7d9a1bbac06863e3b8c372fa1cb854927fc1aeb73a08c79e08cd3f1db821
+HASH PASS tests/test_interconnect_contention_sweep.c 1380fe1284b8a3a8c11104c160538d6ef95ea18f6eac168be08aeedd2de3567a
+HASH PASS tests/test_interconnect_routing_sweep.c 75179c70b04bc98b65ed9b647aaa36e847f415c90ee94e62b9b435492baefba4
+HASH PASS tests/test_interconnect_topology_sweep.c 1222f166b8bf45248e8ed8ca57cbd47452471dad994bda754558089b4bdb24ee
+HASH PASS tests/test_interconnect_switching_sweep.c bd19e7762e5514122e1d7cdf5c79cf918f658a1c1b2caeb7e97b45de66cbdc01
+HASH PASS tests/test_multicore_scaling_sweep.c c164c20c9fed6fa8f9c873131438cccb470a53e3c6d0149f3fd9db1be6b66259
+HASH PASS docs/multicore-cluster.md 6612f4cd499a0c9ac2e28ede0d88fdfa842bea9dd793c55ec86a561cd9adb3d4
+HASH PASS docs/exploration/interconnect-contention-traffic-matrix.md 6e20ca4908446609dbcc265d15c702e3bfa441a812022e24fede2f36b34e629c
+HASH PASS docs/exploration/interconnect-mesh-routing-order.md fdf869c066d27c77f005d42cc6680ff90e7d9ca4597cadc8b68cac100c585ae6
+HASH PASS docs/exploration/interconnect-switching-modes.md c2a28844527aca8c6afed9111da810e54a6825f82f1362b2b1369f8507dd529b
+HASH PASS docs/exploration/interconnect-topology-sweep.md 60754c76d3655835e52869d5da05305a5c8a8dfb185cb0bc4eed396222310315
+HASH PASS docs/exploration/multicore-scaling-gemm256.md 7bdf0ddac330db3734df92824106c21976f3e95d192972bb0c8aeb49fcef4682
+PREDICATE PASS archive-member-tu_core.o
+PREDICATE PASS archive-member-tu_cluster.o
+PREDICATE PASS archive-member-infra/config.o
+PREDICATE PASS focused-target-test-multicore
+PREDICATE PASS focused-target-test-config
+PREDICATE PASS focused-target-test-interconnect-contention-sweep
+PREDICATE PASS focused-target-test-interconnect-routing-sweep
+PREDICATE PASS aggregate-includes-multicore
+PREDICATE PASS aggregate-includes-config
+PREDICATE PASS quick-excludes-multicore
+PREDICATE PASS quick-excludes-config
+PREDICATE PASS core-stores-state-snapshot
+PREDICATE PASS core-declares-icc-buffer
+PREDICATE PASS core-default-singleton
+PREDICATE PASS core-create-reuses-global-init
+PREDICATE PASS core-copies-global-state
+PREDICATE PASS core-clears-global-state
+PREDICATE PASS global-state-swap-in-helper
+PREDICATE PASS global-state-swap-out-helper
+PREDICATE PASS core-wrapper-reaches-tu_run_asm
+PREDICATE PASS core-wrapper-reaches-tu_cmdq_sync_all
+PREDICATE PASS core-wrapper-reaches-tu_dma_load_w
+PREDICATE PASS core-wrapper-reaches-tu_dma_load_a
+PREDICATE PASS core-wrapper-reaches-tu_dma_store_o
+PREDICATE PASS core-wrapper-reaches-tu_mma
+PREDICATE PASS no-core-thread-launch
+PREDICATE PASS doc-claims-no-shared-mutable-state
+PREDICATE PASS doc-claims-simultaneous-spmd-start
+PREDICATE PASS doc-claims-barrier-rendezvous
+PREDICATE PASS standalone-report-implies-topology-barrier-effect
+PREDICATE PASS cluster-count-range
+PREDICATE PASS constructor-no-topology-lower-bound-check
+PREDICATE PASS constructor-no-topology-upper-bound-check
+PREDICATE PASS mesh-ceiling-columns
+PREDICATE PASS constructor-no-mesh-rows-upper-bound
+PREDICATE PASS constructor-no-overflow-safe-mesh-ceiling
+PREDICATE PASS cluster-creates-core-snapshots
+PREDICATE PASS runtime-declares-icc_switching_mode
+PREDICATE PASS cluster-consumes-icc_switching_mode
+PREDICATE PASS runtime-declares-icc_contention_mode
+PREDICATE PASS cluster-consumes-icc_contention_mode
+PREDICATE PASS runtime-declares-icc_mesh_routing_mode
+PREDICATE PASS cluster-consumes-icc_mesh_routing_mode
+PREDICATE PASS runtime-declares-icc_link_bytes_per_cycle
+PREDICATE PASS cluster-consumes-icc_link_bytes_per_cycle
+PREDICATE PASS runtime-declares-icc_router_latency_cycles
+PREDICATE PASS cluster-consumes-icc_router_latency_cycles
+PREDICATE PASS ring-shortest-distance
+PREDICATE PASS mesh-manhattan-distance
+PREDICATE PASS cut-through-equation
+PREDICATE PASS store-forward-equation
+PREDICATE PASS ring-clockwise-tie
+PREDICATE PASS mesh-route-order
+PREDICATE PASS stale-header-lower-bound-claim
+PREDICATE PASS stale-header-blocking-claim
+PREDICATE PASS stale-header-latency-result-claim
+PREDICATE PASS stale-header-rendezvous-claim
+PREDICATE PASS shared-link-heuristic-equation
+PREDICATE PASS shared-score-no-overflow-guard
+PREDICATE PASS link-service-unchecked-addition
+PREDICATE PASS message-size-u32-bounds-link-load
+PREDICATE PASS message-count-u32-bounds-link-load
+PREDICATE PASS send-host-temporary
+PREDICATE PASS send-immediate-read
+PREDICATE PASS send-immediate-write
+PREDICATE PASS send-destination-cycle-update
+PREDICATE PASS send-does-not-consume-tag
+PREDICATE PASS send-does-not-consume-blocking
+PREDICATE PASS send-does-not-consume-latency_cycles
+PREDICATE PASS send-32bit-offset-addition
+PREDICATE PASS send-no-overflow-safe-source-span-check
+PREDICATE PASS send-no-overflow-safe-destination-span-check
+PREDICATE PASS send-additive-cycle-sum
+PREDICATE PASS broadcast-sequential-loop
+PREDICATE PASS broadcast-reuses-send
+PREDICATE PASS allreduce-32bit-size-product
+PREDICATE PASS allreduce-no-explicit-region-bounds
+PREDICATE PASS allreduce-host-core-order-sum
+PREDICATE PASS allreduce-host-writeback
+PREDICATE PASS allreduce-bypasses-send
+PREDICATE PASS allreduce-no-cycle-accounting
+PREDICATE PASS allreduce-gather-message-count
+PREDICATE PASS barrier-fixed-roundtrip
+PREDICATE PASS barrier-updates-stat-count
+PREDICATE PASS barrier-lifecycle-counter-unused
+PREDICATE PASS barrier-topology-independent
+PREDICATE PASS spmd-serial-loop
+PREDICATE PASS spmd-reaches-legacy-asm
+PREDICATE PASS spmd-no-thread-launch
+PREDICATE PASS header-concurrency-claim-present
+PREDICATE PASS printed-bandwidth-implicit-1ghz
+PREDICATE PASS declared-bandwidth-field-unused-in-implementation
+PREDICATE PASS full-config-parser-assigns-multicore_enabled
+PREDICATE PASS full-config-parser-assigns-num_cores
+PREDICATE PASS full-config-parser-assigns-interconnect_mode
+PREDICATE PASS runtime-converter-drops-multicore_enabled
+PREDICATE PASS runtime-converter-drops-num_cores
+PREDICATE PASS runtime-converter-drops-interconnect_mode
+PREDICATE PASS runtime-converter-retains-icc_switching_mode
+PREDICATE PASS runtime-converter-retains-icc_contention_mode
+PREDICATE PASS runtime-converter-retains-icc_mesh_routing_mode
+PREDICATE PASS runtime-converter-retains-icc_link_bytes_per_cycle
+PREDICATE PASS runtime-converter-retains-icc_router_latency_cycles
+PREDICATE PASS full-config-validates-link-width
+PREDICATE PASS full-config-validates-route-order
+PREDICATE PASS json-complete-multicore-values
+PREDICATE PASS yaml-multicore-enabled
+PREDICATE PASS yaml-multicore-num_cores
+PREDICATE PASS yaml-multicore-interconnect
+PREDICATE PASS yaml-multicore-switching
+PREDICATE PASS yaml-multicore-contention
+PREDICATE PASS yaml-multicore-mesh_routing
+PREDICATE PASS yaml-multicore-link_bytes_per_cycle
+PREDICATE PASS yaml-multicore-router_latency_cycles
+PREDICATE PASS yaml-multicore-cache_coherence
+PREDICATE PASS generator-reads-multicore-map
+PREDICATE PASS generator-emits-enabled
+PREDICATE PASS generator-emits-core-count
+PREDICATE PASS generator-emits-topology
+PREDICATE PASS generator-emits-switching
+PREDICATE PASS generator-emits-contention
+PREDICATE PASS generator-emits-route-order
+PREDICATE PASS generator-emits-link-width
+PREDICATE PASS generator-emits-router-latency
+PREDICATE PASS sram-bounds-only-reports
+PREDICATE PASS sram-bounds-does-not-abort
+PREDICATE PASS sram-bounds-does-not-return-status
+PREDICATE PASS bulk-read-calls-reporting-check
+PREDICATE PASS bulk-read-proceeds-to-memcpy
+PREDICATE PASS bulk-write-calls-reporting-check
+PREDICATE PASS bulk-write-proceeds-to-memcpy
+PREDICATE PASS focused-multicore-16-distinct-test-calls
+PREDICATE PASS focused-multicore-fail-closed-exit
+PREDICATE PASS spmd-named-test-uses-direct-mma
+PREDICATE PASS spmd-named-test-does-not-call-spmd-api
+PREDICATE PASS focused-discriminating-==15
+PREDICATE PASS focused-discriminating-==79
+PREDICATE PASS focused-discriminating-==207
+PREDICATE PASS focused-discriminating-==133
+PREDICATE PASS focused-discriminating-==606&&yx.estimated_cycles==222
+PREDICATE PASS exact-c-callers-traffic-estimator
+PREDICATE PASS exact-c-callers-transfer-estimator
+PREDICATE PASS exact-c-callers-hop-distance
+PREDICATE PASS exact-c-callers-send
+PREDICATE PASS exact-c-callers-broadcast
+PREDICATE PASS exact-c-callers-allreduce
+PREDICATE PASS exact-c-callers-barrier
+PREDICATE PASS exact-c-callers-spmd-implementation-only
+PREDICATE PASS exact-c-callers-cluster-constructor
+PREDICATE PASS standalone-sweep-does-not-include-cmodel-test_interconnect_topology_sweep
+PREDICATE PASS standalone-sweep-does-not-call-cluster-test_interconnect_topology_sweep
+PREDICATE PASS standalone-sweep-does-not-include-cmodel-test_interconnect_switching_sweep
+PREDICATE PASS standalone-sweep-does-not-call-cluster-test_interconnect_switching_sweep
+PREDICATE PASS linked-sweep-calls-estimator-test_interconnect_contention_sweep
+PREDICATE PASS linked-sweep-calls-estimator-test_interconnect_routing_sweep
+CH12_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=28 predicates=155 checks=183

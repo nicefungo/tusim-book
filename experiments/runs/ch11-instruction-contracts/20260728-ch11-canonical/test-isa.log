@@ -1,0 +1,15 @@
++ timeout 30s /tmp/tusim-ch11-work.Smmaro/ch11-test-isa 
+
+=== TU ISA Tests ===
+
+  [1] Instruction size = 96 bits (12 bytes) ... PASS
+  [2] All defined opcodes have names (reserved slots may be UNKNOWN) ... (68 named, 60 reserved) PASS
+  [3] Key opcode names are correct ... PASS
+  [4] Category classification correct ... PASS
+  [5] Query functions correct ... PASS
+  [6] Flag decoding ... PASS
+  [7] Backward-compat CMD opcodes map to ISA ... PASS
+  [8] All opcodes are distinct (excluding reserved UNKNOWNs) ... PASS
+  [9] Descriptor struct sizes ... PASS
+
+=== Results: 9/9 passed ===

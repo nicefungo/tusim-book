@@ -1,0 +1,70 @@
+{
+  "tu": {
+    "compute": {
+      "pe_array": {
+        "rows": 4,
+        "cols": 8,
+        "dataflow": "output_stationary",
+        "pipeline_depth": 7
+      },
+      "mac_units_per_pe": 2,
+      "supported_precisions": ["fp16", "bf16"]
+    },
+    "memory": {
+      "sram": {
+        "w_buffer_kb": 8,
+        "a_buffer_kb": 12,
+        "o_buffer_kb": 16
+      },
+      "banking": {
+        "banks": 4,
+        "bank_width_bytes": 8,
+        "conflict_model": "stall_cycle"
+      },
+      "latency": {
+        "dram_read": 7,
+        "dram_write": 9
+      },
+      "dram": {
+        "type": "hbm2",
+        "bandwidth_gbps": 123.0,
+        "model_row_conflicts": true
+      }
+    },
+    "dma": {
+      "bus_width_bits": 64,
+      "max_burst_bytes": 16,
+      "channels": 1,
+      "max_outstanding": 2,
+      "async_mode": true
+    },
+    "isa": {
+      "instruction_width_bits": 64,
+      "queue_depth": 3,
+      "dependency_checking": true
+    },
+    "performance": {
+      "cycle_model": "estimated",
+      "counters": {
+        "enabled": false,
+        "detailed_stalls": true
+      },
+      "tracing": {
+        "enabled": true,
+        "output_file": "chapter-04.vcd"
+      }
+    },
+    "precision": {
+      "fp16": {
+        "rounding": "round_toward_zero",
+        "subnormal": "full_support",
+        "saturate": false
+      }
+    },
+    "verification": {
+      "golden_reference": "numpy",
+      "random_test_iterations": 7,
+      "error_tolerance": 0.125
+    }
+  }
+}

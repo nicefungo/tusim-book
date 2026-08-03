@@ -1,0 +1,57 @@
+edition:
+  title: "Tusim: Designing and Exploring Parametric Tensor Units"
+  subtitle: "A Technical Reference for Accelerator CModels, Compiler Co-Design, Verification, and Architecture Exploration"
+  edition_name: "stable-main snapshot edition"
+  repository: "https://github.com/nicefungo/tusim"
+  branch: "main"
+  commit: "e918c80b6fce833cd1fcae97730fa841c2176f25"
+  short_commit: "e918c80"
+  formal_release: false
+  repository_version_string: "2.0-dev"
+  frozen_on: "2026-07-25"
+  license: "MIT"
+
+manuscript:
+  canonical_language: "English"
+  canonical_format: "Markdown"
+  audience:
+    - accelerator architects
+    - compiler engineers
+    - performance-model developers
+    - verification engineers
+    - graduate students
+  evidence_order:
+    - executable behavior at the pinned commit
+    - focused and integration tests
+    - public headers and live configuration propagation
+    - current project documentation
+    - exploration reports with assumptions
+    - historical roadmaps and gap analyses
+
+verification_environment:
+  architecture: "aarch64"
+  compiler: "GCC 11.4.0"
+  make: "GNU Make 4.3"
+  python: "3.11.15"
+  initial_build: "pass with warnings"
+  initial_smoke_test: "pass"
+  smoke_results:
+    cmodel: "19/19"
+    command_queue: "9/9"
+    dma: "10/10"
+    asm: "pass"
+  warnings_observed:
+    - "unused comp_names in infra/logging.c"
+    - "unused parse_opt_uint in infra/config.c"
+    - "missing label initializers in tests/test_cmodel.c"
+
+claim_labels:
+  - executable
+  - integrated
+  - functional-model
+  - analytical-model
+  - deterministic-lower-bound
+  - estimated
+  - calibrated
+  - historical
+  - future-work

@@ -1,0 +1,25 @@
+
+═══════════════════════════════════════════
+  TU Scatter/Gather DMA Tests (Gap DM3)
+═══════════════════════════════════════════
+
+  Scatter descriptor creation                          PASS
+  Scatter execution (sequential offsets)               PASS
+  Scatter execution (sparse offsets)                   PASS
+  Scatter single element                               PASS
+  Scatter empty index list                             PASS
+  Scatter cycle accounting                             PASS
+  Scatter large types (double, 64-bit)                 PASS
+  Scatter 1-byte elements                              PASS
+  Scatter channel routing                              PASS
+  Gather descriptor creation                           PASS
+  Gather execution (sequential)                        PASS
+  Gather execution (sparse)                            PASS
+  Gather single element                                PASS
+  Gather cycle accounting                              PASS
+  Scatter+gather round-trip                            PASS
+
+═══════════════════════════════════════════
+  Test Suite Complete
+  15/15 tests passed
+═══════════════════════════════════════════

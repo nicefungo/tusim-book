@@ -1,0 +1,17 @@
+TinyTU DMA Descriptor Engine Tests
+==================================
+
+  Linear transfer host→SRAM (128 bytes)              PASS
+  Linear transfer SRAM→host (256 bytes)              PASS
+  Strided 2D — extract 4×4 col from 4×8 matrix     PASS
+  Strided 3D — 2×2×2 cube from 4×4×4 volume      PASS
+  Descriptor chaining (3 linked xfers)                 PASS
+  Async mode: queue + tick + flush                     PASS
+  FP32 matrix transfer (16×16, 1024 bytes)            PASS
+  Legacy tu_dma_load + tu_dma_store                    PASS
+  Completion signal assignment                         PASS
+  DMA transfer statistics                              PASS
+
+═══════════════════════════════════════════
+  10/10 tests passed
+═══════════════════════════════════════════

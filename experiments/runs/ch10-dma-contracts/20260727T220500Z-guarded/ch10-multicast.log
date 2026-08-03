@@ -1,0 +1,15 @@
+DMA multicast overflow: dst=small target[0] offset=250 + 64 > 256
+=== Multicast/Broadcast DMA Tests (DM4) ===
+
+  Create multicast descriptor                          PASS
+  Multicast single target                              PASS
+  Multicast three regions                              PASS
+  Multicast bounds exact fit                           PASS
+  Multicast bounds overflow                            PASS
+  Multicast null inputs                                PASS
+  Multicast destroy frees arrays                       PASS
+  Multicast performance counter                        PASS
+  Multicast 16-target fanout                           PASS
+  Multicast chained after linear                       PASS
+
+=== Results: 10/10 passed ===

@@ -1,0 +1,107 @@
+# Tusim Stable-Snapshot Source Audit
+
+## Scope
+
+This audit anchors the textbook to commit `e918c80b6fce833cd1fcae97730fa841c2176f25`. It is an initial map, not a declaration that every subsystem is fully calibrated.
+
+## Initial executable verification
+
+A clean `make` completed on AArch64 with GCC 11.4.0. An explicit local-library invocation, `LD_LIBRARY_PATH="$PWD${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" make test-quick`, then produced:
+
+- parameterized CModel: 19/19 passing;
+- command queue: 9/9 passing;
+- DMA descriptor engine: 10/10 passing;
+- self-contained TU ASM identity test: passing.
+
+Build warnings were present but did not block execution. The build modified a historically tracked object file (`tu_cmodel/tu_cmodel.o`); it was restored after testing. This confirms the repository-hygiene warning that ignored patterns do not protect already tracked artifacts.
+
+## Evidence matrix
+
+| Subsystem | Library-linked | Focused evidence | Public/runtime path | Initial textbook classification |
+|---|---:|---|---|---|
+| Core lifecycle and MMA | yes | `test_cmodel.c` | `tu_cmodel.h` | executable functional model with cycle estimate |
+| FP16/FP32 conversion | yes | cmodel/golden plus Chapter 8 exhaustive raw-bit probe | precision API; separate local dataflow decoders | canonical widening exact over all codes; narrowing/subnormal and local-path defects apply |
+| BF16, FP8, TF32, rounding | yes | dedicated tests plus Chapter 8 boundary matrix | precision-specific APIs and registry; precision config dropped | executable conversion APIs, not generic MMA precision dispatch |
+| Banked SRAM | yes | cmodel/memory tests | SRAM API/runtime sizes | executable conflict/stall abstraction |
+| DMA descriptors | yes | 10/10 descriptor, 15/15 scatter/gather, 10/10 multicast, 65-check source audit, and zero-failure Chapter 10 probes | ordinary paths expose fixed legacy wrappers; general descriptors remain standalone/bounded consumers | executable functional transfer API plus uncalibrated service accounting; independent one-node safe subset, ownership, queue, config, and channel-array limits apply |
+| DRAM | yes | `test_dram.c` | DRAM configuration/model API | executable estimated model; calibration not established |
+| Memory hierarchy | yes | `test_memory_hierarchy.c` | module API | executable abstraction |
+| Double buffering | yes | 10/10 focused plus bounded Chapter 10 pipeline probe | standalone API and bounded pipeline controller | executable standalone state; valid DMA-to-shadow overlap is rejected at this pin |
+| Address generator | yes | 12/13 focused in Chapter 10; transposed case fails | descriptor-chain helper, not ordinary operation routing | executable boundary with known transposition failure; general correctness deferred |
+| WS/OS/RS dataflows | yes | focused tests plus Chapter 7 direct probe; historical sweep challenged | global registry and direct `tu_set_dataflow` | executable functional plug-ins with distinct uncalibrated formulas; config/core selection gaps and no physical movement model |
+| Command queue | yes | 9/9 smoke plus Chapter 11 zero-failure lifecycle probe | submission/sync APIs and selected core/DPI wrappers | executable eight-class dispatcher; missing/faulted dependency, barrier, signal, reset, completion, and reclamation boundaries apply |
+| TU ISA and ASM | yes | 9/9 ISA, ASM smoke, exact-count/native-byte audit | ISA metadata header; separate `tu_run_asm` interpreter | packed native metadata plus executable text subset, not a portable binary stream or one integrated path |
+| Elementwise | yes | dedicated test | command and direct APIs | executable; separate SRAM stall domain |
+| Convolution | yes | dedicated tests/sweeps | engine descriptor/API | functional plus analytical timing; grouped/depthwise limitations apply |
+| Pooling | yes | dedicated tests/sweeps | engine API | executable; returned cycle meaning differs from other engines |
+| Softmax | yes | dedicated tests/sweeps | engine API | functional; return value is SRAM stalls, not total cycles |
+| LayerNorm/RMSNorm | yes | dedicated tests/sweeps | engine API | functional; return value is SRAM stalls, not total cycles |
+| Attention | yes | dedicated tests/sweeps | engine API | functional tiled model with stats; buffer/layout constraints apply |
+| INT quantization | yes | dedicated tests/sweep | quantization API/config | executable; engine-level coverage must be stated |
+| 2:4 sparsity | yes | unit and sweep tests | config/module API | executable structured representation plus estimated decoder model |
+| Weight compression | yes | unit and sweep tests | runtime config/module API | executable codecs; latency model covers dense reconstruction only |
+| Scheduler | yes | unit and sweep tests | scheduler API | executable; current DAG-bound estimate can hide policy ordering |
+| Liveness allocator | yes | dedicated tests | liveness API | executable compiler-side model |
+| Multi-core/cluster | yes | dedicated tests/sweep | core/cluster APIs | executable wrapper; global-state and ownership constraints apply |
+| Interconnect | partly cluster-linked; some standalone | topology/switching/contention/routing sweeps | cluster config and analytical harnesses | deterministic route-load heuristic estimates, not router-cycle simulation or proved makespan bounds |
+| Multi-context | yes | unit and sweep tests | context API/config | executable save/restore abstraction |
+| Performance counters | yes | dedicated tests | standalone counter API | executable but not uniformly wired into `g_tu` |
+| Cycle model | source exists | `test_cycle_model.c` | module API | estimated model; not listed in `TU_OBJS` at this snapshot and therefore must not be described as library-integrated without separate linkage evidence |
+| Event trace/VCD | yes | trace test | trace API | executable observability |
+| Power/energy | yes | power test | power API/config | estimated table/model; not silicon-calibrated by this audit |
+| Logging/debug/replay | yes | dedicated tests | infra APIs | executable observability |
+| DPI-C | yes | DPI test | binding API | executable integration boundary |
+| Python bindings | Python file present | no Make aggregate evidence identified | ctypes-style binding | source-present; runtime validation pending |
+| ONNX compiler | Python frontend present; two contained examples plus external GPT-block symlink | frontend accepts all three resolved models; generated-program audit in Chapter 3 fails | CLI emits C, but all audited models reported 0 TU ops | demonstration frontend/code emitter; generated C does not link because `host_gemm` is undefined, `test-full` masks failure, and GPT target requires a sibling workspace |
+
+## Documentation conflicts already confirmed
+
+1. `README.md` describes the current broad parametric system, while `docs/TU_CMODEL.md` and the header preamble retain the original fixed 16×16 TinyTU narrative.
+2. `docs/TU_DATAFLOW.md` calls RS future/reserved, but `row_stationary.c` is currently compiled into both libraries.
+3. The repository config calls itself `2.0-dev`; no Git release tags were present during planning.
+4. `Makefile` contains many focused tests and sweeps not all covered by `test` or `test-quick`; aggregate-target success cannot stand in for complete subsystem validation.
+5. Some focused targets link with `-L. -ltucmodel`, which may select a stale shared library if only the static archive was rebuilt. Clean builds or explicit static linkage are required for trustworthy evidence.
+6. `make test-full` suppresses generated-program compile and runtime failures with `|| true`; both contained ONNX models and the externally resolved GPT-block symlink target reported zero TU operations and emitted C that failed to link on undefined `host_gemm`.
+7. `tools/ci_runner.sh --quick` creates its report directory before `make clean`, while the clean target removes that directory; the reproduced wrapper run failed before its strict build. Static inspection also finds false/incomplete compile-only, quick-golden, and compiler gates downstream.
+8. `config-docs` reproduced the tracked config reference exactly. Doxygen execution remained blocked because Doxygen and Graphviz were absent; the Make recipe would also suppress downstream Doxygen failure and does not verify generated HTML.
+9. JSON `dataflow` is parsed but omitted by `tu_config_to_runtime`; initialization selects compile-time `TU_DATAFLOW_MODE`. Geometry and SRAM capacities propagate, but a runtime dataflow request does not.
+10. Chapter 4's mechanical audit detects 76 fields in `tu_config_t`, but only 16 source fields cross `tu_config_to_runtime`; the global initializer therefore loses 60 at that boundary. This is a path-specific count, not a claim that every dropped field lacks specialized consumers.
+11. YAML and JSON are not synchronized: the source-aware audit finds 66 YAML leaves, 75 JSON leaves, and nine genuinely JSON-only leaves. The custom YAML parser sees only 65 YAML leaves because it misreads the explicit empty trace path as an empty mapping. JSON requests `cycle_accurate` while YAML requests `functional`; the tracked header selects functional mode for global queue construction.
+12. Regenerating `tu_config.h` from YAML does not reproduce the tracked header (different hashes and a 181-line mechanical unified diff). The generator omits material later definitions, so the tracked header is the effective compile-time contract at this snapshot.
+13. The Chapter 4 probe confirms runtime PE geometry with a discriminating 9×9×9 A/B effect (12 tiles at 4×8 versus 1 at 16×16, identical output) and confirms W/A/O capacities. Requested dataflow, pipeline depth, SRAM banking, basic DMA width, queue depth/mode, and rounding remain compile-time or separately controlled in the global initialization path.
+14. `docs/CONFIG_REFERENCE.md` is generated from `tu_config_default()`, not the shipped JSON. It lists 71 of 76 detected full-structure fields and is a default-value reference, not a schema or consumer map. Its DMA “GB/s” derived row divides bits by eight without applying frequency, so it is dimensionally bytes per transfer/cycle under an unstated assumption.
+15. Fifteen `tu_config_t` members are not populated by the runtime parser, and several canonical JSON keys have no corresponding parser mapping. Unknown-key tolerance makes unsupported keys appear accepted.
+16. The enforced surface audit pins the commit and seven source hashes and checks exact field sets/counts; it returns nonzero on unexpected drift rather than treating report generation as a pass.
+17. The Chapter 6 audit confirms row-major `O[M,N] += W[M,K] × A[K,N]`, runtime `R×C×C` tiling, valid edge execution, packed FP16 bias expansion into an FP32 O image, and a useful-work count of `2MNK` operations.
+18. Internal MMA tiling partitions computation but does not stream operands: the direct path requires complete `2MK`-byte W, `2KN`-byte A, and `4MN`-byte O images to fit their SRAM regions. Bounds reporting is not failure-atomic.
+19. The active WS estimate charges fill and drain inside every K-tile invocation and behaves as if pipeline depth were 2. The full-config pipeline field is not an effective global-MMA runtime knob, and historical exploration formulas that charge different intervals are not current executable evidence.
+20. `tu_cmodel.h` says output is FP16 and rounded on store, but direct `tu_dma_store_o()` copies FP32 O bytes; explicit conversion is separate. The standalone aspect-ratio script also uses a two-byte O traffic term and does not reproduce current dispatcher tiling/cycle accounting.
+21. WS, OS, and RS duplicate a defective local FP16 subnormal converter. Chapter 6 reproduced raw `0x0001` as `2^-14` through MMA versus canonical `2^-24`, a 1,024× error.
+22. Direct W/A-load and O-store wrappers inspect `g_tu.dma.estimated_cycles`, while the legacy engine updates process-global `g_tu_dma`; those transfers therefore add zero DMA cycles to `g_tu.estimated_cycles`. O-load uses another direct formula. Global estimated cycles are not a coherent end-to-end DMA-plus-MMA domain, and the legacy engine is not core-snapshotted.
+23. Byte offsets are not type-alignment checked before FP16/FP32 pointer casts, and direct runtime initialization bypasses the full config validator's 1–1024 PE-dimension range.
+24. Chapter 7 reproduces bitwise WS/OS/RS equivalence for nonsymmetric, edge, and multi-K normal-value cases while confirming that all three functional kernels use the same scalar `m,n,k` loop and C-array accesses. Their stationary-operand narratives are logical intent, not executed PE-local movement schedules.
+25. The pinned MMA-only formulas are per-K-tile deterministic estimates: WS `T_M T_N[T_K(2C+2R)+K]`, OS `T_M T_N[K+Σceil(k_q/4)]`, and RS `T_M T_N[T_K(C+1+R)+K]`. They are uncalibrated and structurally favor OS over RS over WS; the ranking is not workload-discovered physical performance.
+26. Direct global selection of WS/OS/RS works, but unknown JSON names silently become WS, recognized names are dropped before runtime, and process-global `tu_set_dataflow()` does not modify a `tu_core_t` snapshot. NLR is declared but unregistered; requesting it falls back to WS while returning success. DPI can retain and summarize requested NLR while its active-name API reports WS.
+27. The existing dataflow sweep is a non-gating report whose `main()` returns zero regardless of comparison failures. It labels three core executions WS/OS/RS even though core swap-in makes all three execute WS, and its formulas omit pinned K-tile callback multiplicity. Its table is historical analytical evidence rather than a current executable comparison.
+28. Plug-in statistics have mixed intervals: total cycles persist globally, tile/FLOP fields are consumed and cleared after public MMA, and RS-private reuse fields reset each dispatch and have no public accessor. The separate performance-counter subsystem is not wired into `g_tu`; its producer hard-codes WS, storage lacks RS, and diff/merge omit both dataflow buckets.
+29. Chapter 8's independent exhaustive oracle finds zero mismatches in canonical FP16 widening across all 65,536 codes. Each WS/OS/RS local decoder disagrees on 1,982 of 2,046 nonzero signed subnormal codes and zero normal codes; raw `0x0001` becomes `2^-14` instead of `2^-24`.
+30. Canonical FP16 narrowing defaults to a pre-round source-region FTZ. Its advertised full-subnormal mode maps an expanded nine-vector half-minimum-through-normal-boundary matrix to `0x0200`; FTZ maps midpoint-neighbor inputs that should round to minimum normal to zero. BF16 narrowing independently flushes subnormals; FP8 and TF32 use separate local policies.
+31. Pinned E4M3 treats every exponent-15 code as NaN and cannot encode its decoded maximum finite 240, disagreeing with OCP OFP8 E4M3. Tested FP8 halfway cases round upward, subnormal/normal midpoint carries clamp downward, and E5M2 finite overflow ignores RTZ. BF16 and TF32 can turn a low-payload signaling NaN into infinity.
+32. The precision registry contains eight linked conversion descriptors, but direct MMA hardcodes FP16 W/A and FP32 psum/O. Precision, rounding, subnormal, and saturation fields parse in canonical JSON config but are omitted by `tu_config_to_runtime`; numerical modes remain process-global and saturation has no converter consumer. TF32 has a passing focused target but is omitted from aggregate `make test`; `test-full` is not a superset and suppresses generated-code failures.
+33. `tu_precision_get()` checks only `prec < TU_PREC_COUNT` before indexing the built-in descriptor array, so a negative enum can index before the array. This was recorded statically rather than executed as undefined behavior.
+34. Chapter 9 confirms three incompatible memory surfaces. Generic SRAM uses compiled 32-bank × 4-byte geometry and a per-bank refill budget; exhausted accesses still copy immediately and return uncalibrated penalties. Its arbitration enums behave identically, low-level conflict field has no producer, utilization omits the initial service window, and base latency is uncharged. Parsed W/A/O capacities control allocations but overflow checks are failure-open; parsed banking does not propagate. The standalone hierarchy passes 10/10 focused functions at compiled defaults but is disconnected from direct MMA, preserves GBuf refill state across hierarchy reset, has unsafe non-word-multiple GBuf tails, and can mismatch custom bank count with meter allocation. A third source-present cycle model uses byte-address-modulo mapping and its own conflict producer but is absent from `TU_OBJS` and direct MMA. The config executable reports 20/20 on the observed run but its bare-`return` failure macro is not a fail-closed gate.
+35. Chapter 10 separates descriptor representation, byte/span geometry, borrowed ownership, admission, executor outcome, timestamp eligibility, and retirement. Synchronous and tick-driven modes have distinct cleanup windows; rejection already destroys the submitted chain. Channel `total_completed` advances on controlled failed-executor paths and does not prove delivery. Queue heads and chains share `next`, so mixed same-channel use can disconnect or strand nodes and synchronous chains underflow queue depth. Service estimates use `50 + ceil(bytes/32)` plus selected SRAM penalties and are uncalibrated sums, not elapsed time. Parsed DMA fields do not reach top-level active state; general descriptors do not call the DRAM model or serve as ordinary MMA operands; live legacy estimates accrue in process-global `g_tu_dma` while top-level accounting samples embedded `g_tu.dma`. Reinitialization zeroes singleton state without teardown. The initializer's fixed storage is three channels although requests through eight can be made effective; the four-channel pipeline suite is therefore intentionally skipped. The canonical audit preserves the 12/13 address-generator failure and rejects valid DMA-to-shadow overlap rather than presenting a green certificate.
+36. Chapter 11 distinguishes expanded-ISA metadata, legacy text ASM, the command queue, and the compiler scheduler rather than presenting one stack. The native packed object is 12 bytes on the audited little-endian ABI, with 59 explicit operation enumerators and 68 named table slots, but no portable binary encoder/decoder consumer is established. The queue dispatches eight classes; `CONV2D` faults. Synchronous submission bypasses dependencies; missing IDs satisfy while faulted IDs strand dependents. Completion neither guarantees handler effects nor reclaims capacity, signal IDs lack a populated registry, the barrier is weaker than a full fence, and reset reuses command IDs without resetting signal IDs. Oversized elementwise chains are safely rejected downstream but still recorded completed. Scheduler insertion/hoist APIs count candidates without mutating the graph, full scheduling clears those counts, and dense predecessor sets silently truncate at 16. Its fixed cycle sums are uncalibrated analytical estimates. The canonical run seals 26 hashes, 96 predicates, focused queue/ISA/ASM/scheduler observations, five static-link gates, and a zero-failure adversarial probe.
+37. Chapter 12 separates adjacent multicore surfaces rather than presenting one NoC: core wrappers swap snapshots through process-global state; send/broadcast copy O-SRAM bytes immediately and attach isolated estimates; the traffic API evaluates hypothetical simultaneous messages; all-reduce is host FP32 computation with no routed-cycle increment; barrier adds a topology-independent 32-bit product without rendezvous; and SPMD is an implementation-only serial loop. The combined shared-link equation is a deterministic route-load heuristic, not a makespan lower bound: canonical-v5 seals a disjoint-flow counterexample (`isolated=94`, `bottleneck=128`, `estimated=158`, feasible shared-pair term 133). The audit seals 28 hashes, 155 predicates, 183 source checks, exact C-call inventories, generator/SRAM/header contradictions, 16/16 focused tests plus a 15/16 mutation, and the config suite's reached ICC PASS followed by process status 134.
+
+## Questions to resolve before later chapters
+
+- Which JSON/YAML settings complete the entire source→parser→runtime→consumer path?
+- Which engines honor selected precision and dataflow modes rather than exposing only module-local APIs?
+- Which counters share a cycle domain and which must never be added?
+- Which models have external calibration against RTL, SCALE-Sim, Gemmini, Timeloop, FPGA, or silicon?
+- Which multicore engines are core-local, and which still access global `g_tu` state?
+- Which test targets are omitted from CI and aggregate test commands?
+- Is the Python binding current with the stable public C API?
+
+The corresponding chapters must answer these questions with executable evidence rather than assumption.

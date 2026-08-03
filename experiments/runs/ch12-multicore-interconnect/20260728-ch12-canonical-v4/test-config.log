@@ -1,0 +1,25 @@
+  JSON: integer 42                                       PASS
+  JSON: double 3.14                                      PASS
+  JSON: string hello                                     PASS
+  JSON: string escapes                                   PASS
+  JSON: bool/null                                        PASS
+  JSON: array                                            PASS
+  JSON: object + get                                     PASS
+  JSON: nested objects                                   PASS
+  JSON: trailing characters error                        PASS
+  Config: defaults                                       PASS
+  Config: load from string                               PASS
+  Config: load from file                                 PASS
+  Config: validation pass                                PASS
+  Config: validation fail (bad rows)                     PASS
+  Config: validation fail (bad bank width)               PASS
+  Config: validation fail (bad bus width)                PASS
+  Config: interconnect switching parse + validation      PASS
+  Config: reject unsupported interconnect switching      PASS
+  Config: to runtime conversion                          PASS
+  Config: TU init from config + MMA                      [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 8×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TU initialized from config: 8×8 PE, 256 KB SRAM
+*** stack smashing detected ***: terminated
+timeout: the monitored command dumped core
+experiments/run_ch12_multicore_interconnect_audit.sh: line 173: 336875 Aborted                 stdbuf -o0 -e0 timeout 90s ./ch12-test-config

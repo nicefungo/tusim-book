@@ -1,0 +1,20 @@
+inputs/experiments/ch11_source_audit.py: OK
+inputs/experiments/ch11_instruction_contract_probe.c: OK
+inputs/experiments/run_ch11_instruction_contract_audit.sh: OK
+inputs/experiments/ch11_predraft_validate.py: OK
+inputs/experiments/ch11-instruction-contract-audit-2026-07-28.md: OK
+inputs/notes/chapter-11-framing-and-evidence-plan.md: OK
+inputs/notes/chapter-11-source-and-claim-ledger.md: OK
+inputs/notes/chapter-11-skeptical-review-dispositions.md: OK
+inputs/references/foundations.md: OK
+source-archive-sha256.txt: OK
+source-audit.log: OK
+archive-members.txt: OK
+input-hashes.txt: OK
+test-cmdq.log: OK
+test-isa.log: OK
+test-asm.log: OK
+test-scheduler.log: OK
+ch11-probe.log: OK
+transcript.log: OK
+FINALIZED_RUN PASS run_dir=/home/zxy/Workplace/books/tusim-book/experiments/runs/ch11-instruction-contracts/20260728-ch11-canonical manifest=/home/zxy/Workplace/books/tusim-book/experiments/runs/ch11-instruction-contracts/20260728-ch11-canonical/sha256-retained.txt transcript_sha256=299c8435ea12f60c0d47f149cd0c9dcd5217b8b56a3055c3bc1b21e312c85037

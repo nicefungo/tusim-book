@@ -1,0 +1,24 @@
+inputs/edition.yaml: OK
+inputs/experiments/ch12_source_audit.py: OK
+inputs/experiments/ch12_multicore_interconnect_probe.c: OK
+inputs/experiments/run_ch12_multicore_interconnect_audit.sh: OK
+inputs/experiments/ch12_predraft_validate.py: OK
+inputs/experiments/ch12-multicore-interconnect-audit-2026-07-28.md: OK
+inputs/notes/chapter-12-framing-and-evidence-plan.md: OK
+inputs/notes/chapter-12-source-and-claim-ledger.md: OK
+inputs/notes/chapter-12-skeptical-review-dispositions.md: OK
+inputs/references/foundations.md: OK
+source-archive-sha256.txt: OK
+source-audit.log: OK
+source-audit-mutation.log: OK
+archive-members.txt: OK
+input-hashes.txt: OK
+build.log: OK
+test-multicore.log: OK
+test-multicore-mutation.log: OK
+test-config.log: OK
+contention-sweep.log: OK
+routing-sweep.log: OK
+ch12-probe.log: OK
+transcript.log: OK
+FINALIZED_RUN PASS run_dir=/home/zxy/Workplace/books/tusim-book/experiments/runs/ch12-multicore-interconnect/20260728-ch12-canonical-v3 manifest=/home/zxy/Workplace/books/tusim-book/experiments/runs/ch12-multicore-interconnect/20260728-ch12-canonical-v3/sha256-retained.txt transcript_sha256=923a29c2c7d9ea40b2cde03f4b3ae427076c8cfb4a5cc7d2ac58d89ea4d58113

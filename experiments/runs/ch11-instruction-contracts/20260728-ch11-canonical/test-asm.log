@@ -1,0 +1,4 @@
++ timeout 30s /tmp/tusim-ch11-work.Smmaro/ch11-test-asm 
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+TU ASM self-contained identity smoke test: PASS

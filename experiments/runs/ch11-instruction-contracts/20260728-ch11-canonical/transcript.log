@@ -1,0 +1,465 @@
+
+===== provenance before =====
+utc=2026-07-28T03:33:23Z
+book_root=/home/zxy/Workplace/books/tusim-book
+book_head=2e9130b3ee12f1f90c24b8ba02b8424ad12bd208
+book_branch=main
+book_remotes=0
+BOOK_STATUS_BEFORE_BEGIN
+BOOK_STATUS_BEFORE_END
+tusim_root=/home/zxy/Workplace/projects/tusim
+tusim_head=e918c80b6fce833cd1fcae97730fa841c2176f25
+tusim_branch=DETACHED
+tusim_status_bytes=0
+tusim_ignored_inventory_sha256=bb6aa62e0a80724a77579cdf4ec844acba8d5f59a1d3b4418d0025b4456415ab
+
+===== create pinned disposable source =====
++ git -C /home/zxy/Workplace/projects/tusim archive --format=tar --output=/tmp/tusim-ch11-archive.8wtSnB.tar e918c80b6fce833cd1fcae97730fa841c2176f25 
+fb023fe79a0e7dafbf334848756e44127101f5fdb75c1004e2ed2712318b708f  source-at-pin.tar
++ tar -xf /tmp/tusim-ch11-archive.8wtSnB.tar -C /tmp/tusim-ch11-work.Smmaro 
+
+===== source and artifact input hashes =====
+21bb1c0a32bd4a44bdc7bab713d618d73963d463c6392c400fa78857902e5012  experiments/ch11_source_audit.py
+6157ff32f9b444180553f1b44f84e6fbf633c2a3f8d7a541a9efb2fa1b1a9c9d  experiments/ch11_instruction_contract_probe.c
+2bf3f823a84ed7fbf145a459ea5a6dbccad33319aa008859b3fe08c571311894  experiments/run_ch11_instruction_contract_audit.sh
+dbdd8e8765f544d82c06edbac348f4ae4a804343330865b4b9e0615d0cddaa3a  experiments/ch11_predraft_validate.py
+a92f4434e3f2090666facb6cd7b5b3e50c3aaa62546c711fed697691381b5309  experiments/ch11-instruction-contract-audit-2026-07-28.md
+a66762830028bc1abe740ab7e9df8479b2f97da98b480a98df7729247f20ea38  notes/chapter-11-framing-and-evidence-plan.md
+d1dc3a3fda590d27265b6c6ab641fc1d128e8fcdf9525f2efd0b88fd5b721a59  notes/chapter-11-source-and-claim-ledger.md
+d148cc254a391842cee5260a9eee4b845816829b7f4ed160a3adf8fd7d143c6a  notes/chapter-11-skeptical-review-dispositions.md
+179a28092a65f0e229c503200d8b0d3787fe35ed6efbf528c94e049096934291  references/foundations.md
+
+===== fail-closed source audit =====
++ python3 /home/zxy/Workplace/books/tusim-book/experiments/ch11_source_audit.py /tmp/tusim-ch11-work.Smmaro e918c80b6fce833cd1fcae97730fa841c2176f25 
+HASH PASS Makefile 5249a0e077438a4e6f70c74936c185bb1c30105bb834b3f89ac6a78b32630fd2
+HASH PASS tu_cmodel/command_queue.c e8e24987b1cadb61d23bee76085ca7f11b37b7d387eb075033a1651f8a72a389
+HASH PASS tu_cmodel/command_queue.h cf1f06164d7b3353158c3b70c0667d29b6e94a2ca90a08620232546023363135
+HASH PASS tu_cmodel/tu_cmodel.c 542aa16f6f1561f0d55af05920e9922ed3c381a1ad193e6f2ecfca390a8b5059
+HASH PASS tu_cmodel/tu_cmodel.h 416a0d20776825498217ff5d4382f07ccb2ac9689bbe6c70cacd1bf13e7725af
+HASH PASS tu_cmodel/tu_config.h 129d55ad55409bcd4b5dcae5007faa297c087d48a150a4a85073d66e49cbb45d
+HASH PASS tu_cmodel/infra/config.c 17b7919392d4a315022a129ce5bbdff301a2d3405af3163756b430b2b36dd12a
+HASH PASS tu_cmodel/infra/config.h 723deb631e83705ab80143dd251761c3b98ca692c5d1eefb243d47aca551913b
+HASH PASS config/tu_config.json 6f9d292696b1ca5fa38ad3298e7f3a04c43095c0950f71dbe0c3c68b1f15f4db
+HASH PASS tu_cmodel/tu_asm.c 7d509822dd585bf9f445c96a7be03882a1019d42c39b19f9d14a5b8c5603daee
+HASH PASS tu_cmodel/tu_core.c 0e4b3c6e206465748ae2d3d2e9871f3a6542a61cd1ddcddfff6886b9ed1f0eeb
+HASH PASS tu_cmodel/tu_cluster.c 7c968e95ba0a88fcc27f803be6aa337161bfa691505cdd39b01146252fa77b36
+HASH PASS tu_cmodel/bindings/tu_dpi.c 51ccaa58f226ed4d67f8b6c96b35a8ce77237980503de93e88335a0077d74b8a
+HASH PASS tu_cmodel/compute/elementwise_pipeline.c e46a698f48bb69ac577b11ff866b4c34953a2ca03e2194bee85558cea4f656e2
+HASH PASS tu_cmodel/isa/tu_isa.c 53bdf44cd720a933da174da55ab1180f8056de9fb2aaa5b9b534adb7af4c387f
+HASH PASS tu_cmodel/isa/tu_isa.h 8efd760c3485492de68b6093d9fa617cdebc2f75de3453310ed3f207b4d16456
+HASH PASS tu_cmodel/isa/tu_scheduler.c b76afa350cc6229fe981e4c188bdc7b8026df4ae74725b3106c624afee9c8893
+HASH PASS tu_cmodel/isa/tu_scheduler.h d0af2cfa650f704b8abefadea0f1bb0bb02029c0d2168b7b608505b0fe1a3426
+HASH PASS tests/test_command_queue.c f15c088772c5ac1eeedd25ceeeb8592f60f6b5386f5a854b5394f1d65e934237
+HASH PASS tests/test_isa.c 1f20a476d30d73485473adf532848d7af3d372167b969d40f9fce9279d93d2d0
+HASH PASS tests/test_asm.c c76512bc7ad8246c8d5dc747239c2bc1dd1b4872fb44e05bea0432ad660fc024
+HASH PASS tests/test_scheduler.c c35fa60e174b338d9dfbd6e94fa40941820c2d5076b44e3a0ccf1f9cc1db71d0
+HASH PASS tests/test_scheduler_sweep.c 9a56f263e42dcd7e5573868e388849a4ced6c65576b8f437aaff12f51be9e940
+HASH PASS tests/test_config.c e2bf7d9a1bbac06863e3b8c372fa1cb854927fc1aeb73a08c79e08cd3f1db821
+HASH PASS tests/test_elementwise.c 5346cc195d6a728990030cb372633ff6343de7c67c6991ce226b4b20ea015317
+HASH PASS compiler/onnx_to_tu.py 9308a86a6c7a986c9fa6cfae6f1b147724de5a78cabaf34656e15de4e4713e2b
+PREDICATE PASS archive-member-tu_asm.o
+PREDICATE PASS archive-member-command_queue.o
+PREDICATE PASS archive-member-isa/tu_isa.o
+PREDICATE PASS archive-member-isa/tu_scheduler.o
+PREDICATE PASS focused-target-test-cmdq
+PREDICATE PASS focused-target-test-isa
+PREDICATE PASS focused-target-test-asm
+PREDICATE PASS focused-target-test-scheduler
+PREDICATE PASS quick-includes-cmdq-asm-not-isa
+PREDICATE PASS aggregate-includes-scheduler
+PREDICATE PASS 96-bit-object-size
+PREDICATE PASS 59-explicit-operation-enumerators
+PREDICATE PASS 68-named-and-60-unknown-catalog-slots
+PREDICATE PASS no-binary-encoder-api
+PREDICATE PASS no-binary-decoder-api
+PREDICATE PASS queue-opcode-alias
+PREDICATE PASS queue-three-operand-forms
+PREDICATE PASS queue-dispatch-TU_CMD_NOP
+PREDICATE PASS queue-dispatch-TU_CMD_DMA_LOAD
+PREDICATE PASS queue-dispatch-TU_CMD_DMA_STORE
+PREDICATE PASS queue-dispatch-TU_CMD_MMA
+PREDICATE PASS queue-dispatch-TU_CMD_SYNC
+PREDICATE PASS queue-dispatch-TU_CMD_BARRIER
+PREDICATE PASS queue-dispatch-TU_CMD_HALT
+PREDICATE PASS queue-dispatch-TU_CMD_ELEMENTWISE
+PREDICATE PASS unsupported-opcode-fault
+PREDICATE PASS submit-returns-id
+PREDICATE PASS header-return-contract-conflict
+PREDICATE PASS missing-dependency-assumed-complete
+PREDICATE PASS submitted-timestamp-written-at-execution
+PREDICATE PASS sync-bypasses-dependency-check
+PREDICATE PASS async-submit-auto-tick
+PREDICATE PASS retirement-guard-inverted
+PREDICATE PASS unknown-status-completed
+PREDICATE PASS unknown-wait-success
+PREDICATE PASS signal-id-assigned
+PREDICATE PASS signal-registry-never-populated
+PREDICATE PASS sync-drain-no-op
+PREDICATE PASS reset-restarts-command-id
+PREDICATE PASS reset-does-not-restart-signal-id
+PREDICATE PASS public-ew-count-stored-before-local-clamp
+PREDICATE PASS queue-ew-forwards-unclamped-stored-count
+PREDICATE PASS fused-elementwise-rejects-count-above-eight
+PREDICATE PASS fused-elementwise-rejects-before-copy
+PREDICATE PASS compile-time-queue-init
+PREDICATE PASS compiled-queue-depth-16
+PREDICATE PASS compiled-dependency-checking-off
+PREDICATE PASS compiled-functional-mode-default
+PREDICATE PASS full-config-default-queue-depth-16
+PREDICATE PASS full-config-default-dependency-off
+PREDICATE PASS full-config-default-cycle-model-2
+PREDICATE PASS full-config-parses-dependency-switch
+PREDICATE PASS full-config-parses-instruction-width
+PREDICATE PASS full-config-parses-queue-depth
+PREDICATE PASS full-config-parses-cycle-model
+PREDICATE PASS runtime-converter-drops-isa_instr_width_bits
+PREDICATE PASS runtime-converter-drops-isa_queue_depth
+PREDICATE PASS runtime-converter-drops-isa_dep_checking
+PREDICATE PASS runtime-converter-drops-cycle_model
+PREDICATE PASS shipped-config-instruction-width-96
+PREDICATE PASS shipped-config-cycle-model-label
+PREDICATE PASS parsed-queue-depth-not-consumed-by-core
+PREDICATE PASS parsed-dependency-switch-not-consumed-by-core
+PREDICATE PASS legacy-asm-LOAD_W
+PREDICATE PASS legacy-asm-LOAD_A
+PREDICATE PASS legacy-asm-LOAD_O
+PREDICATE PASS legacy-asm-STORE_O
+PREDICATE PASS legacy-asm-MMA
+PREDICATE PASS legacy-asm-SYNC
+PREDICATE PASS legacy-asm-no-barrier
+PREDICATE PASS asm-reinitializes-global-state
+PREDICATE PASS asm-bypasses-command-queue
+PREDICATE PASS asm-bypasses-scheduler
+PREDICATE PASS asm-does-not-construct-packed-instructions
+PREDICATE PASS asm-discards-host-buffer-size
+PREDICATE PASS core-wrapper-reaches-legacy-asm
+PREDICATE PASS dpi-reaches-queue-mma-wrapper
+PREDICATE PASS dpi-reaches-queue-barrier-wrapper
+PREDICATE PASS compiler-does-not-emit-binary-isa
+PREDICATE PASS compiler-does-not-run-scheduler
+PREDICATE PASS null-default-disables-hoist
+PREDICATE PASS null-default-disables-insertion
+PREDICATE PASS list-schedule-clears-barrier-count
+PREDICATE PASS list-schedule-clears-hoist-count
+PREDICATE PASS insertion-only-counts
+PREDICATE PASS insertion-does-not-add-node
+PREDICATE PASS dma-hoist-only-counts-candidate
+PREDICATE PASS scheduler-edge-capacity-16
+PREDICATE PASS scheduler-silently-drops-excess-edges
+PREDICATE PASS scheduler-skips-barrier-as-later-predecessor
+PREDICATE PASS pipeline-tiles-config-not-consumed
+PREDICATE PASS max-window-config-not-consumed
+PREDICATE PASS serial-fixed-cost-estimate
+PREDICATE PASS whole-tree-scheduler-call-surface
+PREDICATE PASS whole-tree-legacy-asm-call-surface
+PREDICATE PASS whole-tree-command-queue-call-surface
+CH11_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=26 predicates=96 checks=122
+
+===== contained static archive build =====
++ make -C /tmp/tusim-ch11-work.Smmaro -j2 libtucmodel.a 
+make: Entering directory '/tmp/tusim-ch11-work.Smmaro'
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/dma_descriptor.o tu_cmodel/dma_descriptor.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/rounding.o tu_cmodel/rounding.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/fp8.o tu_cmodel/fp8.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tf32.o tu_cmodel/tf32.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/dram_model.o tu_cmodel/memory/dram_model.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/memory_hierarchy.o tu_cmodel/memory/memory_hierarchy.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/double_buffer.o tu_cmodel/memory/double_buffer.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/address_generator.o tu_cmodel/memory/address_generator.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_isa.o tu_cmodel/isa/tu_isa.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/elementwise_pipeline.o tu_cmodel/compute/elementwise_pipeline.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/normalization_engine.o tu_cmodel/compute/normalization_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/softmax_engine.o tu_cmodel/compute/softmax_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/convolution_engine.o tu_cmodel/compute/convolution_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/attention_engine.o tu_cmodel/compute/attention_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/pooling_engine.o tu_cmodel/compute/pooling_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/logging.o tu_cmodel/infra/logging.c
+tu_cmodel/infra/logging.c: In function ‘tu_trace_export_vcd’:
+tu_cmodel/infra/logging.c:229:17: warning: unused variable ‘comp_names’ [-Wunused-variable]
+  229 |     const char *comp_names[] = {
+      |                 ^~~~~~~~~~
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/json_reader.o tu_cmodel/infra/json_reader.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/config.o tu_cmodel/infra/config.c
+tu_cmodel/infra/config.c:62:13: warning: ‘parse_opt_uint’ defined but not used [-Wunused-function]
+   62 | static bool parse_opt_uint(const tu_json_value_t *obj, const char *key,
+      |             ^~~~~~~~~~~~~~
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_int_quant.o tu_cmodel/tu_int_quant.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/performance_counters.o tu_cmodel/perf/performance_counters.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/event_trace.o tu_cmodel/perf/event_trace.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/power_model.o tu_cmodel/perf/power_model.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/pipeline_controller.o tu_cmodel/compute/pipeline_controller.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/dataflow_registry.o tu_cmodel/compute/dataflow/dataflow_registry.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/dataflow_dispatcher.o tu_cmodel/compute/dataflow/dataflow_dispatcher.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/weight_stationary.o tu_cmodel/compute/dataflow/weight_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/output_stationary.o tu_cmodel/compute/dataflow/output_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/row_stationary.o tu_cmodel/compute/dataflow/row_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_core.o tu_cmodel/tu_core.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_cluster.o tu_cmodel/tu_cluster.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_status.o tu_cmodel/tu_status.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/tu_context.o tu_cmodel/infra/tu_context.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/weight_compress.o tu_cmodel/memory/weight_compress.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/sparsity/structured_2of4.o tu_cmodel/sparsity/structured_2of4.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_scheduler.o tu_cmodel/isa/tu_scheduler.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_liveness.o tu_cmodel/isa/tu_liveness.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/tu_debug.o tu_cmodel/infra/tu_debug.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/bindings/tu_dpi.o tu_cmodel/bindings/tu_dpi.c
+ar rcs libtucmodel.a tu_cmodel/tu_cmodel.o tu_cmodel/tu_asm.o tu_cmodel/tu_precision.o tu_cmodel/tu_sram.o tu_cmodel/tu_dma.o tu_cmodel/dma_descriptor.o tu_cmodel/rounding.o tu_cmodel/fp8.o tu_cmodel/tf32.o tu_cmodel/command_queue.o tu_cmodel/memory/dram_model.o tu_cmodel/memory/memory_hierarchy.o tu_cmodel/memory/double_buffer.o tu_cmodel/memory/address_generator.o tu_cmodel/isa/tu_isa.o tu_cmodel/compute/elementwise_pipeline.o tu_cmodel/compute/normalization_engine.o tu_cmodel/compute/softmax_engine.o tu_cmodel/compute/convolution_engine.o tu_cmodel/compute/attention_engine.o tu_cmodel/compute/pooling_engine.o tu_cmodel/infra/logging.o tu_cmodel/infra/json_reader.o tu_cmodel/infra/config.o tu_cmodel/tu_int_quant.o tu_cmodel/perf/performance_counters.o tu_cmodel/perf/event_trace.o tu_cmodel/perf/power_model.o tu_cmodel/compute/pipeline_controller.o tu_cmodel/compute/dataflow/dataflow_registry.o tu_cmodel/compute/dataflow/dataflow_dispatcher.o tu_cmodel/compute/dataflow/weight_stationary.o tu_cmodel/compute/dataflow/output_stationary.o tu_cmodel/compute/dataflow/row_stationary.o tu_cmodel/tu_core.o tu_cmodel/tu_cluster.o tu_cmodel/tu_status.o tu_cmodel/infra/tu_context.o tu_cmodel/memory/weight_compress.o tu_cmodel/sparsity/structured_2of4.o tu_cmodel/isa/tu_scheduler.o tu_cmodel/isa/tu_liveness.o tu_cmodel/infra/tu_debug.o tu_cmodel/bindings/tu_dpi.o
+make: Leaving directory '/tmp/tusim-ch11-work.Smmaro'
+address_generator.o
+attention_engine.o
+command_queue.o
+config.o
+convolution_engine.o
+dataflow_dispatcher.o
+dataflow_registry.o
+dma_descriptor.o
+double_buffer.o
+dram_model.o
+elementwise_pipeline.o
+event_trace.o
+fp8.o
+json_reader.o
+logging.o
+memory_hierarchy.o
+normalization_engine.o
+output_stationary.o
+performance_counters.o
+pipeline_controller.o
+pooling_engine.o
+power_model.o
+rounding.o
+row_stationary.o
+softmax_engine.o
+structured_2of4.o
+tf32.o
+tu_asm.o
+tu_cluster.o
+tu_cmodel.o
+tu_context.o
+tu_core.o
+tu_debug.o
+tu_dma.o
+tu_dpi.o
+tu_int_quant.o
+tu_isa.o
+tu_liveness.o
+tu_precision.o
+tu_scheduler.o
+tu_sram.o
+tu_status.o
+weight_compress.o
+weight_stationary.o
+ARCHIVE_MEMBER PASS command_queue.o
+ARCHIVE_MEMBER PASS tu_asm.o
+ARCHIVE_MEMBER PASS tu_isa.o
+ARCHIVE_MEMBER PASS tu_scheduler.o
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch11-work.Smmaro -I/tmp/tusim-ch11-work.Smmaro/tu_cmodel -o /tmp/tusim-ch11-work.Smmaro/ch11-probe /home/zxy/Workplace/books/tusim-book/experiments/ch11_instruction_contract_probe.c /tmp/tusim-ch11-work.Smmaro/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch11-work.Smmaro -I/tmp/tusim-ch11-work.Smmaro/tu_cmodel -o /tmp/tusim-ch11-work.Smmaro/ch11-test-cmdq /tmp/tusim-ch11-work.Smmaro/tests/test_command_queue.c /tmp/tusim-ch11-work.Smmaro/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch11-work.Smmaro -I/tmp/tusim-ch11-work.Smmaro/tu_cmodel -o /tmp/tusim-ch11-work.Smmaro/ch11-test-isa /tmp/tusim-ch11-work.Smmaro/tests/test_isa.c /tmp/tusim-ch11-work.Smmaro/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch11-work.Smmaro -I/tmp/tusim-ch11-work.Smmaro/tu_cmodel -o /tmp/tusim-ch11-work.Smmaro/ch11-test-asm /tmp/tusim-ch11-work.Smmaro/tests/test_asm.c /tmp/tusim-ch11-work.Smmaro/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch11-work.Smmaro -I/tmp/tusim-ch11-work.Smmaro/tu_cmodel -o /tmp/tusim-ch11-work.Smmaro/ch11-test-scheduler /tmp/tusim-ch11-work.Smmaro/tests/test_scheduler.c /tmp/tusim-ch11-work.Smmaro/libtucmodel.a -lm 
+STATIC_LINK_PASS ch11-probe
+STATIC_LINK_PASS ch11-test-cmdq
+STATIC_LINK_PASS ch11-test-isa
+STATIC_LINK_PASS ch11-test-asm
+STATIC_LINK_PASS ch11-test-scheduler
+
+===== focused harness observations =====
++ timeout 30s /tmp/tusim-ch11-work.Smmaro/ch11-test-cmdq 
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+TinyTU Command Queue Tests
+===========================
+
+  Command queue creation                                 PASS
+  CMDQ MMA identity 16×16×16                           PASS
+  Command ID monotonicity                                PASS
+  Command queue barrier                                  PASS
+  Command queue overflow                                 PASS
+  CMDQ DMA load + MMA                                    PASS
+  Standalone command queue                               PASS
+  Command queue reset                                    PASS
+  NOP command execution                                  PASS
+
+═══════════════════════════════════════════
+  9/9 tests passed
+═══════════════════════════════════════════
++ timeout 30s /tmp/tusim-ch11-work.Smmaro/ch11-test-isa 
+
+=== TU ISA Tests ===
+
+  [1] Instruction size = 96 bits (12 bytes) ... PASS
+  [2] All defined opcodes have names (reserved slots may be UNKNOWN) ... (68 named, 60 reserved) PASS
+  [3] Key opcode names are correct ... PASS
+  [4] Category classification correct ... PASS
+  [5] Query functions correct ... PASS
+  [6] Flag decoding ... PASS
+  [7] Backward-compat CMD opcodes map to ISA ... PASS
+  [8] All opcodes are distinct (excluding reserved UNKNOWNs) ... PASS
+  [9] Descriptor struct sizes ... PASS
+
+=== Results: 9/9 passed ===
++ timeout 30s /tmp/tusim-ch11-work.Smmaro/ch11-test-asm 
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+TU ASM self-contained identity smoke test: PASS
++ timeout 30s /tmp/tusim-ch11-work.Smmaro/ch11-test-scheduler 
+
+===========================================
+  Compiler Scheduling Pass Tests (Gap C2)
+===========================================
+
+  TEST empty sequence ... PASS
+  TEST single instruction ... PASS
+  TEST DMA load → MMA dependency (RAW) ... PASS
+  TEST independent DMA loads reordered ... PASS
+  TEST DMA → MMA → DMA store pipeline ... PASS
+  TEST complex DAG construction ... PASS
+  TEST ASAP/ALAP mobility computation ... PASS
+  TEST barrier insertion analysis ... PASS
+  TEST policy comparison (balanced vs ASAP vs ALAP) ... PASS
+  TEST large sequence stress test (64 instrs) ... PASS
+  TEST validation detects dependency violations ... PASS
+  TEST instructions with no SRAM access ... PASS
+  TEST double-buffered tile pipeline scheduling ... PASS
+  TEST config override (no DMA hoisting, ASAP policy) ... PASS
+
+-------------------------------------------
+  Results: 14/14 passed
+-------------------------------------------
+HARNESS_QUALIFICATION focused passes do not certify cross-surface integration or the adversarial lifecycle cases.
+
+===== fail-closed custom probe =====
++ timeout 30s /tmp/tusim-ch11-work.Smmaro/ch11-probe 
+TU CMDQ: unknown opcode 19
+TU CMDQ: unknown opcode 19
+EW: too many ops in fused chain (9 > 8)
+ISA sizeof=12 opcode_count_sentinel=128 named_slots=68 unknown_slots=60
+ISA native_bytes=10 a5 22 11 44 33 66 55 aa 99 88 77
+CHECK PASS: instruction object is 12 bytes
+CHECK PASS: catalog has exact 128-slot sentinel, 68 named slots, and 60 unknown slots
+CHECK PASS: audit host is little-endian
+CHECK PASS: native packed-object bytes match the audited little-endian ABI snapshot
+CHECK PASS: reserved control-range slot 0x0f is category UNKNOWN
+CHECK PASS: generic SRAM query defaults reserved slot 0x0f to true
+CHECK PASS: synchronous queue created at requested capacity
+CHECK PASS: submit returns command ID rather than documented zero
+CHECK PASS: synchronous submit executes despite missing dependency
+CHECK PASS: completed synchronous command remains counted in queue depth
+CHECK PASS: command gets signal ID but signal registry remains empty
+CHECK PASS: declared CONV2D faults in command-queue dispatcher
+CHECK PASS: faulted command is separate from completed counter
+CHECK PASS: unknown command status is reported as COMPLETED
+CHECK PASS: wait on unknown command reports success
+CHECK PASS: third synchronous command accepted
+CHECK PASS: fourth synchronous command accepted
+CHECK PASS: queue rejects after lifetime submissions reach capacity
+CHECK PASS: synchronous sync is a no-op and does not retire completed commands
+SYNC_QUEUE count=4 submitted=4 completed=3 faulted=1 signal_count=0 current_cycle=0
+CHECK PASS: reset reuses command ID 1
+CHECK PASS: reset does not restart next signal ID
+CHECK PASS: stale pre-reset command ID aliases the new command with reused ID
+RESET_IDS old_cmd=1 new_cmd=1 old_signal=1 new_signal=5
+CHECK PASS: tick-driven queue created
+CHECK PASS: tick-driven submit auto-ticks and completes ready NOP in submit call
+CHECK PASS: auto-tick advances one cycle but does not retire queue storage
+CHECK PASS: later tick reports no execution and still does not retire completed command
+CHECK PASS: missing dependency is assumed already completed in tick-driven mode
+CHECK PASS: completion timestamp is the executor tick, with no service duration
+CHECK PASS: tick-driven completion signal registry also remains empty
+ASYNC_QUEUE count=2 submitted=2 completed=2 faulted=0 signal_count=0 current_cycle=3
+CHECK PASS: barrier probe queue created
+CHECK PASS: barrier probe creates retained faulted predecessor
+CHECK PASS: command before barrier remains pending on faulted dependency
+CHECK PASS: bounded wait times out on retained fault dependency
+CHECK PASS: barrier submission succeeds
+CHECK PASS: barrier completes while an earlier command remains pending
+CHECK PASS: post-barrier command completes before earlier pending command
+ASYNC_BARRIER fault=3 pre=0 barrier=2 post=2 count=4 cycle=6
+CHECK PASS: elementwise boundary queue created
+CHECK PASS: nine-operation elementwise descriptor is admitted
+CHECK PASS: downstream fused helper rejects count above eight but queue still reports COMPLETED
+ELEMENTWISE_BOUNDARY count=9 status=2 completed=1 faulted=0
+CHECK PASS: scheduler emits all three instructions
+SCHED_BARRIER output=DMA.LOAD,NOP,BARRIER valid=1 hoisted=0 inserted=0 cycles=9
+CHECK PASS: post-barrier independent DMA can be emitted before barrier
+CHECK PASS: list scheduler clears reported hoist and insertion counts
+CHECK PASS: scheduler DAG builds for DMA-MMA-store sequence
+SCHED_INSERT_ANALYSIS counted=0 graph_nodes=3
+CHECK PASS: barrier insertion analysis does not insert an instruction
+CHECK PASS: positive barrier-analysis graph builds
+CHECK PASS: barrier analysis reports one hazard without inserting a node
+CHECK PASS: full scheduler erases positive barrier-analysis report and emits no added instruction
+SCHED_POSITIVE_INSERT direct=1 run=0 input_nodes=2 output_nodes=2
+CHECK PASS: positive DMA-hoist analysis graph builds
+CHECK PASS: DMA-hoist analysis reports one candidate without moving graph nodes
+CHECK PASS: full scheduler erases positive DMA-hoist report
+SCHED_POSITIVE_HOIST direct=1 run=0 input_nodes=3 output_nodes=3
+CHECK PASS: 17-predecessor barrier graph builds without rejection
+CHECK PASS: barrier silently retains only 16 of 17 requir[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+TU ASM error line 1: unknown instruction: BARRIER
+
+ed predecessor edges
+SCHED_DENSE_BARRIER prior=17 retained_preds=16 max_deps=16
+ASM expanded_mnemonic_rc=-1
+CHECK PASS: legacy text interpreter rejects expanded BARRIER mnemonic
+CH11_PROBE SUMMARY failures=0
+EXPECTED_FINDING MATCH ISA sizeof=12 opcode_count_sentinel=128 named_slots=68 unknown_slots=60
+EXPECTED_FINDING MATCH SYNC_QUEUE count=4 submitted=4 completed=3 faulted=1 signal_count=0 current_cycle=0
+EXPECTED_FINDING MATCH RESET_IDS old_cmd=1 new_cmd=1 old_signal=1 new_signal=5
+EXPECTED_FINDING MATCH ASYNC_QUEUE count=2 submitted=2 completed=2 faulted=0 signal_count=0 current_cycle=3
+EXPECTED_FINDING MATCH ASYNC_BARRIER fault=3 pre=0 barrier=2 post=2 count=4 cycle=6
+EXPECTED_FINDING MATCH ELEMENTWISE_BOUNDARY count=9 status=2 completed=1 faulted=0
+EXPECTED_FINDING MATCH SCHED_BARRIER output=DMA.LOAD,NOP,BARRIER valid=1 hoisted=0 inserted=0 cycles=9
+EXPECTED_FINDING MATCH SCHED_POSITIVE_INSERT direct=1 run=0 input_nodes=2 output_nodes=2
+EXPECTED_FINDING MATCH SCHED_POSITIVE_HOIST direct=1 run=0 input_nodes=3 output_nodes=3
+EXPECTED_FINDING MATCH SCHED_DENSE_BARRIER prior=17 retained_preds=16 max_deps=16
+EXPECTED_FINDING MATCH ASM expanded_mnemonic_rc=-1
+EXPECTED_FINDING MATCH CH11_PROBE SUMMARY failures=0
+
+===== retained artifact manifest phase one =====
+21bb1c0a32bd4a44bdc7bab713d618d73963d463c6392c400fa78857902e5012  inputs/experiments/ch11_source_audit.py
+6157ff32f9b444180553f1b44f84e6fbf633c2a3f8d7a541a9efb2fa1b1a9c9d  inputs/experiments/ch11_instruction_contract_probe.c
+2bf3f823a84ed7fbf145a459ea5a6dbccad33319aa008859b3fe08c571311894  inputs/experiments/run_ch11_instruction_contract_audit.sh
+dbdd8e8765f544d82c06edbac348f4ae4a804343330865b4b9e0615d0cddaa3a  inputs/experiments/ch11_predraft_validate.py
+a92f4434e3f2090666facb6cd7b5b3e50c3aaa62546c711fed697691381b5309  inputs/experiments/ch11-instruction-contract-audit-2026-07-28.md
+a66762830028bc1abe740ab7e9df8479b2f97da98b480a98df7729247f20ea38  inputs/notes/chapter-11-framing-and-evidence-plan.md
+d1dc3a3fda590d27265b6c6ab641fc1d128e8fcdf9525f2efd0b88fd5b721a59  inputs/notes/chapter-11-source-and-claim-ledger.md
+d148cc254a391842cee5260a9eee4b845816829b7f4ed160a3adf8fd7d143c6a  inputs/notes/chapter-11-skeptical-review-dispositions.md
+179a28092a65f0e229c503200d8b0d3787fe35ed6efbf528c94e049096934291  inputs/references/foundations.md
+2893e24d56f12ac93abf90b8c1c10ccf906852ebe430c0ec8f0c29a492cd29f5  source-archive-sha256.txt
+1c5011f16214e474b95eadefa7c0314d51945b528006db006772e2eca3b313d9  source-audit.log
+2018067c97b254b174e291fba31b46052aade365f00195b0c1d4314d3ad8e315  archive-members.txt
+c253b5a3a6c29df3592235778acd40299e2724978245fd63b283c0bf68f3709a  input-hashes.txt
+970d8bee8b24a3f0802f221f0d081ad2714fe2d9b18d932689eb08223577bae5  test-cmdq.log
+909e85ff879da0dbda43180dbe403bf8fb1ac5fad953463c272c2103524edc3b  test-isa.log
+9cf608af07937fdff4a0d06d51bc913f8366c552ac9aaa7ef77e35cd1cacea39  test-asm.log
+b998f385ea67ae55b96bf3030ea050ea2ac7abe0ec99076c1ceae495b657df46  test-scheduler.log
+e388bc72f148b20b73f3c515b2f92df4e8d162a3c608bb5dbec0b0ef10907c15  ch11-probe.log
+
+===== provenance after =====
+TUSIM_POST PASS head=e918c80b6fce833cd1fcae97730fa841c2176f25 detached=yes tracked_and_untracked_clean=yes ignored_inventory_unchanged=yes
+experiments/ch11_source_audit.py: OK
+experiments/ch11_instruction_contract_probe.c: OK
+experiments/run_ch11_instruction_contract_audit.sh: OK
+experiments/ch11_predraft_validate.py: OK
+experiments/ch11-instruction-contract-audit-2026-07-28.md: OK
+notes/chapter-11-framing-and-evidence-plan.md: OK
+notes/chapter-11-source-and-claim-ledger.md: OK
+notes/chapter-11-skeptical-review-dispositions.md: OK
+references/foundations.md: OK
+BOOK_POST PASS head=2e9130b3ee12f1f90c24b8ba02b8424ad12bd208 branch=main inputs_unchanged=yes status_unchanged_outside_run=yes remotes=0
+
+===== result =====
+CH11_AUDIT_SNAPSHOT_MATCHED_EXPECTED_FINDINGS run_dir=/home/zxy/Workplace/books/tusim-book/experiments/runs/ch11-instruction-contracts/20260728-ch11-canonical

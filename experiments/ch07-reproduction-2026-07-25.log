@@ -1,0 +1,1656 @@
+++ git -C /home/zxy/Workplace/projects/tusim status --porcelain=v1
++ test -z ''
+++ git -C /home/zxy/Workplace/projects/tusim rev-parse HEAD
++ test e918c80b6fce833cd1fcae97730fa841c2176f25 = e918c80b6fce833cd1fcae97730fa841c2176f25
++ rm -rf /tmp/tusim-ch07-reproduction /tmp/tusim-ch07-e918c80.tar
++ git -C /home/zxy/Workplace/projects/tusim archive --format=tar e918c80b6fce833cd1fcae97730fa841c2176f25
+++ sha256sum /tmp/tusim-ch07-e918c80.tar
+++ cut '-d ' -f1
++ test fb023fe79a0e7dafbf334848756e44127101f5fdb75c1004e2ed2712318b708f = fb023fe79a0e7dafbf334848756e44127101f5fdb75c1004e2ed2712318b708f
++ mkdir -p /tmp/tusim-ch07-reproduction
++ tar -xf /tmp/tusim-ch07-e918c80.tar -C /tmp/tusim-ch07-reproduction
++ printf '%s\n' fb023fe79a0e7dafbf334848756e44127101f5fdb75c1004e2ed2712318b708f
++ cd /tmp/tusim-ch07-reproduction
++ printf '%s\n' '=== TOOLCHAIN ==='
+=== TOOLCHAIN ===
++ cc --version
+cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
++ make --version
+GNU Make 4.3
+Built for aarch64-unknown-linux-gnu
+Copyright (C) 1988-2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
++ ldd --version
+ldd (Ubuntu GLIBC 2.35-0ubuntu3.13) 2.35
+Copyright (C) 2022 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+Written by Roland McGrath and Ulrich Drepper.
++ python3 --version
+Python 3.11.15
++ uname -a
+Linux ubuntu 5.15.148-tegra #1 SMP PREEMPT Thu Sep 18 15:08:33 PDT 2025 aarch64 aarch64 aarch64 GNU/Linux
++ make clean
+rm -f tu_cmodel/*.o tu_cmodel/memory/*.o tu_cmodel/sparsity/*.o tu_cmodel/isa/*.o tu_cmodel/compute/*.o tu_cmodel/compute/dataflow/*.o tu_cmodel/infra/*.o tu_cmodel/perf/*.o tu_cmodel/bindings/*.o libtucmodel.a libtucmodel.so
+rm -f test-cmodel test-cmdq test-dma test-dram test-isa test-golden test-golden-full
+rm -f test-dataflow test-elementwise test-bf16 test-memhier test-norm test-logging
+rm -f test-int-quant test-conv test-random
+rm -f test-rounding test-fp8 test-attention test-perf test-pool test-pipeline
+rm -f test-agen test-multicore test-multicore-sweep test-compress test-errors test-config test-softmax test-double test-context test-context-switch-sweep test-compress test-weight-compression-sweep test-sparsity test-sparsity-sweep test-scheduler test-scheduler-sweep test-interconnect-topology-sweep test-interconnect-switching-sweep test-interconnect-contention-sweep test-interconnect-routing-sweep test-liveness test-power test-dpi test-dataflow-sweep test-rounding-sweep test-attention-sweep test-pooling-sweep test-softmax-sweep test-conv-sweep test-norm-sweep test-norm-attention-sweep test-conv-groups-sweep test-conv-pool-cascade test-mma-activation-sweep test-softmax-attention-sweep
+rm -f /tmp/gpt_block_tu /tmp/gpt_block_tu.c /tmp/test_asm
+rm -rf build/ci_reports
++ make -j2 libtucmodel.a
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/tu_cmodel.o tu_cmodel/tu_cmodel.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/tu_asm.o tu_cmodel/tu_asm.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/tu_precision.o tu_cmodel/tu_precision.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/tu_sram.o tu_cmodel/tu_sram.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/tu_dma.o tu_cmodel/tu_dma.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/dma_descriptor.o tu_cmodel/dma_descriptor.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/rounding.o tu_cmodel/rounding.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/fp8.o tu_cmodel/fp8.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tf32.o tu_cmodel/tf32.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/command_queue.o tu_cmodel/command_queue.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/dram_model.o tu_cmodel/memory/dram_model.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/memory_hierarchy.o tu_cmodel/memory/memory_hierarchy.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/double_buffer.o tu_cmodel/memory/double_buffer.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/address_generator.o tu_cmodel/memory/address_generator.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_isa.o tu_cmodel/isa/tu_isa.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/elementwise_pipeline.o tu_cmodel/compute/elementwise_pipeline.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/normalization_engine.o tu_cmodel/compute/normalization_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/softmax_engine.o tu_cmodel/compute/softmax_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/convolution_engine.o tu_cmodel/compute/convolution_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/attention_engine.o tu_cmodel/compute/attention_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/pooling_engine.o tu_cmodel/compute/pooling_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/logging.o tu_cmodel/infra/logging.c
+tu_cmodel/infra/logging.c: In function ‘tu_trace_export_vcd’:
+tu_cmodel/infra/logging.c:229:17: warning: unused variable ‘comp_names’ [-Wunused-variable]
+  229 |     const char *comp_names[] = {
+      |                 ^~~~~~~~~~
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/json_reader.o tu_cmodel/infra/json_reader.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/config.o tu_cmodel/infra/config.c
+tu_cmodel/infra/config.c:62:13: warning: ‘parse_opt_uint’ defined but not used [-Wunused-function]
+   62 | static bool parse_opt_uint(const tu_json_value_t *obj, const char *key,
+      |             ^~~~~~~~~~~~~~
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_int_quant.o tu_cmodel/tu_int_quant.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/performance_counters.o tu_cmodel/perf/performance_counters.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/event_trace.o tu_cmodel/perf/event_trace.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/power_model.o tu_cmodel/perf/power_model.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/pipeline_controller.o tu_cmodel/compute/pipeline_controller.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/dataflow_registry.o tu_cmodel/compute/dataflow/dataflow_registry.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/dataflow_dispatcher.o tu_cmodel/compute/dataflow/dataflow_dispatcher.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/weight_stationary.o tu_cmodel/compute/dataflow/weight_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/output_stationary.o tu_cmodel/compute/dataflow/output_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/row_stationary.o tu_cmodel/compute/dataflow/row_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_core.o tu_cmodel/tu_core.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_cluster.o tu_cmodel/tu_cluster.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_status.o tu_cmodel/tu_status.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/tu_context.o tu_cmodel/infra/tu_context.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/weight_compress.o tu_cmodel/memory/weight_compress.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/sparsity/structured_2of4.o tu_cmodel/sparsity/structured_2of4.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_scheduler.o tu_cmodel/isa/tu_scheduler.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_liveness.o tu_cmodel/isa/tu_liveness.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/tu_debug.o tu_cmodel/infra/tu_debug.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/bindings/tu_dpi.o tu_cmodel/bindings/tu_dpi.c
+ar rcs libtucmodel.a tu_cmodel/tu_cmodel.o tu_cmodel/tu_asm.o tu_cmodel/tu_precision.o tu_cmodel/tu_sram.o tu_cmodel/tu_dma.o tu_cmodel/dma_descriptor.o tu_cmodel/rounding.o tu_cmodel/fp8.o tu_cmodel/tf32.o tu_cmodel/command_queue.o tu_cmodel/memory/dram_model.o tu_cmodel/memory/memory_hierarchy.o tu_cmodel/memory/double_buffer.o tu_cmodel/memory/address_generator.o tu_cmodel/isa/tu_isa.o tu_cmodel/compute/elementwise_pipeline.o tu_cmodel/compute/normalization_engine.o tu_cmodel/compute/softmax_engine.o tu_cmodel/compute/convolution_engine.o tu_cmodel/compute/attention_engine.o tu_cmodel/compute/pooling_engine.o tu_cmodel/infra/logging.o tu_cmodel/infra/json_reader.o tu_cmodel/infra/config.o tu_cmodel/tu_int_quant.o tu_cmodel/perf/performance_counters.o tu_cmodel/perf/event_trace.o tu_cmodel/perf/power_model.o tu_cmodel/compute/pipeline_controller.o tu_cmodel/compute/dataflow/dataflow_registry.o tu_cmodel/compute/dataflow/dataflow_dispatcher.o tu_cmodel/compute/dataflow/weight_stationary.o tu_cmodel/compute/dataflow/output_stationary.o tu_cmodel/compute/dataflow/row_stationary.o tu_cmodel/tu_core.o tu_cmodel/tu_cluster.o tu_cmodel/tu_status.o tu_cmodel/infra/tu_context.o tu_cmodel/memory/weight_compress.o tu_cmodel/sparsity/structured_2of4.o tu_cmodel/isa/tu_scheduler.o tu_cmodel/isa/tu_liveness.o tu_cmodel/infra/tu_debug.o tu_cmodel/bindings/tu_dpi.o
++ make test-dataflow
+cc -O2 -Wall -Wextra -std=c11 -fPIC -I. -Itu_cmodel -o test-dataflow tests/test_dataflow.c -L. -ltucmodel -lm
+./test-dataflow
+
+=== TU Dataflow Plugin Tests (Gap A4) ===
+
+  [TEST] registry init and lookup                                PASS
+  [TEST] WS identity 16x16                                       [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] OS identity 16x16                                       [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] RS identity 16x16                                       [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] RS registry lookup by ID and name                       [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] RS-vs-WS equivalence (32x16 random)                     [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] WS-vs-OS equivalence (32x16 random)                     [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] dataflow switch WS→OS mid-session                     [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] edge tiles (31x31x17 non-multiple-of-16)                [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+
+=== Results: 9 passed, 0 failed ===
+
++ make test-config
+cc -O2 -Wall -Wextra -std=c11 -fPIC -I. -Itu_cmodel -o test-config tests/test_config.c ./libtucmodel.a -lm
+tests/test_config.c: In function ‘main’:
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:36:9: note: in expansion of macro ‘CHECK’
+   36 |         CHECK(err == TU_JSON_OK && root.type == TU_JSON_INT && root.int_val == 42, "int parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:45:9: note: in expansion of macro ‘CHECK’
+   45 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:46:9: note: in expansion of macro ‘CHECK’
+   46 |         CHECK(root.type == TU_JSON_DOUBLE && root.double_val > 3.14 && root.double_val < 3.15, "double");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:55:9: note: in expansion of macro ‘CHECK’
+   55 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:57:9: note: in expansion of macro ‘CHECK’
+   57 |         CHECK(s && len == 12 && strncmp(s, "hello, world", 12) == 0, "string");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:66:9: note: in expansion of macro ‘CHECK’
+   66 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:68:9: note: in expansion of macro ‘CHECK’
+   68 |         CHECK(s && len == 13 && strncmp(s, "hello\nworld\t!", 13) == 0, "escapes");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:76:9: note: in expansion of macro ‘CHECK’
+   76 |         CHECK(tu_json_parse("true", &r, NULL, 0) == TU_JSON_OK && r.type == TU_JSON_BOOL && r.bool_val, "true");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:78:9: note: in expansion of macro ‘CHECK’
+   78 |         CHECK(tu_json_parse("false", &r, NULL, 0) == TU_JSON_OK && r.type == TU_JSON_BOOL && !r.bool_val, "false");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:80:9: note: in expansion of macro ‘CHECK’
+   80 |         CHECK(tu_json_parse("null", &r, NULL, 0) == TU_JSON_OK && r.type == TU_JSON_NULL, "null");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:89:9: note: in expansion of macro ‘CHECK’
+   89 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK && root.type == TU_JSON_ARRAY, "parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:90:9: note: in expansion of macro ‘CHECK’
+   90 |         CHECK(root.array.count == 4, "count");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:91:9: note: in expansion of macro ‘CHECK’
+   91 |         CHECK(root.array.items[0].int_val == 1, "idx0");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:92:9: note: in expansion of macro ‘CHECK’
+   92 |         CHECK(root.array.items[1].int_val == 2, "idx1");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:93:9: note: in expansion of macro ‘CHECK’
+   93 |         CHECK(root.array.items[2].int_val == 3, "idx2");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:94:9: note: in expansion of macro ‘CHECK’
+   94 |         CHECK(tu_json_as_string(&root.array.items[3], NULL) != NULL, "idx3");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:103:9: note: in expansion of macro ‘CHECK’
+  103 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:104:9: note: in expansion of macro ‘CHECK’
+  104 |         CHECK(root.object.count == 3, "count");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:107:9: note: in expansion of macro ‘CHECK’
+  107 |         CHECK(v && v->int_val == 32, "rows");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:110:9: note: in expansion of macro ‘CHECK’
+  110 |         CHECK(v && v->int_val == 32, "cols");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:114:9: note: in expansion of macro ‘CHECK’
+  114 |         CHECK(s && len == 6 && strncmp(s, "TinyTU", 6) == 0, "name");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:117:9: note: in expansion of macro ‘CHECK’
+  117 |         CHECK(v == NULL, "missing");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:127:9: note: in expansion of macro ‘CHECK’
+  127 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:131:9: note: in expansion of macro ‘CHECK’
+  131 |         CHECK(c && c->int_val == 99, "nested");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:140:9: note: in expansion of macro ‘CHECK’
+  140 |         CHECK(tu_json_parse(json, &root, NULL, 0) != TU_JSON_OK, "should fail");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:151:9: note: in expansion of macro ‘CHECK’
+  151 |         CHECK(cfg.pe_rows == 16, "pe_rows");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:152:9: note: in expansion of macro ‘CHECK’
+  152 |         CHECK(cfg.pe_cols == 16, "pe_cols");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:153:9: note: in expansion of macro ‘CHECK’
+  153 |         CHECK(cfg.sram_w_size_kb == 128, "w_size");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:154:9: note: in expansion of macro ‘CHECK’
+  154 |         CHECK(cfg.sram_a_size_kb == 64, "a_size");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:155:9: note: in expansion of macro ‘CHECK’
+  155 |         CHECK(cfg.sram_o_size_kb == 64, "o_size");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:156:9: note: in expansion of macro ‘CHECK’
+  156 |         CHECK(cfg.dma_bus_width_bits == 256, "bus");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:157:9: note: in expansion of macro ‘CHECK’
+  157 |         CHECK(cfg.cycle_model == 2, "cycle");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:158:9: note: in expansion of macro ‘CHECK’
+  158 |         CHECK(cfg.counters_enabled, "counters");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:159:9: note: in expansion of macro ‘CHECK’
+  159 |         CHECK(cfg.dataflow_mode == 0, "dataflow");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:190:9: note: in expansion of macro ‘CHECK’
+  190 |         CHECK(tu_config_load_string(json, &cfg, NULL, 0) == 0, "load");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:191:9: note: in expansion of macro ‘CHECK’
+  191 |         CHECK(cfg.pe_rows == 32, "rows");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:192:9: note: in expansion of macro ‘CHECK’
+  192 |         CHECK(cfg.pe_cols == 32, "cols");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:193:9: note: in expansion of macro ‘CHECK’
+  193 |         CHECK(cfg.dataflow_mode == 1, "dataflow=OS");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:194:9: note: in expansion of macro ‘CHECK’
+  194 |         CHECK(cfg.sram_w_size_kb == 256, "w_size");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:195:9: note: in expansion of macro ‘CHECK’
+  195 |         CHECK(cfg.sram_num_banks == 64, "banks");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:196:9: note: in expansion of macro ‘CHECK’
+  196 |         CHECK(cfg.sram_bank_width == 8, "bank_width");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:197:9: note: in expansion of macro ‘CHECK’
+  197 |         CHECK(cfg.dma_bus_width_bits == 512, "dma_bus");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:198:9: note: in expansion of macro ‘CHECK’
+  198 |         CHECK(cfg.dma_async_mode, "async");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:205:9: note: in expansion of macro ‘CHECK’
+  205 |         CHECK(tu_config_load("config/tu_config.json", &cfg, NULL, 0) == 0, "load_file");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:206:9: note: in expansion of macro ‘CHECK’
+  206 |         CHECK(cfg.pe_rows == 16, "rows");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:207:9: note: in expansion of macro ‘CHECK’
+  207 |         CHECK(cfg.pe_cols == 16, "cols");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:208:9: note: in expansion of macro ‘CHECK’
+  208 |         CHECK(cfg.dma_bus_width_bits == 256, "bus");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:216:9: note: in expansion of macro ‘CHECK’
+  216 |         CHECK(tu_config_validate(&cfg, NULL, 0) == 0, "valid default");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:225:9: note: in expansion of macro ‘CHECK’
+  225 |         CHECK(tu_config_validate(&cfg, NULL, 0) != 0, "should reject pe_rows=0");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:234:9: note: in expansion of macro ‘CHECK’
+  234 |         CHECK(tu_config_validate(&cfg, NULL, 0) != 0, "should reject bank_width=3");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:243:9: note: in expansion of macro ‘CHECK’
+  243 |         CHECK(tu_config_validate(&cfg, NULL, 0) != 0, "should reject bus=100");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:255:9: note: in expansion of macro ‘CHECK’
+  255 |         CHECK(tu_config_load_string(json, &cfg, NULL, 0) == 0, "ICC config parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:256:9: note: in expansion of macro ‘CHECK’
+  256 |         CHECK(cfg.icc_switching_mode == TU_ICC_SWITCH_CUT_THROUGH, "switching mode");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:257:9: note: in expansion of macro ‘CHECK’
+  257 |         CHECK(cfg.icc_contention_mode == TU_ICC_CONTENTION_SHARED_LINK, "contention mode");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:258:9: note: in expansion of macro ‘CHECK’
+  258 |         CHECK(cfg.icc_mesh_routing_mode == TU_ICC_MESH_ROUTE_YX, "mesh routing mode");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:259:9: note: in expansion of macro ‘CHECK’
+  259 |         CHECK(cfg.icc_link_bytes_per_cycle == 32, "link width");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:260:9: note: in expansion of macro ‘CHECK’
+  260 |         CHECK(cfg.icc_router_latency_cycles == 3, "router latency");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:262:9: note: in expansion of macro ‘CHECK’
+  262 |         CHECK(rt.icc_switching_mode == TU_ICC_SWITCH_CUT_THROUGH, "runtime switching");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:263:9: note: in expansion of macro ‘CHECK’
+  263 |         CHECK(rt.icc_contention_mode == TU_ICC_CONTENTION_SHARED_LINK, "runtime contention");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:264:9: note: in expansion of macro ‘CHECK’
+  264 |         CHECK(rt.icc_mesh_routing_mode == TU_ICC_MESH_ROUTE_YX, "runtime mesh routing");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:265:9: note: in expansion of macro ‘CHECK’
+  265 |         CHECK(rt.icc_link_bytes_per_cycle == 32, "runtime link width");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:273:9: note: in expansion of macro ‘CHECK’
+  273 |         CHECK(tu_config_load_string(
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:276:9: note: in expansion of macro ‘CHECK’
+  276 |         CHECK(strstr(err, "switching") != NULL, "wrong switch validation error");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:277:9: note: in expansion of macro ‘CHECK’
+  277 |         CHECK(tu_config_load_string(
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:281:9: note: in expansion of macro ‘CHECK’
+  281 |         CHECK(tu_config_load_string(
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:284:9: note: in expansion of macro ‘CHECK’
+  284 |         CHECK(strstr(err, "contention") != NULL, "wrong contention validation error");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:285:9: note: in expansion of macro ‘CHECK’
+  285 |         CHECK(tu_config_load_string(
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:288:9: note: in expansion of macro ‘CHECK’
+  288 |         CHECK(strstr(err, "mesh_routing") != NULL, "wrong mesh routing validation error");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:300:9: note: in expansion of macro ‘CHECK’
+  300 |         CHECK(rt.pe_rows == 32, "rt_rows");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:301:9: note: in expansion of macro ‘CHECK’
+  301 |         CHECK(rt.pe_cols == 64, "rt_cols");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:302:9: note: in expansion of macro ‘CHECK’
+  302 |         CHECK(rt.sram_w_size == 256 * 1024, "rt_w_size");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:313:9: note: in expansion of macro ‘CHECK’
+  313 |         CHECK(err == 0, "init");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:314:9: note: in expansion of macro ‘CHECK’
+  314 |         CHECK(g_tu.rt_cfg.pe_rows == 8, "rt_pe_rows");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:315:9: note: in expansion of macro ‘CHECK’
+  315 |         CHECK(g_tu.rt_cfg.pe_cols == 8, "rt_pe_cols");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:337:9: note: in expansion of macro ‘CHECK’
+  337 |         CHECK(max_err < 0.1f, "mma result close to 16.0");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+./test-config
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 8×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TU initialized from config: 8×8 PE, 256 KB SRAM
+  JSON: integer 42                                       PASS
+  JSON: double 3.14                                      PASS
+  JSON: string hello                                     PASS
+  JSON: string escapes                                   PASS
+  JSON: bool/null                                        PASS
+  JSON: array                                            PASS
+  JSON: object + get                                     PASS
+  JSON: nested objects                                   PASS
+  JSON: trailing characters error                        PASS
+  Config: defaults                                       PASS
+  Config: load from string                               PASS
+  Config: load from file                                 PASS
+  Config: validation pass                                PASS
+  Config: validation fail (bad rows)                     PASS
+  Config: validation fail (bad bank width)               PASS
+  Config: validation fail (bad bus width)                PASS
+  Config: interconnect switching parse + validation      PASS
+  Config: reject unsupported interconnect switching      PASS
+  Config: to runtime conversion                          PASS
+  Config: TU init from config + MMA                      PASS
+
+═══════════════════════════════════════════
+  Test Suite Complete
+  20/20 tests passed
+═══════════════════════════════════════════
++ make test-multicore
+cc -O2 -Wall -Wextra -std=c11 -fPIC -I. -Itu_cmodel -o test-multicore tests/test_multicore.c ./libtucmodel.a -lm
+tests/test_multicore.c: In function ‘test_core_isolation’:
+tests/test_multicore.c:179:23: warning: unused variable ‘out2’ [-Wunused-variable]
+  179 |     fp16_t out1[256], out2[256];
+      |                       ^~~~
+tests/test_multicore.c:179:12: warning: unused variable ‘out1’ [-Wunused-variable]
+  179 |     fp16_t out1[256], out2[256];
+      |            ^~~~
+tests/test_multicore.c: In function ‘test_spmd_execution’:
+tests/test_multicore.c:591:12: warning: variable ‘a_data’ set but not used [-Wunused-but-set-variable]
+  591 |     fp16_t a_data[16];
+      |            ^~~~~~
+tests/test_multicore.c:582:12: warning: variable ‘a_ones’ set but not used [-Wunused-but-set-variable]
+  582 |     fp16_t a_ones[16];
+      |            ^~~~~~
+tests/test_multicore.c:571:17: warning: unused variable ‘program’ [-Wunused-variable]
+  571 |     const char *program =
+      |                 ^~~~~~~
+./test-multicore
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 2 cores, topology=none
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 2 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 6 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [6] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [7] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [8] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [9] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [10] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [11] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [12] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [13] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [14] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [15] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 16 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [6] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [7] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [8] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [9] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [10] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [11] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [12] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [13] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [14] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [15] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [6] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [7] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [8] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [9] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [10] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [11] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [12] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [13] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [14] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [15] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 16 cores, topology=mesh
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [4] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [5] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [6] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [7] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [8] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [9] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [10] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [11] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [12] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [13] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [14] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [15] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 2 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+
+=== TU Multi-Core Cluster Tests (Gap A5) ===
+
+  TEST 1: core lifecycle ... PASS
+  TEST 2: core DMA load/store ... PASS
+  TEST 3: core MMA (identity) ... PASS
+  TEST 4: core state isolation ... PASS
+  TEST 5: cluster ring creation ... PASS
+  TEST 6: cluster mesh creation ... PASS
+  TEST 7: hop distance ... PASS
+  TEST 8: neighbor discovery ... PASS
+  TEST 9: ICC send ... PASS
+  TEST 10: ICC switching timing modes ... PASS
+  TEST 11: ICC simultaneous shared-link contention ... PASS
+  TEST 12: ICC deterministic mesh routing XY/YX ... PASS
+  TEST 13: ICC broadcast ... PASS
+  TEST 14: all-reduce sum ... PASS
+  TEST 15: barrier sync ... PASS
+  TEST 16: SPMD execution ... PASS
+
+=== Results: 16/16 passed, 0 failed ===
++ make test-dpi
+cc -O2 -Wall -Wextra -std=c11 -fPIC -I. -Itu_cmodel -o test-dpi tests/test_dpi.c -L. -ltucmodel -lm
+./test-dpi
+
+=== TU DPI-C Integration Tests (Gap I1) ===
+
+  [TEST] init and destroy single instance                   [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] three simultaneous instances                       [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 32×32 PE, 512 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 8×8 PE, 128 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] SRAM write/read round-trip                         [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] GEMM identity matrix via DPI                       [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] ReLU elementwise via DPI                           [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] softmax via DPI                                    [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] layernorm via DPI                                  [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] performance counters via DPI                       [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] dataflow switch via DPI                            [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] async command submission and sync                  [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] reset and re-use                                   [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] error handling for invalid inputs                  [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+  [TEST] summary string generation                          [       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+
+=== Results: 13 passed, 0 failed ===
+
++ make test-dataflow-sweep
+cc -O2 -Wall -Wextra -std=c11 -fPIC -I. -Itu_cmodel -o test-dataflow-sweep tests/test_dataflow_sweep.c -L. -ltucmodel -lm
+./test-dataflow-sweep
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+
+=== TU CModel Dataflow Sweep: GEMM 128×128×256 ===
+
+PE array: 16×16 (256 MACs), clock: 1 GHz, peak: 0.51 TOPS
+Workload: 8 MFLOPs, DMA: 192 KB (W=64 KB, A=64 KB, O=64 KB)
+
+--- Functional Correctness ---
+  weight_stationary:  O[0]=-14.826792, O[16383]=9.515121 — OK
+  output_stationary:  O[0]=-14.826792, O[16383]=9.515121 — match WS ✓
+  row_stationary:     O[0]=-14.826792, O[16383]=9.515121 — match WS ✓
+
+--- Analytical Cycle Model (pipeline depth=2) ---
+
+  Tiles: 8 M-rows × 8 N-cols = 64 tiles
+  Inner dim K=256, pipeline depth=2
+
+  ┌─────────────────────┬──────────┬──────────┬──────────┐
+  │ Dataflow            │  kCycles │   mTOPS  │  Util %  │
+  ├─────────────────────┼──────────┼──────────┼──────────┤
+  │ weight_stationary   │       20 │    204.8 │    80.0  │
+  │ output_stationary   │       16 │    256.0 │   100.0  │
+  │ row_stationary      │       18 │    226.8 │    88.6  │
+  └─────────────────────┴──────────┴──────────┴──────────┘
+
+  DMA overhead: 6 kCycles (192 KB at 32 B/cycle)
+  Total w/ DMA: WS=26 kCyc, OS=22 kCyc, RS=24 kCyc
+
+--- Key Finding ---
+  OS is 20% faster than WS (16 kCyc vs 20 kCyc)
+  RS is 10% faster than WS (18 kCyc vs 20 kCyc)
+  OS is 11% faster than RS (cycle model omits fill/drain entirely)
+  RS's fill/drain reduction (pd-1 vs pd) saves 31 cycles per tile
+
++ cp /home/zxy/Workplace/books/tusim-book/experiments/ch07_dataflow_probe.c .
++ cc -O2 -Wall -Wextra -std=c11 -I. -Itu_cmodel -o ch07_dataflow_probe ch07_dataflow_probe.c ./libtucmodel.a -lm
++ ./ch07_dataflow_probe
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] DF    [1;33mWARN [0m dataflow id=3 not registered, falling back to WS
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TU initialized from config: 4×8 PE, 256 KB SRAM
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] DF    [1;33mWARN [0m dataflow id=3 not registered, falling back to WS
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+selection registry_count=3 duplicate_addresses=stable json_requested=row_stationary active_after_init=weight_stationary unknown_name=weight_stationary nlr_fallback=weight_stationary dpi_summary=NLR dpi_active=weight_stationary
+core_selection process_global=output_stationary core_snapshot=weight_stationary selection_scope=separate
+case=nonsymmetric shape=2x3x2 pe=4x8 tiles=1 flops=24 cycles_ws=26 cycles_os=3 cycles_rs=15 equivalent=PASS oracle=PASS plugin_tile_flop_stats=cleared
+case=edge-k-boundary shape=9x10x9 pe=4x8 tiles=12 flops=1620 cycles_ws=342 cycles_os=72 cycles_rs=210 equivalent=PASS oracle=PASS plugin_tile_flop_stats=cleared
+case=multi-k shape=5x17x19 pe=4x8 tiles=18 flops=3230 cycles_ws=546 cycles_os=144 cycles_rs=348 equivalent=PASS oracle=PASS plugin_tile_flop_stats=cleared
+subnormal canonical=0x1p-24 ws=0x1p-14 os=0x1p-14 rs=0x1p-14 ratio=1024 shared_defect=PASS
+SUMMARY: PASS failures=0
++ python3 /home/zxy/Workplace/books/tusim-book/experiments/ch07_dataflow_audit.py . e918c80b6fce833cd1fcae97730fa841c2176f25
+pin: e918c80b6fce833cd1fcae97730fa841c2176f25
+source_archive_sha256: PASS (fb023fe79a0e7dafbf334848756e44127101f5fdb75c1004e2ed2712318b708f)
+source_hashes: PASS (15/15)
+shape pe tiles flops ws_cycles os_cycles rs_cycles
+2x3x2 4x8 1 24 26 3 15
+9x10x9 4x8 12 1620 342 72 210
+5x17x19 4x8 18 3230 546 144 348
+31x31x17 16x16 8 32674 580 88 332
+contracts: PASS
++ printf '%s\n' '=== DYNAMIC-DEPENDENCY CHECKS ==='
+=== DYNAMIC-DEPENDENCY CHECKS ===
++ for binary in test-dataflow test-config test-multicore test-dpi test-dataflow-sweep ch07_dataflow_probe
+++ ldd ./test-dataflow
++ deps='	linux-vdso.so.1 (0x0000ffffad8fd000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffffad5d0000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffffad420000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffffad8c4000)'
++ printf '%s\n' '--- test-dataflow' '	linux-vdso.so.1 (0x0000ffffad8fd000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffffad5d0000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffffad420000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffffad8c4000)'
+--- test-dataflow
+	linux-vdso.so.1 (0x0000ffffad8fd000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffffad5d0000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffffad420000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffffad8c4000)
++ case "$deps" in
++ for binary in test-dataflow test-config test-multicore test-dpi test-dataflow-sweep ch07_dataflow_probe
+++ ldd ./test-config
++ deps='	linux-vdso.so.1 (0x0000ffff94ba5000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffff94880000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffff946d0000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff94b6c000)'
++ printf '%s\n' '--- test-config' '	linux-vdso.so.1 (0x0000ffff94ba5000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffff94880000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffff946d0000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff94b6c000)'
+--- test-config
+	linux-vdso.so.1 (0x0000ffff94ba5000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffff94880000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffff946d0000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff94b6c000)
++ case "$deps" in
++ for binary in test-dataflow test-config test-multicore test-dpi test-dataflow-sweep ch07_dataflow_probe
+++ ldd ./test-multicore
++ deps='	linux-vdso.so.1 (0x0000ffffaf103000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffffaedd0000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffffaec20000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffffaf0ca000)'
++ printf '%s\n' '--- test-multicore' '	linux-vdso.so.1 (0x0000ffffaf103000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffffaedd0000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffffaec20000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffffaf0ca000)'
+--- test-multicore
+	linux-vdso.so.1 (0x0000ffffaf103000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffffaedd0000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffffaec20000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffffaf0ca000)
++ case "$deps" in
++ for binary in test-dataflow test-config test-multicore test-dpi test-dataflow-sweep ch07_dataflow_probe
+++ ldd ./test-dpi
++ deps='	linux-vdso.so.1 (0x0000ffff8864f000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffff88320000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffff88170000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff88616000)'
++ printf '%s\n' '--- test-dpi' '	linux-vdso.so.1 (0x0000ffff8864f000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffff88320000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffff88170000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff88616000)'
+--- test-dpi
+	linux-vdso.so.1 (0x0000ffff8864f000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffff88320000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffff88170000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff88616000)
++ case "$deps" in
++ for binary in test-dataflow test-config test-multicore test-dpi test-dataflow-sweep ch07_dataflow_probe
+++ ldd ./test-dataflow-sweep
++ deps='	linux-vdso.so.1 (0x0000ffff811bd000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffff80e00000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffff80c50000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff81184000)'
++ printf '%s\n' '--- test-dataflow-sweep' '	linux-vdso.so.1 (0x0000ffff811bd000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffff80e00000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffff80c50000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff81184000)'
+--- test-dataflow-sweep
+	linux-vdso.so.1 (0x0000ffff811bd000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffff80e00000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffff80c50000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff81184000)
++ case "$deps" in
++ for binary in test-dataflow test-config test-multicore test-dpi test-dataflow-sweep ch07_dataflow_probe
+++ ldd ./ch07_dataflow_probe
++ deps='	linux-vdso.so.1 (0x0000ffff903eb000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffff900b0000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffff8ff00000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff903b2000)'
++ printf '%s\n' '--- ch07_dataflow_probe' '	linux-vdso.so.1 (0x0000ffff903eb000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffff900b0000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffff8ff00000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff903b2000)'
+--- ch07_dataflow_probe
+	linux-vdso.so.1 (0x0000ffff903eb000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffff900b0000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffff8ff00000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff903b2000)
++ case "$deps" in
++ printf '%s\n' '=== ARTIFACT HASHES ==='
+=== ARTIFACT HASHES ===
++ sha256sum /tmp/tusim-ch07-e918c80.tar /home/zxy/Workplace/books/tusim-book/experiments/ch07_dataflow_probe.c /home/zxy/Workplace/books/tusim-book/experiments/ch07_dataflow_audit.py /home/zxy/Workplace/books/tusim-book/experiments/ch07_reproduce.sh libtucmodel.a test-dataflow test-config test-multicore test-dpi test-dataflow-sweep ch07_dataflow_probe
+fb023fe79a0e7dafbf334848756e44127101f5fdb75c1004e2ed2712318b708f  /tmp/tusim-ch07-e918c80.tar
+a7cf6c28459a85d34aebd7ea2350fdb493693acd7ce4a5024daf6b8db7877d08  /home/zxy/Workplace/books/tusim-book/experiments/ch07_dataflow_probe.c
+2d784eef6548c9e6d3b144dc69b7a26ab014290f61d075e1d9607f0b2224e109  /home/zxy/Workplace/books/tusim-book/experiments/ch07_dataflow_audit.py
+5dc17a503298a52b3cc4172620bb3a0a11a6bedc4e5e7fb07883d3aec030c68c  /home/zxy/Workplace/books/tusim-book/experiments/ch07_reproduce.sh
+5ea8d9a7b912fa256246e1179bf77f81b4f16761e3effc517c9f1da5e291c397  libtucmodel.a
+201c51866f2bf0d87d70e3f1486ed1e23350f233c56b16f8e7429cd3929b99ce  test-dataflow
+e10b8493495a1c1f410498a526159358b3a5e6450d23514d2008a4ac63e28350  test-config
+904d0a28556a1f52227c6f2fbf952c0387642b09e29677dd8232cee137bc86a2  test-multicore
+769dcf11e366d4f822296d887f8eee6242019923a4bb45a57f880e68c81ceefe  test-dpi
+dd969b321c7ab11fd5e97210ab3557427c905954726da95d787d6659aacc6581  test-dataflow-sweep
+b9a1307b9b170f658acf22cd2de4037f479734d4e48507eb0de3d4992c08c9b1  ch07_dataflow_probe
+++ git -C /home/zxy/Workplace/projects/tusim status --porcelain=v1
++ test -z ''
++ printf 'REPRODUCTION: PASS\n'
+REPRODUCTION: PASS

@@ -1,0 +1,43 @@
++ ./ch10-probe 
+
+[async_visibility]
+after_submit id=1 engine_cycle=0 queue=1 active=0 data=0 completed=0 cycles_completed=0
+CHECK submit defers bytes and completion           PASS
+after_tick1 retired=0 engine_cycle=1 queue=0 active=1 data=90 completed=1 cycles_completed=53 channel_completed=0
+CHECK visibility precedes channel retirement       PASS
+after_retire engine_cycle=53 active=0 channel_completed=1
+CHECK retirement occurs at cycles_completed        PASS
+
+[channel_and_queue]
+cross_channel tick=1 ch0_active=1 ch1_active=1 d0_done=1 d1_done=1 c0=52 c1=52
+CHECK two channels dispatch in one tick            PASS
+queue_capacity ids=4,5,0 depth=2 submitted=2
+CHECK queue admission is fail-closed at max depth  PASS
+sync_chain id=7 depth=4294967294 submitted=1 completed=3 transfers=3
+CHECK sync chain underflows queued-head depth      PASS
+chain_submit id=10 depth=1 head_is_first=1 tail_is_first=1 next_present=1
+CHECK chain counts one queued head                 PASS
+chain_tick1 depth=0 head_is_second=1 active_is_first=1
+CHECK queued chain node remains while depth is zero PASS
+
+[address_ranges]
+strided2d rc=0 count=8 addrs=0x100,0x104,0x120,0x124,0x140,0x144,0x160,0x164
+CHECK strided iterator uses element stride         PASS
+range_truncation logical=4 capacity=2 r0={0x100,8} r1={0x120,8}
+CHECK range API returns logical count beyond capacity PASS
+im2col_padding single=0xffffffff iterator=0xffffff00
+CHECK im2col padding sentinels differ by API       PASS
+
+[double_buffer_pipeline]
+before_advance tid=0 stage=1 active=11 shadow=22 dst_host_is_shadow=1
+after_advance stage=2 pipe_cycle=0 dma_cycle=1 desc_completed=1 desc_cycles_completed=53 active=22 shadow=7a swapped=1
+CHECK pipeline advances on executor completion flag PASS
+CHECK load wrote old active then swap hid new bytes PASS
+pipeline_stats tiles=1 load=2 compute=5 seq=8 piped=7 speedup=1.142857 pipe_cycle=6
+CHECK single-tile totals use separate formula fields PASS
+
+[counter_domains]
+direct_load global_dma_delta=52 embedded_dma_delta=0 tu_estimated_delta=0 tu_bytes=64
+CHECK direct wrapper samples inactive embedded DMA state PASS
+
+SUMMARY failures=0

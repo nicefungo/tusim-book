@@ -1,0 +1,967 @@
+CHAPTER=9 Memory Hierarchy and Banked Scratchpads
+PIN=e918c80b6fce833cd1fcae97730fa841c2176f25
+ARCHIVE_SHA256=fb023fe79a0e7dafbf334848756e44127101f5fdb75c1004e2ed2712318b708f
+TREE=/tmp/tusim-ch09-reproduction
+KERNEL=Linux ubuntu 5.15.148-tegra #1 SMP PREEMPT Thu Sep 18 15:08:33 PDT 2025 aarch64 aarch64 aarch64 GNU/Linux
+CC=cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+MAKE=GNU Make 4.3
+PYTHON=Python 3.11.15
+SOURCE_IGNORED_INVENTORY_SHA256=a3b635cd47463352c7a2cbd3136d0700d920350d1cb9ce1d1e0645313d0000c1
+SOURCE_AUDIT: PASS (24/24 hashes)
+LIBRARY: SRAM+hierarchy+DRAM objects present; test-memhier aggregate-listed
+CONFIG: capacities+banking parse; capacities propagate; banking/DRAM drop at runtime conversion; GBuf defaults are not parsed by canonical JSON
+INTEGRATION: hierarchy call sites limited to implementation+focused test; direct MMA uses raw SRAM pointers
+STATIC_LIMITS: low-level SRAM arbitration stored/no consumer; low-level conflicts no producer; hierarchy tick does not refill SRAM
+THIRD_SURFACE: cycle-model bank engine source-present, conflict-producing, byte-address-modulo mapped, not TU_OBJS-integrated
+make: Entering directory '/tmp/tusim-ch09-reproduction'
+rm -f tu_cmodel/*.o tu_cmodel/memory/*.o tu_cmodel/sparsity/*.o tu_cmodel/isa/*.o tu_cmodel/compute/*.o tu_cmodel/compute/dataflow/*.o tu_cmodel/infra/*.o tu_cmodel/perf/*.o tu_cmodel/bindings/*.o libtucmodel.a libtucmodel.so
+rm -f test-cmodel test-cmdq test-dma test-dram test-isa test-golden test-golden-full
+rm -f test-dataflow test-elementwise test-bf16 test-memhier test-norm test-logging
+rm -f test-int-quant test-conv test-random
+rm -f test-rounding test-fp8 test-attention test-perf test-pool test-pipeline
+rm -f test-agen test-multicore test-multicore-sweep test-compress test-errors test-config test-softmax test-double test-context test-context-switch-sweep test-compress test-weight-compression-sweep test-sparsity test-sparsity-sweep test-scheduler test-scheduler-sweep test-interconnect-topology-sweep test-interconnect-switching-sweep test-interconnect-contention-sweep test-interconnect-routing-sweep test-liveness test-power test-dpi test-dataflow-sweep test-rounding-sweep test-attention-sweep test-pooling-sweep test-softmax-sweep test-conv-sweep test-norm-sweep test-norm-attention-sweep test-conv-groups-sweep test-conv-pool-cascade test-mma-activation-sweep test-softmax-attention-sweep
+rm -f /tmp/gpt_block_tu /tmp/gpt_block_tu.c /tmp/test_asm
+rm -rf build/ci_reports
+make: Leaving directory '/tmp/tusim-ch09-reproduction'
+make: Entering directory '/tmp/tusim-ch09-reproduction'
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/tu_cmodel.o tu_cmodel/tu_cmodel.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/tu_asm.o tu_cmodel/tu_asm.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/tu_precision.o tu_cmodel/tu_precision.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/tu_sram.o tu_cmodel/tu_sram.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/tu_dma.o tu_cmodel/tu_dma.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/dma_descriptor.o tu_cmodel/dma_descriptor.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/rounding.o tu_cmodel/rounding.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/fp8.o tu_cmodel/fp8.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tf32.o tu_cmodel/tf32.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/command_queue.o tu_cmodel/command_queue.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/dram_model.o tu_cmodel/memory/dram_model.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/memory_hierarchy.o tu_cmodel/memory/memory_hierarchy.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/double_buffer.o tu_cmodel/memory/double_buffer.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/address_generator.o tu_cmodel/memory/address_generator.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_isa.o tu_cmodel/isa/tu_isa.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/elementwise_pipeline.o tu_cmodel/compute/elementwise_pipeline.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/normalization_engine.o tu_cmodel/compute/normalization_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/softmax_engine.o tu_cmodel/compute/softmax_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/convolution_engine.o tu_cmodel/compute/convolution_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/attention_engine.o tu_cmodel/compute/attention_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/pooling_engine.o tu_cmodel/compute/pooling_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/logging.o tu_cmodel/infra/logging.c
+tu_cmodel/infra/logging.c: In function ‘tu_trace_export_vcd’:
+tu_cmodel/infra/logging.c:229:17: warning: unused variable ‘comp_names’ [-Wunused-variable]
+  229 |     const char *comp_names[] = {
+      |                 ^~~~~~~~~~
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/json_reader.o tu_cmodel/infra/json_reader.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/config.o tu_cmodel/infra/config.c
+tu_cmodel/infra/config.c:62:13: warning: ‘parse_opt_uint’ defined but not used [-Wunused-function]
+   62 | static bool parse_opt_uint(const tu_json_value_t *obj, const char *key,
+      |             ^~~~~~~~~~~~~~
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_int_quant.o tu_cmodel/tu_int_quant.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/performance_counters.o tu_cmodel/perf/performance_counters.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/event_trace.o tu_cmodel/perf/event_trace.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/power_model.o tu_cmodel/perf/power_model.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/pipeline_controller.o tu_cmodel/compute/pipeline_controller.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/dataflow_registry.o tu_cmodel/compute/dataflow/dataflow_registry.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/dataflow_dispatcher.o tu_cmodel/compute/dataflow/dataflow_dispatcher.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/weight_stationary.o tu_cmodel/compute/dataflow/weight_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/output_stationary.o tu_cmodel/compute/dataflow/output_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/row_stationary.o tu_cmodel/compute/dataflow/row_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_core.o tu_cmodel/tu_core.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_cluster.o tu_cmodel/tu_cluster.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_status.o tu_cmodel/tu_status.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/tu_context.o tu_cmodel/infra/tu_context.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/weight_compress.o tu_cmodel/memory/weight_compress.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/sparsity/structured_2of4.o tu_cmodel/sparsity/structured_2of4.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_scheduler.o tu_cmodel/isa/tu_scheduler.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_liveness.o tu_cmodel/isa/tu_liveness.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/tu_debug.o tu_cmodel/infra/tu_debug.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/bindings/tu_dpi.o tu_cmodel/bindings/tu_dpi.c
+ar rcs libtucmodel.a tu_cmodel/tu_cmodel.o tu_cmodel/tu_asm.o tu_cmodel/tu_precision.o tu_cmodel/tu_sram.o tu_cmodel/tu_dma.o tu_cmodel/dma_descriptor.o tu_cmodel/rounding.o tu_cmodel/fp8.o tu_cmodel/tf32.o tu_cmodel/command_queue.o tu_cmodel/memory/dram_model.o tu_cmodel/memory/memory_hierarchy.o tu_cmodel/memory/double_buffer.o tu_cmodel/memory/address_generator.o tu_cmodel/isa/tu_isa.o tu_cmodel/compute/elementwise_pipeline.o tu_cmodel/compute/normalization_engine.o tu_cmodel/compute/softmax_engine.o tu_cmodel/compute/convolution_engine.o tu_cmodel/compute/attention_engine.o tu_cmodel/compute/pooling_engine.o tu_cmodel/infra/logging.o tu_cmodel/infra/json_reader.o tu_cmodel/infra/config.o tu_cmodel/tu_int_quant.o tu_cmodel/perf/performance_counters.o tu_cmodel/perf/event_trace.o tu_cmodel/perf/power_model.o tu_cmodel/compute/pipeline_controller.o tu_cmodel/compute/dataflow/dataflow_registry.o tu_cmodel/compute/dataflow/dataflow_dispatcher.o tu_cmodel/compute/dataflow/weight_stationary.o tu_cmodel/compute/dataflow/output_stationary.o tu_cmodel/compute/dataflow/row_stationary.o tu_cmodel/tu_core.o tu_cmodel/tu_cluster.o tu_cmodel/tu_status.o tu_cmodel/infra/tu_context.o tu_cmodel/memory/weight_compress.o tu_cmodel/sparsity/structured_2of4.o tu_cmodel/isa/tu_scheduler.o tu_cmodel/isa/tu_liveness.o tu_cmodel/infra/tu_debug.o tu_cmodel/bindings/tu_dpi.o
+make: Leaving directory '/tmp/tusim-ch09-reproduction'
+
+===== test-memhier =====
+make: Entering directory '/tmp/tusim-ch09-reproduction'
+cc -O2 -Wall -Wextra -std=c11 -fPIC -I. -o test-memhier tests/test_memory_hierarchy.c -L. -ltucmodel -lm
+./test-memhier
+TinyTU Memory Hierarchy — Unit Tests
+=====================================
+Config: RegFile=256 B/PE, SPAD=256 KB (32 banks), GBUF=1 MB (16 banks)
+
+  Hierarchy init + destroy                               PASS
+  Level name lookup                                      PASS
+  Local SPAD read/write via hierarchy                    PASS
+  Global Buffer read/write                               PASS
+  RegFile access tracking                                PASS
+  DRAM access delegation                                 PASS
+  On-chip total size                                     PASS
+  Reset zeros stats, keeps config                        PASS
+  Hierarchy cycle advancement                            PASS
+  Statistics print (smoke)                               PASS
+
+═══════════════════════════════════════════
+  10/10 tests passed
+═══════════════════════════════════════════
+make: Leaving directory '/tmp/tusim-ch09-reproduction'
+
+===== test-cmodel =====
+make: Entering directory '/tmp/tusim-ch09-reproduction'
+cc -O2 -Wall -Wextra -std=c11 -fPIC -I. -o test-cmodel tests/test_cmodel.c -L. -ltucmodel -lm
+tests/test_cmodel.c: In function ‘test_mma_identity_param’:
+tests/test_cmodel.c:136:9: warning: missing initializer for field ‘label’ of ‘mma_dim_config_t’ [-Wmissing-field-initializers]
+  136 |         {16, 16, 16, 16, 16},   /* original 16×16 */
+      |         ^
+tests/test_cmodel.c:89:17: note: ‘label’ declared here
+   89 |     const char *label;
+      |                 ^~~~~
+tests/test_cmodel.c:137:9: warning: missing initializer for field ‘label’ of ‘mma_dim_config_t’ [-Wmissing-field-initializers]
+  137 |         {32, 32, 32, 32, 32},   /* 32×32 PE */
+      |         ^
+tests/test_cmodel.c:89:17: note: ‘label’ declared here
+   89 |     const char *label;
+      |                 ^~~~~
+tests/test_cmodel.c:138:9: warning: missing initializer for field ‘label’ of ‘mma_dim_config_t’ [-Wmissing-field-initializers]
+  138 |         { 8,  8, 16, 16, 16},   /* 8×8 PE */
+      |         ^
+tests/test_cmodel.c:89:17: note: ‘label’ declared here
+   89 |     const char *label;
+      |                 ^~~~~
+tests/test_cmodel.c:139:9: warning: missing initializer for field ‘label’ of ‘mma_dim_config_t’ [-Wmissing-field-initializers]
+  139 |         {16, 16, 32, 16, 16},   /* tall M, exact K multiple */
+      |         ^
+tests/test_cmodel.c:89:17: note: ‘label’ declared here
+   89 |     const char *label;
+      |                 ^~~~~
+tests/test_cmodel.c:140:9: warning: missing initializer for field ‘label’ of ‘mma_dim_config_t’ [-Wmissing-field-initializers]
+  140 |         { 4,  8, 16, 16, 16},   /* non-square */
+      |         ^
+tests/test_cmodel.c:89:17: note: ‘label’ declared here
+   89 |     const char *label;
+      |                 ^~~~~
+tests/test_cmodel.c:141:9: warning: missing initializer for field ‘label’ of ‘mma_dim_config_t’ [-Wmissing-field-initializers]
+  141 |         {16, 16, 48, 48, 48},   /* 48×48, non-power-of-2 */
+      |         ^
+tests/test_cmodel.c:89:17: note: ‘label’ declared here
+   89 |     const char *label;
+      |                 ^~~~~
+tests/test_cmodel.c:142:9: warning: missing initializer for field ‘label’ of ‘mma_dim_config_t’ [-Wmissing-field-initializers]
+  142 |         {16, 16, 20, 20, 20},   /* non-multiple-of-tile dimensions */
+      |         ^
+tests/test_cmodel.c:89:17: note: ‘label’ declared here
+   89 |     const char *label;
+      |                 ^~~~~
+./test-cmodel
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 32×32 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 8×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 32×32 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 2×2 PE, 6 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×3 PE, 24 KB SRAM, dataflow=weight_stationary
+TinyTU CModel — Parameterized Test Suite
+=========================================
+Compile-time TU_PE_ROWS=16 TU_PE_COLS=16 (default)
+
+  FP16 round-trip (1.0)                                  PASS
+  FP16 round-trip (0.0)                                  PASS
+  FP16 round-trip (-2.5)                                 PASS
+  FP16 round-trip (65504.0 — max fp16)                 PASS
+  FP16 round-trip (subnormal: 1e-8, flush-to-zero)       PASS
+  FP16 round-trip (NaN)                                  PASS
+  FP16 round-trip (+Inf)                                 PASS
+
+--- MMA Identity (parameterized PE dimensions) ---
+  MMA identity 16x16 (16×16 PE)                         PASS
+  MMA identity 32x32 (32×32 PE)                         PASS
+  MMA identity 16x16 (8×8 PE)                           PASS
+  MMA identity 32x16 (16×16 PE)                         PASS
+  MMA identity 16x16 (4×8 PE)                           PASS
+  MMA identity 48x48 (16×16 PE)                         PASS
+  MMA identity 20x20 (16×16 PE)                         PASS
+
+--- MMA Known Values ---
+  MMA 32×8 (all-0.5 W, all-2.0 A → 16.0)              PASS
+
+--- MMA Bias ---
+  MMA 16×16×16 with bias (zero W/A)                    PASS
+
+--- Runtime Config ---
+  Runtime config: 32×32 PE array                        PASS
+
+--- Small PE Array ---
+  MMA 4×4×4 with 2×2 PE array                         PASS
+
+--- Edge Cases ---
+  MMA 7×5×9 (non-multiple-of-tile, 4×3 PE)            PASS
+
+═══════════════════════════════════════════
+  19/19 tests passed
+═══════════════════════════════════════════
+make: Leaving directory '/tmp/tusim-ch09-reproduction'
+
+===== test-config =====
+make: Entering directory '/tmp/tusim-ch09-reproduction'
+cc -O2 -Wall -Wextra -std=c11 -fPIC -I. -Itu_cmodel -o test-config tests/test_config.c ./libtucmodel.a -lm
+tests/test_config.c: In function ‘main’:
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:36:9: note: in expansion of macro ‘CHECK’
+   36 |         CHECK(err == TU_JSON_OK && root.type == TU_JSON_INT && root.int_val == 42, "int parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:45:9: note: in expansion of macro ‘CHECK’
+   45 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:46:9: note: in expansion of macro ‘CHECK’
+   46 |         CHECK(root.type == TU_JSON_DOUBLE && root.double_val > 3.14 && root.double_val < 3.15, "double");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:55:9: note: in expansion of macro ‘CHECK’
+   55 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:57:9: note: in expansion of macro ‘CHECK’
+   57 |         CHECK(s && len == 12 && strncmp(s, "hello, world", 12) == 0, "string");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:66:9: note: in expansion of macro ‘CHECK’
+   66 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:68:9: note: in expansion of macro ‘CHECK’
+   68 |         CHECK(s && len == 13 && strncmp(s, "hello\nworld\t!", 13) == 0, "escapes");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:76:9: note: in expansion of macro ‘CHECK’
+   76 |         CHECK(tu_json_parse("true", &r, NULL, 0) == TU_JSON_OK && r.type == TU_JSON_BOOL && r.bool_val, "true");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:78:9: note: in expansion of macro ‘CHECK’
+   78 |         CHECK(tu_json_parse("false", &r, NULL, 0) == TU_JSON_OK && r.type == TU_JSON_BOOL && !r.bool_val, "false");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:80:9: note: in expansion of macro ‘CHECK’
+   80 |         CHECK(tu_json_parse("null", &r, NULL, 0) == TU_JSON_OK && r.type == TU_JSON_NULL, "null");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:89:9: note: in expansion of macro ‘CHECK’
+   89 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK && root.type == TU_JSON_ARRAY, "parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:90:9: note: in expansion of macro ‘CHECK’
+   90 |         CHECK(root.array.count == 4, "count");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:91:9: note: in expansion of macro ‘CHECK’
+   91 |         CHECK(root.array.items[0].int_val == 1, "idx0");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:92:9: note: in expansion of macro ‘CHECK’
+   92 |         CHECK(root.array.items[1].int_val == 2, "idx1");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:93:9: note: in expansion of macro ‘CHECK’
+   93 |         CHECK(root.array.items[2].int_val == 3, "idx2");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:94:9: note: in expansion of macro ‘CHECK’
+   94 |         CHECK(tu_json_as_string(&root.array.items[3], NULL) != NULL, "idx3");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:103:9: note: in expansion of macro ‘CHECK’
+  103 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:104:9: note: in expansion of macro ‘CHECK’
+  104 |         CHECK(root.object.count == 3, "count");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:107:9: note: in expansion of macro ‘CHECK’
+  107 |         CHECK(v && v->int_val == 32, "rows");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:110:9: note: in expansion of macro ‘CHECK’
+  110 |         CHECK(v && v->int_val == 32, "cols");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:114:9: note: in expansion of macro ‘CHECK’
+  114 |         CHECK(s && len == 6 && strncmp(s, "TinyTU", 6) == 0, "name");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:117:9: note: in expansion of macro ‘CHECK’
+  117 |         CHECK(v == NULL, "missing");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:127:9: note: in expansion of macro ‘CHECK’
+  127 |         CHECK(tu_json_parse(json, &root, NULL, 0) == TU_JSON_OK, "parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:131:9: note: in expansion of macro ‘CHECK’
+  131 |         CHECK(c && c->int_val == 99, "nested");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:140:9: note: in expansion of macro ‘CHECK’
+  140 |         CHECK(tu_json_parse(json, &root, NULL, 0) != TU_JSON_OK, "should fail");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:151:9: note: in expansion of macro ‘CHECK’
+  151 |         CHECK(cfg.pe_rows == 16, "pe_rows");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:152:9: note: in expansion of macro ‘CHECK’
+  152 |         CHECK(cfg.pe_cols == 16, "pe_cols");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:153:9: note: in expansion of macro ‘CHECK’
+  153 |         CHECK(cfg.sram_w_size_kb == 128, "w_size");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:154:9: note: in expansion of macro ‘CHECK’
+  154 |         CHECK(cfg.sram_a_size_kb == 64, "a_size");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:155:9: note: in expansion of macro ‘CHECK’
+  155 |         CHECK(cfg.sram_o_size_kb == 64, "o_size");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:156:9: note: in expansion of macro ‘CHECK’
+  156 |         CHECK(cfg.dma_bus_width_bits == 256, "bus");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:157:9: note: in expansion of macro ‘CHECK’
+  157 |         CHECK(cfg.cycle_model == 2, "cycle");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:158:9: note: in expansion of macro ‘CHECK’
+  158 |         CHECK(cfg.counters_enabled, "counters");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:159:9: note: in expansion of macro ‘CHECK’
+  159 |         CHECK(cfg.dataflow_mode == 0, "dataflow");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:190:9: note: in expansion of macro ‘CHECK’
+  190 |         CHECK(tu_config_load_string(json, &cfg, NULL, 0) == 0, "load");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:191:9: note: in expansion of macro ‘CHECK’
+  191 |         CHECK(cfg.pe_rows == 32, "rows");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:192:9: note: in expansion of macro ‘CHECK’
+  192 |         CHECK(cfg.pe_cols == 32, "cols");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:193:9: note: in expansion of macro ‘CHECK’
+  193 |         CHECK(cfg.dataflow_mode == 1, "dataflow=OS");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:194:9: note: in expansion of macro ‘CHECK’
+  194 |         CHECK(cfg.sram_w_size_kb == 256, "w_size");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:195:9: note: in expansion of macro ‘CHECK’
+  195 |         CHECK(cfg.sram_num_banks == 64, "banks");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:196:9: note: in expansion of macro ‘CHECK’
+  196 |         CHECK(cfg.sram_bank_width == 8, "bank_width");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:197:9: note: in expansion of macro ‘CHECK’
+  197 |         CHECK(cfg.dma_bus_width_bits == 512, "dma_bus");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:198:9: note: in expansion of macro ‘CHECK’
+  198 |         CHECK(cfg.dma_async_mode, "async");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:205:9: note: in expansion of macro ‘CHECK’
+  205 |         CHECK(tu_config_load("config/tu_config.json", &cfg, NULL, 0) == 0, "load_file");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:206:9: note: in expansion of macro ‘CHECK’
+  206 |         CHECK(cfg.pe_rows == 16, "rows");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:207:9: note: in expansion of macro ‘CHECK’
+  207 |         CHECK(cfg.pe_cols == 16, "cols");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:208:9: note: in expansion of macro ‘CHECK’
+  208 |         CHECK(cfg.dma_bus_width_bits == 256, "bus");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:216:9: note: in expansion of macro ‘CHECK’
+  216 |         CHECK(tu_config_validate(&cfg, NULL, 0) == 0, "valid default");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:225:9: note: in expansion of macro ‘CHECK’
+  225 |         CHECK(tu_config_validate(&cfg, NULL, 0) != 0, "should reject pe_rows=0");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:234:9: note: in expansion of macro ‘CHECK’
+  234 |         CHECK(tu_config_validate(&cfg, NULL, 0) != 0, "should reject bank_width=3");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:243:9: note: in expansion of macro ‘CHECK’
+  243 |         CHECK(tu_config_validate(&cfg, NULL, 0) != 0, "should reject bus=100");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:255:9: note: in expansion of macro ‘CHECK’
+  255 |         CHECK(tu_config_load_string(json, &cfg, NULL, 0) == 0, "ICC config parse");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:256:9: note: in expansion of macro ‘CHECK’
+  256 |         CHECK(cfg.icc_switching_mode == TU_ICC_SWITCH_CUT_THROUGH, "switching mode");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:257:9: note: in expansion of macro ‘CHECK’
+  257 |         CHECK(cfg.icc_contention_mode == TU_ICC_CONTENTION_SHARED_LINK, "contention mode");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:258:9: note: in expansion of macro ‘CHECK’
+  258 |         CHECK(cfg.icc_mesh_routing_mode == TU_ICC_MESH_ROUTE_YX, "mesh routing mode");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:259:9: note: in expansion of macro ‘CHECK’
+  259 |         CHECK(cfg.icc_link_bytes_per_cycle == 32, "link width");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:260:9: note: in expansion of macro ‘CHECK’
+  260 |         CHECK(cfg.icc_router_latency_cycles == 3, "router latency");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:262:9: note: in expansion of macro ‘CHECK’
+  262 |         CHECK(rt.icc_switching_mode == TU_ICC_SWITCH_CUT_THROUGH, "runtime switching");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:263:9: note: in expansion of macro ‘CHECK’
+  263 |         CHECK(rt.icc_contention_mode == TU_ICC_CONTENTION_SHARED_LINK, "runtime contention");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:264:9: note: in expansion of macro ‘CHECK’
+  264 |         CHECK(rt.icc_mesh_routing_mode == TU_ICC_MESH_ROUTE_YX, "runtime mesh routing");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:265:9: note: in expansion of macro ‘CHECK’
+  265 |         CHECK(rt.icc_link_bytes_per_cycle == 32, "runtime link width");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:273:9: note: in expansion of macro ‘CHECK’
+  273 |         CHECK(tu_config_load_string(
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:276:9: note: in expansion of macro ‘CHECK’
+  276 |         CHECK(strstr(err, "switching") != NULL, "wrong switch validation error");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:277:9: note: in expansion of macro ‘CHECK’
+  277 |         CHECK(tu_config_load_string(
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:281:9: note: in expansion of macro ‘CHECK’
+  281 |         CHECK(tu_config_load_string(
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:284:9: note: in expansion of macro ‘CHECK’
+  284 |         CHECK(strstr(err, "contention") != NULL, "wrong contention validation error");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:285:9: note: in expansion of macro ‘CHECK’
+  285 |         CHECK(tu_config_load_string(
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:288:9: note: in expansion of macro ‘CHECK’
+  288 |         CHECK(strstr(err, "mesh_routing") != NULL, "wrong mesh routing validation error");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:300:9: note: in expansion of macro ‘CHECK’
+  300 |         CHECK(rt.pe_rows == 32, "rt_rows");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:301:9: note: in expansion of macro ‘CHECK’
+  301 |         CHECK(rt.pe_cols == 64, "rt_cols");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:302:9: note: in expansion of macro ‘CHECK’
+  302 |         CHECK(rt.sram_w_size == 256 * 1024, "rt_w_size");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:313:9: note: in expansion of macro ‘CHECK’
+  313 |         CHECK(err == 0, "init");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:314:9: note: in expansion of macro ‘CHECK’
+  314 |         CHECK(g_tu.rt_cfg.pe_rows == 8, "rt_pe_rows");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:315:9: note: in expansion of macro ‘CHECK’
+  315 |         CHECK(g_tu.rt_cfg.pe_cols == 8, "rt_pe_cols");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+tests/test_config.c:24:63: warning: ‘return’ with no value, in function returning non-void [-Wreturn-type]
+   24 | #define CHECK(cond, msg) do { if (!(cond)) { FAIL("%s", msg); return; } } while(0)
+      |                                                               ^~~~~~
+tests/test_config.c:337:9: note: in expansion of macro ‘CHECK’
+  337 |         CHECK(max_err < 0.1f, "mma result close to 16.0");
+      |         ^~~~~
+tests/test_config.c:26:5: note: declared here
+   26 | int main(void) {
+      |     ^~~~
+./test-config
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 8×8 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TU initialized from config: 8×8 PE, 256 KB SRAM
+  JSON: integer 42                                       PASS
+  JSON: double 3.14                                      PASS
+  JSON: string hello                                     PASS
+  JSON: string escapes                                   PASS
+  JSON: bool/null                                        PASS
+  JSON: array                                            PASS
+  JSON: object + get                                     PASS
+  JSON: nested objects                                   PASS
+  JSON: trailing characters error                        PASS
+  Config: defaults                                       PASS
+  Config: load from string                               PASS
+  Config: load from file                                 PASS
+  Config: validation pass                                PASS
+  Config: validation fail (bad rows)                     PASS
+  Config: validation fail (bad bank width)               PASS
+  Config: validation fail (bad bus width)                PASS
+  Config: interconnect switching parse + validation      PASS
+  Config: reject unsupported interconnect switching      PASS
+  Config: to runtime conversion                          PASS
+  Config: TU init from config + MMA                      PASS
+
+═══════════════════════════════════════════
+  Test Suite Complete
+  20/20 tests passed
+═══════════════════════════════════════════
+make: Leaving directory '/tmp/tusim-ch09-reproduction'
+
+===== ch09_memory_probe =====
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 4×8 PE, 36 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TU initialized from config: 4×8 PE, 36 KB SRAM
+SRAM_BUDGET bank_count=32 bank_width=4 sequence=0,3,0 refill=3,3,0 stalled_copy=22222222 conflicts=0 raw_bypass=PASS
+UTILIZATION bank0_served=2 reported=1.0 initial_window_omitted_and_clipped=yes
+ARBITRATION none=10 round_robin=10 priority=10 behavior=identical
+HIERARCHY preinit_override=erased gbuf=1048576B/16banks/8Bword tick_refill=no direct_refill=yes reset_refill_state=preserved regfile_storage=no hits_before_reset=4
+CONFIG requested_banks=8x8B active_banks=32x4B capacities=16384/8192/12288 mma_sram_counter_delta=0/0/0 hierarchy_integration=absent
+SUMMARY: PASS failures=0
+
+===== static-link gates =====
+[test-memhier]
+	linux-vdso.so.1 (0x0000ffffb59c6000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffffb5790000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffffb598d000)
+[test-cmodel]
+	linux-vdso.so.1 (0x0000ffffadc37000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffffad910000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffffad760000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffffadbfe000)
+[test-config]
+	linux-vdso.so.1 (0x0000ffff91bd9000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffff918b0000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffff91700000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffff91ba0000)
+[ch09_memory_probe]
+	linux-vdso.so.1 (0x0000ffffb9a6a000)
+	libm.so.6 => /lib/aarch64-linux-gnu/libm.so.6 (0x0000ffffb9740000)
+	libc.so.6 => /lib/aarch64-linux-gnu/libc.so.6 (0x0000ffffb9590000)
+	/lib/ld-linux-aarch64.so.1 (0x0000ffffb9a31000)
+
+===== artifact hashes =====
+fb023fe79a0e7dafbf334848756e44127101f5fdb75c1004e2ed2712318b708f  /tmp/tusim-e918c80-ch09.tar
+eb89c47cc609e68fe2a71f21d44c2575c061dabbaa4d495dddd167fadfbcc454  /home/zxy/Workplace/books/tusim-book/experiments/ch09_memory_probe.c
+06964d8163788fdd97539efb98f984c7b21e6d50840d09a15dc97c848177cb07  /home/zxy/Workplace/books/tusim-book/experiments/ch09_memory_audit.py
+d8d88abb579376bae67c8ef8fffd1ffe3ff7ece4ec80d7f469a74805ea920c05  /home/zxy/Workplace/books/tusim-book/experiments/ch09_reproduce.sh
+5ea8d9a7b912fa256246e1179bf77f81b4f16761e3effc517c9f1da5e291c397  /tmp/tusim-ch09-reproduction/libtucmodel.a
+7c05ed9a8c83bac8ea5b3185c21500437e55e607d463d47e2d884d378cd60c68  /tmp/tusim-ch09-reproduction/ch09_memory_probe
+SOURCE_STATE: no tracked/nonignored changes; ignored inventory unchanged
+REPRODUCTION: PASS

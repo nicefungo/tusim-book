@@ -1,0 +1,67 @@
++ ./ch10-extended 
+
+[timing_boundaries]
+timing size=0 formula=50+ceil(0/32) expected=50 observed=50 issued=0
+CHECK service formula and inert issue timestamp        PASS
+timing size=1 formula=50+ceil(1/32) expected=51 observed=51 issued=0
+CHECK service formula and inert issue timestamp        PASS
+timing size=31 formula=50+ceil(31/32) expected=51 observed=51 issued=0
+CHECK service formula and inert issue timestamp        PASS
+timing size=32 formula=50+ceil(32/32) expected=51 observed=51 issued=0
+CHECK service formula and inert issue timestamp        PASS
+timing size=33 formula=50+ceil(33/32) expected=52 observed=52 issued=0
+CHECK service formula and inert issue timestamp        PASS
+timing size=64 formula=50+ceil(64/32) expected=52 observed=52 issued=0
+CHECK service formula and inert issue timestamp        PASS
+timing size=65 formula=50+ceil(65/32) expected=53 observed=53 issued=0
+CHECK service formula and inert issue timestamp        PASS
+descriptor_store size=64 macro=TU_LATENCY_DRAM_READ value=50 observed=52
+CHECK descriptor store uses read-latency macro         PASS
+
+[geometry_oracles]
+geom2d payload=12 src_span=17 dst_span=19 rows_ok=1 canaries_ok=1
+CHECK 2D nonsymmetric strides match independent oracle PASS
+geom3d payload=12 src_span=21 dst_span=30 rows_ok=1 canaries_ok=1
+CHECK 3D nonsymmetric strides match independent oracle PASS
+scatter accounted=3 events=3 unique_offsets=2 final4=b2 final8=c3
+CHECK duplicate scatter separates events from unique bytes PASS
+multicast source_payload=4 requested_fanout=8 delivered=8
+CHECK multicast distinguishes source and fanout bytes  PASS
+
+[borrowed_state]
+borrowed mutated_src=a5 mutated_index=5 observed_at5=a5 old_at1=00
+CHECK source and index list are borrowed until execution PASS
+
+[queue_link_corruption]
+chain_then_head a0_next_is_q=1 a1_disconnected=1 head_a0=1 tail_q=1 depth=2
+CHECK later head overwrites first chain linkage        PASS
+submit_while_active active_b0=1 head_b1=1 b0_next_q=1 q_reachable_from_head=0 depth=1
+CHECK stale tail makes new head unreachable from pending head PASS
+
+[bandwidth_resource_sweep]
+bw_on shared_region ch0_service=530 ch1_service=530 delta=0
+CHECK shared-region same-tick estimates are equal      PASS
+bw_on separate_regions ch0_service=530 ch1_service=530
+CHECK separate regions match shared-region service estimate PASS
+bw_off shared_region ch0_service=82 ch1_service=82 expected=82
+CHECK bandwidth switch changes estimate but not channel equality PASS
+
+[error_lifecycle]
+sync_error id=23 flag=0 timestamp=0 channel_completed=1 transfers=0 depth=0
+CHECK sync failed executor still increments channel completion PASS
+async_error_after_select flag=0 timestamp=0 active=1 completed_count=0
+CHECK async failed executor leaves zero-timestamp active descriptor PASS
+async_error_after_next_tick active=0 completed_count=1 transfers=0
+CHECK async failed executor retires as channel-completed next tick PASS
+flush_error flag=0 timestamp=0 completed_count=1 transfers=0
+CHECK flush failed executor still increments channel completion PASS
+
+[config_ab]
+json_parse rc=0 bus_bits=128 burst=32 channels=1 depth=2 async=1 multicast=0
+CHECK JSON parser stores nondefault DMA fields         PASS
+config_path rc=0 requested_async=1 active_async=0 requested_channels=1 active_channels=3 requested_depth=2 active_depth=4 requested_bus_bits=128 compile_bus_bits=256
+CHECK top-level config path omits nondefault DMA fields PASS
+direct_path active_async=1 active_channels=1 active_depth=2
+CHECK direct initializer activates async/channel/depth values PASS
+
+EXTENDED_SUMMARY failures=0
