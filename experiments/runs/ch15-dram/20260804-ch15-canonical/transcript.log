@@ -1,0 +1,21 @@
+CH15_AUDIT start
+run_id=20260804-ch15-canonical
+pin=e918c80b6fce833cd1fcae97730fa841c2176f25
+2026-08-04T18:26:18+08:00
+book_head=688fd1d893c23670040f15fae69fb7c4cd19dd97
+TUSIM_PRE PASS head=e918c80b6fce833cd1fcae97730fa841c2176f25
+MEMBERSHIP dram-target=true
+MEMBERSHIP dram-aggregate=true
+MEMBERSHIP cycle-model-absent-tu-objs=true
+CH15_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=15 predicates=39 checks=54
+SOURCE_AUDIT_MUTATION PASS rc=1
+ARCHIVE_MEMBER PASS dram_model.o
+ARCHIVE_MEMBER PASS memory_hierarchy.o
+STATIC_LINK_PASS ch15-test-dram
+STATIC_LINK_PASS ch15-probe
+FOCUSED_TEST PASS 12/12
+FOCUSED_TEST_MUTATION PASS expected=11/12
+PROBE PASS
+TUSIM_POST PASS head=e918c80b6fce833cd1fcae97730fa841c2176f25 ignored_inventory_unchanged=yes
+BOOK_POST PASS inputs_unchanged=yes status_unchanged_outside_run=yes remote_unchanged=yes no_push_performed=yes
+CH15_AUDIT_SNAPSHOT_MATCHED_EXPECTED_FINDINGS

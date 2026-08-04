@@ -1,0 +1,19 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/aarch64-linux-gnu/libthread_db.so.1".
+CH15_PROBE start
+PRESET hbm2 bw=256.0 channels=8 burst=64 rlat=50 hbm3_bw=819.0 hbm3_channels=16
+ESTIMATE hbm2_read64=51 hbm3_read819=41
+INITIAL cycle=0 window=0 budget=0
+ACCESS first cycles=50 stall=1000 current=0 budget=0 pending_r=64 ch0_avail=50
+ACCESS same_channel cycles=50 stall=1050 current=0
+ACCESS next_channel cycles=50 stall=1000 current=0 ch1_avail=50
+REFILL cycle=1000 cycles=50 stall=0 budget=255936 pending_r=64
+ROW read_cycles=60 read_stall=1000 write_cycles=50 write_stall=1060 conflicts=1
+STATS cycle=0 read_bw=1024.0 util=4.0 peak=256.0
+METER first_bw_stall_request=2001 pending=128064 budget=127936 current=1000
+RESET stale_start=1000 stale_size=1000 cycles=50 stall=0 budget=255936 current=0
+CLOCK peak1=256 peak2=128 estimate_before=51 estimate_after=51
+HIER type=1 rc=0 stall=1000 marker=0x5a dram_cycle=0
+CONFIG rc=0 type=3 bw=777.0 row=1 rlat=33 wlat=44 manual_bw=819.0 manual_row=0
+CH15_PROBE SUMMARY failures=0
+[Inferior 1 (process 92222) exited normally]

@@ -22,6 +22,7 @@ This directory contains the source-backed technical/academic reference book for 
 - [Chapter 12 — Multi-Core Clusters and Interconnect Heuristic Estimates](manuscript/part-2-core/12-multi-core-clusters-and-interconnect-heuristics.md) — complete first draft; canonical-v5 evidence reseal passed; clean technical, editorial, and reproducibility re-review passed
 - [Chapter 13 — Weight Streams: Quantization, Structured Sparsity, and Compression](manuscript/part-2-core/13-weight-streams-quantization-sparsity-compression.md) — complete first draft; canonical-v8 evidence seal passed; skeptical pre-draft and independent technical/editorial/reproducibility review findings resolved
 - [Chapter 14 — Operator Compute Engines: Functional Semantics and Engine Metrics](manuscript/part-2-core/14-operator-compute-engines-functional-semantics-and-engine-metrics.md) — complete first draft; canonical-v3 evidence seal passed; skeptical pre-draft and independent technical/editorial/reproducibility review findings resolved
+- [Chapter 15 — DRAM Service Models and Bandwidth Claims](manuscript/part-2-core/15-dram-service-models-and-bandwidth-claims.md) — complete first draft; canonical-v3 evidence seal passed; independent technical/editorial/reproducibility review findings resolved and clean re-review passed
 
 ## Editorial foundations
 
@@ -30,19 +31,6 @@ This directory contains the source-backed technical/academic reference book for 
 - [Stable-snapshot source audit](source-audit.md)
 - [Fidelity matrix](fidelity-matrix.md)
 - [Verified foundation references](references/foundations.md)
-- [Latest closed-session handoff — Chapter 14](notes/handoffs/2026-08-04-chapter-14.md)
-- [Previous closed-session handoff — Chapter 13](notes/handoffs/2026-08-03-chapter-13.md)
-- [Previous closed-session handoff — Chapter 12](notes/handoffs/2026-07-28-chapter-12.md)
-- [Previous closed-session handoff — Chapter 11](notes/handoffs/2026-07-28-chapter-11.md)
-- [Previous closed-session handoff — Chapter 10](notes/handoffs/2026-07-27-chapter-10.md)
-- [Previous closed-session handoff — Chapter 9](notes/handoffs/2026-07-26-chapter-09.md)
-- [Previous closed-session handoff — Chapter 8](notes/handoffs/2026-07-25-chapter-08.md)
-- [Previous closed-session handoff — Chapter 7](notes/handoffs/2026-07-25-chapter-07.md)
-- [Previous closed-session handoff — Chapter 6](notes/handoffs/2026-07-25-chapter-06.md)
-- [Previous closed-session handoff — Chapter 5](notes/handoffs/2026-07-25-chapter-05.md)
-- [Previous closed-session handoff — Chapter 4](notes/handoffs/2026-07-25-chapter-04.md)
-- [Previous closed-session handoff — Chapter 3](notes/handoffs/2026-07-25-chapter-03.md)
-- [Previous handoff — Chapters 1–2](notes/handoffs/2026-07-25-chapters-01-02.md)
 
 ## Writing status
 
@@ -66,6 +54,7 @@ This directory contains the source-backed technical/academic reference book for 
 | Chapter 12 | complete 6,893-word first draft; canonical-v5 reproduces 28 source hashes, 155 structural/reachability predicates, 183 total source checks, 16/16 focused multicore tests, forced 15/16 mutation failure, the exact heuristic counterexample, retained pre-draft validation, and outer bundle closure; clean technical, editorial, and reproducibility re-review passed |
 | Chapter 13 | complete 5,624-word first draft; canonical-v8 reproduces 25 source hashes, 138 structural/reachability predicates, 163 total source checks, 14/14 int-quant, 27/27 sparsity, 24/24 compress, forced 26/27 mutation failure, exact byte/estimate probe findings, retained pre-draft validation, and outer bundle closure; skeptical pre-draft review and independent technical/editorial/reproducibility review findings resolved |
 | Chapter 14 | complete 6,100-word first draft; canonical-v3 reproduces 28 source hashes, 46 structural/reachability predicates, 74 total source checks, 16/16 elementwise, 11/11 norm, 12/12 conv, 14/14 pool, 11/11 pipeline, 15/15 standalone softmax, qualified attention (6–8/9 rc=1, UB-dependent failing subset, never 9/9), forced 14/15 softmax mutation, the metric census (96/80/40) and exact engine probe findings, retained pre-draft validation, and outer bundle closure; skeptical pre-draft review and independent technical/editorial/reproducibility review findings resolved |
+| Chapter 15 | complete 6,450-word first draft; canonical-v3 reproduces 23 source hashes, 62 structural/reachability predicates, 85 total checks, DRAM 12/12, hierarchy 10/10, source-linked cycle model 21/21, power 20/20, forced 11/12 mutation with inferior code 01, expanded state-machine/64-byte-sentinel probe, four historical-sweep contradictions, immutable manifest, and 13-file predraft validation; independent technical/editorial/reproducibility review findings resolved and clean re-review passed |
 
 ## Evidence policy
 

@@ -1,0 +1,28 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/aarch64-linux-gnu/libthread_db.so.1".
+
+=== TU Power/Energy Model Tests ===
+
+  TEST  1: tech_node_lookup                                   PASS
+  TEST  2: tech_node_from_string                              PASS
+  TEST  3: power_model_init                                   PASS
+  TEST  4: power_model_tech_nodes                             PASS
+  TEST  5: power_mac_recording                                PASS
+  TEST  6: power_memory_recording                             PASS
+  TEST  7: power_dram_recording                               PASS
+  TEST  8: power_dma_recording                                PASS
+  TEST  9: power_tick                                         PASS
+  TEST 10: power_total                                        PASS
+  TEST 11: power_avg_power                                    PASS
+  TEST 12: power_breakdown                                    PASS
+  TEST 13: power_area_estimate                                PASS
+  TEST 14: power_snapshot_diff                                PASS
+  TEST 15: power_reset                                        PASS
+  TEST 16: power_tech_switch                                  PASS
+  TEST 17: power_disable                                      PASS
+  TEST 18: power_energy_scaling                               PASS
+  TEST 19: power_config_integration                           PASS
+  TEST 20: power_numeric_stability                            PASS
+
+Results: 20/20 tests passed
+[Inferior 1 (process 95154) exited normally]

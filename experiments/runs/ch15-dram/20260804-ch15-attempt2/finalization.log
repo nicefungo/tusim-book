@@ -1,0 +1,22 @@
+archive-members.txt: OK
+build.log: OK
+ch15-probe.log: OK
+input-hashes.txt: OK
+inputs/PLAN.md: OK
+inputs/edition.yaml: OK
+inputs/experiments/ch15-dram-audit-2026-08-04.md: OK
+inputs/experiments/ch15_dram_probe.c: OK
+inputs/experiments/ch15_predraft_validate.py: OK
+inputs/experiments/ch15_source_audit.py: OK
+inputs/experiments/run_ch15_dram_audit.sh: OK
+inputs/notes/chapter-15-framing-and-evidence-plan.md: OK
+inputs/notes/chapter-15-source-and-claim-ledger.md: OK
+inputs/notes/whole-book-replanning-2026-08-04.md: OK
+inputs/references/foundations.md: OK
+source-archive-sha256.txt: OK
+source-audit-mutation.log: OK
+source-audit.log: OK
+test-dram-mutation.log: OK
+test-dram.log: OK
+transcript.log: OK
+FINALIZED_RUN PASS run_dir=20260804-ch15-canonical manifest=20260804-ch15-canonical/sha256-retained.txt transcript_sha256=336b16530d7c9434b1a4bafcc9df16cffaf1a6f54738947d1ef1f905249adf2b

@@ -1,0 +1,21 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/aarch64-linux-gnu/libthread_db.so.1".
+TinyTU Memory Hierarchy — Unit Tests
+=====================================
+Config: RegFile=256 B/PE, SPAD=256 KB (32 banks), GBUF=1 MB (16 banks)
+
+  Hierarchy init + destroy                               PASS
+  Level name lookup                                      PASS
+  Local SPAD read/write via hierarchy                    PASS
+  Global Buffer read/write                               PASS
+  RegFile access tracking                                PASS
+  DRAM access delegation                                 PASS
+  On-chip total size                                     PASS
+  Reset zeros stats, keeps config                        PASS
+  Hierarchy cycle advancement                            PASS
+  Statistics print (smoke)                               PASS
+
+═══════════════════════════════════════════
+  10/10 tests passed
+═══════════════════════════════════════════
+[Inferior 1 (process 95128) exited normally]

@@ -1,0 +1,5 @@
+RECOMPUTE HBM2 8GHz eff=32.0 dma=6144 total=22560 tops=2.975 loss=0.0% dma_share=27.2%
+RECOMPUTE DDR5 8GHz eff=6.4 dma=30720 total=47136 tops=1.424 loss=52.1% dma_share=65.2%
+RECOMPUTE DDR4 8GHz eff=3.2 dma=61440 total=77856 tops=0.862 loss=71.0% dma_share=78.9%
+RECOMPUTE DDR4 1GHz tops=0.348 loss=6.4% conclusion_identical=false
+SWEEP_RECOMPUTE PASS contradictions=4 historical_report_not_decision_evidence=yes

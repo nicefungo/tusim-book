@@ -1,0 +1,42 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/aarch64-linux-gnu/libthread_db.so.1".
+
+=== TU DRAM Model Tests ===
+
+  [1] Create all DRAM types ... PASS
+  [2] Custom DRAM parameters ... PASS
+  [3] Ideal DRAM zero latency ... PASS
+  [4] HBM2 access timing ... PASS
+  [5] Statistics accumulation ... PASS
+  [6] Bandwidth estimation ... PASS
+  [7] Null safety ... PASS
+  [8] Reset clears statistics ... PASS
+  [9] Tick advances cycle counter ... PASS
+  [10] Peak BW per cycle ... PASS
+  [11] Print stats ... 
+
+── DRAM Statistics (HBM2) ──
+  Type:                  HBM2
+  Peak bandwidth:        256.0 GB/s
+  Channels:              8
+  Read latency:          50 cycles
+  Write latency:         50 cycles
+  ─────────────────────────────────
+  Total reads:           1
+  Total writes:          1
+  Read bytes:            1024
+  Write bytes:           512
+  Read cycles:           50
+  Write cycles:          50
+  Stall cycles:          2050
+  Row conflicts:         0
+  ─────────────────────────────────
+  Eff. read BW:          1024.00 GB/s
+  Eff. write BW:         512.00 GB/s
+  Utilization:           600.0%
+────────────────────────────────
+PASS
+  [12] All types have valid parameters ... PASS
+
+=== Results: 12/12 passed ===
+[Inferior 1 (process 92174) exited normally]
