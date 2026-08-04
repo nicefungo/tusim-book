@@ -1,0 +1,23 @@
++ timeout 90s /tmp/tusim-ch14-work.qzG4rg/ch14-test-pipeline 
+
+===========================================
+  Software Pipelining Controller Tests
+  (Gap E2 — Tile-level DMA/Compute Overlap)
+===========================================
+
+  TEST pipeline initialization ... PASS
+  TEST auto initialization on first submit ... PASS
+  TEST free slots tracking ... PASS
+  TEST stage progression DMA_PRELOAD->COMPUTE->DMA_STORE->DONE ... PASS
+  TEST overlap accounting with depth=2 ... tu_db: pipeline_test double-buffered (65536 bytes ×2 = 131072 total)
+PASS
+  TEST measurable speedup with pipelining (depth=2 vs depth=1) ... PASS
+  TEST sync and idle detection ... PASS
+  TEST backpressure and stall tracking ... PASS
+  TEST config defaults ... PASS
+  TEST statistics completeness after multi-tile run ... PASS
+  TEST reset clears pipeline state ... PASS
+
+-------------------------------------------
+  Results: 11/11 passed
+-------------------------------------------

@@ -1,0 +1,21 @@
++ timeout 90s /tmp/tusim-ch14-work.rCf6Ne/ch14-test-convolution 
+
+╔══════════════════════════════════════════════════╗
+║  TinyTU Convolution Engine Tests (O2)           ║
+╚══════════════════════════════════════════════════╝
+
+  Conv dims: 32×32 input, 3×3 kernel, stride=1, pad=1   PASS
+  Conv dims: 32×32 input, 3×3 kernel, stride=2, pad=1   PASS
+  Conv dims: invalid (too small, kernel > input)          PASS
+  im2col NHWC: 3×3 input, 2×2 kernel, stride=1, pad=0   PASS
+  im2col NHWC: 2×2 input, pad=1, same padding            PASS
+  Direct conv NCHW: identity kernel (1×1, 1 filter, 1 channel) PASS
+  Direct conv NCHW: 3×3 input, 2×2 kernel, 2 channels   PASS
+  Direct conv: stride=2, 5×5 input, 2×2 kernel          PASS
+  Depthwise conv (groups=channels): 2 channels, 2×2 kernel PASS
+  Conv with fused ReLU (negative input → 0 output)      PASS
+  Conv cycle estimate > 0 for valid config                PASS
+  im2col+GEMM pipeline vs direct reference (1×1 kernel)  PASS
+
+  12/12 tests passed
+

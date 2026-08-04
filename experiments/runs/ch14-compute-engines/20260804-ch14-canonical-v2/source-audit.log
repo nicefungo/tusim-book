@@ -1,0 +1,9 @@
++ python3 /home/zxy/Workplace/books/tusim-book/experiments/ch14_source_audit.py /tmp/tusim-ch14-work.rCf6Ne e918c80b6fce833cd1fcae97730fa841c2176f25 
+TEST_MEMBERSHIP test-elementwise=true
+TEST_MEMBERSHIP test-norm=true
+TEST_MEMBERSHIP test-conv=true
+TEST_MEMBERSHIP test-attention=true
+TEST_MEMBERSHIP test-pool=true
+TEST_MEMBERSHIP test-pipeline=true
+TEST_MEMBERSHIP test-softmax=false
+CH14_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=28 predicates=46 checks=74

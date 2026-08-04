@@ -1,0 +1,22 @@
++ timeout 90s /tmp/tusim-ch14-work.qzG4rg/ch14-test-pooling 
+pool: input height 2 + padding 0 < kernel 5
+pool: src overflow 300 + 64 > 256
+  pool_dim_computation                                   PASS
+  maxpool_basic                                          PASS
+  maxpool_stride1                                        PASS
+  maxpool_negative                                       PASS
+  avgpool_basic                                          PASS
+  avgpool_exclude_pad                                    PASS
+  maxpool_with_padding                                   PASS
+  avgpool_padding                                        PASS
+  pool_all_equal                                         PASS
+  pool_single_element                                    PASS
+  pool_rectangular_kernel                                PASS
+  pool_full_execution                                    PASS
+  pool_multichannel                                      PASS
+  pool_validation                                        PASS
+
+═══════════════════════════════════════════
+  Test Suite Complete
+  14/14 tests passed
+═══════════════════════════════════════════

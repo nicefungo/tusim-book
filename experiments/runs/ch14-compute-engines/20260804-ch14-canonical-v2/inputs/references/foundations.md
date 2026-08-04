@@ -122,12 +122,6 @@ Pitch Patarasuk and Xin Yuan, “Bandwidth Optimal All-reduce Algorithms for Clu
 
 **Safe use:** Collective performance depends on the communication algorithm, topology assumptions, and cost model; reduce-scatter/allgather constructions provide a contrast to host-side gather/sum/writeback. The paper does not validate Tusim's functional all-reduce or supply transferable cycle counts.
 
-## [DAO22] FlashAttention
-
-Tri Dao, Daniel Y. Fu, Stefano Ermon, Atri Rudra, and Christopher Ré, “FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness,” *Advances in Neural Information Processing Systems (NeurIPS)* 35, 2022. [arXiv:2205.14135v2](https://arxiv.org/abs/2205.14135) (metadata verified 2026-08-04); DOI for arXiv record: [10.48550/arXiv.2205.14135](https://doi.org/10.48550/arXiv.2205.14135). Official project: <https://github.com/Dao-AILab/flash-attention>.
-
-**Safe use:** Tiled softmax attention with online row statistics explains why an attention engine stages Q/K/V/P tiles in on-chip memory and why tile geometry interacts with SRAM capacity; the paper's IO-aware complexity vocabulary is design context, not validation of Tusim's cycle equations or its FP16 staging defect.
-
 ## Bibliographic cautions
 
 - Check arXiv identifiers by title; plausible numeric IDs can refer to unrelated fields.

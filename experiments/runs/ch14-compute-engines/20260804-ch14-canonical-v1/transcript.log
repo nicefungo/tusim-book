@@ -1,0 +1,304 @@
+
+===== provenance before =====
+utc=2026-08-04T08:20:22Z
+book_root=/home/zxy/Workplace/books/tusim-book
+book_head=fb802979afc20a7736b820b9a0b1c0d362b64827
+book_branch=main
+tusim_root=/home/zxy/Workplace/projects/tusim
+tusim_head=e918c80b6fce833cd1fcae97730fa841c2176f25
+tusim_branch=DETACHED
+tusim_status_bytes=0
+tusim_ignored_inventory_sha256=bb6aa62e0a80724a77579cdf4ec844acba8d5f59a1d3b4418d0025b4456415ab
+
+===== create pinned disposable source =====
++ git -C /home/zxy/Workplace/projects/tusim archive --format=tar --output=/tmp/tusim-ch14-archive.ZG7c4v.tar e918c80b6fce833cd1fcae97730fa841c2176f25 
+fb023fe79a0e7dafbf334848756e44127101f5fdb75c1004e2ed2712318b708f  source-at-pin.tar
++ tar -xf /tmp/tusim-ch14-archive.ZG7c4v.tar -C /tmp/tusim-ch14-work.qzG4rg 
+
+===== source and artifact input hashes =====
+304e1c846ddd2a465eb09427f4959dd02505a105546bb0b02e51d921c4c800ae  edition.yaml
+2002bef0581ab180449e8deccb5b8a9fef7668923d23d6c6da5c4d4cafa1be4c  experiments/ch14_source_audit.py
+4b785286aa1fa162e2d29c43a4f60489f1dd227b753cf59ddf58c63b03ec2595  experiments/ch14_compute_engines_probe.c
+275d02cc0d13c7e177cfa47a02e361ad5b0e47fc4fa1ec0f3bd71cf72781a890  experiments/run_ch14_compute_engines_audit.sh
+3037d77c47039d589c226ced2ecb0a39e875db6ba5beaff5425345bc3f086f5d  experiments/ch14_predraft_validate.py
+d5e49458703e13f2a64efd7f5d12f5e36423998d01b755c3b0a90e4422b5751e  experiments/ch14-compute-engines-audit-2026-08-04.md
+cbe524530fe4b0f19a3a42f31ad466f5c0648f088bb3bb600d4250da0d6c7ee0  notes/chapter-14-framing-and-evidence-plan.md
+a661eed42677abccf6d8149f9fae3fe0738f28826c4134773727105fa966eb8c  notes/chapter-14-source-and-claim-ledger.md
+3d8b02459d065f6cfd9b749553e9927652bf67951ccf58d10d4286c84225f7d2  references/foundations.md
+
+===== fail-closed source audit =====
++ python3 /home/zxy/Workplace/books/tusim-book/experiments/ch14_source_audit.py /tmp/tusim-ch14-work.qzG4rg e918c80b6fce833cd1fcae97730fa841c2176f25 
+TEST_MEMBERSHIP test-elementwise=true
+TEST_MEMBERSHIP test-norm=true
+TEST_MEMBERSHIP test-conv=true
+TEST_MEMBERSHIP test-attention=true
+TEST_MEMBERSHIP test-pool=true
+TEST_MEMBERSHIP test-pipeline=true
+TEST_MEMBERSHIP test-softmax=false
+CH14_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=28 predicates=46 checks=74
+
+===== source-audit mutation control =====
+SOURCE_AUDIT_MUTATION PASS rc=1 restored=yes
+
+===== contained static archive build =====
++ make -C /tmp/tusim-ch14-work.qzG4rg -j2 libtucmodel.a 
+make: Entering directory '/tmp/tusim-ch14-work.qzG4rg'
+cc -O2 -Wall -Wextra -std=c11 -fPIC -c -o tu_cmodel/dma_descriptor.o tu_cmodel/dma_descriptor.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/rounding.o tu_cmodel/rounding.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/fp8.o tu_cmodel/fp8.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tf32.o tu_cmodel/tf32.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/dram_model.o tu_cmodel/memory/dram_model.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/memory_hierarchy.o tu_cmodel/memory/memory_hierarchy.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/double_buffer.o tu_cmodel/memory/double_buffer.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/address_generator.o tu_cmodel/memory/address_generator.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_isa.o tu_cmodel/isa/tu_isa.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/elementwise_pipeline.o tu_cmodel/compute/elementwise_pipeline.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/normalization_engine.o tu_cmodel/compute/normalization_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/softmax_engine.o tu_cmodel/compute/softmax_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/convolution_engine.o tu_cmodel/compute/convolution_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/attention_engine.o tu_cmodel/compute/attention_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/pooling_engine.o tu_cmodel/compute/pooling_engine.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/logging.o tu_cmodel/infra/logging.c
+tu_cmodel/infra/logging.c: In function ‘tu_trace_export_vcd’:
+tu_cmodel/infra/logging.c:229:17: warning: unused variable ‘comp_names’ [-Wunused-variable]
+  229 |     const char *comp_names[] = {
+      |                 ^~~~~~~~~~
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/json_reader.o tu_cmodel/infra/json_reader.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/config.o tu_cmodel/infra/config.c
+tu_cmodel/infra/config.c:62:13: warning: ‘parse_opt_uint’ defined but not used [-Wunused-function]
+   62 | static bool parse_opt_uint(const tu_json_value_t *obj, const char *key,
+      |             ^~~~~~~~~~~~~~
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_int_quant.o tu_cmodel/tu_int_quant.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/performance_counters.o tu_cmodel/perf/performance_counters.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/event_trace.o tu_cmodel/perf/event_trace.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/perf/power_model.o tu_cmodel/perf/power_model.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/pipeline_controller.o tu_cmodel/compute/pipeline_controller.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/dataflow_registry.o tu_cmodel/compute/dataflow/dataflow_registry.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/dataflow_dispatcher.o tu_cmodel/compute/dataflow/dataflow_dispatcher.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/weight_stationary.o tu_cmodel/compute/dataflow/weight_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/output_stationary.o tu_cmodel/compute/dataflow/output_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/compute/dataflow/row_stationary.o tu_cmodel/compute/dataflow/row_stationary.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_core.o tu_cmodel/tu_core.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_cluster.o tu_cmodel/tu_cluster.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/tu_status.o tu_cmodel/tu_status.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/tu_context.o tu_cmodel/infra/tu_context.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/memory/weight_compress.o tu_cmodel/memory/weight_compress.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/sparsity/structured_2of4.o tu_cmodel/sparsity/structured_2of4.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_scheduler.o tu_cmodel/isa/tu_scheduler.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/isa/tu_liveness.o tu_cmodel/isa/tu_liveness.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/infra/tu_debug.o tu_cmodel/infra/tu_debug.c
+cc -O2 -Wall -Wextra -std=c11 -fPIC -Itu_cmodel -c -o tu_cmodel/bindings/tu_dpi.o tu_cmodel/bindings/tu_dpi.c
+ar rcs libtucmodel.a tu_cmodel/tu_cmodel.o tu_cmodel/tu_asm.o tu_cmodel/tu_precision.o tu_cmodel/tu_sram.o tu_cmodel/tu_dma.o tu_cmodel/dma_descriptor.o tu_cmodel/rounding.o tu_cmodel/fp8.o tu_cmodel/tf32.o tu_cmodel/command_queue.o tu_cmodel/memory/dram_model.o tu_cmodel/memory/memory_hierarchy.o tu_cmodel/memory/double_buffer.o tu_cmodel/memory/address_generator.o tu_cmodel/isa/tu_isa.o tu_cmodel/compute/elementwise_pipeline.o tu_cmodel/compute/normalization_engine.o tu_cmodel/compute/softmax_engine.o tu_cmodel/compute/convolution_engine.o tu_cmodel/compute/attention_engine.o tu_cmodel/compute/pooling_engine.o tu_cmodel/infra/logging.o tu_cmodel/infra/json_reader.o tu_cmodel/infra/config.o tu_cmodel/tu_int_quant.o tu_cmodel/perf/performance_counters.o tu_cmodel/perf/event_trace.o tu_cmodel/perf/power_model.o tu_cmodel/compute/pipeline_controller.o tu_cmodel/compute/dataflow/dataflow_registry.o tu_cmodel/compute/dataflow/dataflow_dispatcher.o tu_cmodel/compute/dataflow/weight_stationary.o tu_cmodel/compute/dataflow/output_stationary.o tu_cmodel/compute/dataflow/row_stationary.o tu_cmodel/tu_core.o tu_cmodel/tu_cluster.o tu_cmodel/tu_status.o tu_cmodel/infra/tu_context.o tu_cmodel/memory/weight_compress.o tu_cmodel/sparsity/structured_2of4.o tu_cmodel/isa/tu_scheduler.o tu_cmodel/isa/tu_liveness.o tu_cmodel/infra/tu_debug.o tu_cmodel/bindings/tu_dpi.o
+make: Leaving directory '/tmp/tusim-ch14-work.qzG4rg'
+address_generator.o
+attention_engine.o
+command_queue.o
+config.o
+convolution_engine.o
+dataflow_dispatcher.o
+dataflow_registry.o
+dma_descriptor.o
+double_buffer.o
+dram_model.o
+elementwise_pipeline.o
+event_trace.o
+fp8.o
+json_reader.o
+logging.o
+memory_hierarchy.o
+normalization_engine.o
+output_stationary.o
+performance_counters.o
+pipeline_controller.o
+pooling_engine.o
+power_model.o
+rounding.o
+row_stationary.o
+softmax_engine.o
+structured_2of4.o
+tf32.o
+tu_asm.o
+tu_cluster.o
+tu_cmodel.o
+tu_context.o
+tu_core.o
+tu_debug.o
+tu_dma.o
+tu_dpi.o
+tu_int_quant.o
+tu_isa.o
+tu_liveness.o
+tu_precision.o
+tu_scheduler.o
+tu_sram.o
+tu_status.o
+weight_compress.o
+weight_stationary.o
+ARCHIVE_MEMBER PASS convolution_engine.o
+ARCHIVE_MEMBER PASS softmax_engine.o
+ARCHIVE_MEMBER PASS attention_engine.o
+ARCHIVE_MEMBER PASS normalization_engine.o
+ARCHIVE_MEMBER PASS pooling_engine.o
+ARCHIVE_MEMBER PASS elementwise_pipeline.o
+ARCHIVE_MEMBER PASS pipeline_controller.o
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch14-work.qzG4rg -I/tmp/tusim-ch14-work.qzG4rg/tu_cmodel -o /tmp/tusim-ch14-work.qzG4rg/ch14-probe /home/zxy/Workplace/books/tusim-book/experiments/ch14_compute_engines_probe.c /tmp/tusim-ch14-work.qzG4rg/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch14-work.qzG4rg -I/tmp/tusim-ch14-work.qzG4rg/tu_cmodel -o /tmp/tusim-ch14-work.qzG4rg/ch14-test-elementwise /tmp/tusim-ch14-work.qzG4rg/tests/test_elementwise.c /tmp/tusim-ch14-work.qzG4rg/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch14-work.qzG4rg -I/tmp/tusim-ch14-work.qzG4rg/tu_cmodel -o /tmp/tusim-ch14-work.qzG4rg/ch14-test-normalization /tmp/tusim-ch14-work.qzG4rg/tests/test_normalization.c /tmp/tusim-ch14-work.qzG4rg/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch14-work.qzG4rg -I/tmp/tusim-ch14-work.qzG4rg/tu_cmodel -o /tmp/tusim-ch14-work.qzG4rg/ch14-test-convolution /tmp/tusim-ch14-work.qzG4rg/tests/test_convolution.c /tmp/tusim-ch14-work.qzG4rg/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch14-work.qzG4rg -I/tmp/tusim-ch14-work.qzG4rg/tu_cmodel -o /tmp/tusim-ch14-work.qzG4rg/ch14-test-attention /tmp/tusim-ch14-work.qzG4rg/tests/test_attention.c /tmp/tusim-ch14-work.qzG4rg/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch14-work.qzG4rg -I/tmp/tusim-ch14-work.qzG4rg/tu_cmodel -o /tmp/tusim-ch14-work.qzG4rg/ch14-test-pooling /tmp/tusim-ch14-work.qzG4rg/tests/test_pooling.c /tmp/tusim-ch14-work.qzG4rg/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch14-work.qzG4rg -I/tmp/tusim-ch14-work.qzG4rg/tu_cmodel -o /tmp/tusim-ch14-work.qzG4rg/ch14-test-pipeline /tmp/tusim-ch14-work.qzG4rg/tests/test_pipeline.c /tmp/tusim-ch14-work.qzG4rg/libtucmodel.a -lm 
++ cc -O2 -Wall -Wextra -std=c11 -fPIC -I/tmp/tusim-ch14-work.qzG4rg -I/tmp/tusim-ch14-work.qzG4rg/tu_cmodel -o /tmp/tusim-ch14-work.qzG4rg/ch14-test-softmax /tmp/tusim-ch14-work.qzG4rg/tests/test_softmax.c /tmp/tusim-ch14-work.qzG4rg/libtucmodel.a -lm 
+STATIC_LINK_PASS ch14-probe
+STATIC_LINK_PASS ch14-test-elementwise
+STATIC_LINK_PASS ch14-test-normalization
+STATIC_LINK_PASS ch14-test-convolution
+STATIC_LINK_PASS ch14-test-attention
+STATIC_LINK_PASS ch14-test-pooling
+STATIC_LINK_PASS ch14-test-pipeline
+STATIC_LINK_PASS ch14-test-softmax
+
+===== engine focused suites (six green, attention qualified) =====
++ timeout 90s /tmp/tusim-ch14-work.qzG4rg/ch14-test-elementwise 
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+
+TinyTU Elementwise Pipeline Tests
+==================================
+
+  ReLU in-place (4 elements)                         PASS
+  GELU (4 elements)                                  PASS
+  SiLU (4 elements)                                  PASS
+  Sigmoid (4 elements)                               PASS
+  Tanh (4 elements)                                  PASS
+  Neg + Abs (4 elements)                             PASS
+  Add scalar (4 elements)                            PASS
+  Mul scalar (4 elements)                            PASS
+  Fused Add(1.0) + ReLU (8 elements)                 PASS
+  Fused Mul(0.5) + GELU (4 elements)                 PASS
+  Exp + Sqrt (4 elements)                            PASS
+  ReLU large tensor (256 elements)                   PASS
+  CMDQ elementwise ReLU (16 elements)                PASS
+  MMA + ReLU pipeline (16x16)                        PASS
+  Opcode name strings                                PASS
+  Descriptor validation                              PASS
+
+═══════════════════════════════════════════
+  16/16 tests passed
+═══════════════════════════════════════════
+
++ timeout 90s /tmp/tusim-ch14-work.qzG4rg/ch14-test-normalization 
+TinyTU Normalization Engine — Unit Tests
+==========================================
+
+  LayerNorm — identity (μ≈0, σ≈1)                PASS
+  LayerNorm — constant input (all 3.0)                 PASS
+  RMSNorm — basic correctness                          PASS
+  LayerNorm with gamma=2.0                               PASS
+  LayerNorm with beta offset                             PASS
+  Per-row LayerNorm (3 rows × 4 cols)                   PASS
+  Per-row RMSNorm (2 rows × 3 cols)                     PASS
+  Single-element LayerNorm                               PASS
+  Single-element RMSNorm                                 PASS
+  Validate null descriptor                               tu_norm_validate: null descriptor
+PASS
+  Validate zero element count                            tu_norm_validate: elem_count is zero
+PASS
+
+═══════════════════════════════════════════
+  11/11 tests passed
+═══════════════════════════════════════════
++ timeout 90s /tmp/tusim-ch14-work.qzG4rg/ch14-test-convolution 
+
+╔══════════════════════════════════════════════════╗
+║  TinyTU Convolution Engine Tests (O2)           ║
+╚══════════════════════════════════════════════════╝
+
+  Conv dims: 32×32 input, 3×3 kernel, stride=1, pad=1   PASS
+  Conv dims: 32×32 input, 3×3 kernel, stride=2, pad=1   PASS
+  Conv dims: invalid (too small, kernel > input)          PASS
+  im2col NHWC: 3×3 input, 2×2 kernel, stride=1, pad=0   PASS
+  im2col NHWC: 2×2 input, pad=1, same padding            PASS
+  Direct conv NCHW: identity kernel (1×1, 1 filter, 1 channel) PASS
+  Direct conv NCHW: 3×3 input, 2×2 kernel, 2 channels   PASS
+  Direct conv: stride=2, 5×5 input, 2×2 kernel          PASS
+  Depthwise conv (groups=channels): 2 channels, 2×2 kernel PASS
+  Conv with fused ReLU (negative input → 0 output)      PASS
+  Conv cycle estimate > 0 for valid config                PASS
+  im2col+GEMM pipeline vs direct reference (1×1 kernel)  PASS
+
+  12/12 tests passed
+
++ timeout 90s /tmp/tusim-ch14-work.qzG4rg/ch14-test-pooling 
+pool: input height 2 + padding 0 < kernel 5
+pool: src overflow 300 + 64 > 256
+  pool_dim_computation                                   PASS
+  maxpool_basic                                          PASS
+  maxpool_stride1                                        PASS
+  maxpool_negative                                       PASS
+  avgpool_basic                                          PASS
+  avgpool_exclude_pad                                    PASS
+  maxpool_with_padding                                   PASS
+  avgpool_padding                                        PASS
+  pool_all_equal                                         PASS
+  pool_single_element                                    PASS
+  pool_rectangular_kernel                                PASS
+  pool_full_execution                                    PASS
+  pool_multichannel                                      PASS
+  pool_validation                                        PASS
+
+═══════════════════════════════════════════
+  Test Suite Complete
+  14/14 tests passed
+═══════════════════════════════════════════
++ timeout 90s /tmp/tusim-ch14-work.qzG4rg/ch14-test-pipeline 
+
+===========================================
+  Software Pipelining Controller Tests
+  (Gap E2 — Tile-level DMA/Compute Overlap)
+===========================================
+
+  TEST pipeline initialization ... PASS
+  TEST auto initialization on first submit ... PASS
+  TEST free slots tracking ... PASS
+  TEST stage progression DMA_PRELOAD->COMPUTE->DMA_STORE->DONE ... PASS
+  TEST overlap accounting with depth=2 ... tu_db: pipeline_test double-buffered (65536 bytes ×2 = 131072 total)
+PASS
+  TEST measurable speedup with pipelining (depth=2 vs depth=1) ... PASS
+  TEST sync and idle detection ... PASS
+  TEST backpressure and stall tracking ... PASS
+  TEST config defaults ... PASS
+  TEST statistics completeness after multi-tile run ... PASS
+  TEST reset clears pipeline state ... PASS
+
+-------------------------------------------
+  Results: 11/11 passed
+-------------------------------------------

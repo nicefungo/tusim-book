@@ -1,0 +1,56 @@
++ timeout 90s /tmp/tusim-ch14-work.rCf6Ne/ch14-test-elementwise 
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+
+TinyTU Elementwise Pipeline Tests
+==================================
+
+  ReLU in-place (4 elements)                         PASS
+  GELU (4 elements)                                  PASS
+  SiLU (4 elements)                                  PASS
+  Sigmoid (4 elements)                               PASS
+  Tanh (4 elements)                                  PASS
+  Neg + Abs (4 elements)                             PASS
+  Add scalar (4 elements)                            PASS
+  Mul scalar (4 elements)                            PASS
+  Fused Add(1.0) + ReLU (8 elements)                 PASS
+  Fused Mul(0.5) + GELU (4 elements)                 PASS
+  Exp + Sqrt (4 elements)                            PASS
+  ReLU large tensor (256 elements)                   PASS
+  CMDQ elementwise ReLU (16 elements)                PASS
+  MMA + ReLU pipeline (16x16)                        PASS
+  Opcode name strings                                PASS
+  Descriptor validation                              PASS
+
+═══════════════════════════════════════════
+  16/16 tests passed
+═══════════════════════════════════════════
+

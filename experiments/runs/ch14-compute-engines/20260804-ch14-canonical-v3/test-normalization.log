@@ -1,0 +1,21 @@
++ timeout 90s /tmp/tusim-ch14-work.VpzjGo/ch14-test-normalization 
+TinyTU Normalization Engine — Unit Tests
+==========================================
+
+  LayerNorm — identity (μ≈0, σ≈1)                PASS
+  LayerNorm — constant input (all 3.0)                 PASS
+  RMSNorm — basic correctness                          PASS
+  LayerNorm with gamma=2.0                               PASS
+  LayerNorm with beta offset                             PASS
+  Per-row LayerNorm (3 rows × 4 cols)                   PASS
+  Per-row RMSNorm (2 rows × 3 cols)                     PASS
+  Single-element LayerNorm                               PASS
+  Single-element RMSNorm                                 PASS
+  Validate null descriptor                               tu_norm_validate: null descriptor
+PASS
+  Validate zero element count                            tu_norm_validate: elem_count is zero
+PASS
+
+═══════════════════════════════════════════
+  11/11 tests passed
+═══════════════════════════════════════════

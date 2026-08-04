@@ -1,0 +1,26 @@
+inputs/edition.yaml: OK
+inputs/experiments/ch14_source_audit.py: OK
+inputs/experiments/ch14_compute_engines_probe.c: OK
+inputs/experiments/run_ch14_compute_engines_audit.sh: OK
+inputs/experiments/ch14_predraft_validate.py: OK
+inputs/experiments/ch14-compute-engines-audit-2026-08-04.md: OK
+inputs/notes/chapter-14-framing-and-evidence-plan.md: OK
+inputs/notes/chapter-14-source-and-claim-ledger.md: OK
+inputs/references/foundations.md: OK
+source-archive-sha256.txt: OK
+source-audit.log: OK
+source-audit-mutation.log: OK
+archive-members.txt: OK
+input-hashes.txt: OK
+build.log: OK
+test-elementwise.log: OK
+test-normalization.log: OK
+test-convolution.log: OK
+test-attention.log: OK
+test-pooling.log: OK
+test-pipeline.log: OK
+test-softmax.log: OK
+test-softmax-mutation.log: OK
+ch14-probe.log: OK
+transcript.log: OK
+FINALIZED_RUN PASS run_dir=/home/zxy/Workplace/books/tusim-book/experiments/runs/ch14-compute-engines/20260804-ch14-canonical-v3 manifest=/home/zxy/Workplace/books/tusim-book/experiments/runs/ch14-compute-engines/20260804-ch14-canonical-v3/sha256-retained.txt transcript_sha256=7bea75be825272d3d3ae249a15d6f8040862bb2dc16cc20673d90a454274ea42

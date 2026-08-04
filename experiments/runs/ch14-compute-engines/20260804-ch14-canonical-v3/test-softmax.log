@@ -1,0 +1,20 @@
++ timeout 90s /tmp/tusim-ch14-work.VpzjGo/ch14-test-softmax 
+=== TU Softmax Engine Tests ===
+
+  TEST single element ... PASS
+  TEST uniform vector ... PASS
+  TEST known values ... PASS
+  TEST large values (stability) ... PASS
+  TEST negative values ... PASS
+  TEST batched 2D ... PASS
+  TEST log-softmax ... PASS
+  TEST scaled softmax (attention) ... PASS
+  TEST masked softmax ... PASS
+  TEST all negative inf ... PASS
+  TEST zero input ... PASS
+  TEST online mode ... PASS
+  TEST out-of-place ... PASS
+  TEST large row (256D) ... PASS
+  TEST log-softmax 2D ... PASS
+
+=== Results: 15/15 passed, 0 failed ===
