@@ -1,0 +1,61 @@
+CH16_AUDIT_START run=experiments/runs/ch16-double-buffer/20260804-ch16-canonical-v4 input_commit=abf3278561fdf9263bcc8a92b4f5af1c61b74c9c pin=e918c80b6fce833cd1fcae97730fa841c2176f25
+TOOLCHAIN host=aarch64 cc=11.4.0 make=GNU Make 4.3 python=Python 3.11.15 gdb=GNU gdb (Ubuntu 12.1-0ubuntu1~22.04.2) 12.1
+CH16_CALLERS db=tu_cmodel/compute/pipeline_controller.c pipeline=none
+CH16_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=31 predicates=60 checks=91
+CH16_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=31 predicates=60 checks=91
+CH16_SOURCE_AUDIT ERROR hash mismatch tu_cmodel/memory/double_buffer.c expected=94d5ac4d1974ec577cb51af7d132c6bf2e7cf405d0eb5626159430555fcdb07a got=d13258dfcbf85460ffab50c4d9facb035b0e6884282f099a311441fe91116651
+CH16_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=31 predicates=60 checks=91
+SOURCE_HASH_MUTATION PASS rc=1
+double_buffer.o
+pipeline_controller.o
+STATIC_LINK PASS binaries=2
+=== Results: 10/10 passed, 0 failed ===
+[Inferior 1 (process 127717) exited normally]
+FOCUSED_DOUBLE_BUFFER PASS tests=10
+=== Results: 9/10 passed, 1 failed ===
+[Inferior 1 (process 127736) exited with code 01]
+FOCUSED_MUTATION PASS gdb_rc=0 inferior=01
+DB_CLEAN_SWAP count=1 active_idx=1 active=00 shadow=11 dirty=0
+DB_NOTIFY_ONLY shadow_before=00 shadow_after=00 dirty=1 bytes=1016 dma_cycles=82
+DB_SHARED_METER first=0 second=2 active_value=00000000 bank0_words=0
+DB_DISABLE enabled=0 primary=44 db_null=1
+PIPE_AFTER stage=2 completed=1 desc_cycles=53 pipe_cycle=0 dma_cycle=1 active=22 shadow=7a swapped=1 dirty=1
+PIPE_LEDGER tiles=1 load=2 compute=5 seq=8 piped=7 saved=0 speedup=1.142857 pipe_cycle=6
+PIPE_DEPTH1_NOLOAD tid=0 active=00 shadow=55 swaps=1 dirty=0 stage=2
+PIPE_DEPTH1_LEDGER seq=5 piped=3 saved=0 speedup=1.666667
+PIPE_EMPTY tid=0 seq=7 piped=0 saved=0 speedup=inf overlap_load=0 overlap_store=0
+PIPE_RESET initialized=0 depth=2 slots_null=1 free_slots=1
+PIPE_AFTER_RESET_SUBMIT tid=0 depth=1 initialized=1 stored_cmd=123
+SRAM_REINIT primary_replaced=1 meter_replaced=1 db_lost=1 new_size=32
+CTX_RESTORE ids=0,1 save_rc=0 restore_rc=0 db_lost=1 primary_live=1
+CH16_PROBE SUMMARY failures=0
+[Inferior 1 (process 127748) exited normally]
+BOUNDED_PROBE PASS
+CH16_SWEEP okb=16 chunks=32,32,32,32 total=28752 overlap=9216 db=19536 tops=0.292 dbtops=0.429 speedup=1.472
+CH16_SWEEP okb=24 chunks=48,48,32 total=26688 overlap=6912 db=19776 tops=0.314 dbtops=0.424 speedup=1.350
+CH16_SWEEP okb=32 chunks=64,64 total=24624 overlap=4096 db=20528 tops=0.341 dbtops=0.409 speedup=1.200
+CH16_SWEEP okb=40 chunks=80,48 total=24624 overlap=4096 db=20528 tops=0.341 dbtops=0.409 speedup=1.200
+CH16_SWEEP okb=48 chunks=96,32 total=24624 overlap=4096 db=20528 tops=0.341 dbtops=0.409 speedup=1.200
+CH16_SWEEP okb=56 chunks=112,16 total=24624 overlap=4096 db=20528 tops=0.341 dbtops=0.409 speedup=1.200
+CH16_SWEEP okb=64 chunks=128 total=22560 overlap=0 db=22560 tops=0.372 dbtops=0.372 speedup=1.000
+CH16_SWEEP okb=80 chunks=128 total=22560 overlap=0 db=22560 tops=0.372 dbtops=0.372 speedup=1.000
+CH16_SWEEP okb=96 chunks=128 total=22560 overlap=0 db=22560 tops=0.372 dbtops=0.372 speedup=1.000
+CH16_SWEEP okb=128 chunks=128 total=22560 overlap=0 db=22560 tops=0.372 dbtops=0.372 speedup=1.000
+CH16_SWEEP_CAPACITY single64_kib=64 double16_physical_kib=32 ratio=2.0
+CH16_SWEEP_PORT_CHECK independent_256pe_two_fp16_bytes_per_cycle=1024 report_claim=512
+CH16_SWEEP_THRESHOLD report=20 exact=17 continuous=18.285714
+CH16_SWEEP_RESOURCE_GUARD C=100 P=80 S=80 uncapped=160 shared_cap=100
+CH16_SWEEP SUMMARY failures=0 rows=10
+CH16_SWEEP SUMMARY failures=0 rows=10
+CH16_SWEEP_CAPACITY single64_kib=64 double16_physical_kib=32 ratio=2.0
+CH16_SWEEP_PORT_CHECK independent_256pe_two_fp16_bytes_per_cycle=1024 report_claim=512
+CH16_SWEEP_THRESHOLD report=20 exact=17 continuous=18.285714
+CH16_SWEEP_RESOURCE_GUARD C=100 P=80 S=80 uncapped=160 shared_cap=100
+REPORT_RECOMPUTE PASS
+SRAM_REINIT primary_replaced=1 meter_replaced=1 db_lost=1 new_size=32
+CTX_RESTORE ids=0,1 save_rc=0 restore_rc=0 db_lost=1 primary_live=1
+CH16_PROBE SUMMARY failures=0
+[Inferior 1 (process 127930) exited normally]
+ASAN_LIFECYCLE PASS detect_leaks=0 isolated_context_child=yes
+PIPELINE_SUITE_QUALIFIED not_executed=fixed_channels_3_requested_4
+CH16_AUDIT_BODY_COMPLETE

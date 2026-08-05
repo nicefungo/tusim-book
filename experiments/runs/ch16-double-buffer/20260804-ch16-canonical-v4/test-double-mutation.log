@@ -1,0 +1,27 @@
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/aarch64-linux-gnu/libthread_db.so.1".
+=== TU Double Buffering Tests ===
+
+  TEST default disabled ... PASS
+  TEST enable double buffering ... tu_db: test double-buffered (4096 bytes ×2 = 8192 total)
+PASS
+  TEST swap buffers ... tu_db: test double-buffered (4096 bytes ×2 = 8192 total)
+PASS
+  TEST shadow write notification ... tu_db: test double-buffered (4096 bytes ×2 = 8192 total)
+FAIL: bytes should match
+  expected 1025, got 1024
+  TEST multiple swaps ... tu_db: test double-buffered (4096 bytes ×2 = 8192 total)
+PASS
+  TEST disable ... tu_db: test double-buffered (4096 bytes ×2 = 8192 total)
+PASS
+  TEST overlapped cycles ... tu_db: test double-buffered (4096 bytes ×2 = 8192 total)
+PASS
+  TEST stats integrity ... tu_db: test double-buffered (4096 bytes ×2 = 8192 total)
+PASS
+  TEST active pointer changes ... tu_db: test double-buffered (4096 bytes ×2 = 8192 total)
+PASS
+  TEST double enable idempotent ... tu_db: test double-buffered (4096 bytes ×2 = 8192 total)
+PASS
+
+=== Results: 9/10 passed, 1 failed ===
+[Inferior 1 (process 127736) exited with code 01]

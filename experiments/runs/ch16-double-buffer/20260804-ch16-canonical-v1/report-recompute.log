@@ -1,0 +1,13 @@
+CH16_SWEEP okb=16 chunks=32,32,32,32 total=28752 overlap=9216 db=19536 tops=0.292 dbtops=0.429 speedup=1.472
+CH16_SWEEP okb=24 chunks=48,48,32 total=26688 overlap=6912 db=19776 tops=0.314 dbtops=0.424 speedup=1.350
+CH16_SWEEP okb=32 chunks=64,64 total=24624 overlap=4096 db=20528 tops=0.341 dbtops=0.409 speedup=1.200
+CH16_SWEEP okb=40 chunks=80,48 total=24624 overlap=4096 db=20528 tops=0.341 dbtops=0.409 speedup=1.200
+CH16_SWEEP okb=48 chunks=96,32 total=24624 overlap=4096 db=20528 tops=0.341 dbtops=0.409 speedup=1.200
+CH16_SWEEP okb=56 chunks=112,16 total=24624 overlap=4096 db=20528 tops=0.341 dbtops=0.409 speedup=1.200
+CH16_SWEEP okb=64 chunks=128 total=22560 overlap=0 db=22560 tops=0.372 dbtops=0.372 speedup=1.000
+CH16_SWEEP okb=80 chunks=128 total=22560 overlap=0 db=22560 tops=0.372 dbtops=0.372 speedup=1.000
+CH16_SWEEP okb=96 chunks=128 total=22560 overlap=0 db=22560 tops=0.372 dbtops=0.372 speedup=1.000
+CH16_SWEEP okb=128 chunks=128 total=22560 overlap=0 db=22560 tops=0.372 dbtops=0.372 speedup=1.000
+CH16_SWEEP_CAPACITY single64_kib=64 double16_physical_kib=32 ratio=2.0
+CH16_SWEEP_PORT_CHECK independent_256pe_two_fp16_bytes_per_cycle=1024 report_claim=512
+CH16_SWEEP SUMMARY failures=0 rows=10
