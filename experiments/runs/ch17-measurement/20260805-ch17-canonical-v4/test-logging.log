@@ -1,0 +1,28 @@
+
+=== TU Structured Logging Tests (Gap Q2) ===
+
+  [TEST] log init and default config                             PASS
+  [TEST] severity level filtering                                PASS
+  [TEST] all severity levels emit                                [       0] TEST  [1;31mERROR[0m test error message
+[       0] TEST  [1;33mWARN [0m test warning message
+[       0] TEST  [1;32mINFO [0m test info message
+[       0] TEST  [1;36mDEBUG[0m test debug message
+[       0] TEST  [1;35mTRACE[0m test trace message
+PASS
+  [TEST] component tags distinct                                 [       0] CORE  [1;32mINFO [0m core message
+[       0] MMA   [1;32mINFO [0m mma message
+[       0] DMA   [1;32mINFO [0m dma message
+[       0] MEM   [1;32mINFO [0m mem message
+[       0] ISA   [1;32mINFO [0m isa message
+[       0] CMD   [1;32mINFO [0m cmd message
+[       0] DF    [1;32mINFO [0m df message
+[       0] PREC  [1;32mINFO [0m prec message
+PASS
+  [TEST] trace event recording                                   PASS
+  [TEST] VCD trace export                                        PASS
+  [TEST] logging integrated with tu_init                         [      50] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[      50] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+PASS
+
+=== Results: 7 passed, 0 failed ===
+

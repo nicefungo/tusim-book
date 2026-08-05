@@ -1,0 +1,2 @@
+CH17_SOURCE_AUDIT ERROR hash mismatch tu_cmodel/perf/performance_counters.c expected=f7d9a5ec33c873cb4c900902d3c8d168622be782a8979cc6a822211c471807f2 got=49c907ba3798b1000f183d427678fe658abf2aa6af30e71daeaeeb4903ed6b2b
+CH17_SOURCE_AUDIT FAIL pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=31 predicates=95 checks=126

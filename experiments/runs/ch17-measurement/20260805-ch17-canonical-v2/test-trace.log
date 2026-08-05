@@ -1,0 +1,35 @@
+=== Event Tracing Tests (P2.7 — VCD Generation) ===
+
+  Create trace with valid filename                  PASS
+  Verify trace fields after creation                PASS
+PASS
+PASS
+PASS
+PASS
+  Add 1-bit signal (DMA active)                     PASS
+  Add 8-bit signal (DMA state)                      PASS
+  Add 32-bit signal (compute counter)               PASS
+  Signal count updated correctly                    PASS
+  Signal update sets dirty flag                     PASS
+  Signal with same value does not mark dirty        PASS
+  Signal with different value marks dirty           PASS
+  Tick writes header on first call, defers signal flushPASS
+PASS
+PASS
+  Tick advances cycle counter and flushes signals   PASS
+  Dirty signals cleared after tick                  PASS
+  VCD file exists and non-empty                     PASS
+  VCD header contains $date                         PASS
+  VCD header contains $version                      PASS
+  VCD header contains $timescale                    PASS
+  VCD header contains $var definitions              PASS
+  VCD header contains $enddefinitions               PASS
+  VCD contains $dumpvars                            PASS
+  VCD contains time header #0                       PASS
+  VCD contains time header #5                       PASS
+  VCD contains registered signal name               PASS
+  VCD file ends with end-of-file marker after close PASS
+  Handle null filename gracefully                   PASS
+  Handle signal overflow gracefully                 PASS
+
+=== Results: 31/31 passed ===

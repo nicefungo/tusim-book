@@ -1,0 +1,56 @@
+
+=== Cycle-Accurate Model Tests ===
+
+  pipeline — issue and complete one tile               PASS
+  pipeline — RAW hazard detection                      PASS
+  pipeline — WAW hazard detection                      PASS
+  pipeline — utilization tracking                      PASS
+  bank model — basic access                            PASS
+  bank model — bandwidth exhaustion                    PASS
+  bank model — periodic refill                         PASS
+  bank model — statistics                              PASS
+  DRAM — row buffer hit                                PASS
+  DRAM — row buffer conflict                           PASS
+  DRAM — preset values                                 PASS
+  DRAM — statistics                                    PASS
+  cycle model — functional mode                        PASS
+  cycle model — estimated mode tile                    PASS
+  cycle model — cycle-accurate tile execution          
+=== TU Cycle Model Report ===
+Model fidelity: CYCLE_ACCURATE
+Total cycles: 2619
+
+-- Pipeline --
+  Issues:           1
+  Completions:      1
+  Hazard stalls:    0 cycles
+  Utilization:      0.0%
+
+-- SRAM Banks --
+  Reads:            1024
+  Writes:           256
+  Bank stalls:      1277 cycles
+  Bank conflicts:   3
+  Avg utilization:  4000.0%
+
+-- DRAM --
+  Accesses:         0
+  Row hits:         0 (0.0%)
+  Row misses:       0
+  Stall cycles:     0
+  Data transferred: 0 bytes
+  Eff. bandwidth:   40.0 GB/s
+
+-- DMA Bus --
+  Bus stalls:       0 cycles
+===============================
+PASS
+  cycle model — multiple tiles                         PASS
+  cycle model — reset                                  PASS
+  DMA arbitration — single channel                     PASS
+  DMA transfer — cycle-accurate mode                   PASS
+  null safety — destroy NULL                           PASS
+  null safety — operations on NULL                     PASS
+
+---
+Tests: 21 run, 21 passed, 0 failed

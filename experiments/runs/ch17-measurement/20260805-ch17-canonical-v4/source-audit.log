@@ -1,0 +1,2 @@
+CH17_CALLERS perf=tu_cmodel/perf/cycle_model.c event=none power=none cycle=none
+CH17_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=31 predicates=96 checks=127

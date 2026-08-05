@@ -1,0 +1,43 @@
+CH17_AUDIT_START run=experiments/runs/ch17-measurement/20260805-ch17-canonical-v1 input_commit=fd6aabb588ad4dcfc4a1a23b928838729c4e3131 pin=e918c80b6fce833cd1fcae97730fa841c2176f25
+TOOLCHAIN host=aarch64 cc=11.4.0 make=GNU Make 4.3 python=Python 3.11.15
+CH17_CALLERS perf=tu_cmodel/perf/cycle_model.c event=none power=none cycle=none
+CH17_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=31 predicates=65 checks=96
+CH17_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=31 predicates=65 checks=96
+CH17_SOURCE_AUDIT ERROR hash mismatch tu_cmodel/perf/performance_counters.c expected=f7d9a5ec33c873cb4c900902d3c8d168622be782a8979cc6a822211c471807f2 got=49c907ba3798b1000f183d427678fe658abf2aa6af30e71daeaeeb4903ed6b2b
+CH17_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=31 predicates=65 checks=96
+SOURCE_HASH_MUTATION PASS rc=1
+performance_counters.o
+event_trace.o
+power_model.o
+logging.o
+STATIC_LINK PASS binaries=7
+  12/12 tests passed
+FOCUSED_PERF PASS tests=12
+=== Results: 31/31 passed ===
+FOCUSED_TRACE PASS tests=31
+=== Results: 7 passed, 0 failed ===
+FOCUSED_LOGGING PASS tests=7
+Results: 20/20 tests passed
+FOCUSED_POWER PASS tests=20
+Tests: 21 run, 21 passed, 0 failed
+FOCUSED_CYCLE PASS tests=21
+  11/12 tests passed
+FOCUSED_MUTATION PASS tests=11/12 rc=1
+Benchmark complete.
+BENCHMARK_QUALIFIED rc=0 no_fail_closed_count=yes
+PERF_ADDITIVE total=18 wall_ns=18 dma_read=64 dma_stall=2 compute=6 macs=8 leak=0.018
+PERF_DUPLICATE after_explicit_tick=24 compute=6
+PERF_OMISSIONS diff_ws=0 diff_gbuf_conf=0 diff_row_hits=0 merge_ws=0 merge_gbuf_conf=0 merge_row_hits=0 merge_energy_total=0.0
+PERF_RESET energy_mac=99.0 total=0
+PERF_METRICS dma_gbps=10.000 tops=0.001000 efficiency=0.003906250 util=0.500 hit=1.000
+CYCLE_EST tile=14 current=14
+CYCLE_WRITE cycles=15 cm=15 perf=15 read_bytes=32 write_bytes=0 read_cycles=15 write_cycles=0
+CYCLE_BRIDGE cm=20 perf=20
+TRACE_CONTEXT first_cycle=0 dirty=1 enabled=0
+TRACE_CONTEXT second_cycle=3 dirty=0
+TRACE_LOG count=2 first=0 second=9 global=9
+POWER_TABLE area=1.051648 mac=2.000 spad=0.400 dram=370.000 dma=0.640 clock=0.100 leak=52.5824 total=425.7224 avg_mw=42.5722
+POWER_DECREASING_DIFF cycles=18446744073709551606 macs=18446744073709551606 energy_mac=-2.000
+CH17_PROBE SUMMARY failures=0
+CH17_PROBE SUMMARY failures=0
+CH17_AUDIT_BODY_COMPLETE
