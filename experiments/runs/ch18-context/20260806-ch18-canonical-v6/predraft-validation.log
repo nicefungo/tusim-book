@@ -1,0 +1,2 @@
+CH18_PREDRAFT_VALIDATION PASS run=experiments/runs/ch18-context/20260806-ch18-canonical-v6 input_commit=aec80e066029ac515ee63a5e9959d34ecb929599 pin=e918c80b6fce833cd1fcae97730fa841c2176f25 inputs=16 retained=45 apis=19 source_checks=210 focused=15 mutation=14/15 probe_rows=45
+CH18_PREDRAFT_VALIDATION PASS run=experiments/runs/ch18-context/20260806-ch18-canonical-v6 input_commit=aec80e066029ac515ee63a5e9959d34ecb929599 pin=e918c80b6fce833cd1fcae97730fa841c2176f25 inputs=16 retained=45 apis=19 source_checks=210 focused=15 mutation=14/15 probe_rows=45

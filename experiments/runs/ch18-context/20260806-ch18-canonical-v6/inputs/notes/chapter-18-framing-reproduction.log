@@ -1,0 +1,254 @@
+CH18_FRAMING_REPRODUCTION_V1
+pin=e918c80b6fce833cd1fcae97730fa841c2176f25
+source_head=e918c80b6fce833cd1fcae97730fa841c2176f25
+source_detached_clean=PASS
+cc=cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+make=GNU Make 4.3
+python=Python 3.11.15
+source_file_hashes_begin
+5249a0e077438a4e6f70c74936c185bb1c30105bb834b3f89ac6a78b32630fd2  Makefile
+ecd0f8258183a9dca0649ca8ed446bee23978571a201fa3464317f31a46762b0  tu_cmodel/infra/tu_context.c
+9479cf3a9883ff4b0dbe0e7c7482a9bdad99f2558bd840838e94519e7fa1af28  tu_cmodel/infra/tu_context.h
+0e4b3c6e206465748ae2d3d2e9871f3a6542a61cd1ddcddfff6886b9ed1f0eeb  tu_cmodel/tu_core.c
+dc5c22065fb65be4353585ccbfd3bec6c9b9d70e976a51e87169bac79dd164e9  tu_cmodel/tu_core.h
+b76afa350cc6229fe981e4c188bdc7b8026df4ae74725b3106c624afee9c8893  tu_cmodel/isa/tu_scheduler.c
+d0af2cfa650f704b8abefadea0f1bb0bb02029c0d2168b7b608505b0fe1a3426  tu_cmodel/isa/tu_scheduler.h
+78949f02c43c3c7711033644cb87c5e0441edff0f4d1931d47ba104a67e9b239  tu_cmodel/isa/tu_liveness.c
+a3f7759b0ade75bb85cd45584895687318e1355c692d39f001e2893ef87a4dfd  tu_cmodel/isa/tu_liveness.h
+e364e9187b1795174de10992ac60aff2f5c852aeebcc1cd9a95605e1e07bf1a3  tests/test_context.c
+a6c50ea702490df03dcbe653b3f82601fc05807cbee8b5d068fb03c0dccae76a  tests/test_context_switch_sweep.c
+c35fa60e174b338d9dfbd6e94fa40941820c2d5076b44e3a0ccf1f9cc1db71d0  tests/test_scheduler.c
+9a56f263e42dcd7e5573868e388849a4ced6c65576b8f437aaff12f51be9e940  tests/test_scheduler_sweep.c
+598a4e8731af6a28ebf6f5224d27effd7f1296eba133b762f90eff75ffcf5f58  tests/test_liveness.c
+source_file_hashes_end
+tu_cmodel/infra/logging.c: In function ‘tu_trace_export_vcd’:
+tu_cmodel/infra/logging.c:229:17: warning: unused variable ‘comp_names’ [-Wunused-variable]
+  229 |     const char *comp_names[] = {
+      |                 ^~~~~~~~~~
+tu_cmodel/infra/config.c:62:13: warning: ‘parse_opt_uint’ defined but not used [-Wunused-function]
+   62 | static bool parse_opt_uint(const tu_json_value_t *obj, const char *key,
+      |             ^~~~~~~~~~~~~~
+focused_tests_begin
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+  ctx_manager_create                                     PASS
+  ctx_alloc_free                                         PASS
+  ctx_state_transitions                                  PASS
+  ctx_save_restore_sram                                  PASS
+  ctx_context_switch                                     PASS
+  ctx_round_robin_sched                                  PASS
+  ctx_priority_sched                                     PASS
+  ctx_block_unblock                                      PASS
+  ctx_perf_isolation                                     PASS
+  ctx_print_status                                       ═══════════════════════════════════════════
+  TU Context Manager Status
+═══════════════════════════════════════════
+  Max contexts:     4
+  Active contexts:  2
+  Active ctx ID:    0
+  Total switches:   0
+  Switch overhead:  0 cycles
+  Sched policy:     round-robin
+  Time-slice:       0 cyc / 0 cmds
+
+  Contexts:
+    ID  State         Priority      Cycles    Commands  Switches
+     0  ACTIVE             128           0           0         0
+     1  READY              128           0           0         0
+     2  IDLE               128           0           0         0
+     3  IDLE               128           0           0         0
+═══════════════════════════════════════════
+PASS
+  ctx_null_safety                                        PASS
+  ctx_max_contexts                                       PASS
+  ctx_save_scope_cost                                    PASS
+  ctx_full_control_cost                                  PASS
+  ctx_config_validation                                  PASS
+
+═══════════════════════════════════════════
+  Test Suite Complete
+  15/15 tests passed
+═══════════════════════════════════════════
+
+===========================================
+  Compiler Scheduling Pass Tests (Gap C2)
+===========================================
+
+  TEST empty sequence ... PASS
+  TEST single instruction ... PASS
+  TEST DMA load → MMA dependency (RAW) ... PASS
+  TEST independent DMA loads reordered ... PASS
+  TEST DMA → MMA → DMA store pipeline ... PASS
+  TEST complex DAG construction ... PASS
+  TEST ASAP/ALAP mobility computation ... PASS
+  TEST barrier insertion analysis ... PASS
+  TEST policy comparison (balanced vs ASAP vs ALAP) ... PASS
+  TEST large sequence stress test (64 instrs) ... PASS
+  TEST validation detects dependency violations ... PASS
+  TEST instructions with no SRAM access ... PASS
+  TEST double-buffered tile pipeline scheduling ... PASS
+  TEST config override (no DMA hoisting, ASAP policy) ... PASS
+
+-------------------------------------------
+  Results: 14/14 passed
+-------------------------------------------
+
+===========================================
+  Liveness-Based Allocator Tests (Gap C3)
+===========================================
+
+  TEST empty sequence ... PASS
+  TEST single DMA load → single VReg ... PASS
+  TEST DMA → MMA → DMA store (3 VRegs across W/A/O) ... PASS
+  TEST interference detection ... PASS
+  TEST greedy coloring assigns non-overlapping offsets ... PASS
+  TEST full allocation pipeline ... PASS
+  TEST spilling when capacity exceeded ... PASS
+  TEST all 4 spill strategies produce valid output ... PASS
+  TEST all 3 allocation strategies produce valid output ... PASS
+  TEST W/A/O regions allocated independently ... PASS
+  TEST configurable capacities affect peak usage ... PASS
+  TEST MMA pipeline resolves physical offsets ... PASS
+
+-------------------------------------------
+  Results: 12/12 passed
+-------------------------------------------
+focused_tests_summary=context_15_of_15 scheduler_14_of_14 liveness_12_of_12
+focused_tests_end
+context_sweep_begin
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 128 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 512 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+Context save-scope sweep (fixed=100 cycles)
+SRAM_KiB scope    state_B switch_cycles
+     128 full      131072          8292
+     128 live25     32768          2148
+     128 control        0           100
+     256 full      262144         16484
+     256 live25     65536          4196
+     256 control        0           100
+     512 full      524288         32868
+     512 live25    131072          8292
+     512 control        0           100
+
+Full-save bandwidth sensitivity (256 KiB SRAM)
+BW_Bpc switch_cycles
+    16         32868
+    32         16484
+    64          8292
+context_sweep_selected_rows=PASS
+context_sweep_end
+scheduler_sweep_begin
+
+=== TU Scheduler Policy Sweep ===
+
+Comparing ASAP, ALAP, BALANCED across 5 workload topologies.
+DMA channel: flags&3 -> 0=W,1=A,2=O.  MMA: reads W+A, writes O.
+
+Topology             Policy       Cycles  Barrier   Hoist     Len
+--------             ------       ------  -------   -----     ---
+  All-Independent      ASAP             16        0       0       4
+  All-Independent      ALAP             16        0       0       4
+  All-Independent      BALANCED         16        0       0       4
+  Serial-Chain         ASAP             10        0       0       4
+  Serial-Chain         ALAP             10        0       0       4
+  Serial-Chain         BALANCED         10        0       0       4
+  Fan-Out              ASAP             21        0       0       6
+  Fan-Out              ALAP             21        0       0       6
+  Fan-Out              BALANCED         21        0       0       6
+  Fan-In               ASAP             12        0       0       6
+  Fan-In               ALAP             12        0       0       6
+  Fan-In               BALANCED         12        0       0       6
+  Pipeline-Tiles       ASAP             28        0       0      13
+  Pipeline-Tiles       ALAP             28        0       0      13
+  Pipeline-Tiles       BALANCED         28        0       0      13
+
+=== Sweep Complete ===
+
+scheduler_policy_invariance=PASS topologies=5
+scheduler_sweep_end
+non_test_external_callers_context=0 paths=NONE
+non_test_external_callers_scheduler=0 paths=NONE
+non_test_external_callers_liveness=0 paths=NONE
+caller_inventory=PASS
+source_after_detached_clean=PASS
+CH18_FRAMING_REPRODUCTION_PASS

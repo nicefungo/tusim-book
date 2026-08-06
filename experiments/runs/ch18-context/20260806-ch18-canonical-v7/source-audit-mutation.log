@@ -1,0 +1,2 @@
+CH18_SOURCE_AUDIT ERROR hash mismatch tu_cmodel/infra/tu_context.c expected=ecd0f8258183a9dca0649ca8ed446bee23978571a201fa3464317f31a46762b0 got=24f3ae6826c654699ef880213b194660afa18f5460f5d27f066a54b2d5710c30
+CH18_SOURCE_AUDIT FAIL pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=39 predicates=171 checks=210

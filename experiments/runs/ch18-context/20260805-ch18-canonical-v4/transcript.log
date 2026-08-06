@@ -1,0 +1,37 @@
+CH18_AUDIT_START run=experiments/runs/ch18-context/20260805-ch18-canonical-v4 input_commit=a46d8024298bd0206ab3d0daa154e66ca31cf7a4 pin=e918c80b6fce833cd1fcae97730fa841c2176f25
+TOOLCHAIN host=aarch64 cc=cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0 make=GNU Make 4.3 python=Python 3.11.15
+CH18_PUBLIC_APIS count=19 names=tu_ctx_alloc,tu_ctx_block_current,tu_ctx_free,tu_ctx_get,tu_ctx_get_switch_count,tu_ctx_get_switch_overhead,tu_ctx_manager_config_validate,tu_ctx_manager_create,tu_ctx_manager_destroy,tu_ctx_notify_command,tu_ctx_notify_cycles,tu_ctx_print_status,tu_ctx_request_switch,tu_ctx_restore,tu_ctx_save,tu_ctx_schedule_next,tu_ctx_slice_expired,tu_ctx_switch,tu_ctx_unblock
+CH18_CALLERS external_nontest=none
+CH18_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=32 predicates=147 checks=179
+CH18_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=32 predicates=147 checks=179
+CH18_SOURCE_AUDIT FAIL pin expected=e918c80b6fce833cd1fcae97730fa841c2176f25 got=0000000000000000000000000000000000000000
+SOURCE_PIN_MUTATION PASS rc=1
+CH18_SOURCE_AUDIT ERROR hash mismatch tu_cmodel/infra/tu_context.c expected=ecd0f8258183a9dca0649ca8ed446bee23978571a201fa3464317f31a46762b0 got=24f3ae6826c654699ef880213b194660afa18f5460f5d27f066a54b2d5710c30
+CH18_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=32 predicates=147 checks=179
+SOURCE_HASH_MUTATION PASS rc=1
+tu_context.o
+STATIC_LINK PASS binaries=5
+  15/15 tests passed
+FOCUSED_CONTEXT PASS tests=15
+  14/15 tests passed
+FOCUSED_MUTATION PASS tests=14/15 rc=1
+     128 full      131072          8292
+     128 live25     32768          2148
+     128 control        0           100
+     256 full      262144         16484
+     256 live25     65536          4196
+     256 control        0           100
+     512 full      524288         32868
+     512 live25    131072          8292
+     512 control        0           100
+    16         32868
+    32         16484
+    64          8292
+SWEEP PASS rows=12
+CH18_PROBE SUMMARY failures=0
+CH18_PROBE SUMMARY failures=0
+PROBE PASS failures=0 optimization_stable=yes
+CH18_PREDRAFT_VALIDATION FAIL: optimizer-removable assertion in validator
+CH18_PREDRAFT_VALIDATION FAIL: optimizer-removable assertion in validator
+VALIDATOR_MUTATION PASS normal_rc=1 optimized_rc=1
+CH18_AUDIT_BODY_COMPLETE
