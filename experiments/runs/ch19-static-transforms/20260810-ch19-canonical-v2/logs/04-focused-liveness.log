@@ -1,0 +1,21 @@
+
+===========================================
+  Liveness-Based Allocator Tests (Gap C3)
+===========================================
+
+  TEST empty sequence ... PASS
+  TEST single DMA load → single VReg ... PASS
+  TEST DMA → MMA → DMA store (3 VRegs across W/A/O) ... PASS
+  TEST interference detection ... PASS
+  TEST greedy coloring assigns non-overlapping offsets ... PASS
+  TEST full allocation pipeline ... PASS
+  TEST spilling when capacity exceeded ... PASS
+  TEST all 4 spill strategies produce valid output ... PASS
+  TEST all 3 allocation strategies produce valid output ... PASS
+  TEST W/A/O regions allocated independently ... PASS
+  TEST configurable capacities affect peak usage ... PASS
+  TEST MMA pipeline resolves physical offsets ... PASS
+
+-------------------------------------------
+  Results: 12/12 passed
+-------------------------------------------

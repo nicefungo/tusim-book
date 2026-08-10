@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/tmp/ch19-canonical-f8XxSC/ch19_validator_control.py", line 3, in <module>
+    assert False
+           ^^^^^
+AssertionError

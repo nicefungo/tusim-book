@@ -1,0 +1,1 @@
+CH19_PREDRAFT_VALIDATION PASS stage=pre run=experiments/runs/ch19-static-transforms/20260810-ch19-postreview-v3 input_commit=8d2e459257a6b340ad98f66c82a396a430d69441 pin=e918c80b6fce833cd1fcae97730fa841c2176f25 inputs=15 body=46 opcode_rows=128 source_checks=182

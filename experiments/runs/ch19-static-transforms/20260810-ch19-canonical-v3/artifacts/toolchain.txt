@@ -1,0 +1,4 @@
+cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+GNU Make 4.3
+Python 3.11.15
+Linux ubuntu 5.15.148-tegra #1 SMP PREEMPT Thu Sep 18 15:08:33 PDT 2025 aarch64 aarch64 aarch64 GNU/Linux

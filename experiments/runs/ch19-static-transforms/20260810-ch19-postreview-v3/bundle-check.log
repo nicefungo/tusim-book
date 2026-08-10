@@ -1,0 +1,5 @@
+SHA256SUMS: OK
+manifest-check.log: OK
+finalization.log: OK
+validator-normal.log: OK
+validator-optimized.log: OK

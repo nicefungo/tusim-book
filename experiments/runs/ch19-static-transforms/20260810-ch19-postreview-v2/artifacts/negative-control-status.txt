@@ -1,0 +1,5 @@
+scheduler_suite_rc=1
+liveness_suite_rc=1
+scheduler_identity_rc=1
+liveness_opcode_rc=1
+spill_accounting_rc=1

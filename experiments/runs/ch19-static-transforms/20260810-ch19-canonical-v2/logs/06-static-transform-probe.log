@@ -1,0 +1,22 @@
+SCHED_POLICY asap=NOP,DMA.LOAD alap=NOP,DMA.LOAD balanced=DMA.LOAD,NOP cycles=5/5/5
+OPS barrier_crossing n=3 0:DMA.LOAD/64/16/0/0x00000000 1:NOP/0/0/0/0x00000000 2:BARRIER/0/0/0/0x00000000
+SCHED_NAMED direct_barriers=1 explicit=0 null=0 order_equal=1
+SCHED_VALIDATE reversed_dependency accepted=1 omitted_dim2=1,2 omitted_imm=0x11111111,0x22222222
+SCHED_DENSE intended=17 retained=16 built=1
+OPS halt_crossing n=3 0:DMA.LOAD/64/16/0/0x00000000 1:NOP/0/0/0/0x00000000 2:HALT/0/0/0/0x00000000
+SCHED_FANOUT intended=17 producer_succs=16 last_preds=0 first=DMA.LOAD
+SCHED_VALIDATE unmatched accepted=1 graph_nodes=2 result_nodes=2
+SCHED_HOIST preds=2 ids=0,2 reported=1
+SCHED_INVALID_POLICY rc=0 first=DMA.LOAD
+SCHED_ACCESS_CENSUS ELEMENTWISE=2 SCALE=2 GROUP_NORM=0 DECOMPRESS=0 COMPRESS=0
+SCHED_DMA_FIELDS flags=0x1 writesW=0 writesA=1 rangeA=100:101
+CROSS_ACCESS attention sched_readA=1 sched_writeO=1 live_vregs=1 v0=2/0/0/65536
+LIVE_BIND vregs=6 w_nodes=2 w_edges=0 v0=0/0/0/16 v1=1/-1/0/64 v2=0/1/2/16 v3=1/-1/1/64 v4=2/2/2/0 v5=1/-1/2/2
+LIVE_VREG_LIMIT input_defs=129 rc=0 retained=128
+LIVE_CAP_UNDERFLOW capacity=16 margin=32 valid=1 peak=100 out_n=1 off=0
+OPS spill_sequence n=4 0:DMA.LOAD/0/16/0/0x00000000 1:DMA.LOAD/65535/16/0/0x00000000 2:DMA.STORE/0/16/0/0x00000000 3:DMA.STORE/65535/16/0/0x00000000
+OPS attention_size_truncation n=2 0:ATTENTION/0/1/0/0x00000000 1:DMA.STORE/65535/0/0/0x00000000
+LIVE_NO_SPILL offsets=0,0 colored=1 spills=0
+OPS wrong_value_patch n=3 0:DMA.LOAD/32/16/0/0x00000000 1:DMA.LOAD/128/16/0/0x00000000 2:MMA/128/1/1/0x00a00000
+LIVE_OUTPUT_LIMIT input=301 rc=0 valid=1 output=512 last_opcode=NOP last_dim0=256
+CH19_PROBE SUMMARY failures=0

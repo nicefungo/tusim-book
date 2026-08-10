@@ -1,0 +1,1 @@
+/tmp/ch19-canonical-aWTbAt/tusim/tu_cmodel/isa/tu_liveness.c:88:74: runtime error: signed integer overflow: 65535 * 65535 cannot be represented in type 'int'

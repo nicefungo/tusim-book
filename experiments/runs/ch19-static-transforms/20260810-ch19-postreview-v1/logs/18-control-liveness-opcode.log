@@ -1,0 +1,160 @@
+SCHED_POLICY asap=NOP,DMA.LOAD alap=NOP,DMA.LOAD balanced=DMA.LOAD,NOP cycles=5/5/5
+OPS barrier_crossing n=3 0:DMA.LOAD/64/16/0/0x00000000 1:NOP/0/0/0/0x00000000 2:BARRIER/0/0/0/0x00000000
+SCHED_NAMED direct_barriers=1 explicit=0 null=0 order_equal=1
+SCHED_BARRIER_DIRECTION store_then_compute=1 compute_then_store=0
+SCHED_VALIDATE reversed_dependency accepted=1 omitted_dim2=1,2 omitted_imm=0x11111111,0x22222222
+SCHED_DENSE intended=17 retained=16 built=1
+OPS halt_crossing n=3 0:DMA.LOAD/64/16/0/0x00000000 1:NOP/0/0/0/0x00000000 2:HALT/0/0/0/0x00000000
+SCHED_FANOUT intended=17 producer_succs=16 last_preds=0 first=DMA.LOAD
+SCHED_VALIDATE unmatched accepted=1 graph_nodes=2 result_nodes=2
+SCHED_HOIST preds=2 ids=0,2 reported=1
+SCHED_INVALID_POLICY rc=0 first=DMA.LOAD
+SCHED_ACCESS_CENSUS ELEMENTWISE=2 SCALE=2 GROUP_NORM=0 DECOMPRESS=0 COMPRESS=0
+SCHED_DMA_FIELDS flags=0x1 writesW=0 writesA=1 rangeA=100:101
+CROSS_ACCESS attention sched_readA=1 sched_writeO=1 live_vregs=1 v0=2/0/0/65536
+CROSS_STRIDED sched_writes=0/1/0 live_vregs=1 v0=0/0/0/16
+CHECK_FAIL liveness strided path uses different channel bits and broad use class
+OPCODE_CENSUS op=0x00 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x01 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x02 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x03 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x04 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x05 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x06 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x07 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x08 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x09 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x0a sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x0b sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x0c sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x0d sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x0e sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x0f sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x10 sched_mask=0x23 live_vregs=3/2:0:0:128/0:-1:0:16/1:-1:0:16
+OPCODE_CENSUS op=0x11 sched_mask=0x23 live_vregs=3/2:0:0:128/0:-1:0:16/1:-1:0:16
+OPCODE_CENSUS op=0x12 sched_mask=0x23 live_vregs=3/2:0:0:128/0:-1:0:16/1:-1:0:16
+OPCODE_CENSUS op=0x13 sched_mask=0x23 live_vregs=1/2:0:0:4294967295
+OPCODE_CENSUS op=0x14 sched_mask=0x23 live_vregs=1/2:0:0:4294967295
+OPCODE_CENSUS op=0x15 sched_mask=0x23 live_vregs=1/2:0:0:4294967295
+OPCODE_CENSUS op=0x16 sched_mask=0x23 live_vregs=0
+OPCODE_CENSUS op=0x17 sched_mask=0x22 live_vregs=1/2:0:0:65536
+OPCODE_CENSUS op=0x18 sched_mask=0x22 live_vregs=1/2:0:0:65536
+OPCODE_CENSUS op=0x19 sched_mask=0x22 live_vregs=1/2:0:0:65536
+OPCODE_CENSUS op=0x1a sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x1b sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x1c sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x1d sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x1e sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x1f sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x20 sched_mask=0x24 live_vregs=0
+OPCODE_CENSUS op=0x21 sched_mask=0x24 live_vregs=1/2:0:0:16
+OPCODE_CENSUS op=0x22 sched_mask=0x24 live_vregs=1/2:0:0:16
+OPCODE_CENSUS op=0x23 sched_mask=0x24 live_vregs=1/2:0:0:16
+OPCODE_CENSUS op=0x24 sched_mask=0x24 live_vregs=1/2:0:0:16
+OPCODE_CENSUS op=0x25 sched_mask=0x24 live_vregs=1/2:0:0:16
+OPCODE_CENSUS op=0x26 sched_mask=0x24 live_vregs=1/2:0:0:16
+OPCODE_CENSUS op=0x27 sched_mask=0x24 live_vregs=1/2:0:0:16
+OPCODE_CENSUS op=0x28 sched_mask=0x24 live_vregs=1/2:0:0:16
+OPCODE_CENSUS op=0x29 sched_mask=0x24 live_vregs=0
+OPCODE_CENSUS op=0x2a sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x2b sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x2c sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x2d sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x2e sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x2f sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x30 sched_mask=0x22 live_vregs=0
+OPCODE_CENSUS op=0x31 sched_mask=0x22 live_vregs=0
+OPCODE_CENSUS op=0x32 sched_mask=0x22 live_vregs=0
+OPCODE_CENSUS op=0x33 sched_mask=0x22 live_vregs=2/2:0:0:16/1:-1:0:16
+OPCODE_CENSUS op=0x34 sched_mask=0x22 live_vregs=2/2:0:0:16/1:-1:0:16
+OPCODE_CENSUS op=0x35 sched_mask=0x22 live_vregs=2/2:0:0:16/1:-1:0:16
+OPCODE_CENSUS op=0x36 sched_mask=0x22 live_vregs=2/2:0:0:16/1:-1:0:16
+OPCODE_CENSUS op=0x37 sched_mask=0x22 live_vregs=2/2:0:0:16/1:-1:0:16
+OPCODE_CENSUS op=0x38 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x39 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x3a sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x3b sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x3c sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x3d sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x3e sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x3f sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x40 sched_mask=0x22 live_vregs=1/2:0:0:65536
+OPCODE_CENSUS op=0x41 sched_mask=0x22 live_vregs=1/2:0:0:65536
+OPCODE_CENSUS op=0x42 sched_mask=0x22 live_vregs=1/2:0:0:65536
+OPCODE_CENSUS op=0x43 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x44 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x45 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x46 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x47 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x48 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x49 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x4a sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x4b sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x4c sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x4d sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x4e sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x4f sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x50 sched_mask=0x08 live_vregs=1/0:0:0:4
+OPCODE_CENSUS op=0x51 sched_mask=0x01 live_vregs=1/0:-1:0:4
+OPCODE_CENSUS op=0x52 sched_mask=0x01 live_vregs=0
+OPCODE_CENSUS op=0x53 sched_mask=0x08 live_vregs=1/0:0:0:4
+OPCODE_CENSUS op=0x54 sched_mask=0x01 live_vregs=1/0:-1:0:4
+OPCODE_CENSUS op=0x55 sched_mask=0x08 live_vregs=1/0:0:0:4
+OPCODE_CENSUS op=0x56 sched_mask=0x01 live_vregs=1/0:-1:0:4
+OPCODE_CENSUS op=0x57 sched_mask=0x08 live_vregs=1/0:0:0:4
+OPCODE_CENSUS op=0x58 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x59 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x5a sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x5b sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x5c sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x5d sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x5e sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x5f sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x60 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x61 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x62 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x63 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x64 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x65 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x66 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x67 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x68 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x69 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x6a sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x6b sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x6c sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x6d sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x6e sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x6f sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x70 sched_mask=0x23 live_vregs=3/2:0:0:128/0:-1:0:16/1:-1:0:16
+OPCODE_CENSUS op=0x71 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x72 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x73 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x74 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x75 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x76 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x77 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x78 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x79 sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x7a sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x7b sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x7c sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x7d sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x7e sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS op=0x7f sched_mask=0x00 live_vregs=0
+OPCODE_CENSUS_SUMMARY rows=128
+LIVE_BIND vregs=4 w_nodes=2 w_edges=0 v0=0/0/0/16 v1=0/1/2/16 v2=2/2/2/0 v3=1/-1/2/2
+CHECK_FAIL two W, repeated implicit A, O definitions
+LIVE_VREG_LIMIT input_defs=129 rc=0 retained=128
+LIVE_CAP_UNDERFLOW capacity=16 margin=32 valid=1 peak=100 out_n=1 off=0
+OPS spill_sequence n=4 0:DMA.LOAD/0/16/0/0x00000000 1:DMA.LOAD/65535/16/0/0x00000000 2:DMA.STORE/0/16/0/0x00000000 3:DMA.STORE/65535/16/0/0x00000000
+OPS attention_size_truncation n=2 0:ATTENTION/0/1/0/0x00000000 1:DMA.STORE/65535/0/0/0x00000000
+LIVE_NO_SPILL offsets=0,0 colored=1 spills=0
+OPS wrong_value_patch n=3 0:DMA.LOAD/32/16/0/0x00000000 1:DMA.LOAD/64/16/0/0x00000000 2:MMA/64/1/1/0x00800000
+CHECK_FAIL MMA W operand patched to newest disjoint value
+LIVE_REBUILD nodes=2->4 matrix_replaced=1 edges=2
+LIVE_PROVENANCE rc=0 valid=1 opcode=RELU dim0=77
+LIVE_SPILL_ACCOUNTING spilled=1 num_spills=2 spill_bytes=32 colored=0 offset=4294967295
+LIVE_INVALID_ENUM alloc=99 offset=0 colored=1
+LIVE_OUTPUT_LIMIT input=301 rc=0 valid=1 output=512 last_opcode=NOP last_dim0=256
+CH19_PROBE SUMMARY failures=3
