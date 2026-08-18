@@ -1,0 +1,96 @@
+SOURCE_STATE before head=e918c80b6fce833cd1fcae97730fa841c2176f25 detached=1 dirty_entries=0 ignored_hash=ace3beb0807f47046b28c848b542feba4f1ee494b31917a1ceb5ee52f9b21792
+BOOK_STATE head=1cb9af78036a06470dc16adf48e4d75b9cf982a4 branch=main clean_before=1
+TOOLCHAIN host=aarch64 cc=cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0 make=GNU Make 4.3 python=Python 3.11.15
+ARCHIVE disposable=1 path=/tmp/ch20-audit-m6JZi1/src
+CHECK pin=PASS
+CHECK hash:.github/workflows/ci.yml=PASS
+CHECK hash:Makefile=PASS
+CHECK hash:bindings/python/tu_bindings.py=PASS
+CHECK hash:docs/differential-testing.md=PASS
+CHECK hash:tests/test_debug.c=PASS
+CHECK hash:tests/test_dpi.c=PASS
+CHECK hash:tests/test_error_handling.c=PASS
+CHECK hash:tests/test_framework.h=PASS
+CHECK hash:tests/test_golden.c=PASS
+CHECK hash:tests/test_random.c=PASS
+CHECK hash:tools/ci_runner.sh=PASS
+CHECK hash:tools/test_report.py=PASS
+CHECK hash:tu_cmodel/bindings/tu_dpi.c=PASS
+CHECK hash:tu_cmodel/bindings/tu_dpi.h=PASS
+CHECK hash:tu_cmodel/infra/config.c=PASS
+CHECK hash:tu_cmodel/infra/config.h=PASS
+CHECK hash:tu_cmodel/infra/random_tensor.h=PASS
+CHECK hash:tu_cmodel/infra/tu_debug.c=PASS
+CHECK hash:tu_cmodel/infra/tu_debug.h=PASS
+CHECK predicate:inventory-64-sources=PASS
+CHECK predicate:inventory-59-source-prerequisites=PASS
+CHECK predicate:inventory-31-aggregate=PASS
+CHECK predicate:inventory-4-quick=PASS
+CHECK predicate:inventory-five-relation-omissions=PASS
+CHECK predicate:ci-four-and-fourteen=PASS
+CHECK predicate:workflow-delegates-runner=PASS
+CHECK predicate:make-suppresses-generated-compile=PASS
+CHECK predicate:make-suppresses-generated-run=PASS
+CHECK predicate:fixed-host-global-paths=PASS
+CHECK predicate:ci-clean-after-report-dir=PASS
+CHECK predicate:clean-removes-report-dir=PASS
+CHECK predicate:quick-golden-status-suppressed=PASS
+CHECK predicate:quick-golden-text-authority=PASS
+CHECK predicate:coverage-status-suppressed=PASS
+CHECK predicate:coverage-forced-pass=PASS
+CHECK predicate:report-exit-absent=PASS
+CHECK predicate:report-tail-can-override-failure=PASS
+CHECK predicate:shared-comparator-nan-blind=PASS
+CHECK predicate:golden-local-oracle=PASS
+CHECK predicate:random-repository-oracle=PASS
+CHECK predicate:config-parses-dataflow=PASS
+CHECK predicate:runtime-conversion-drops-dataflow=PASS
+CHECK predicate:debug-text-json-return-zero=PASS
+CHECK predicate:debug-tests-use-vacuous-size=PASS
+CHECK predicate:debug-checksum-tautology=PASS
+CHECK predicate:replay-header-claims-reissue=PASS
+CHECK predicate:replay-executes-no-op=PASS
+CHECK predicate:replay-not-tested-execute=PASS
+CHECK predicate:bounds-addition-can-wrap=PASS
+CHECK predicate:error-injection-never-reached=PASS
+CHECK predicate:dpi-identity-symmetric=PASS
+CHECK predicate:binding-nonsymmetric-capable=PASS
+CHECK predicate:binding-no-make-owner=PASS
+CHECK predicate:binding-full-api-overclaim=PASS
+CHECK predicate:binding-config-path-unused=PASS
+CHECK predicate:debug-replay-invariant-external-callers-zero=PASS
+CH20_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=19 predicates=37 checks=57
+CH20_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=19 predicates=37 checks=57
+CHECK hash:tu_cmodel/infra/tu_debug.c=FAIL
+CH20_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=19 predicates=37 checks=57
+SOURCE_AUDIT_MUTATION rejected_rc=1 restored=PASS
+tu_debug.o
+tu_dpi.o
+ORACLE_NAN shared_accept=1 strict_accept=0 shared_pass=1 shared_fail=0
+CONFIG_EFFECT parse_rc=0 parsed_df=1 rt_rows=8 rt_cols=4 active=weight_stationary
+DUMP_SIZE reported=0 actual=338
+REPLAY_NOOP arbitrary_opcode=0xFE mismatches_equal=0 mismatches_mutated=1 output_bytes=69
+BOUNDS_WRAP wrapped_accept=1 ordinary_accept=0
+CH20_PROBE SUMMARY failures=0
+PROBE_OPT_STABILITY byte_identical=1
+CH20_PROBE SUMMARY failures=0
+PROBE_SANITIZERS address_undefined=PASS leak_check=excluded_global_singleton
+=== Results: 25/25 passed, 0 failed ===
+=== Results: 23/25 passed, 2 failed ===
+DEBUG_MUTATION meaningful_size_gate_rejected_rc=1
+=== Results: 9/9 passed, 0 failed ===
+=== Results: 8/9 passed, 1 failed ===
+ERROR_INJECTION_MUTATION reached_requirement_rejected_rc=1
+  11/11 tests passed
+  2/11 tests passed
+GOLDEN_MUTATION independent_equation_rejected_rc=1
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+REPORT_FALSE_GREEN status=PASS passed=0 failed=1 exit_code=-1
+BINDING_NONSYMMETRIC shape_ok=1 finite=1 max_abs=0 observed=[[19.0, 22.0], [43.0, 50.0]]
+CH20_BOUNDARY_CHECKS PASS
+CH20_BOUNDARY_CHECKS PASS
+CH20_BOUNDARY_CHECKS REJECT
+BOUNDARY_MUTATION expected_value_rejected_rc=4
+SOURCE_STATE after head=e918c80b6fce833cd1fcae97730fa841c2176f25 detached=1 dirty_entries=0 ignored_hash=ace3beb0807f47046b28c848b542feba4f1ee494b31917a1ceb5ee52f9b21792
+BOOK_INPUTS unchanged=1 head=1cb9af78036a06470dc16adf48e4d75b9cf982a4

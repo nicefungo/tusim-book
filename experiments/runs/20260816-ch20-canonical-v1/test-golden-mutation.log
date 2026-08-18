@@ -1,0 +1,209 @@
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+TinyTU Golden Reference Verification
+=====================================
+Comparing cmodel (FP16 in, FP32 acc) vs FP32 reference
+Expected tolerance: ~0.01-0.15 (FP16 quantization)
+
+--- Fixed Configuration Tests ---
+FAIL: max_err=1.001234 > tol=0.010000 (mean=1.000028)
+         
+  MMA 16×16×16 (tiny)                                FAIL: max_err=1.001895 > tol=0.020000 (mean=1.000019)
+         
+  MMA 32×32×32 (medium)                              FAIL: max_err=1.002424 > tol=0.050000 (mean=0.999985)
+         
+  MMA 64×64×64 (large)                               FAIL: max_err=1.000729 > tol=0.150000 (mean=1.000031)
+         
+  MMA 7×5×9 (edge tiles)                             FAIL: max_err=1.000801 > tol=0.010000 (mean=1.000010)
+         
+  MMA 4×8×16 (non-square)                            FAIL: max_err=1.001466 > tol=0.050000 (mean=1.000013)
+         
+  MMA 31×17×23 (prime dims)                          FAIL: max_err=1.000035 > tol=0.001000 (mean=1.000035)
+         
+  MMA 1×1×1 (scalar)                                 FAIL: max_err=1.000836 > tol=0.020000 (mean=0.999839)
+         
+  MMA 1×16×64 (vector)                               
+--- Bias Test ---
+  Bias golden: zero W/A, sequential bias               PASS
+
+--- Precision Boundary Tests ---
+  Precision: max FP16 values (65504)                   PASS
+
+--- Random Tensor Differential Testing (50 tests) ---
+    FAIL [0]: M=16 N=16 K=16 max_err=1.000717 tol=0.018000
+    FAIL [1]: M=8 N=16 K=32 max_err=1.001391 tol=0.026000
+    FAIL [2]: M=32 N=8 K=16 max_err=1.001020 tol=0.018000
+    FAIL [3]: M=10 N=10 K=10 max_err=1.000764 tol=0.015000
+    FAIL [4]: M=15 N=15 K=15 max_err=1.001379 tol=0.017500
+    FAIL [5]: M=31 N=17 K=23 max_err=1.001132 tol=0.021500
+    FAIL [6]: M=4 N=4 K=8 max_err=1.000548 tol=0.014000
+    FAIL [7]: M=7 N=11 K=13 max_err=1.000882 tol=0.016500
+    FAIL [8]: M=64 N=16 K=16 max_err=1.001246 tol=0.018000
+    FAIL [9]: M=16 N=64 K=16 max_err=1.001407 tol=0.018000
+    FAIL [10]: M=16 N=16 K=64 max_err=1.002127 tol=0.042000
+    FAIL [11]: M=48 N=48 K=48 max_err=1.001895 tol=0.034000
+    FAIL [12]: M=16 N=16 K=16 max_err=1.001172 tol=0.018000
+    FAIL [13]: M=8 N=16 K=32 max_err=1.000944 tol=0.026000
+    FAIL [14]: M=32 N=8 K=16 max_err=1.000978 tol=0.018000
+    FAIL [15]: M=10 N=10 K=10 max_err=1.000764 tol=0.015000
+    FAIL [16]: M=15 N=15 K=15 max_err=1.000858 tol=0.017500
+    FAIL [17]: M=31 N=17 K=23 max_err=1.001268 tol=0.021500
+    FAIL [18]: M=4 N=4 K=8 max_err=1.000508 tol=0.014000
+    FAIL [19]: M=7 N=11 K=13 max_err=1.000806 tol=0.016500
+    FAIL [20]: M=64 N=16 K=16 max_err=1.001245 tol=0.018000
+    FAIL [21]: M=16 N=64 K=16 max_err=1.001053 tol=0.018000
+    FAIL [22]: M=16 N=16 K=64 max_err=1.002702 tol=0.042000
+    FAIL [23]: M=48 N=48 K=48 max_err=1.002035 tol=0.034000
+    FAIL [24]: M=16 N=16 K=16 max_err=1.001050 tol=0.018000
+    FAIL [25]: M=8 N=16 K=32 max_err=1.001507 tol=0.026000
+    FAIL [26]: M=32 N=8 K=16 max_err=1.001204 tol=0.018000
+    FAIL [27]: M=10 N=10 K=10 max_err=1.000669 tol=0.015000
+    FAIL [28]: M=15 N=15 K=15 max_err=1.001028 tol=0.017500
+    FAIL [29]: M=31 N=17 K=23 max_err=1.001419 tol=0.021500
+    FAIL [30]: M=4 N=4 K=8 max_err=1.000423 tol=0.014000
+    FAIL [31]: M=7 N=11 K=13 max_err=1.000887 tol=0.016500
+    FAIL [32]: M=64 N=16 K=16 max_err=1.001417 tol=0.018000
+    FAIL [33]: M=16 N=64 K=16 max_err=1.001101 tol=0.018000
+    FAIL [34]: M=16 N=16 K=64 max_err=1.002166 tol=0.042000
+    FAIL [35]: M=48 N=48 K=48 max_err=1.002028 tol=0.034000
+    FAIL [36]: M=16 N=16 K=16 max_err=1.001150 tol=0.018000
+    FAIL [37]: M=8 N=16 K=32 max_err=1.001224 tol=0.026000
+    FAIL [38]: M=32 N=8 K=16 max_err=1.001251 tol=0.018000
+    FAIL [39]: M=10 N=10 K=10 max_err=1.000699 tol=0.015000
+    FAIL [40]: M=15 N=15 K=15 max_err=1.000875 tol=0.017500
+    FAIL [41]: M=31 N=17 K=23 max_err=1.001405 tol=0.021500
+    FAIL [42]: M=4 N=4 K=8 max_err=1.000433 tol=0.014000
+    FAIL [43]: M=7 N=11 K=13 max_err=1.001007 tol=0.016500
+    FAIL [44]: M=64 N=16 K=16 max_err=1.001360 tol=0.018000
+    FAIL [45]: M=16 N=64 K=16 max_[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+err=1.001191 tol=0.018000
+    FAIL [46]: M=16 N=16 K=64 max_err=1.001939 tol=0.042000
+    FAIL [47]: M=48 N=48 K=48 max_err=1.001805 tol=0.034000
+    FAIL [48]: M=16 N=16 K=16 max_err=1.001081 tol=0.018000
+    FAIL [49]: M=8 N=16 K=32 max_err=1.001144 tol=0.026000
+    Progress: 50/50 tests, 0 pass, 50 fail, avg_max_err=0.000000
+FAIL: 50/50 tests failed
+
+═══════════════════════════════════════════
+  2/11 tests passed
+  Max observed error: 1.002424
+═══════════════════════════════════════════

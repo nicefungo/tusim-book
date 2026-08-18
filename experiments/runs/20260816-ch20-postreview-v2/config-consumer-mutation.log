@@ -1,0 +1,50 @@
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 8×4 PE, 256 KB SRAM, dataflow=output_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 8×4 PE, 256 KB SRAM, dataflow=output_stationary
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 8×4 PE, 256 KB SRAM, dataflow=output_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=output_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;33mWARN [0m ASSERT[2]: Bounds violation: addr=15 size=2 limit=16 ctx=ordinary
+[       0] CORE  [1;33mWARN [0m ASSERT[3]: Invalid tile dims: 0×1 (PE=8×8) ctx=zero
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+  nan discriminator                                    PASS (max_err=0.000000, mean_err=nan)
+ORACLE_NAN shared_accept=1 strict_accept=0 shared_pass=1 shared_fail=0
+CHECK shared_nan_accept got=1 want=1 PASS
+CHECK strict_nan_reject got=0 want=0 PASS
+CHECK config_ws_parse got=0 want=0 PASS
+CHECK config_os_parse got=0 want=0 PASS
+CHECK config_parsed_ws got=0 want=0 PASS
+CHECK config_parsed_os got=1 want=1 PASS
+CHECK config_rt_rows got=8 want=8 PASS
+CHECK config_rt_cols got=4 want=4 PASS
+CHECK config_ws_input_active_ws got=-64 want=0 FAIL
+CHECK config_os_input_active_ws got=-64 want=0 FAIL
+CHECK direct_set_os got=0 want=0 PASS
+CHECK direct_os_active got=0 want=0 PASS
+CONFIG_AB ws_parse=0 os_parse=0 ws_df=0 os_df=1 rt_rows=8 rt_cols=4 ws_active=output_stationary os_active=output_stationary direct_os=output_stationary
+CHECK core_create got=1 want=1 PASS
+CORE_REINIT_GEOMETRY created_8x4=1 reinitialized_16x16=1 created_bytes=336 reinitialized_bytes=338
+CHECK core_created_8x4 got=1 want=1 PASS
+CHECK core_reinitialized_16x16 got=1 want=1 PASS
+CHECK dump_tmpfile got=1 want=1 PASS
+DUMP_SIZE fixture=post_reinit_16x16 reported=0 actual=338
+CHECK dump_reported_zero got=0 want=0 PASS
+CHECK dump_actual_338 got=338 want=338 PASS
+CHECK replay_start got=0 want=0 PASS
+CHECK replay_record got=0 want=0 PASS
+CHECK replay_tmpfile got=1 want=1 PASS
+CHECK replay_mut_tmpfile got=1 want=1 PASS
+REPLAY_NOOP arbitrary_opcode=0xFE mismatches_equal=0 mismatches_mutated=1 output_bytes=69
+CHECK replay_noop_accept got=0 want=0 PASS
+CHECK replay_mutation_detect got=1 want=1 PASS
+BOUNDS_WRAP wrapped_accept=1 ordinary_accept=0
+CHECK bounds_wrap_unsafe_green got=1 want=1 PASS
+CHECK bounds_ordinary_reject got=0 want=0 PASS
+TILE_PE_IGNORED oversized_accept=1 zero_reject=1
+CHECK tile_oversized_accept got=1 want=1 PASS
+CHECK tile_zero_reject got=0 want=0 PASS
+CH20_PROBE SUMMARY failures=2

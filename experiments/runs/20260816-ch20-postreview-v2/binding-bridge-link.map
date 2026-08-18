@@ -1,0 +1,1547 @@
+Archive member included to satisfy reference by file (symbol)
+
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cmodel.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_asm.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_precision.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_sram.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dma.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dma_descriptor.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(rounding.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(fp8.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tf32.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(command_queue.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dram_model.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(memory_hierarchy.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(double_buffer.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(address_generator.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_isa.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(elementwise_pipeline.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(normalization_engine.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(softmax_engine.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(convolution_engine.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(attention_engine.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pooling_engine.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(logging.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(json_reader.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(config.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_int_quant.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(performance_counters.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(event_trace.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(power_model.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pipeline_controller.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_registry.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_dispatcher.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_stationary.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(output_stationary.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(row_stationary.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_core.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cluster.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_status.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_context.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_compress.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(structured_2of4.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_scheduler.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_liveness.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_debug.o)
+                              (--whole-archive)
+/tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dpi.o)
+                              (--whole-archive)
+
+As-needed library included to satisfy reference by file (symbol)
+
+libm.so.6                     /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(elementwise_pipeline.o) (tanhf@@GLIBC_2.17)
+libc.so.6                     /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(event_trace.o) (ctime@@GLIBC_2.17)
+ld-linux-aarch64.so.1         /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cmodel.o) (__stack_chk_guard@@GLIBC_2.17)
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cmodel.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_asm.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_precision.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_sram.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dma.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dma_descriptor.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(rounding.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(fp8.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tf32.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(command_queue.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dram_model.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(memory_hierarchy.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(double_buffer.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(address_generator.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_isa.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(elementwise_pipeline.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(normalization_engine.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(softmax_engine.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(convolution_engine.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(attention_engine.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pooling_engine.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(logging.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(json_reader.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(config.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_int_quant.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(performance_counters.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(event_trace.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(power_model.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pipeline_controller.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_registry.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_dispatcher.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_stationary.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(output_stationary.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(row_stationary.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_core.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cluster.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_status.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_context.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_compress.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(structured_2of4.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_scheduler.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_liveness.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_debug.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dpi.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o
+LOAD /tmp/ch20-audit-pcJLh3/src/libtucmodel.a
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/libm.so
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/libgcc.a
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/libgcc_s.so
+START GROUP
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/libgcc_s.so.1
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/libgcc.a
+END GROUP
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/libc.so
+START GROUP
+LOAD /lib/aarch64-linux-gnu/libc.so.6
+LOAD /usr/lib/aarch64-linux-gnu/libc_nonshared.a
+LOAD /lib/ld-linux-aarch64.so.1
+END GROUP
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/libgcc.a
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/libgcc_s.so
+START GROUP
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/libgcc_s.so.1
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/libgcc.a
+END GROUP
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o
+LOAD /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o
+                0x00000000000001c8                . = (SEGMENT_START ("text-segment", 0x0) + SIZEOF_HEADERS)
+
+.note.gnu.build-id
+                0x00000000000001c8       0x24
+ *(.note.gnu.build-id)
+ .note.gnu.build-id
+                0x00000000000001c8       0x24 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+
+.hash
+ *(.hash)
+
+.gnu.hash       0x00000000000001f0      0xdf0
+ *(.gnu.hash)
+ .gnu.hash      0x00000000000001f0      0xdf0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+
+.dynsym         0x0000000000000fe0     0x3390
+ *(.dynsym)
+ .dynsym        0x0000000000000fe0     0x3390 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+
+.dynstr         0x0000000000004370     0x2a43
+ *(.dynstr)
+ .dynstr        0x0000000000004370     0x2a43 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+
+.gnu.version    0x0000000000006db4      0x44c
+ *(.gnu.version)
+ .gnu.version   0x0000000000006db4      0x44c /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+
+.gnu.version_d  0x0000000000007200        0x0
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x0000000000007200        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+
+.gnu.version_r  0x0000000000007200       0x70
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x0000000000007200       0x70 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+
+.rela.dyn       0x0000000000007270     0x1380
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ .rela.data.rel.local
+                0x0000000000007270      0x258 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ .rela.data.rel.ro.local
+                0x00000000000074c8      0xf78 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ .rela.data     0x0000000000008440       0x48 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ .rela.got      0x0000000000008488      0x138 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+ *(.rela.ifunc)
+ .rela.ifunc    0x00000000000085c0        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ .rela.fini_array
+                0x00000000000085c0       0x18 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ .rela.init_array
+                0x00000000000085d8       0x18 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+
+.rela.plt       0x00000000000085f0     0x1728
+ *(.rela.plt)
+ .rela.plt      0x00000000000085f0     0x1728 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ *(.rela.iplt)
+
+.init           0x0000000000009d18       0x18
+ *(SORT_NONE(.init))
+ .init          0x0000000000009d18       0x10 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+                0x0000000000009d18                _init
+ .init          0x0000000000009d28        0x8 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o
+
+.plt            0x0000000000009d30      0xf90
+ *(.plt)
+ .plt           0x0000000000009d30      0xf90 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ *(.iplt)
+
+.text           0x000000000000acc0    0x22428
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(SORT_BY_NAME(.text.sorted.*))
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x000000000000acc0       0x14 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ *fill*         0x000000000000acd4        0xc 1f2003d5
+ .text          0x000000000000ace0       0xc4 /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o
+ *fill*         0x000000000000ada4        0xc 1f2003d5
+ .text          0x000000000000adb0     0x1290 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cmodel.o)
+                0x000000000000ae50                tu_dma_load_w
+                0x000000000000aee0                tu_dma_load_a
+                0x000000000000af70                tu_dma_store_o
+                0x000000000000b000                tu_dma_load_o
+                0x000000000000b090                tu_mma
+                0x000000000000b790                tu_sync
+                0x000000000000b7c0                tu_get_cmdq
+                0x000000000000b7d0                tu_cmdq_submit_mma
+                0x000000000000b864                tu_cmdq_submit_dma_load
+                0x000000000000b8f0                tu_cmdq_submit_dma_store
+                0x000000000000b980                tu_cmdq_submit_barrier
+                0x000000000000b990                tu_cmdq_submit_elementwise
+                0x000000000000baa0                tu_cmdq_sync_all
+                0x000000000000bab0                tu_set_dataflow
+                0x000000000000bb44                tu_get_dataflow_name
+                0x000000000000bb80                tu_init_with_config
+                0x000000000000bd50                tu_init
+                0x000000000000bdc0                tu_init_from_config
+                0x000000000000bee0                tu_init_from_file
+                0x000000000000bf74                tu_print_stats
+ .text          0x000000000000c040      0xe60 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_asm.o)
+                0x000000000000c3d4                tu_run_asm
+ .text          0x000000000000cea0      0x864 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_precision.o)
+                0x000000000000d250                tu_fp32_to_fp16
+                0x000000000000d3e4                tu_fp16_to_fp32
+                0x000000000000d460                tu_round_fp32_to_fp16
+                0x000000000000d464                tu_fp32_to_fp16_buffer
+                0x000000000000d4b4                tu_fp16_to_fp32_buffer
+                0x000000000000d504                tu_bf16_to_fp32
+                0x000000000000d510                tu_fp32_to_bf16
+                0x000000000000d570                tu_fp32_to_bf16_buffer
+                0x000000000000d5c4                tu_bf16_to_fp32_buffer
+                0x000000000000d614                tu_get_subnormal_mode
+                0x000000000000d620                tu_set_subnormal_mode
+                0x000000000000d630                tu_precision_get
+                0x000000000000d6a4                tu_precision_register
+ *fill*         0x000000000000d704        0xc 1f2003d5
+ .text          0x000000000000d710      0xa4c /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_sram.o)
+                0x000000000000d830                tu_sram_init_bw
+                0x000000000000d8f0                tu_sram_init
+                0x000000000000d904                tu_sram_destroy
+                0x000000000000d960                tu_sram_refill_bw
+                0x000000000000d9d0                tu_sram_advance_cycle
+                0x000000000000d9e0                tu_sram_set_bw_modeling
+                0x000000000000d9f0                tu_sram_read
+                0x000000000000da90                tu_sram_write
+                0x000000000000db30                tu_sram_read_bulk
+                0x000000000000dc10                tu_sram_write_bulk
+                0x000000000000dcf0                tu_sram_raw_ptr
+                0x000000000000dd20                tu_sram_get_bandwidth_utilization
+                0x000000000000ddd0                tu_sram_get_bank_bw_stats
+                0x000000000000dec0                tu_sram_get_cycle
+                0x000000000000ded0                tu_sram_print_stats
+ .text          0x000000000000e15c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dma.o)
+ *fill*         0x000000000000e15c        0x4 1f2003d5
+ .text          0x000000000000e160     0x13d8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dma_descriptor.o)
+                0x000000000000e160                tu_dma_init_full
+                0x000000000000e1f0                tu_dma_init
+                0x000000000000e200                tu_dma_desc_create_linear
+                0x000000000000e314                tu_dma_desc_create_strided_2d
+                0x000000000000e440                tu_dma_desc_create_strided_3d
+                0x000000000000e590                tu_dma_desc_chain
+                0x000000000000e5b4                tu_dma_desc_create_scatter
+                0x000000000000e640                tu_dma_desc_create_gather
+                0x000000000000e6d0                tu_dma_desc_create_multicast
+                0x000000000000e840                tu_dma_desc_destroy
+                0x000000000000e890                tu_dma_destroy
+                0x000000000000e960                tu_dma_execute_desc
+                0x000000000000efc0                tu_dma_submit_desc
+                0x000000000000f120                tu_dma_tick
+                0x000000000000f1e0                tu_dma_flush_channel
+                0x000000000000f2a0                tu_dma_flush_all
+                0x000000000000f2e4                tu_dma_load
+                0x000000000000f3b0                tu_dma_store
+                0x000000000000f484                tu_dma_sync
+                0x000000000000f490                tu_dma_print_stats
+ *fill*         0x000000000000f538        0x8 1f2003d5
+ .text          0x000000000000f540      0x2d0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(rounding.o)
+                0x000000000000f540                tu_stochastic_set_seed
+                0x000000000000f5b4                tu_stochastic_uniform
+                0x000000000000f600                tu_set_rounding_mode
+                0x000000000000f610                tu_get_rounding_mode
+                0x000000000000f620                tu_round_apply
+                0x000000000000f710                tu_round_fp32_to_mantissa
+ .text          0x000000000000f810      0x7a4 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(fp8.o)
+                0x000000000000f810                tu_fp8_e4m3_to_fp32
+                0x000000000000f8d0                tu_fp32_to_fp8_e4m3
+                0x000000000000fb04                tu_fp8_e5m2_to_fp32
+                0x000000000000fbe4                tu_fp32_to_fp8_e5m2
+                0x000000000000fe40                tu_fp32_to_fp8_e4m3_buffer
+                0x000000000000fe94                tu_fp8_e4m3_to_fp32_buffer
+                0x000000000000fee4                tu_fp32_to_fp8_e5m2_buffer
+                0x000000000000ff34                tu_fp8_e5m2_to_fp32_buffer
+                0x000000000000ff84                tu_fp8_e4m3_to_fp16
+                0x000000000000ffa0                tu_fp8_e5m2_to_fp16
+ *fill*         0x000000000000ffb4        0xc 1f2003d5
+ .text          0x000000000000ffc0      0x218 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tf32.o)
+                0x000000000000ffc0                tu_tf32_to_fp32
+                0x000000000000ffd0                tu_fp32_to_tf32
+                0x00000000000100c0                tu_fp32_to_tf32_buffer
+                0x0000000000010114                tu_tf32_to_fp32_buffer
+                0x0000000000010164                tu_tf32_to_fp16
+                0x0000000000010180                tu_fp16_to_tf32
+                0x0000000000010194                tu_tf32_to_bf16
+                0x00000000000101b0                tu_bf16_to_tf32
+                0x00000000000101c4                tu_tf32_get_range
+ *fill*         0x00000000000101d8        0x8 1f2003d5
+ .text          0x00000000000101e0      0xa60 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(command_queue.o)
+                0x00000000000104a4                tu_cmdq_create
+                0x0000000000010530                tu_cmdq_destroy
+                0x00000000000105a0                tu_cmdq_reset
+                0x0000000000010640                tu_cmdq_tick
+                0x00000000000107d4                tu_cmdq_submit
+                0x00000000000109b0                tu_cmdq_barrier
+                0x0000000000010a30                tu_cmdq_wait
+                0x0000000000010b00                tu_cmdq_sync
+                0x0000000000010b40                tu_cmdq_get_depth
+                0x0000000000010b54                tu_cmdq_get_status
+                0x0000000000010ba0                tu_cmdq_print_stats
+                0x0000000000010c10                tu_cmdq_get_counts
+ .text          0x0000000000010c40      0x820 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dram_model.o)
+                0x0000000000010c40                tu_dram_type_name
+                0x0000000000010c64                tu_dram_create
+                0x0000000000010d14                tu_dram_create_custom
+                0x0000000000010dd0                tu_dram_destroy
+                0x0000000000010e00                tu_dram_reset
+                0x0000000000010e40                tu_dram_tick
+                0x0000000000010eb0                tu_dram_read
+                0x0000000000011050                tu_dram_write
+                0x00000000000111d0                tu_dram_estimate_transfer
+                0x0000000000011240                tu_dram_get_name
+                0x0000000000011260                tu_dram_get_stats
+                0x0000000000011300                tu_dram_print_stats
+                0x0000000000011404                tu_dram_peak_bw_per_cycle
+                0x0000000000011444                tu_dram_set_core_clock
+                0x0000000000011450                tu_dram_set_row_modeling
+ .text          0x0000000000011460      0xab8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(memory_hierarchy.o)
+                0x0000000000011460                tu_mem_hierarchy_set_level_config
+                0x0000000000011494                tu_gbuf_init
+                0x0000000000011514                tu_gbuf_destroy
+                0x0000000000011554                tu_mem_hierarchy_destroy
+                0x0000000000011590                tu_gbuf_get_sram
+                0x0000000000011594                tu_mem_hierarchy_reset
+                0x0000000000011a70                tu_mem_hierarchy_read
+                0x0000000000011a80                tu_mem_hierarchy_read_word
+                0x0000000000011a84                tu_mem_hierarchy_write
+                0x0000000000011a90                tu_mem_hierarchy_write_word
+                0x0000000000011a94                tu_gbuf_contains
+                0x0000000000011ab0                tu_regfile_init
+                0x0000000000011ac0                tu_mem_hierarchy_init
+                0x0000000000011c30                tu_regfile_record_read
+                0x0000000000011c40                tu_regfile_record_write
+                0x0000000000011c50                tu_mem_level_name
+                0x0000000000011ca0                tu_mem_hierarchy_get_bytes
+                0x0000000000011cb4                tu_mem_hierarchy_get_stalls
+                0x0000000000011cc4                tu_mem_hierarchy_get_onchip_total
+                0x0000000000011ce0                tu_mem_hierarchy_print_stats
+                0x0000000000011eb0                tu_mem_hierarchy_tick
+                0x0000000000011f10                tu_mem_hierarchy_get_cycle
+ *fill*         0x0000000000011f18        0x8 1f2003d5
+ .text          0x0000000000011f20      0x3f0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(double_buffer.o)
+                0x0000000000011f20                tu_sram_enable_double_buffer
+                0x0000000000012030                tu_sram_disable_double_buffer
+                0x0000000000012094                tu_sram_is_double_buffered
+                0x00000000000120b4                tu_sram_swap_buffers
+                0x0000000000012100                tu_sram_get_active_ptr
+                0x0000000000012134                tu_sram_get_shadow_ptr
+                0x0000000000012170                tu_sram_notify_shadow_write
+                0x00000000000121a4                tu_sram_is_shadow_dirty
+                0x00000000000121d0                tu_sram_get_db_stats
+                0x0000000000012224                tu_sram_print_db_stats
+                0x00000000000122c0                tu_sram_record_overlapped_cycles
+                0x00000000000122e4                tu_sram_get_overlapped_cycles
+ .text          0x0000000000012310      0xacc /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(address_generator.o)
+                0x0000000000012310                tu_agen_im2col_dims
+                0x0000000000012374                tu_agen_compute_tiling
+                0x00000000000123d0                tu_agen_iterator_init
+                0x0000000000012700                tu_agen_next
+                0x0000000000012930                tu_agen_has_next
+                0x0000000000012950                tu_agen_reset
+                0x0000000000012960                tu_agen_total
+                0x0000000000012974                tu_agen_generate_all
+                0x0000000000012a04                tu_agen_generate_ranges
+                0x0000000000012b54                tu_agen_addr_im2col
+                0x0000000000012bd0                tu_agen_desc_from_range
+                0x0000000000012ca0                tu_agen_desc_chain_from_iterator
+ *fill*         0x0000000000012ddc        0x4 1f2003d5
+ .text          0x0000000000012de0      0x168 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_isa.o)
+                0x0000000000012de0                tu_isa_opcode_name
+                0x0000000000012e14                tu_isa_opcode_category
+                0x0000000000012eb0                tu_isa_has_sram_operands
+                0x0000000000012ed0                tu_isa_is_compute_op
+                0x0000000000012ef4                tu_isa_is_dma_op
+                0x0000000000012f10                tu_isa_decode_flags
+ *fill*         0x0000000000012f48        0x8 1f2003d5
+ .text          0x0000000000012f50      0x9a0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(elementwise_pipeline.o)
+                0x0000000000012f50                tu_ew_add_tensors
+                0x00000000000130f0                tu_ew_opcode_name
+                0x00000000000131f0                tu_ew_validate_desc
+                0x0000000000013290                tu_ew_execute
+                0x0000000000013704                tu_ew_apply_unary
+                0x0000000000013790                tu_ew_apply_binary_scalar
+                0x0000000000013824                tu_ew_apply_fused
+ .text          0x00000000000138f0      0xd44 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(normalization_engine.o)
+                0x00000000000138f0                tu_norm_mode_name
+                0x0000000000013934                tu_norm_validate_desc
+                0x0000000000013a70                tu_norm_execute
+                0x0000000000014034                tu_layernorm
+                0x0000000000014200                tu_rmsnorm
+                0x0000000000014330                tu_layernorm_2d
+                0x0000000000014500                tu_rmsnorm_2d
+ *fill*         0x0000000000014634        0xc 1f2003d5
+ .text          0x0000000000014640      0xc3c /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(softmax_engine.o)
+                0x0000000000014800                tu_softmax_host
+                0x0000000000014860                tu_log_softmax_host
+                0x00000000000148c0                tu_softmax_mode_name
+                0x0000000000014904                tu_softmax_validate_desc
+                0x0000000000014ae0                tu_softmax_execute
+                0x0000000000014fb0                tu_softmax
+                0x0000000000015040                tu_softmax_2d
+                0x00000000000150d0                tu_softmax_masked
+                0x0000000000015160                tu_log_softmax
+                0x00000000000151f0                tu_log_softmax_2d
+ *fill*         0x000000000001527c        0x4 1f2003d5
+ .text          0x0000000000015280     0x166c /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(convolution_engine.o)
+                0x00000000000152f0                tu_conv_compute_dims
+                0x00000000000153a4                tu_im2col_nhwc
+                0x00000000000157a0                tu_im2col_nchw
+                0x0000000000015ba0                tu_conv2d_direct_nchw_fp32
+                0x0000000000016084                tu_conv2d_direct_nhwc_fp32
+                0x0000000000016570                tu_conv2d_im2col_gemm
+                0x0000000000016860                tu_conv_estimate_cycles
+ *fill*         0x00000000000168ec        0x4 1f2003d5
+ .text          0x00000000000168f0     0x1408 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(attention_engine.o)
+                0x00000000000168f0                tu_attention_auto_tile
+                0x0000000000016a70                tu_attention_validate_desc
+                0x0000000000016c74                tu_attention_execute
+                0x0000000000017c50                tu_attention_simple
+ *fill*         0x0000000000017cf8        0x8 1f2003d5
+ .text          0x0000000000017d00      0xa00 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pooling_engine.o)
+                0x0000000000017d00                tu_pool_compute_dims
+                0x0000000000017e70                tu_pool_validate
+                0x0000000000017f60                tu_pool_max_2d
+                0x00000000000180c0                tu_pool_avg_2d
+                0x0000000000018230                tu_pool_execute
+ .text          0x0000000000018700      0x8cc /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(logging.o)
+                0x0000000000018700                tu_log_init
+                0x00000000000187c0                tu_log_init_config
+                0x0000000000018854                tu_log_set_level
+                0x0000000000018860                tu_log_get_level
+                0x0000000000018870                tu_log_get_config
+                0x0000000000018880                tu_log_emit
+                0x0000000000018ae4                tu_trace_event
+                0x0000000000018b40                tu_trace_get_buffer
+                0x0000000000018b60                tu_trace_clear
+                0x0000000000018b74                tu_trace_get_cycle
+                0x0000000000018b80                tu_trace_set_cycle
+                0x0000000000018b90                tu_trace_export_vcd
+ *fill*         0x0000000000018fcc        0x4 1f2003d5
+ .text          0x0000000000018fd0     0x16f4 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(json_reader.o)
+                0x000000000001a230                tu_json_parse
+                0x000000000001a360                tu_json_free
+                0x000000000001a490                tu_json_get
+                0x000000000001a550                tu_json_as_bool
+                0x000000000001a590                tu_json_as_int
+                0x000000000001a5e0                tu_json_as_double
+                0x000000000001a614                tu_json_as_string
+                0x000000000001a650                tu_json_array_len
+                0x000000000001a680                tu_json_array_get
+                0x000000000001a6c0                tu_json_dump
+ *fill*         0x000000000001a6c4        0xc 1f2003d5
+ .text          0x000000000001a6d0     0x289c /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(config.o)
+                0x000000000001a6d0                tu_config_default
+                0x000000000001a810                tu_config_to_runtime
+                0x000000000001a940                tu_config_validate
+                0x000000000001ade0                tu_config_load_string
+                0x000000000001c120                tu_config_load
+                0x000000000001c290                tu_config_dump
+                0x000000000001c4a0                tu_config_emit_docs
+ *fill*         0x000000000001cf6c        0x4 1f2003d5
+ .text          0x000000000001cf70      0x5dc /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_int_quant.o)
+                0x000000000001cf70                tu_quant_params_init_int8
+                0x000000000001cf84                tu_quant_params_init_uint4
+                0x000000000001cfa0                tu_quant_params_calibrate_int8_symmetric
+                0x000000000001d030                tu_quant_params_calibrate_int8_asymmetric
+                0x000000000001d0f4                tu_quant_params_calibrate_uint4
+                0x000000000001d1b0                tu_fp32_to_int8
+                0x000000000001d1f0                tu_int8_to_fp32
+                0x000000000001d210                tu_fp32_to_uint4_nibble
+                0x000000000001d250                tu_uint4_nibble_to_fp32
+                0x000000000001d270                tu_fp32_to_int8_buffer
+                0x000000000001d2d4                tu_int8_to_fp32_buffer
+                0x000000000001d334                tu_uint4_unpack
+                0x000000000001d350                tu_uint4_pack
+                0x000000000001d380                tu_fp32_to_uint4_buffer
+                0x000000000001d400                tu_uint4_to_fp32_buffer
+                0x000000000001d470                tu_int8_dot_product
+                0x000000000001d4a4                tu_int8_mma_tile
+ *fill*         0x000000000001d54c        0x4 1f2003d5
+ .text          0x000000000001d550     0x1918 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(performance_counters.o)
+                0x000000000001d550                tu_perf_init
+                0x000000000001d5e0                tu_perf_reset
+                0x000000000001d650                tu_perf_set_enabled
+                0x000000000001d660                tu_perf_tick
+                0x000000000001d6c0                tu_perf_get_cycle
+                0x000000000001d6d0                tu_perf_dma_record_read
+                0x000000000001d840                tu_perf_dma_record_write
+                0x000000000001d8e0                tu_perf_dma_record_internal
+                0x000000000001d924                tu_perf_compute_record_mma
+                0x000000000001da64                tu_perf_compute_record_op
+                0x000000000001dbd0                tu_perf_compute_record_idle
+                0x000000000001dc10                tu_perf_compute_record_pipeline_bubble
+                0x000000000001dc30                tu_perf_mem_record_spad_access
+                0x000000000001dcf0                tu_perf_mem_record_gbuf_access
+                0x000000000001dd30                tu_perf_mem_record_dram_access
+                0x000000000001ddf0                tu_perf_mem_record_reqfile_access
+                0x000000000001de24                tu_perf_power_config
+                0x000000000001de40                tu_perf_power_set_enabled
+                0x000000000001de50                tu_perf_snapshot
+                0x000000000001dee0                tu_perf_diff
+                0x000000000001e3b4                tu_perf_merge
+                0x000000000001e6e0                tu_perf_from_dma_descriptor
+                0x000000000001e780                tu_perf_compute_metrics
+                0x000000000001e980                tu_perf_print_report
+                0x000000000001edd0                tu_perf_print_summary
+ *fill*         0x000000000001ee68        0x8 1f2003d5
+ .text          0x000000000001ee70      0x738 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(event_trace.o)
+                0x000000000001ef50                tu_trace_create
+                0x000000000001f010                tu_trace_close
+                0x000000000001f130                tu_trace_add_signal
+                0x000000000001f1e4                tu_trace_signal
+                0x000000000001f224                tu_trace_tick
+                0x000000000001f5a0                tu_trace_is_enabled
+ *fill*         0x000000000001f5a8        0x8 1f2003d5
+ .text          0x000000000001f5b0     0x1140 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(power_model.o)
+                0x000000000001f5b0                tu_power_get_tech_node
+                0x000000000001f5e0                tu_power_tech_node_from_string
+                0x000000000001f7c4                tu_power_tech_node_name
+                0x000000000001f7f4                tu_power_model_init
+                0x000000000001f920                tu_power_model_reset
+                0x000000000001f950                tu_power_model_set_tech_node
+                0x000000000001f9d0                tu_power_model_set_enabled
+                0x000000000001f9e0                tu_power_record_mac
+                0x000000000001fa90                tu_power_record_regfile_access
+                0x000000000001fb00                tu_power_record_spad_access
+                0x000000000001fb70                tu_power_record_global_buf_access
+                0x000000000001fbe0                tu_power_record_dram_access
+                0x000000000001fc70                tu_power_record_dma
+                0x000000000001fcb0                tu_power_tick
+                0x000000000001fd40                tu_power_compute_total
+                0x000000000001fd94                tu_power_get_avg_power_mw
+                0x000000000001fe50                tu_power_get_energy_per_mac
+                0x000000000001feb4                tu_power_get_breakdown
+                0x000000000001ffc0                tu_power_estimate_area
+                0x0000000000020020                tu_power_print_report
+                0x0000000000020300                tu_power_print_summary
+                0x0000000000020374                tu_power_snapshot
+                0x0000000000020400                tu_power_diff
+                0x0000000000020640                tu_power_model_from_config
+ .text          0x00000000000206f0      0xc00 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pipeline_controller.o)
+                0x00000000000206f0                tu_pipeline_config_default
+                0x0000000000020714                tu_pipeline_destroy
+                0x00000000000207a0                tu_pipeline_init
+                0x0000000000020880                tu_pipeline_reset
+                0x00000000000208f0                tu_pipeline_advance
+                0x0000000000020b70                tu_pipeline_submit_tile
+                0x0000000000020ee0                tu_pipeline_free_slots
+                0x0000000000020f40                tu_pipeline_sync
+                0x0000000000020fa0                tu_pipeline_is_idle
+                0x0000000000020fc4                tu_pipeline_get_stats
+                0x00000000000210a0                tu_pipeline_get_saved_cycles
+                0x00000000000210c0                tu_pipeline_print_stats
+ .text          0x00000000000212f0      0x250 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_registry.o)
+                0x00000000000212f0                tu_dataflow_registry_init
+                0x00000000000212f4                tu_dataflow_register
+                0x0000000000021394                tu_dataflow_lookup
+                0x00000000000213e0                tu_dataflow_lookup_by_name
+                0x0000000000021480                tu_dataflow_registry_count
+                0x0000000000021490                tu_dataflow_registry_get
+                0x00000000000214c0                tu_dataflow_registry_destroy
+ .text          0x0000000000021540      0x408 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_dispatcher.o)
+                0x0000000000021540                tu_dataflow_execute_mma
+ *fill*         0x0000000000021948        0x8 1f2003d5
+ .text          0x0000000000021950      0x344 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_stationary.o)
+                0x0000000000021be0                tu_dataflow_ws_create
+                0x0000000000021c64                tu_dataflow_ws_destroy
+ *fill*         0x0000000000021c94        0xc 1f2003d5
+ .text          0x0000000000021ca0      0x310 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(output_stationary.o)
+                0x0000000000021ef0                tu_dataflow_os_create
+                0x0000000000021f80                tu_dataflow_os_destroy
+ .text          0x0000000000021fb0      0x3c0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(row_stationary.o)
+                0x00000000000222b4                tu_dataflow_rs_create
+                0x0000000000022340                tu_dataflow_rs_destroy
+ .text          0x0000000000022370      0xa98 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_core.o)
+                0x0000000000022370                tu_core_create_with_id
+                0x0000000000022440                tu_core_create
+                0x0000000000022450                tu_core_init
+                0x0000000000022530                tu_core_destroy
+                0x0000000000022610                tu_core_default
+                0x00000000000226a0                tu_core_execute_asm_text
+                0x00000000000227b0                tu_core_sync
+                0x0000000000022884                tu_core_get_cmdq
+                0x00000000000228a0                tu_core_get_dma
+                0x00000000000228b0                tu_core_get_sram_w
+                0x00000000000228c0                tu_core_get_sram_a
+                0x00000000000228d0                tu_core_get_sram_o
+                0x00000000000228e0                tu_core_dma_load_w
+                0x00000000000229e0                tu_core_dma_load_a
+                0x0000000000022ae0                tu_core_dma_store_o
+                0x0000000000022be0                tu_core_mma
+                0x0000000000022d40                tu_core_print_stats
+ *fill*         0x0000000000022e08        0x8 1f2003d5
+ .text          0x0000000000022e10     0x123c /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cluster.o)
+                0x0000000000022e10                tu_cluster_create
+                0x0000000000023134                tu_cluster_destroy
+                0x00000000000231d4                tu_cluster_get_core
+                0x0000000000023200                tu_cluster_hop_distance
+                0x00000000000232c0                tu_cluster_estimate_transfer_cycles
+                0x0000000000023370                tu_cluster_estimate_traffic_cycles
+                0x0000000000023704                tu_cluster_neighbors
+                0x0000000000023840                tu_cluster_send
+                0x00000000000239c4                tu_cluster_broadcast
+                0x0000000000023ae0                tu_cluster_allreduce_sum_f32
+                0x0000000000023c90                tu_cluster_barrier
+                0x0000000000023cf0                tu_cluster_spmd_execute
+                0x0000000000023e00                tu_cluster_print_stats
+ *fill*         0x000000000002404c        0x4 1f2003d5
+ .text          0x0000000000024050      0x2e4 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_status.o)
+                0x0000000000024050                tu_get_last_error
+                0x0000000000024070                tu_clear_error
+                0x0000000000024090                tu_set_error_mode
+                0x00000000000240a0                tu_get_error_mode
+                0x00000000000240b0                tu_status_str
+                0x00000000000240e4                tu_report_error
+                0x0000000000024214                tu_error_inject_enable
+                0x0000000000024260                tu_error_inject_disable_all
+                0x0000000000024280                tu_error_inject_check
+ *fill*         0x0000000000024334        0xc 1f2003d5
+ .text          0x0000000000024340     0x1134 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_context.o)
+                0x00000000000246d0                tu_ctx_manager_config_validate
+                0x0000000000024750                tu_ctx_manager_create
+                0x0000000000024844                tu_ctx_manager_destroy
+                0x0000000000024940                tu_ctx_alloc
+                0x0000000000024a20                tu_ctx_get
+                0x0000000000024a54                tu_ctx_save
+                0x0000000000024b00                tu_ctx_free
+                0x0000000000024bf0                tu_ctx_restore
+                0x0000000000024f20                tu_ctx_switch
+                0x0000000000024f90                tu_ctx_schedule_next
+                0x0000000000025050                tu_ctx_request_switch
+                0x00000000000250a0                tu_ctx_slice_expired
+                0x00000000000250e4                tu_ctx_block_current
+                0x0000000000025140                tu_ctx_unblock
+                0x0000000000025184                tu_ctx_notify_command
+                0x00000000000251a0                tu_ctx_notify_cycles
+                0x00000000000251b4                tu_ctx_print_status
+                0x0000000000025444                tu_ctx_get_switch_count
+                0x0000000000025460                tu_ctx_get_switch_overhead
+ *fill*         0x0000000000025474        0xc 1f2003d5
+ .text          0x0000000000025480     0x142c /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_compress.o)
+                0x00000000000255d0                tu_compress_config_from_tu_config
+                0x0000000000025670                tu_compress_rle
+                0x0000000000025834                tu_decompress_rle
+                0x0000000000025904                tu_compress_get_ratio
+                0x0000000000025934                tu_compress_get_original_count
+                0x0000000000025950                tu_compress_validate
+                0x00000000000259d0                tu_compress_bitmap
+                0x0000000000025b24                tu_compress_bitmap_validate
+                0x0000000000025bf0                tu_decompress_bitmap
+                0x0000000000025cb4                tu_compress_adaptive_rle
+                0x0000000000025e90                tu_compress_adaptive
+                0x00000000000260d0                tu_compress_adaptive_validate
+                0x0000000000026200                tu_compress_adaptive_get_codec
+                0x0000000000026260                tu_decompress_adaptive
+                0x00000000000263e4                tu_compress_for_dma
+                0x0000000000026500                tu_decompress_from_dma
+                0x00000000000265f4                tu_compress_estimate_cycles
+ *fill*         0x00000000000268ac        0x4 1f2003d5
+ .text          0x00000000000268b0     0x132c /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(structured_2of4.o)
+                0x00000000000268b0                tu_sparsity_2of4_mask_is_valid
+                0x00000000000268e0                tu_sparsity_2of4_mask_nth_bit
+                0x0000000000026914                tu_sparsity_2of4_prune_fp32
+                0x0000000000026a90                tu_sparsity_2of4_prune_with_masks_fp32
+                0x0000000000026c30                tu_sparsity_2of4_encode_group
+                0x0000000000026d00                tu_sparsity_2of4_decode_group
+                0x0000000000026df0                tu_sparsity_2of4_compress
+                0x0000000000026ee0                tu_sparsity_2of4_decompress
+                0x0000000000026f90                tu_sparsity_2of4_mma_fp16
+                0x00000000000272c4                tu_sparsity_2of4_mma_tiled
+                0x0000000000027840                tu_sparsity_2of4_speedup
+                0x0000000000027900                tu_sparsity_2of4_estimate_cycles
+                0x0000000000027a94                tu_sparsity_2of4_verify_pattern
+                0x0000000000027b00                tu_sparsity_2of4_ratio
+                0x0000000000027b54                tu_sparsity_2of4_verify_against_dense
+ *fill*         0x0000000000027bdc        0x4 1f2003d5
+ .text          0x0000000000027be0     0x115c /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_scheduler.o)
+                0x0000000000027be0                tu_sched_analyze_access
+                0x0000000000027e70                tu_sched_build_dag
+                0x0000000000028230                tu_sched_compute_mobility
+                0x00000000000283c4                tu_sched_hoist_dma
+                0x0000000000028484                tu_sched_insert_barriers
+                0x0000000000028540                tu_sched_run
+                0x0000000000028990                tu_sched_validate
+                0x0000000000028b40                tu_sched_print_result
+                0x0000000000028c00                tu_sched_print_graph
+ *fill*         0x0000000000028d3c        0x4 1f2003d5
+ .text          0x0000000000028d40     0x1190 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_liveness.o)
+                0x0000000000028dc0                tu_live_analyze
+                0x00000000000291b4                tu_live_build_interference
+                0x0000000000029390                tu_live_color
+                0x00000000000296d0                tu_live_apply
+                0x0000000000029b40                tu_live_allocate
+                0x0000000000029c34                tu_live_print_result
+                0x0000000000029d90                tu_live_print_interference
+ .text          0x0000000000029ed0     0x1f6c /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_debug.o)
+                0x000000000002a450                tu_debug_dump_state
+                0x000000000002b0a0                tu_debug_checksum_sram
+                0x000000000002b100                tu_debug_diff_sram
+                0x000000000002b330                tu_debug_record_start
+                0x000000000002b3a4                tu_debug_record_instr
+                0x000000000002b434                tu_debug_record_stop
+                0x000000000002b450                tu_debug_record_save
+                0x000000000002b544                tu_debug_record_load
+                0x000000000002b6a0                tu_debug_replay_execute
+                0x000000000002b804                tu_debug_record_destroy
+                0x000000000002b840                tu_debug_assert_set_mode
+                0x000000000002b860                tu_debug_assert_set_all
+                0x000000000002b880                tu_debug_assert_get_mode
+                0x000000000002b8a0                tu_debug_assert_range
+                0x000000000002b8e4                tu_debug_assert_alignment
+                0x000000000002b9a0                tu_debug_assert_bounds
+                0x000000000002ba60                tu_debug_assert_tile_dims
+                0x000000000002bb20                tu_debug_assert_dataflow
+                0x000000000002bbe4                tu_debug_assert_get_stats
+                0x000000000002bc00                tu_debug_assert_reset_stats
+                0x000000000002bc14                tu_debug_report
+ *fill*         0x000000000002be3c        0x4 1f2003d5
+ .text          0x000000000002be40     0x12a8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dpi.o)
+                0x000000000002be40                tu_dpi_init
+                0x000000000002c014                tu_dpi_destroy
+                0x000000000002c070                tu_dpi_reset
+                0x000000000002c130                tu_dpi_sram_write
+                0x000000000002c250                tu_dpi_sram_read
+                0x000000000002c374                tu_dpi_sram_size
+                0x000000000002c450                tu_dpi_gemm
+                0x000000000002c540                tu_dpi_elementwise
+                0x000000000002c690                tu_dpi_softmax
+                0x000000000002c774                tu_dpi_layernorm
+                0x000000000002c870                tu_dpi_submit_gemm
+                0x000000000002c964                tu_dpi_submit_barrier
+                0x000000000002ca00                tu_dpi_wait
+                0x000000000002ca84                tu_dpi_sync
+                0x000000000002cb10                tu_dpi_read_counter
+                0x000000000002cca0                tu_dpi_get_summary
+                0x000000000002ce00                tu_dpi_set_dataflow
+                0x000000000002cec4                tu_dpi_get_dataflow_name
+                0x000000000002cfa0                tu_dpi_get_pe_dims
+                0x000000000002d010                tu_dpi_get_sram_sizes
+ .text          0x000000000002d0e8        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o
+ .text          0x000000000002d0e8        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o
+ *(.gnu.warning)
+
+.fini           0x000000000002d0e8       0x14
+ *(SORT_NONE(.fini))
+ .fini          0x000000000002d0e8        0xc /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+                0x000000000002d0e8                _fini
+ .fini          0x000000000002d0f4        0x8 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o
+                [!provide]                        PROVIDE (__etext = .)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (etext = .)
+
+.rodata         0x000000000002d100     0x84d0
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.str1.8
+                0x000000000002d100      0x49c /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cmodel.o)
+ *fill*         0x000000000002d59c        0x4 
+ .rodata        0x000000000002d5a0      0x140 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cmodel.o)
+ .rodata.str1.8
+                0x000000000002d6e0      0x1cb /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_asm.o)
+                                        0x1db (size before relaxing)
+ *fill*         0x000000000002d8ab        0x5 
+ .rodata        0x000000000002d8b0        0x3 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_asm.o)
+ *fill*         0x000000000002d8b3        0x5 
+ .rodata.str1.8
+                0x000000000002d8b8       0x4d /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_precision.o)
+ *fill*         0x000000000002d905        0x3 
+ .rodata.str1.8
+                0x000000000002d908       0xe1 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_sram.o)
+                                         0xea (size before relaxing)
+ *fill*         0x000000000002d9e9        0x7 
+ .rodata        0x000000000002d9f0        0xd /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_sram.o)
+ *fill*         0x000000000002d9fd        0x3 
+ .rodata.str1.8
+                0x000000000002da00      0x2ac /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dma_descriptor.o)
+ *fill*         0x000000000002dcac        0x4 
+ .rodata        0x000000000002dcb0       0x1d /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dma_descriptor.o)
+ *fill*         0x000000000002dccd        0x3 
+ .rodata.str1.8
+                0x000000000002dcd0       0x75 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(command_queue.o)
+ *fill*         0x000000000002dd45        0x3 
+ .rodata.str1.8
+                0x000000000002dd48      0x397 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dram_model.o)
+ *fill*         0x000000000002e0df        0x1 
+ .rodata        0x000000000002e0e0      0x180 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dram_model.o)
+ .rodata.str1.8
+                0x000000000002e260      0x24d /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(memory_hierarchy.o)
+ *fill*         0x000000000002e4ad        0x3 
+ .rodata.str1.8
+                0x000000000002e4b0      0x113 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(double_buffer.o)
+                                        0x123 (size before relaxing)
+ *fill*         0x000000000002e5c3        0x5 
+ .rodata.str1.8
+                0x000000000002e5c8      0x36b /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_isa.o)
+                                        0x373 (size before relaxing)
+ *fill*         0x000000000002e933        0x5 
+ .rodata.str1.8
+                0x000000000002e938       0xfb /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(elementwise_pipeline.o)
+                                        0x113 (size before relaxing)
+ *fill*         0x000000000002ea33        0x1 
+ .rodata        0x000000000002ea34       0x11 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(elementwise_pipeline.o)
+ *fill*         0x000000000002ea45        0x3 
+ .rodata.str1.8
+                0x000000000002ea48      0x22f /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(normalization_engine.o)
+                                        0x237 (size before relaxing)
+ *fill*         0x000000000002ec77        0x1 
+ .rodata.str1.8
+                0x000000000002ec78      0x1fe /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(softmax_engine.o)
+                                        0x206 (size before relaxing)
+ *fill*         0x000000000002ee76        0x2 
+ .rodata.str1.8
+                0x000000000002ee78      0x33e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(attention_engine.o)
+ *fill*         0x000000000002f1b6        0x2 
+ .rodata.str1.8
+                0x000000000002f1b8      0x10d /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pooling_engine.o)
+ *fill*         0x000000000002f2c5        0x3 
+ .rodata.str1.8
+                0x000000000002f2c8      0x3e5 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(logging.o)
+                                        0x405 (size before relaxing)
+ *fill*         0x000000000002f6ad        0x3 
+ .rodata.str1.8
+                0x000000000002f6b0      0x230 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(json_reader.o)
+                                        0x238 (size before relaxing)
+ .rodata.str1.8
+                0x000000000002f8e0     0x240f /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(config.o)
+                                       0x24a7 (size before relaxing)
+ .rodata.str1.8
+                0x0000000000031cef        0xd /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_int_quant.o)
+ *fill*         0x0000000000031cef        0x1 
+ .rodata.str1.8
+                0x0000000000031cf0      0xdff /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(performance_counters.o)
+                                        0xe07 (size before relaxing)
+ *fill*         0x0000000000032aef        0x1 
+ .rodata.cst8   0x0000000000032af0       0x18 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(performance_counters.o)
+ .rodata.str1.8
+                0x0000000000032b08       0x9d /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(event_trace.o)
+                                        0x125 (size before relaxing)
+ *fill*         0x0000000000032ba5        0x3 
+ .rodata.str1.8
+                0x0000000000032ba8      0x94a /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(power_model.o)
+                                        0x95a (size before relaxing)
+ *fill*         0x00000000000334f2        0x6 
+ .rodata.cst8   0x00000000000334f8        0x8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(power_model.o)
+                                         0x18 (size before relaxing)
+ .rodata.str1.8
+                0x0000000000033500      0x3a7 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pipeline_controller.o)
+                                        0x42c (size before relaxing)
+ *fill*         0x00000000000338a7        0x1 
+ .rodata.str1.8
+                0x00000000000338a8       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_dispatcher.o)
+ .rodata.str1.8
+                0x00000000000338d6       0x12 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_stationary.o)
+ .rodata.str1.8
+                0x00000000000338d6       0x12 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(output_stationary.o)
+ .rodata.str1.8
+                0x00000000000338d6        0xf /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(row_stationary.o)
+ *fill*         0x00000000000338d6        0x2 
+ .rodata.str1.8
+                0x00000000000338d8       0x90 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_core.o)
+ .rodata        0x0000000000033968      0x138 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_core.o)
+ .rodata.str1.8
+                0x0000000000033aa0      0x3df /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cluster.o)
+                                        0x3f7 (size before relaxing)
+ *fill*         0x0000000000033e7f        0x1 
+ .rodata.cst8   0x0000000000033e80        0x8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cluster.o)
+ .rodata        0x0000000000033e88      0x138 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cluster.o)
+ .rodata.str1.8
+                0x0000000000033fc0      0x31b /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_status.o)
+                                        0x33b (size before relaxing)
+ *fill*         0x00000000000342db        0x5 
+ .rodata.str1.8
+                0x00000000000342e0      0x1df /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_context.o)
+                                        0x277 (size before relaxing)
+ *fill*         0x00000000000344bf        0x1 
+ .rodata        0x00000000000344c0       0x18 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_compress.o)
+                0x00000000000344c0                tu_compress_config_default
+ .rodata        0x00000000000344d8        0x6 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(structured_2of4.o)
+                0x00000000000344d8                TU_2OF4_VALID_MASKS
+ *fill*         0x00000000000344de        0x2 
+ .rodata.str1.8
+                0x00000000000344e0      0x133 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_scheduler.o)
+                                        0x13b (size before relaxing)
+ *fill*         0x0000000000034613        0x5 
+ .rodata        0x0000000000034618       0x34 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_scheduler.o)
+                0x0000000000034638                tu_sched_config_default
+ *fill*         0x000000000003464c        0x4 
+ .rodata.str1.8
+                0x0000000000034650      0x142 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_liveness.o)
+                                        0x152 (size before relaxing)
+ *fill*         0x0000000000034792        0x6 
+ .rodata        0x0000000000034798       0x1c /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_liveness.o)
+                0x0000000000034798                tu_live_config_default
+ *fill*         0x00000000000347b4        0x4 
+ .rodata.str1.8
+                0x00000000000347b8      0xd69 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_debug.o)
+                                        0xdc9 (size before relaxing)
+ .rodata.cst8   0x0000000000035521        0x8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_debug.o)
+ *fill*         0x0000000000035521        0x7 
+ .rodata.str1.8
+                0x0000000000035528       0x78 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dpi.o)
+                                         0x83 (size before relaxing)
+ .rodata        0x00000000000355a0       0x30 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dpi.o)
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr   0x00000000000355d0     0x115c
+ *(.eh_frame_hdr)
+ .eh_frame_hdr  0x00000000000355d0     0x115c /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o
+                0x00000000000355d0                __GNU_EH_FRAME_HDR
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame       0x0000000000036730     0x68a0
+ *(.eh_frame)
+ .eh_frame      0x0000000000036730       0x78 /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o
+ .eh_frame      0x00000000000367a8      0x3c8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cmodel.o)
+                                        0x3d8 (size before relaxing)
+ .eh_frame      0x0000000000036b70      0x180 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_asm.o)
+                                        0x190 (size before relaxing)
+ .eh_frame      0x0000000000036cf0      0x3a0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_precision.o)
+                                        0x3b0 (size before relaxing)
+ .eh_frame      0x0000000000037090      0x270 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_sram.o)
+                                        0x288 (size before relaxing)
+ .eh_frame      0x0000000000037300      0x560 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dma_descriptor.o)
+                                        0x570 (size before relaxing)
+ .eh_frame      0x0000000000037860       0x78 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(rounding.o)
+                                         0x90 (size before relaxing)
+ .eh_frame      0x00000000000378d8      0x2b0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(fp8.o)
+                                        0x2c8 (size before relaxing)
+ .eh_frame      0x0000000000037b88      0x158 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tf32.o)
+                                        0x170 (size before relaxing)
+ .eh_frame      0x0000000000037ce0      0x240 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(command_queue.o)
+                                        0x250 (size before relaxing)
+ .eh_frame      0x0000000000037f20      0x1b8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dram_model.o)
+                                        0x1d0 (size before relaxing)
+ .eh_frame      0x00000000000380d8      0x330 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(memory_hierarchy.o)
+                                        0x340 (size before relaxing)
+ .eh_frame      0x0000000000038408      0x148 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(double_buffer.o)
+                                        0x160 (size before relaxing)
+ .eh_frame      0x0000000000038550      0x208 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(address_generator.o)
+                                        0x220 (size before relaxing)
+ .eh_frame      0x0000000000038758       0x90 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_isa.o)
+                                         0xa8 (size before relaxing)
+ .eh_frame      0x00000000000387e8      0x1d0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(elementwise_pipeline.o)
+                                        0x1e8 (size before relaxing)
+ .eh_frame      0x00000000000389b8      0x320 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(normalization_engine.o)
+                                        0x338 (size before relaxing)
+ .eh_frame      0x0000000000038cd8      0x2f8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(softmax_engine.o)
+                                        0x310 (size before relaxing)
+ .eh_frame      0x0000000000038fd0      0x210 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(convolution_engine.o)
+                                        0x228 (size before relaxing)
+ .eh_frame      0x00000000000391e0      0x180 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(attention_engine.o)
+                                        0x198 (size before relaxing)
+ .eh_frame      0x0000000000039360      0x1b0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pooling_engine.o)
+                                        0x1c8 (size before relaxing)
+ .eh_frame      0x0000000000039510      0x1d8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(logging.o)
+                                        0x1f0 (size before relaxing)
+ .eh_frame      0x00000000000396e8      0x3d8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(json_reader.o)
+                                        0x3f0 (size before relaxing)
+ .eh_frame      0x0000000000039ac0      0x220 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(config.o)
+                                        0x230 (size before relaxing)
+ .eh_frame      0x0000000000039ce0      0x1c8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_int_quant.o)
+                                        0x1d8 (size before relaxing)
+ .eh_frame      0x0000000000039ea8      0x348 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(performance_counters.o)
+                                        0x358 (size before relaxing)
+ .eh_frame      0x000000000003a1f0      0x190 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(event_trace.o)
+                                        0x1a0 (size before relaxing)
+ .eh_frame      0x000000000003a380      0x348 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(power_model.o)
+                                        0x360 (size before relaxing)
+ .eh_frame      0x000000000003a6c8      0x1e8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pipeline_controller.o)
+                                        0x1f8 (size before relaxing)
+ .eh_frame      0x000000000003a8b0      0x108 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_registry.o)
+                                        0x118 (size before relaxing)
+ .eh_frame      0x000000000003a9b8       0x80 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_dispatcher.o)
+                                         0x98 (size before relaxing)
+ .eh_frame      0x000000000003aa38       0xf8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_stationary.o)
+                                        0x108 (size before relaxing)
+ .eh_frame      0x000000000003ab30       0xf8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(output_stationary.o)
+                                        0x108 (size before relaxing)
+ .eh_frame      0x000000000003ac28      0x100 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(row_stationary.o)
+                                        0x110 (size before relaxing)
+ .eh_frame      0x000000000003ad28      0x378 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_core.o)
+                                        0x390 (size before relaxing)
+ .eh_frame      0x000000000003b0a0      0x408 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cluster.o)
+                                        0x420 (size before relaxing)
+ .eh_frame      0x000000000003b4a8      0x110 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_status.o)
+                                        0x128 (size before relaxing)
+ .eh_frame      0x000000000003b5b8      0x3a0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_context.o)
+                                        0x3b0 (size before relaxing)
+ .eh_frame      0x000000000003b958      0x560 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_compress.o)
+                                        0x570 (size before relaxing)
+ .eh_frame      0x000000000003beb8      0x2d8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(structured_2of4.o)
+                                        0x2e8 (size before relaxing)
+ .eh_frame      0x000000000003c190      0x178 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_scheduler.o)
+                                        0x190 (size before relaxing)
+ .eh_frame      0x000000000003c308      0x248 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_liveness.o)
+                                        0x260 (size before relaxing)
+ .eh_frame      0x000000000003c550      0x4c8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_debug.o)
+                                        0x4e0 (size before relaxing)
+ .eh_frame      0x000000000003ca18      0x5b4 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dpi.o)
+                                        0x5c8 (size before relaxing)
+ .eh_frame      0x000000000003cfcc        0x4 /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o
+ *(.eh_frame.*)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges*)
+                0x000000000004dee8                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array
+ *(.preinit_array)
+
+.init_array     0x000000000004dee8        0x8
+ *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+ .init_array    0x000000000004dee8        0x8 /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o
+
+.fini_array     0x000000000004def0        0x8
+ *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+ .fini_array    0x000000000004def0        0x8 /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro    0x000000000004def8      0xea0
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ .data.rel.ro.local
+                0x000000000004def8       0x40 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dram_model.o)
+ .data.rel.ro.local
+                0x000000000004df38       0xe0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(memory_hierarchy.o)
+ .data.rel.ro.local
+                0x000000000004e018      0x400 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_isa.o)
+ .data.rel.ro.local
+                0x000000000004e418       0xb0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(logging.o)
+ .data.rel.ro.local
+                0x000000000004e4c8       0x20 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_int_quant.o)
+                0x000000000004e4c8                tu_int4_precision_info
+                0x000000000004e4d8                tu_int8_precision_info
+ .data.rel.ro.local
+                0x000000000004e4e8      0x5d0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(power_model.o)
+ .data.rel.ro.local
+                0x000000000004eab8      0x2e0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_status.o)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+ .data.rel.ro   0x000000000004ed98        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+
+.dynamic        0x000000000004ed98      0x1e0
+ *(.dynamic)
+ .dynamic       0x000000000004ed98      0x1e0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+                0x000000000004ed98                _DYNAMIC
+
+.got            0x000000000004ef78       0x70
+ *(.got)
+ .got           0x000000000004ef78       0x70 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+                0x000000000004ef78                _GLOBAL_OFFSET_TABLE_
+ *(.igot)
+                0x000000000004efe8                . = DATA_SEGMENT_RELRO_END (., 0x18)
+
+.got.plt        0x000000000004efe8      0x7d0
+ *(.got.plt)
+ .got.plt       0x000000000004efe8      0x7d0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ *(.igot.plt)
+
+.data           0x000000000004f7b8      0x280
+                [!provide]                        PROVIDE (__data_start = .)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x000000000004f7b8        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ .data          0x000000000004f7b8        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o
+ .data.rel.local
+                0x000000000004f7b8        0x8 /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o
+                0x000000000004f7b8                __dso_handle
+ .data          0x000000000004f7c0        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cmodel.o)
+ .data          0x000000000004f7c0        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_asm.o)
+ .data          0x000000000004f7c0        0x4 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_precision.o)
+ *fill*         0x000000000004f7c4        0x4 
+ .data.rel.local
+                0x000000000004f7c8      0x100 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_precision.o)
+ .data          0x000000000004f8c8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_sram.o)
+ .data          0x000000000004f8c8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dma.o)
+ .data          0x000000000004f8c8        0xc /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dma_descriptor.o)
+ *fill*         0x000000000004f8d4        0x4 
+ .data          0x000000000004f8d8       0x10 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(rounding.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(fp8.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tf32.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(command_queue.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dram_model.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(memory_hierarchy.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(double_buffer.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(address_generator.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_isa.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(elementwise_pipeline.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(normalization_engine.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(softmax_engine.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(convolution_engine.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(attention_engine.o)
+ .data          0x000000000004f8e8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pooling_engine.o)
+ .data          0x000000000004f8e8      0x120 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(logging.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(json_reader.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(config.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_int_quant.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(performance_counters.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(event_trace.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(power_model.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pipeline_controller.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_registry.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_dispatcher.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_stationary.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(output_stationary.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(row_stationary.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_core.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cluster.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_status.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_context.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_compress.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(structured_2of4.o)
+ .data          0x000000000004fa08        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_scheduler.o)
+ .data          0x000000000004fa08       0x18 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_liveness.o)
+ .data          0x000000000004fa20       0x18 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_debug.o)
+ .data          0x000000000004fa38        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dpi.o)
+ .data          0x000000000004fa38        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o
+ .data          0x000000000004fa38        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o
+
+.tm_clone_table
+                0x000000000004fa38        0x0
+ .tm_clone_table
+                0x000000000004fa38        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o
+ .tm_clone_table
+                0x000000000004fa38        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o
+
+.data1
+ *(.data1)
+                [!provide]                        PROVIDE (_edata = .)
+                [!provide]                        PROVIDE (edata = .)
+                0x000000000004fa38                . = .
+                [!provide]                        PROVIDE (__bss_start = .)
+                [!provide]                        PROVIDE (__bss_start__ = .)
+
+.bss            0x000000000004fa38   0x204998
+ *(.dynbss)
+ .dynbss        0x000000000004fa38        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x000000000004fa38        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crti.o
+ .bss           0x000000000004fa38        0x1 /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o
+ *fill*         0x000000000004fa39        0x7 
+ .bss           0x000000000004fa40      0x3b0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cmodel.o)
+                0x000000000004fa40                g_tu
+ .bss           0x000000000004fdf0        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_asm.o)
+ .bss           0x000000000004fdf0       0x10 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_precision.o)
+ .bss           0x000000000004fe00        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_sram.o)
+ .bss           0x000000000004fe00        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dma.o)
+ .bss           0x000000000004fe00      0x108 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dma_descriptor.o)
+                0x000000000004fe08                g_tu_dma
+ .bss           0x000000000004ff08        0x4 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(rounding.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(fp8.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tf32.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(command_queue.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dram_model.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(memory_hierarchy.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(double_buffer.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(address_generator.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_isa.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(elementwise_pipeline.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(normalization_engine.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(softmax_engine.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(convolution_engine.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(attention_engine.o)
+ .bss           0x000000000004ff0c        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pooling_engine.o)
+ *fill*         0x000000000004ff0c        0x4 
+ .bss           0x000000000004ff10   0x200010 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(logging.o)
+ .bss           0x000000000024ff20        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(json_reader.o)
+ .bss           0x000000000024ff20        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(config.o)
+ .bss           0x000000000024ff20        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_int_quant.o)
+ .bss           0x000000000024ff20        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(performance_counters.o)
+ .bss           0x000000000024ff20        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(event_trace.o)
+ .bss           0x000000000024ff20        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(power_model.o)
+ .bss           0x000000000024ff20       0x78 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pipeline_controller.o)
+                0x000000000024ff20                g_tu_pipeline
+ .bss           0x000000000024ff98       0x48 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_registry.o)
+ .bss           0x000000000024ffe0        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_dispatcher.o)
+ .bss           0x000000000024ffe0        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_stationary.o)
+ .bss           0x000000000024ffe0        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(output_stationary.o)
+ .bss           0x000000000024ffe0        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(row_stationary.o)
+ .bss           0x000000000024ffe0        0x8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_core.o)
+                0x000000000024ffe0                g_default_core
+ .bss           0x000000000024ffe8        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cluster.o)
+ .bss           0x000000000024ffe8      0x1b8 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_status.o)
+ .bss           0x00000000002501a0        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_context.o)
+ .bss           0x00000000002501a0        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_compress.o)
+ .bss           0x00000000002501a0        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(structured_2of4.o)
+ .bss           0x00000000002501a0        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_scheduler.o)
+ .bss           0x00000000002501a0        0x0 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_liveness.o)
+ .bss           0x00000000002501a0      0x428 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_debug.o)
+ .bss           0x00000000002505c8     0x3e08 /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dpi.o)
+ .bss           0x00000000002543d0        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o
+ .bss           0x00000000002543d0        0x0 /usr/lib/gcc/aarch64-linux-gnu/11/../../../aarch64-linux-gnu/crtn.o
+ *(COMMON)
+                0x00000000002543d0                . = ALIGN ((. != 0x0)?0x8:0x1)
+                [!provide]                        PROVIDE (_bss_end__ = .)
+                [!provide]                        PROVIDE (__bss_end__ = .)
+                0x00000000002543d0                . = ALIGN (0x8)
+                0x00000000002543d0                . = SEGMENT_START ("ldata-segment", .)
+                0x00000000002543d0                . = ALIGN (0x8)
+                [!provide]                        PROVIDE (__end__ = .)
+                [!provide]                        PROVIDE (_end = .)
+                [!provide]                        PROVIDE (end = .)
+                0x00000000002543d0                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x2d
+ *(.comment)
+ .comment       0x0000000000000000       0x2d /usr/lib/gcc/aarch64-linux-gnu/11/crtbeginS.o
+                                         0x2e (size before relaxing)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cmodel.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_asm.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_precision.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_sram.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dma.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dma_descriptor.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(rounding.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(fp8.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tf32.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(command_queue.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dram_model.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(memory_hierarchy.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(double_buffer.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(address_generator.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_isa.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(elementwise_pipeline.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(normalization_engine.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(softmax_engine.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(convolution_engine.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(attention_engine.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pooling_engine.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(logging.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(json_reader.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(config.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_int_quant.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(performance_counters.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(event_trace.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(power_model.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(pipeline_controller.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_registry.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(dataflow_dispatcher.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_stationary.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(output_stationary.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(row_stationary.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_core.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_cluster.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_status.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_context.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(weight_compress.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(structured_2of4.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_scheduler.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_liveness.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_debug.o)
+ .comment       0x000000000000002d       0x2e /tmp/ch20-audit-pcJLh3/src/libtucmodel.a(tu_dpi.o)
+ .comment       0x000000000000002d       0x2e /usr/lib/gcc/aarch64-linux-gnu/11/crtendS.o
+
+.gnu.build.attributes
+ *(.gnu.build.attributes .gnu.build.attributes.*)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info .gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line .debug_line.* .debug_line_end)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_addr
+ *(.debug_addr)
+
+.debug_line_str
+ *(.debug_line_str)
+
+.debug_loclists
+ *(.debug_loclists)
+
+.debug_macro
+ *(.debug_macro)
+
+.debug_names
+ *(.debug_names)
+
+.debug_rnglists
+ *(.debug_rnglists)
+
+.debug_str_offsets
+ *(.debug_str_offsets)
+
+.debug_sup
+ *(.debug_sup)
+
+.ARM.attributes
+ *(.ARM.attributes)
+ *(.gnu.attributes)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(/tmp/ch20-audit-pcJLh3/src/libtucmodel.so elf64-littleaarch64)
+LOAD linker stubs

@@ -1,0 +1,137 @@
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;33mWARN [0m ASSERT[0]: NaN
+[       0] CORE  [1;33mWARN [0m ASSERT[0]: Inf
+[       0] CORE  [1;33mWARN [0m ASSERT[1]: Misaligned access: addr=1 elem_size=4 ctx=test
+[       0] CORE  [1;33mWARN [0m ASSERT[1]: Misaligned access: addr=3 elem_size=2 ctx=test
+[       0] CORE  [1;33mWARN [0m ASSERT[2]: Bounds violation: addr=95 size=10 limit=100 ctx=test
+[       0] CORE  [1;33mWARN [0m ASSERT[2]: Bounds violation: addr=100 size=1 limit=100 ctx=test
+[       0] CORE  [1;33mWARN [0m ASSERT[3]: Invalid tile dims: 0×16 (PE=32×32) ctx=test
+[       0] CORE  [1;33mWARN [0m ASSERT[3]: Invalid tile dims: 16×0 (PE=32×32) ctx=test
+[       0] CORE  [1;33mWARN [0m ASSERT[4]: Dataflow mismatch: configured=0 requested=1 dir=W buf=A ctx=test
+[       0] CORE  [1;33mWARN [0m ASSERT[2]: Bounds violation: addr=200 size=10 limit=100 ctx=test
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] re-initialized
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+=== TU Debug & Observability Tests (I3) ===
+
+  TEST State dump (text)                        PASS
+  TEST State dump (JSON)                        PASS
+  TEST State dump (binary snapshot)             PASS
+  TEST State dump (SRAM only)                   PASS
+  TEST State dump (counters only)               PASS
+  TEST State dump (null stream)                 PASS
+  TEST SRAM checksum (initial)                  PASS
+  TEST SRAM checksum (after write)              PASS
+  TEST SRAM checksum (idempotent)               PASS
+  TEST SRAM diff (same cores)                   PASS
+  TEST SRAM diff (different cores)              PASS
+  TEST Replay (start/stop)                      PASS
+  TEST Replay (record instruction)              PASS
+  TEST Replay (save/load roundtrip)             PASS
+  TEST Replay (buffer full)                     PASS
+  TEST Assert (range: NaN)                      PASS
+  TEST Assert (range: Inf)                      PASS
+  TEST Assert (range: finite)                   PASS
+  TEST Assert (alignment)                       PASS
+  TEST Assert (bounds)                          PASS
+  TEST Assert (tile dims)                       PASS
+  TEST Assert (dataflow)                        PASS
+  TEST Assert (mode switching)                  PASS
+  TEST Assert (statistics)                      PASS
+  TEST Full debug report                        PASS
+
+=== Results: 25/25 passed, 0 failed ===

@@ -1,0 +1,3 @@
+REPORT_FALSE_GREEN status=PASS passed=0 failed=1 exit_code=-1
+BINDING_NONSYMMETRIC shape_ok=1 finite=1 max_abs=0 observed=[[19.0, 22.0], [43.0, 50.0]]
+CH20_BOUNDARY_CHECKS PASS

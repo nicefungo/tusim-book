@@ -1,0 +1,1 @@
+FINALIZED_RUN run=20260816-ch20-postreview-v2 transcript_sha256=75d80f08eb0a723b5e13f71945bf9dddaade0333aa0f0716ecc9c64d040faf83 input_commit=e5dd99715300c78d9e08d9b1df4bec909bc03982 trust=inner-manifest,outer-root,derived-checks,git-seal

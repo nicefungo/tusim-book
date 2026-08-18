@@ -1,7 +1,7 @@
 # Tusim Book
 
-**Working title:** *Tusim: Designing and Exploring Parametric Tensor Units*  
-**Edition:** stable-main snapshot `e918c80`  
+**Working title:** *Tusim: Designing and Exploring Parametric Tensor Units*
+**Edition:** stable-main snapshot `e918c80`
 **Canonical language:** English
 
 This directory contains the source-backed technical/academic reference book for Tusim.
@@ -63,6 +63,7 @@ This directory contains the source-backed technical/academic reference book for 
 | Chapter 17 | complete 6,089-word first draft; canonical-v4 reproduces 31 source hashes, 96 structural/reachability predicates, 127 checks, focused perf/trace/cycle/power suites, exact additive/reset/diff/merge/direction/unit probes, immutable 43-entry retained and four-entry outer manifests, and fail-closed predraft/manuscript validation with real assertion mutation under normal and optimized Python; independent findings resolved and exact-commit re-review closed |
 | Chapter 18 | complete 8,093-word first draft; canonical-v7 reproduces 39 source hashes, 171 structural predicates, 210 checks, exactly 19 public APIs and zero external non-test callers, context 15/15, real mutation 14/15, 12 exact sweep rows, 45 transition labels, byte-identical O0/O2/sanitizer probe output, immutable 45-entry retained and four-entry outer manifests, and fail-closed manuscript validation with 25 reader-claim mutations; independent technical/editorial/reproducibility findings resolved and reviewed-snapshot closure passed |
 | Chapter 19 | complete 6,754-word first draft; postreview-v3 reproduces 15 sealed inputs, 182 source checks, 128 opcode rows, exact scheduler/liveness boundary probes, immutable 46-entry body and five-entry outer manifests, complete-probe digest binding, and fail-closed manuscript validation with 23 reader-claim mutations under normal and optimized Python; independent technical/editorial/reproducibility findings resolved, exact-commit re-review passed, and reviewed-snapshot release closure passed |
+| Chapter 20 | complete 8,559-word manuscript; postreview-v2 seals 22 hashes, 52 predicates, 75 source checks, a 63-file exact evidence bundle, normal/O2 byte-identical claim probe, 23 verbatim limitations, and fail-closed manuscript validation with 64 reader-visible plus 23 limitation mutations under normal and optimized Python; independent technical/editorial/reproducibility findings resolved and final exact-commit review passed |
 
 ## Evidence policy
 

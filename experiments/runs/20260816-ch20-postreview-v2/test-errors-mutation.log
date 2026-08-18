@@ -1,0 +1,18 @@
+[TU ERROR] /tmp/ch20-audit-pcJLh3/test-errors-mut.c:61 in test_error_reporting(): test null pointer (code=12: null pointer)
+[TU ERROR] /tmp/ch20-audit-pcJLh3/test-errors-mut.c:102 in assert_test_positive(): value must be non-negative (code=82: assertion failed)
+[TU ERROR] /tmp/ch20-audit-pcJLh3/test-errors-mut.c:107 in assert_test_nonzero(): value must be non-zero (code=82: assertion failed)
+[TU ERROR] /tmp/ch20-audit-pcJLh3/test-errors-mut.c:140 in check_not_null(): ptr is null (code=12: null pointer)
+
+=== TU Error Handling Tests (Gap E5) ===
+
+  TEST 1: error code strings ... PASS
+  TEST 2: status helpers ... PASS
+  TEST 3: error reporting ... PASS
+  TEST 4: error modes ... PASS
+  TEST 5: TU_ASSERT macro ... PASS
+  TEST 6: TU_CHECK macro ... PASS
+  TEST 7: TU_RETURN_IF_ERR macro ... PASS
+  TEST 8: error injection ... FAIL: injection must be reached
+  TEST 9: all error codes have strings ... PASS
+
+=== Results: 8/9 passed, 1 failed ===

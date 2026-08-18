@@ -1,0 +1,23 @@
+  nan discriminator                                    PASS (max_err=0.000000, mean_err=nan)
+ORACLE_NAN shared_accept=1 strict_accept=0 shared_pass=1 shared_fail=0
+CHECK shared_nan_accept got=1 want=1 PASS
+CHECK strict_nan_reject got=0 want=0 PASS
+CONFIG_EFFECT parse_rc=0 parsed_df=1 rt_rows=8 rt_cols=4 active=weight_stationary
+CHECK config_parse got=0 want=0 PASS
+CHECK config_parsed_os got=1 want=1 PASS
+CHECK config_rt_rows got=8 want=8 PASS
+CHECK config_rt_cols got=4 want=4 PASS
+CHECK config_active_ws got=0 want=0 PASS
+CHECK core_create got=1 want=1 PASS
+DUMP_SIZE reported=0 actual=338
+CHECK dump_reported_zero got=0 want=0 PASS
+CHECK dump_actual_positive got=1 want=1 PASS
+CHECK replay_start got=0 want=0 PASS
+CHECK replay_record got=0 want=0 PASS
+REPLAY_NOOP arbitrary_opcode=0xFE mismatches_equal=0 mismatches_mutated=1 output_bytes=69
+CHECK replay_noop_accept got=0 want=0 PASS
+CHECK replay_mutation_detect got=1 want=1 PASS
+BOUNDS_WRAP wrapped_accept=1 ordinary_accept=0
+CHECK bounds_wrap_unsafe_green got=1 want=1 PASS
+CHECK bounds_ordinary_reject got=0 want=0 PASS
+CH20_PROBE SUMMARY failures=0

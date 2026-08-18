@@ -1,0 +1,5 @@
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+REPORT_FALSE_GREEN status=PASS passed=0 failed=1 exit_code=-1
+BINDING_NONSYMMETRIC shape_ok=1 finite=1 max_abs=1 observed=[[19.0, 22.0], [43.0, 50.0]]
+CH20_BOUNDARY_CHECKS REJECT
