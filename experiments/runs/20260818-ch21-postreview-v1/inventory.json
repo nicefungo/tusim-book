@@ -1,0 +1,1331 @@
+{
+  "pin": "e918c80b6fce833cd1fcae97730fa841c2176f25",
+  "report_relation_counts": {
+    "explicit_harness": 13,
+    "hypothesis": 30,
+    "manifest": 0,
+    "method": 30,
+    "question": 35,
+    "repro_command": 16
+  },
+  "reports": [
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "ceil(",
+        "cycle model"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 29,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 29
+      },
+      "path": "docs/exploration/aspect-ratio-alignment-sweep.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 0,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 0
+      },
+      "path": "docs/exploration/attention-engine-sweep.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [
+        "make test-compress",
+        "make test-config",
+        "make test-quick",
+        "make test-weight-compression-sweep"
+      ],
+      "ci_member": false,
+      "conclusion": false,
+      "equation_markers": [
+        "ceil(",
+        "cycles ="
+      ],
+      "explicit_harness": true,
+      "harness_paths": [
+        "tests/test_compress.c",
+        "tests/test_weight_compression_sweep.c"
+      ],
+      "hypothesis": false,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 0,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 0
+      },
+      "path": "docs/exploration/bitmap-weight-compression.md",
+      "producer_class": "linked_or_executable",
+      "question": false,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "ceil(",
+        "cycle model",
+        "cycles ="
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 15,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 15
+      },
+      "path": "docs/exploration/broadcast-dma-multicore-scaling.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "ceil(",
+        "cycle model"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 15,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 15
+      },
+      "path": "docs/exploration/bus-width-sweep-gemm128.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [
+        "make test-context",
+        "make test-context-switch-sweep",
+        "make test-quick"
+      ],
+      "ci_member": false,
+      "conclusion": false,
+      "equation_markers": [
+        "ceil(",
+        "cycles ="
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 12,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 12
+      },
+      "path": "docs/exploration/context-switch-state-scope.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [
+        "make test-conv-groups-sweep"
+      ],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "cycle model",
+        "cycles ="
+      ],
+      "explicit_harness": true,
+      "harness_paths": [
+        "tests/test_conv_groups_sweep.c"
+      ],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 8,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 8
+      },
+      "path": "docs/exploration/conv-group-sweep.md",
+      "producer_class": "mixed",
+      "question": true,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [
+        "make test-conv-pool-cascade"
+      ],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "cycle model"
+      ],
+      "explicit_harness": true,
+      "harness_paths": [
+        "tests/test_conv_pool_cascade.c"
+      ],
+      "hypothesis": true,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 42,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 42
+      },
+      "path": "docs/exploration/conv-pool-cascade.md",
+      "producer_class": "mixed",
+      "question": true,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [
+        "make test-conv-sweep"
+      ],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "cycle model"
+      ],
+      "explicit_harness": true,
+      "harness_paths": [
+        "tests/test_conv_sweep.c"
+      ],
+      "hypothesis": false,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 21,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 21
+      },
+      "path": "docs/exploration/convolution-kernel-stride-sweep.md",
+      "producer_class": "mixed",
+      "question": true,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "Cycle model",
+        "ceil(",
+        "cycle model",
+        "cycles ="
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 20,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 20
+      },
+      "path": "docs/exploration/dataflow-comparison-gemm128.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "ceil(",
+        "cycle model"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 16,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 16
+      },
+      "path": "docs/exploration/dataflow-pe-interaction.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "cycle model"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 0,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 0
+      },
+      "path": "docs/exploration/dataflow-rs-comparison-gemm128.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "ceil(",
+        "cycle model",
+        "cycles ="
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 15,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 15
+      },
+      "path": "docs/exploration/db-pe-size-goldilocks.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "ceil(",
+        "cycle model",
+        "cycles ="
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 22,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 22
+      },
+      "path": "docs/exploration/dma-channel-queue-sweep.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "cycle model"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 12,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 12
+      },
+      "path": "docs/exploration/double-buffer-mtiling-recovery.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "cycle model",
+        "cycles ="
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 0,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 0
+      },
+      "path": "docs/exploration/dram-type-clock-sweep.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "ceil("
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": false,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 8,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 8
+      },
+      "path": "docs/exploration/gbuf-sizing-sweep.md",
+      "producer_class": "report_prose",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "cycle model"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": false,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 16,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 16
+      },
+      "path": "docs/exploration/int8-quantization-throughput.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [
+        "make test-config",
+        "make test-interconnect-contention-sweep",
+        "make test-multicore"
+      ],
+      "ci_member": false,
+      "conclusion": false,
+      "equation_markers": [
+        "ceil(",
+        "equation"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": false,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 12,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 12
+      },
+      "path": "docs/exploration/interconnect-contention-traffic-matrix.md",
+      "producer_class": "report_prose",
+      "question": false,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [
+        "make test-config",
+        "make test-interconnect-routing-sweep",
+        "make test-multicore"
+      ],
+      "ci_member": false,
+      "conclusion": false,
+      "equation_markers": [],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": false,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 12,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 12
+      },
+      "path": "docs/exploration/interconnect-mesh-routing-order.md",
+      "producer_class": "report_prose",
+      "question": false,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [
+        "make test-config",
+        "make test-interconnect-switching-sweep",
+        "make test-multicore"
+      ],
+      "ci_member": false,
+      "conclusion": false,
+      "equation_markers": [
+        "ceil(",
+        "equation"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": false,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 12,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 12
+      },
+      "path": "docs/exploration/interconnect-switching-modes.md",
+      "producer_class": "report_prose",
+      "question": false,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": false,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 30,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 30
+      },
+      "path": "docs/exploration/interconnect-topology-sweep.md",
+      "producer_class": "report_prose",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "ceil(",
+        "cycle model",
+        "cycles ="
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 20,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 20
+      },
+      "path": "docs/exploration/k-sweep-dma-crossover.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "ceil(",
+        "cycle model"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 28,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 28
+      },
+      "path": "docs/exploration/mac-density-dma-bound.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [
+        "make test-mma-activation-sweep"
+      ],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "ceil(",
+        "cycle model"
+      ],
+      "explicit_harness": true,
+      "harness_paths": [
+        "tests/test_mma_activation_sweep.c"
+      ],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 19,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 19
+      },
+      "path": "docs/exploration/mma-fused-activation-overhead.md",
+      "producer_class": "mixed",
+      "question": true,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "cycles ="
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": false,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 10,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 10
+      },
+      "path": "docs/exploration/multicore-scaling-gemm256.md",
+      "producer_class": "report_prose",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 0,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 0
+      },
+      "path": "docs/exploration/norm-after-attention-pipeline.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [
+        "make test-norm-sweep"
+      ],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "cycle model"
+      ],
+      "explicit_harness": true,
+      "harness_paths": [
+        "tests/test_norm_sweep.c"
+      ],
+      "hypothesis": false,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 14,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 14
+      },
+      "path": "docs/exploration/norm-mode-comparison.md",
+      "producer_class": "mixed",
+      "question": true,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle model",
+        "ceil(",
+        "cycles ="
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 12,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 12
+      },
+      "path": "docs/exploration/pe-array-sweep-gemm128.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "ceil(",
+        "cycle model"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 4,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 4
+      },
+      "path": "docs/exploration/pipeline-depth-dataflow-interaction.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "ceil(",
+        "cycle model"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 15,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 15
+      },
+      "path": "docs/exploration/pipeline-depth-sweep-gemm128.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "ceil(",
+        "cycle model",
+        "cycles  ="
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 22,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 22
+      },
+      "path": "docs/exploration/pipeline-depth-workload-interaction.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [
+        "make test-pooling-sweep"
+      ],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "cycle model",
+        "cycles ="
+      ],
+      "explicit_harness": true,
+      "harness_paths": [
+        "tests/test_pooling_sweep.c"
+      ],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 4,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 4
+      },
+      "path": "docs/exploration/pooling-config-sweep.md",
+      "producer_class": "mixed",
+      "question": true,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "ceil(",
+        "cycle model"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 45,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 45
+      },
+      "path": "docs/exploration/precision-sweep-gemm128.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [
+        "make test-rounding-sweep"
+      ],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [],
+      "explicit_harness": true,
+      "harness_paths": [
+        "tests/test_rounding_sweep.c"
+      ],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 0,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 0
+      },
+      "path": "docs/exploration/rounding-mode-accuracy-sweep.md",
+      "producer_class": "linked_or_executable",
+      "question": true,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle Model",
+        "cycle model"
+      ],
+      "explicit_harness": true,
+      "harness_paths": [
+        "tests/test_dataflow_sweep.c"
+      ],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 4,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 4
+      },
+      "path": "docs/exploration/rs-pipeline-depth-sweep.md",
+      "producer_class": "mixed",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [
+        "make test-scheduler-sweep"
+      ],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "cycle model"
+      ],
+      "explicit_harness": true,
+      "harness_paths": [
+        "tests/test_scheduler_sweep.c"
+      ],
+      "hypothesis": false,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 0,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 0
+      },
+      "path": "docs/exploration/scheduler-policy-sweep.md",
+      "producer_class": "mixed",
+      "question": false,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 0,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 0
+      },
+      "path": "docs/exploration/softmax-after-attention-pipeline.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "Cycle model",
+        "cycles ="
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": false,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 9,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 9
+      },
+      "path": "docs/exploration/softmax-mode-comparison.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "cycles ="
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": false,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 12,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 12
+      },
+      "path": "docs/exploration/sram-arbitration-sweep.md",
+      "producer_class": "report_prose",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "ceil(",
+        "cycle model",
+        "cycles ="
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 12,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 12
+      },
+      "path": "docs/exploration/sram-obuffer-tiling-threshold.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "ceil(",
+        "cycle model"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 17,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 17
+      },
+      "path": "docs/exploration/sram-wa-buffer-sizing.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    },
+    {
+      "actual_executed_command": [
+        "make test-sparsity",
+        "make test-sparsity-sweep"
+      ],
+      "ci_member": false,
+      "conclusion": false,
+      "equation_markers": [],
+      "explicit_harness": true,
+      "harness_paths": [
+        "tests/test_sparsity.c",
+        "tests/test_sparsity_sweep.c"
+      ],
+      "hypothesis": false,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 8,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 8
+      },
+      "path": "docs/exploration/structured-2of4-sweep.md",
+      "producer_class": "mixed",
+      "question": true,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [
+        "make test-compress",
+        "make test-config",
+        "make test-quick",
+        "make test-weight-compression-sweep"
+      ],
+      "ci_member": false,
+      "conclusion": false,
+      "equation_markers": [
+        "ceil(",
+        "cycle model"
+      ],
+      "explicit_harness": true,
+      "harness_paths": [
+        "tests/test_compress.c",
+        "tests/test_weight_compression_sweep.c"
+      ],
+      "hypothesis": false,
+      "manifest": false,
+      "method": false,
+      "output_row_count": 0,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 0
+      },
+      "path": "docs/exploration/weight-compression-rle-sweep.md",
+      "producer_class": "mixed",
+      "question": false,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [
+        "make test-compress",
+        "make test-config",
+        "make test-weight-compression-sweep"
+      ],
+      "ci_member": false,
+      "conclusion": false,
+      "equation_markers": [
+        "Cycle model",
+        "ceil(",
+        "cycle model",
+        "cycles ="
+      ],
+      "explicit_harness": true,
+      "harness_paths": [
+        "tests/test_compress.c",
+        "tests/test_weight_compression_sweep.c"
+      ],
+      "hypothesis": false,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 0,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 0
+      },
+      "path": "docs/exploration/weight-decoder-throughput.md",
+      "producer_class": "mixed",
+      "question": false,
+      "repro_command": true
+    },
+    {
+      "actual_executed_command": [],
+      "ci_member": false,
+      "conclusion": true,
+      "equation_markers": [
+        "ceil(",
+        "cycle model"
+      ],
+      "explicit_harness": false,
+      "harness_paths": [],
+      "hypothesis": true,
+      "manifest": false,
+      "method": true,
+      "output_row_count": 4,
+      "parameter_matrix": {
+        "declared": true,
+        "table_data_rows": 4
+      },
+      "path": "docs/exploration/workload-scaling-pe-optimal.md",
+      "producer_class": "report_prose",
+      "question": true,
+      "repro_command": false
+    }
+  ],
+  "source_target_pairs": [
+    {
+      "actual_command": "make test-attention-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-attention-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_attention_sweep.c",
+      "source_sha256": "dbe79587143552b4b4e611d19a2f79416e948438c8b41f5395c52099e407b4e5"
+    },
+    {
+      "actual_command": "make test-bench",
+      "aggregate_or_ci": false,
+      "make_target": "test-bench",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_benchmark.c",
+      "source_sha256": "23d9ec53903850fe52cb6316894ade2aa159491b1f1b9744f147403639aac2d3"
+    },
+    {
+      "actual_command": "make test-context-switch-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-context-switch-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_context_switch_sweep.c",
+      "source_sha256": "a6c50ea702490df03dcbe653b3f82601fc05807cbee8b5d068fb03c0dccae76a"
+    },
+    {
+      "actual_command": "make test-conv-groups-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-conv-groups-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_conv_groups_sweep.c",
+      "source_sha256": "a96a7e09bb2489471e588a90e5d4177f7c08078e7b16cd7a6dfd257589f58e3a"
+    },
+    {
+      "actual_command": "make test-conv-pool-cascade",
+      "aggregate_or_ci": false,
+      "make_target": "test-conv-pool-cascade",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_conv_pool_cascade.c",
+      "source_sha256": "6ccd3b6e20f4d834ea744f224b81070389d720c6a81e259da5c4a48d58358a77"
+    },
+    {
+      "actual_command": "make test-conv-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-conv-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_conv_sweep.c",
+      "source_sha256": "6be609cd3630663eef0cf78210f3529fbfaf592b0f9004e834be043512345453"
+    },
+    {
+      "actual_command": "make test-dataflow-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-dataflow-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_dataflow_sweep.c",
+      "source_sha256": "4b3dc2da732f4efa25ec250bfb76e3507bd07168a73a703350150228077f57e6"
+    },
+    {
+      "actual_command": "make test-interconnect-contention-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-interconnect-contention-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_interconnect_contention_sweep.c",
+      "source_sha256": "1380fe1284b8a3a8c11104c160538d6ef95ea18f6eac168be08aeedd2de3567a"
+    },
+    {
+      "actual_command": "make test-interconnect-routing-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-interconnect-routing-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_interconnect_routing_sweep.c",
+      "source_sha256": "75179c70b04bc98b65ed9b647aaa36e847f415c90ee94e62b9b435492baefba4"
+    },
+    {
+      "actual_command": "make test-interconnect-switching-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-interconnect-switching-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_interconnect_switching_sweep.c",
+      "source_sha256": "bd19e7762e5514122e1d7cdf5c79cf918f658a1c1b2caeb7e97b45de66cbdc01"
+    },
+    {
+      "actual_command": "make test-interconnect-topology-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-interconnect-topology-sweep",
+      "producer_class": "local_formula",
+      "source": "tests/test_interconnect_topology_sweep.c",
+      "source_sha256": "1222f166b8bf45248e8ed8ca57cbd47452471dad994bda754558089b4bdb24ee"
+    },
+    {
+      "actual_command": "make test-mma-activation-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-mma-activation-sweep",
+      "producer_class": "local_formula",
+      "source": "tests/test_mma_activation_sweep.c",
+      "source_sha256": "67ee510868c6ec13b78d45e261fbd1be4c56bc57e58a30679cc653897bb7da72"
+    },
+    {
+      "actual_command": "make test-multicore-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-multicore-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_multicore_scaling_sweep.c",
+      "source_sha256": "c164c20c9fed6fa8f9c873131438cccb470a53e3c6d0149f3fd9db1be6b66259"
+    },
+    {
+      "actual_command": "make test-norm-attention-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-norm-attention-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_norm_attention_sweep.c",
+      "source_sha256": "5e407d6d4a12a0f37317335964914a9e43b95459c41fe172b2f0d76f236ff8cf"
+    },
+    {
+      "actual_command": "make test-norm-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-norm-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_norm_sweep.c",
+      "source_sha256": "ccc5a438ccb891a6623b7fb613724900410c6f2ea161e5f78f3e65187810d321"
+    },
+    {
+      "actual_command": "make test-pooling-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-pooling-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_pooling_sweep.c",
+      "source_sha256": "d4473d888fd8a1879707524b2a6c39428a0e7ee1720247b84fddcee4a9aaff8e"
+    },
+    {
+      "actual_command": "make test-rounding-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-rounding-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_rounding_sweep.c",
+      "source_sha256": "f53a5de4a2ff210b156f21c6b03b3a0f077bac6182774456d58135a51cb0e3f2"
+    },
+    {
+      "actual_command": "make test-scheduler-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-scheduler-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_scheduler_sweep.c",
+      "source_sha256": "9a56f263e42dcd7e5573868e388849a4ced6c65576b8f437aaff12f51be9e940"
+    },
+    {
+      "actual_command": "make test-softmax-attention-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-softmax-attention-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_softmax_attention_sweep.c",
+      "source_sha256": "e8e02981a35622eac642b63255c68e39be3d10edeb3f604742b82b6d2e20de7a"
+    },
+    {
+      "actual_command": "make test-softmax-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-softmax-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_softmax_sweep.c",
+      "source_sha256": "f5e0d4dbf405ae7da2910f41993c3cddce1b7806f94393758d82d6d796a3b312"
+    },
+    {
+      "actual_command": "make test-sparsity-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-sparsity-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_sparsity_sweep.c",
+      "source_sha256": "15a3804334b5fb9cc108598b971d9dec897dc27e0db89d21cd541334ce7c21f4"
+    },
+    {
+      "actual_command": "make test-weight-compression-sweep",
+      "aggregate_or_ci": false,
+      "make_target": "test-weight-compression-sweep",
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_weight_compression_sweep.c",
+      "source_sha256": "755ee98ba22775a8481e5ed60b4978e575e45d8a1882861a563e528d2f3065bd"
+    },
+    {
+      "actual_command": "cc tests/test_int8_sweep.c libtucmodel.a -lm",
+      "aggregate_or_ci": false,
+      "make_target": null,
+      "producer_class": "linked_or_executable",
+      "source": "tests/test_int8_sweep.c",
+      "source_sha256": "fa4db1454b4fd24dc2c36d30b1268805d97216f55cb2641924cf0cded3ab2bf2"
+    }
+  ]
+}

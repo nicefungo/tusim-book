@@ -1,0 +1,15 @@
+CH21_PREDRAFT_VALIDATION FAIL manifest-set:manifest
+CH21_PREDRAFT_VALIDATION FAIL regular:b
+CH21_PREDRAFT_VALIDATION FAIL fixture-exact-set
+CH21_PREDRAFT_VALIDATION FAIL manifest-duplicate:a
+CH21_PREDRAFT_VALIDATION FAIL manifest-path:../x
+CH21_PREDRAFT_VALIDATION FAIL regular:b
+normal_cases=6
+CH21_PREDRAFT_VALIDATION FAIL manifest-set:manifest
+CH21_PREDRAFT_VALIDATION FAIL regular:b
+CH21_PREDRAFT_VALIDATION FAIL fixture-exact-set
+CH21_PREDRAFT_VALIDATION FAIL manifest-duplicate:a
+CH21_PREDRAFT_VALIDATION FAIL manifest-path:../x
+CH21_PREDRAFT_VALIDATION FAIL regular:b
+optimized_cases=6
+normal_cases=6 optimized_cases=6 all_rejected=1

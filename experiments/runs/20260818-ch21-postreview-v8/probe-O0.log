@@ -1,0 +1,12 @@
+DATAFLOW_ROUTE requested_label=output_stationary process_global_before=1 core_snapshot_before=0 core_snapshot_after=0 effective_core=weight_stationary
+DATAFLOW_EXEC tag=labeled_os active=weight_stationary delta=67 output=58,64,139,154
+DATAFLOW_EXEC tag=active_os active=output_stationary delta=4 output=58,64,139,154
+DATAFLOW_EXEC tag=active_rs active=row_stationary delta=36 output=58,64,139,154
+DATAFLOW_LINKED_EXEC active=weight_stationary M=128 N=128 K=256 tile=16x16x16 cycles=81920
+DATAFLOW_LINKED_EXEC active=output_stationary M=128 N=128 K=256 tile=16x16x16 cycles=20480
+DATAFLOW_LINKED_EXEC active=row_stationary M=128 N=128 K=256 tile=16x16x16 cycles=50176
+ROUNDING_AXIS value=1.0007 rne=0x3c01 rtz=0x3c00 same_seed_equal=1 changed_seed_diff=1 seed12345_fnv=99a9ff040fc80ca3 seed54321_fnv=283bd184c961bcc2
+RANDOMNESS_SCOPE fixed_seed_replay=1 changed_seed_vector=1 independent_application_samples=0 application_accuracy=0
+ROUNDING_ORDER stable_case_seed_permutation_equal=1 single_seed_permutation_diff=1 stable_fnv=33c857eecbbc9f2f
+CONTEXT_EXEC full256=16484 live25_256=4196 control256=100 full256_bw16=32868 full256_bw64=8292 producer=linked_estimator
+CH21_SWEEP_PROBE SUMMARY failures=0

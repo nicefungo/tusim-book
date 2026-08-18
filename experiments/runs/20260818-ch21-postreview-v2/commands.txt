@@ -1,0 +1,6 @@
+git -C /home/zxy/Workplace/projects/tusim archive --format=tar e918c80b6fce833cd1fcae97730fa841c2176f25
+make -C <archive> -j2 libtucmodel.a
+cc -O0/-O2 -std=c11 -I<archive> ch21_sweep_probe.c <archive>/libtucmodel.a -lm
+python3 <archive>/scripts/sweep_aspect_ratio.py
+python3 experiments/ch21_formula_probe.py <output-dir>
+python3 experiments/ch21_predraft_validate.py --body|--outer|--postseal

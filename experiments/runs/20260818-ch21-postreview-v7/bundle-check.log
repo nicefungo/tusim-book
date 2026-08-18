@@ -1,0 +1,5 @@
+sha256-retained.txt: OK
+manifest-check.log: OK
+finalization.log: OK
+predraft-validation-normal.log: OK
+predraft-validation-optimized.log: OK

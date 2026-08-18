@@ -1,0 +1,10 @@
+ASPECT_MATRIX rows=120 M_set=12 N_set=10 K=128 producer=local_formula
+ASPECT_BOUNDARY M20N16_util=62.5 M40N16_util=83.3 M20N16_total=570 symmetry_16x256_256x16=1
+COUNTEREXAMPLE report_nonzero_remainder_le_3.8=0 M40_remainder8_waste=16.7
+ASPECT_TRANSITION totals=404,543,570,606,669,678 tie_M16_M24=1 padding20to32_reverses=1 duplicated_20x48=1382_vs_1376
+DATAFLOW_SENSITIVITY K_points=1,16,32,64,256,1024 fixed_formula_delta=32 decreasing_fraction=1 producer=local_formula
+CONTEXT_ROWS full256=16484 live25_256=4196 control256=100 full256_bw16=32868 full256_bw64=8292 producer=linked_estimator
+CONTEXT_CROSSOVER budget10000_bw52=10183 bw53=9993 full128_live32_tie=4196 control_reversal_reload_gt=16384
+PRODUCER_CLASSES executable=1 linked_estimator=1 local_formula=1 report_prose=1 heterogeneous_sum=0
+LIMIT_BOUNDARY control100_excludes_reload=1 aspect_not_runtime=1 dataflow_formula_not_effective_route=1 portfolio_conclusion=0 compiler_runtime_composition=0
+CH21_FORMULA_PROBE PASS

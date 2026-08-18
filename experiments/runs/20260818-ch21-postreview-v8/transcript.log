@@ -1,0 +1,79 @@
+SOURCE_STATE before head=e918c80b6fce833cd1fcae97730fa841c2176f25 detached=1 dirty_entries=0 ignored_hash=55cee6bf897c58ee52931706ac6be61adacb18d4d7b3b12f388952a9f79a0485
+BOOK_STATE head=3e8ec2bbf64f9a85b8ffbfd9ca12ce2ccdef3379 branch=main clean=1
+TOOLCHAIN host=aarch64 cc=cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0 make=GNU Make 4.3 python=Python 3.11.15 locale=C
+CHECK pin=PASS
+CHECK hash:Makefile=PASS
+CHECK hash:scripts/sweep_aspect_ratio.py=PASS
+CHECK hash:tests/test_dataflow_sweep.c=PASS
+CHECK hash:tests/test_rounding_sweep.c=PASS
+CHECK hash:tests/test_context_switch_sweep.c=PASS
+CHECK hash:tests/test_int8_sweep.c=PASS
+CHECK hash:tests/test_interconnect_topology_sweep.c=PASS
+CHECK hash:tests/test_mma_activation_sweep.c=PASS
+CHECK hash:tu_cmodel/tu_core.c=PASS
+CHECK hash:tu_cmodel/compute/dataflow/dataflow_dispatcher.c=PASS
+CHECK hash:tu_cmodel/compute/dataflow/weight_stationary.c=PASS
+CHECK hash:tu_cmodel/compute/dataflow/output_stationary.c=PASS
+CHECK hash:tu_cmodel/compute/dataflow/row_stationary.c=PASS
+CHECK hash:tu_cmodel/tu_cmodel.c=PASS
+CHECK hash:tu_cmodel/rounding.c=PASS
+CHECK hash:tu_cmodel/tu_precision.c=PASS
+CHECK hash:tu_cmodel/infra/tu_context.c=PASS
+CHECK hash:docs/exploration/aspect-ratio-alignment-sweep.md=PASS
+CHECK hash:docs/exploration/dataflow-comparison-gemm128.md=PASS
+CHECK hash:docs/exploration/rounding-mode-accuracy-sweep.md=PASS
+CHECK hash:docs/exploration/context-switch-state-scope.md=PASS
+CHECK predicate:exact-21-sweep-token-sources=PASS
+CHECK predicate:exact-22-source-target-pairs=PASS
+CHECK predicate:manual-no-rule-singleton=PASS
+CHECK predicate:exploration-targets-not-aggregate=PASS
+CHECK predicate:exact-46-report-set=PASS
+CHECK predicate:no-source-manifest=PASS
+CHECK predicate:dataflow-label-set-before-core-call=PASS
+CHECK predicate:core-operation-swaps-snapshot-in=PASS
+CHECK predicate:dataflow-sweep-unconditional-success=PASS
+CHECK predicate:dataflow-analytical-formula-local=PASS
+CHECK predicate:dataflow-sweep-all-three-cycle-formulas=PASS
+CHECK predicate:dataflow-report-shape-level-formulas=PASS
+CHECK predicate:dataflow-dispatcher-cycle-composition=PASS
+CHECK predicate:dataflow-linked-ws-cycle-contract=PASS
+CHECK predicate:dataflow-linked-os-cycle-contract=PASS
+CHECK predicate:dataflow-linked-rs-cycle-contract=PASS
+CHECK predicate:rounding-mode-affects-conversion=PASS
+CHECK predicate:rounding-first-stochastic-unseeded=PASS
+CHECK predicate:rounding-only-one-explicit-seed=PASS
+CHECK predicate:context-transfer-equation=PASS
+CHECK predicate:context-sweep-three-scopes=PASS
+CHECK predicate:aspect-exact-axis-lists=PASS
+CHECK predicate:aspect-script-two-different-fill-drain-formulas=PASS
+CHECK predicate:aspect-report-compiler-action-unsupported=PASS
+CHECK predicate:aspect-report-global-remainder-overclaim=PASS
+CHECK predicate:producer-classes-separated=PASS
+CHECK report-field-counts=PASS
+CH21_SOURCE_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 hashes=21 predicates=26 checks=48
+SOURCE_HASH_MUTATION rejected=1 restored=1
+RELATION_MUTATION count_preserved=22 rejected=1
+REPORT_ROLE_MUTATION rejected=1
+CH21_BOUNDARY_AUDIT PASS pin=e918c80b6fce833cd1fcae97730fa841c2176f25 source_bridges=0 unsupported_claims=0 claim_files=4
+BOUNDARY_MUTATION rejected=1
+PROBE_OPT_STABILITY byte_identical=1
+FAIL route-cycles
+ROUTE_MUTATION effective_selection_rejected=1
+**Configs tested:** 120
+ASPECT_MATRIX rows=120 M_set=12 N_set=10 K=128 producer=local_formula
+ASPECT_BOUNDARY M20N16_util=62.5 M40N16_util=83.3 M20N16_total=570 symmetry_16x256_256x16=1
+COUNTEREXAMPLE report_nonzero_remainder_le_3.8=0 M40_remainder8_waste=16.7
+ASPECT_TRANSITION totals=404,543,570,606,669,678 tie_M16_M24=1 padding20to32_reverses=1 duplicated_20x48=1382_vs_1376
+DATAFLOW_REPORT_SENSITIVITY K_points=1,16,32,64,256,1024 R_points=8,16,32 fixed_formula_delta=32 decreasing_fraction=1 producer=report_prose
+DATAFLOW_PRODUCERS sweep_local=26624,22528,24640 report_local=21536,21504 linked_plugin=81920,20480,50176 incomparable=1
+ASPECT_TWO_AXIS workload_M=16,17,20,24,31,32 architecture_pd_bus=1_32,2_32,4_32,2_16,2_64
+CONTEXT_ROWS full256=16484 live25_256=4196 control256=100 full256_bw16=32868 full256_bw64=8292 producer=linked_estimator
+CONTEXT_CROSSOVER budget10000_bw52=10183 bw53=9993 full128_live32_tie=4196 control_reversal_reload_gt=16384
+PRODUCER_CLASSES executable=1 linked_estimator=1 local_formula=1 report_prose=1 heterogeneous_sum=0
+LIMIT_BOUNDARY control100_excludes_reload=1 aspect_not_runtime=1 dataflow_formula_not_effective_route=1 portfolio_conclusion=0
+CH21_FORMULA_PROBE PASS
+FORMULA_MUTATION stale_axis_rejected=1 linked_plugin_rejected=1
+STATUS_MUTATION upstream_zero_mismatch_rejected=1
+DECISION_SCHEMA cases=4 required_fields=24
+SOURCE_STATE after_body head=e918c80b6fce833cd1fcae97730fa841c2176f25 detached=1 dirty_entries=0 ignored_hash=55cee6bf897c58ee52931706ac6be61adacb18d4d7b3b12f388952a9f79a0485
+BOOK_INPUTS unchanged=1 head=3e8ec2bbf64f9a85b8ffbfd9ca12ce2ccdef3379

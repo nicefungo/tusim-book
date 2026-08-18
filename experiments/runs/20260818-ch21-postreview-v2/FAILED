@@ -1,0 +1,8 @@
+CH21_POSTREVIEW_RUN FAILED
+run=20260818-ch21-postreview-v2
+exit_code=1
+stage=report-role-mutation-execution
+cause=mutation audit was invoked without its inventory-output argument, so report classification gates were not evaluated and the expected rejection did not occur
+source_state_after=head=e918c80b6fce833cd1fcae97730fa841c2176f25 detached=1 dirty_entries=0
+postreview_authorization=not_issued
+superseded_by=next fresh run id

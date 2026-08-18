@@ -1,0 +1,5 @@
+git archive e918c80b6fce833cd1fcae97730fa841c2176f25
+make -j2 libtucmodel.a
+cc -O0/-O2 ch21_sweep_probe.c libtucmodel.a -lm
+python3 scripts/sweep_aspect_ratio.py
+python3 ch21_formula_probe.py

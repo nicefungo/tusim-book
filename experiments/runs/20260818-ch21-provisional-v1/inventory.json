@@ -1,0 +1,425 @@
+{
+  "aggregate_exploration_targets": [],
+  "no_rule": [
+    "tests/test_int8_sweep.c"
+  ],
+  "pin": "e918c80b6fce833cd1fcae97730fa841c2176f25",
+  "producer_classes": {
+    "executable_or_linked_inventory": 19,
+    "local_formula_inventory": 4
+  },
+  "reports": [
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/aspect-ratio-alignment-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/attention-engine-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/bitmap-weight-compression.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/broadcast-dma-multicore-scaling.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/bus-width-sweep-gemm128.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/context-switch-state-scope.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/conv-group-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/conv-pool-cascade.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/convolution-kernel-stride-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/dataflow-comparison-gemm128.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/dataflow-pe-interaction.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/dataflow-rs-comparison-gemm128.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/db-pe-size-goldilocks.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/dma-channel-queue-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/double-buffer-mtiling-recovery.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/dram-type-clock-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/gbuf-sizing-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/int8-quantization-throughput.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/interconnect-contention-traffic-matrix.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/interconnect-mesh-routing-order.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/interconnect-switching-modes.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/interconnect-topology-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/k-sweep-dma-crossover.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/mac-density-dma-bound.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/mma-fused-activation-overhead.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/multicore-scaling-gemm256.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/norm-after-attention-pipeline.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/norm-mode-comparison.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/pe-array-sweep-gemm128.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/pipeline-depth-dataflow-interaction.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/pipeline-depth-sweep-gemm128.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/pipeline-depth-workload-interaction.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/pooling-config-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/precision-sweep-gemm128.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/rounding-mode-accuracy-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/rs-pipeline-depth-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/scheduler-policy-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/softmax-after-attention-pipeline.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/softmax-mode-comparison.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/sram-arbitration-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/sram-obuffer-tiling-threshold.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/sram-wa-buffer-sizing.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/structured-2of4-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/weight-compression-rle-sweep.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/weight-decoder-throughput.md",
+      "question": false,
+      "repro_command": false
+    },
+    {
+      "explicit_harness": false,
+      "hypothesis": false,
+      "path": "docs/exploration/workload-scaling-pe-optimal.md",
+      "question": false,
+      "repro_command": false
+    }
+  ],
+  "source_target_pairs": [
+    {
+      "source": "tests/test_attention_sweep.c",
+      "target": "test-attention-sweep"
+    },
+    {
+      "source": "tests/test_benchmark.c",
+      "target": "test-bench"
+    },
+    {
+      "source": "tests/test_context_switch_sweep.c",
+      "target": "test-context-switch-sweep"
+    },
+    {
+      "source": "tests/test_conv_groups_sweep.c",
+      "target": "test-conv-groups-sweep"
+    },
+    {
+      "source": "tests/test_conv_pool_cascade.c",
+      "target": "test-conv-pool-cascade"
+    },
+    {
+      "source": "tests/test_conv_sweep.c",
+      "target": "test-conv-sweep"
+    },
+    {
+      "source": "tests/test_dataflow_sweep.c",
+      "target": "test-dataflow-sweep"
+    },
+    {
+      "source": "tests/test_interconnect_contention_sweep.c",
+      "target": "test-interconnect-contention-sweep"
+    },
+    {
+      "source": "tests/test_interconnect_routing_sweep.c",
+      "target": "test-interconnect-routing-sweep"
+    },
+    {
+      "source": "tests/test_interconnect_switching_sweep.c",
+      "target": "test-interconnect-switching-sweep"
+    },
+    {
+      "source": "tests/test_interconnect_topology_sweep.c",
+      "target": "test-interconnect-topology-sweep"
+    },
+    {
+      "source": "tests/test_mma_activation_sweep.c",
+      "target": "test-mma-activation-sweep"
+    },
+    {
+      "source": "tests/test_multicore_scaling_sweep.c",
+      "target": "test-multicore-sweep"
+    },
+    {
+      "source": "tests/test_norm_attention_sweep.c",
+      "target": "test-norm-attention-sweep"
+    },
+    {
+      "source": "tests/test_norm_sweep.c",
+      "target": "test-norm-sweep"
+    },
+    {
+      "source": "tests/test_pooling_sweep.c",
+      "target": "test-pooling-sweep"
+    },
+    {
+      "source": "tests/test_rounding_sweep.c",
+      "target": "test-rounding-sweep"
+    },
+    {
+      "source": "tests/test_scheduler_sweep.c",
+      "target": "test-scheduler-sweep"
+    },
+    {
+      "source": "tests/test_softmax_attention_sweep.c",
+      "target": "test-softmax-attention-sweep"
+    },
+    {
+      "source": "tests/test_softmax_sweep.c",
+      "target": "test-softmax-sweep"
+    },
+    {
+      "source": "tests/test_sparsity_sweep.c",
+      "target": "test-sparsity-sweep"
+    },
+    {
+      "source": "tests/test_weight_compression_sweep.c",
+      "target": "test-weight-compression-sweep"
+    }
+  ]
+}

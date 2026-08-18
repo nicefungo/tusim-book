@@ -1,0 +1,1 @@
+FINALIZED_RUN run=20260818-ch21-postreview-v7 transcript_sha256=e2d7c478d514f1af6ea4dbb497a93af9777836c32ab5fe067fc2dc966ecce777 input_commit=18f5c8593ca748c910bba96d3db81ca1530a48ec trust=exact-payload,root-manifest,derived-receipts,git-seal authorization=post-review-evidence-authorized

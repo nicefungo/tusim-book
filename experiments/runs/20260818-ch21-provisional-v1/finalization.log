@@ -1,0 +1,1 @@
+FINALIZED_RUN run=20260818-ch21-provisional-v1 transcript_sha256=16f7d32b1bba091e39d600ef1c8b8c2ee4e1b54f932d9fe0bfd751a5c9c23921 input_commit=4ed25b93e3d3acd31780b4b6e5bab333df6945c2 trust=inner-manifest,outer-root,derived-checks,git-seal

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "required_fields": ["id", "producer_class", "producer", "interval", "reset", "numerator", "denominator", "units", "clock_assumption", "omissions", "fidelity", "safe_use"],
+  "rows": [
+    {
+      "id": "dataflow-active-route",
+      "producer_class": "executable",
+      "producer": "tu_core snapshot swap plus dataflow registry/plugin",
+      "interval": "one focused tu_core_mma after explicit buffer initialization",
+      "reset": "fresh core or explicitly zeroed output; active plugin assigned before row",
+      "numerator": "active plugin id and exact FP32 output vector",
+      "denominator": "one declared 2x3 by 3x2 fixture",
+      "units": "plugin id and FP32 values",
+      "clock_assumption": "none for functional output",
+      "omissions": ["physical movement", "calibrated timing", "energy"],
+      "fidelity": "executable cmodel semantics at exact source pin",
+      "safe_use": "prove whether a label reaches the effective core plugin and whether routes preserve this functional fixture"
+    },
+    {
+      "id": "dataflow-linked-cycles",
+      "producer_class": "linked_estimator",
+      "producer": "dataflow dispatcher and plugin estimate_cycles callbacks",
+      "interval": "one focused MMA after reading core estimated_cycles before and after",
+      "reset": "delta within one core; output buffer reset per route",
+      "numerator": "estimated-cycle delta",
+      "denominator": "one MMA invocation and its plugin tile decomposition",
+      "units": "model cycles",
+      "clock_assumption": "no frequency conversion",
+      "omissions": ["local report DMA formula", "elapsed time", "physical calibration"],
+      "fidelity": "linked analytical plugin estimator",
+      "safe_use": "discriminate active WS/OS/RS estimator consumers; do not add to local report totals"
+    },
+    {
+      "id": "rounding-conversion-vector",
+      "producer_class": "executable",
+      "producer": "tu_fp32_to_fp16 through configurable rounding module",
+      "interval": "64 conversions of one declared FP32 value",
+      "reset": "explicit mode selection and stochastic reseed before each governed vector",
+      "numerator": "FP16 code vector or its bound FNV digest",
+      "denominator": "64 conversions",
+      "units": "binary16 codes",
+      "clock_assumption": "none",
+      "omissions": ["independent workload samples", "per-accumulation rounding", "application accuracy", "unbiasedness proof"],
+      "fidelity": "executable conversion semantics",
+      "safe_use": "RNE/RTZ discrimination and same-seed/changed-seed reachability"
+    },
+    {
+      "id": "context-switch-cost",
+      "producer_class": "linked_estimator",
+      "producer": "tu_context manager byte-cost equation",
+      "interval": "one switch between two allocated contexts",
+      "reset": "fresh manager per scope/bandwidth row; cumulative overhead read after first switch",
+      "numerator": "fixed term plus outgoing and incoming retained bytes",
+      "denominator": "declared state bytes per model cycle",
+      "units": "model cycles",
+      "clock_assumption": "none; no wall-time conversion",
+      "omissions": ["reload", "backing store", "queueing", "contention", "energy", "calibration"],
+      "fidelity": "linked analytical manager estimate at caller-established legal boundary",
+      "safe_use": "scope and bandwidth sensitivity within the exact equation"
+    },
+    {
+      "id": "aspect-ratio-matrix",
+      "producer_class": "local_formula",
+      "producer": "standalone Python arithmetic in sweep_aspect_ratio.py and independent recomputation",
+      "interval": "one declared M,N,K row",
+      "reset": "deterministic pure recomputation",
+      "numerator": "useful MACs or FLOPs, depending the named metric",
+      "denominator": "formula tile capacity or local total formula cycles",
+      "units": "utilization fraction, formula cycles, or TOPS under stated scaling",
+      "clock_assumption": "1 GHz only where TOPS is printed",
+      "omissions": ["cmodel route", "compiler padding", "runtime layout", "physical calibration"],
+      "fidelity": "local analytical formula; duplicated report section is independently rejected",
+      "safe_use": "exact tested-grid arithmetic, transitions, ties, and counterexamples"
+    },
+    {
+      "id": "historical-report-prose",
+      "producer_class": "report_prose",
+      "producer": "tracked exploration markdown",
+      "interval": "not an execution interval",
+      "reset": "not applicable",
+      "numerator": "not authoritative",
+      "denominator": "not authoritative",
+      "units": "as stated, subject to source/formula verification",
+      "clock_assumption": "not independently established by prose",
+      "omissions": ["mechanism proof", "status proof", "source integrity", "composition bridge"],
+      "fidelity": "historical narrative requiring independent authorization",
+      "safe_use": "recover hypotheses, claimed recommendations, and limitations; not evidence by itself"
+    }
+  ],
+  "heterogeneous_sum_allowed": false
+}

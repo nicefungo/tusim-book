@@ -1,0 +1,8 @@
+CH21_POSTREVIEW_RUN FAILED
+run=20260818-ch21-postreview-v5
+exit_code=1
+stage=manifest-hierarchy-mutation-construction
+cause=the duplicate-entry control attempted to append a manifest to itself with cat; GNU cat rejected identical input/output before validator execution
+source_state_after=head=e918c80b6fce833cd1fcae97730fa841c2176f25 detached=1 dirty_entries=0
+postreview_authorization=not_issued
+superseded_by=next fresh run id

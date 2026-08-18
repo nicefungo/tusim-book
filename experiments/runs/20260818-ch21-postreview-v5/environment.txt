@@ -1,0 +1,6 @@
+host=aarch64
+cc=cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+make=GNU Make 4.3
+python=Python 3.11.15
+locale=C
+source_pin=e918c80b6fce833cd1fcae97730fa841c2176f25
