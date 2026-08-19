@@ -1,0 +1,276 @@
+#include <inttypes.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
+
+#include "tu_cmodel/tu_sram.h"
+#include "tu_cmodel/memory/double_buffer.h"
+#include "tu_cmodel/dma_descriptor.h"
+#include "tu_cmodel/compute/pipeline_controller.h"
+#include "tu_cmodel/tu_core.h"
+#include "tu_cmodel/infra/tu_context.h"
+
+static int failures = 0;
+#define CHECK(c, msg) do { if (!(c)) { printf("CHECK_FAIL %s\n", msg); failures++; } } while (0)
+
+static tu_dma_descriptor_t *linear_desc(tu_sram_region_t *r, void *host, uint32_t bytes) {
+    return tu_dma_desc_create_linear(0, TU_DMA_DIR_HOST_TO_TU, r, 0, host, 1, bytes);
+}
+
+static void standalone_state(void) {
+    tu_sram_region_t r;
+    tu_sram_init(&r, 64, "db-probe");
+    tu_sram_set_bw_modeling(&r, false);
+    CHECK(tu_sram_enable_double_buffer(&r) == 0, "enable");
+    uint8_t *primary = r.banks.data;
+    uint8_t *shadow_alloc = r.db->shadow_data;
+    memset(primary, 0x11, 64);
+    printf("DB_INIT active_idx=%u active=%02x shadow=%02x dirty=%d swaps=%" PRIu64 " size=%u\n",
+           r.db->active_idx, tu_sram_get_active_ptr(&r)[0],
+           tu_sram_get_shadow_ptr(&r)[0], tu_sram_is_shadow_dirty(&r),
+           r.db->swap_count, r.db->buffer_size);
+
+    uint64_t c1 = tu_sram_swap_buffers(&r);
+    printf("DB_CLEAN_SWAP count=%" PRIu64 " active_idx=%u active=%02x shadow=%02x dirty=%d\n",
+           c1, r.db->active_idx, tu_sram_get_active_ptr(&r)[0],
+           tu_sram_get_shadow_ptr(&r)[0], tu_sram_is_shadow_dirty(&r));
+    CHECK(tu_sram_get_active_ptr(&r) == shadow_alloc && tu_sram_get_active_ptr(&r)[0] == 0,
+          "clean swap makes zero shadow active");
+
+    memset(tu_sram_get_shadow_ptr(&r), 0x33, 16);
+    tu_sram_notify_shadow_write(&r, 16, 5);
+    uint64_t c2 = tu_sram_swap_buffers(&r);
+    tu_db_stats_t s;
+    tu_sram_get_db_stats(&r, &s);
+    printf("DB_WRITTEN_SWAP count=%" PRIu64 " active_idx=%u active=%02x shadow=%02x dirty=%d bytes=%" PRIu64 " dma_cycles=%" PRIu64 "\n",
+           c2, r.db->active_idx, tu_sram_get_active_ptr(&r)[0],
+           tu_sram_get_shadow_ptr(&r)[0], tu_sram_is_shadow_dirty(&r),
+           s.dma_to_shadow_bytes, s.dma_to_shadow_cycles);
+    CHECK(tu_sram_get_active_ptr(&r) == primary && tu_sram_get_active_ptr(&r)[0] == 0x33,
+          "written old primary active after second swap");
+
+    uint8_t before = tu_sram_get_shadow_ptr(&r)[0];
+    tu_sram_notify_shadow_write(&r, 1000, 77);
+    printf("DB_NOTIFY_ONLY shadow_before=%02x shadow_after=%02x dirty=%d bytes=%" PRIu64 " dma_cycles=%" PRIu64 "\n",
+           before, tu_sram_get_shadow_ptr(&r)[0], tu_sram_is_shadow_dirty(&r),
+           r.db->dma_to_shadow_bytes, r.db->dma_to_shadow_cycles);
+    CHECK(before == tu_sram_get_shadow_ptr(&r)[0], "notify has no byte effect");
+    CHECK(r.db->dma_to_shadow_bytes == 1016, "notify accepts oversized byte count");
+    tu_sram_destroy(&r);
+}
+
+static void shared_bank_meter(void) {
+    tu_sram_region_t r;
+    tu_sram_init(&r, 128, "meter");
+    CHECK(tu_sram_enable_double_buffer(&r) == 0, "meter enable");
+    uint32_t v = 0x12345678, out = 0;
+    uint64_t first = tu_sram_write(&r, 0, &v);
+    tu_sram_swap_buffers(&r);
+    uint64_t second = tu_sram_read(&r, 0, &out);
+    printf("DB_SHARED_METER first=%" PRIu64 " second=%" PRIu64 " active_value=%08x bank0_words=%d\n",
+           first, second, out, r.banks.bw_banks[0].words_available);
+    CHECK(first == 0 && second == TU_SRAM_BW_STALL_PENALTY,
+          "roles share bank budget");
+    tu_sram_destroy(&r);
+}
+
+static void disable_preserves_active(void) {
+    tu_sram_region_t r;
+    tu_sram_init(&r, 64, "disable");
+    tu_sram_set_bw_modeling(&r, false);
+    CHECK(tu_sram_enable_double_buffer(&r) == 0, "disable enable");
+    memset(r.banks.data, 0x11, 64);
+    memset(r.db->shadow_data, 0x44, 64);
+    tu_sram_swap_buffers(&r);
+    tu_sram_disable_double_buffer(&r);
+    printf("DB_DISABLE enabled=%d primary=%02x db_null=%d\n",
+           tu_sram_is_double_buffered(&r), r.banks.data[0], r.db == NULL);
+    CHECK(r.banks.data[0] == 0x44 && r.db == NULL, "disable copies active shadow");
+    tu_sram_destroy(&r);
+}
+
+static void pipeline_bridge(void) {
+    tu_dma_init_full(true, 1, 8);
+    tu_sram_region_t r;
+    tu_sram_init(&r, 4096, "pipeline");
+    tu_sram_set_bw_modeling(&r, false);
+    CHECK(tu_sram_enable_double_buffer(&r) == 0, "pipeline enable");
+    uint8_t *active0 = tu_sram_get_active_ptr(&r);
+    uint8_t *shadow0 = tu_sram_get_shadow_ptr(&r);
+    memset(active0, 0x11, 64);
+    memset(shadow0, 0x22, 64);
+    uint8_t src[64];
+    memset(src, 0x7a, sizeof(src));
+
+    tu_pipeline_init(2, NULL);
+    tu_dma_descriptor_t *d = linear_desc(&r, src, sizeof(src));
+    int tid = tu_pipeline_submit_tile(d, NULL, 5, 99, &r);
+    printf("PIPE_BEFORE tid=%d stage=%d active=%02x shadow=%02x dst_region=%d dst_host_shadow=%d pipe_cycle=%" PRIu64 " dma_cycle=%" PRIu64 "\n",
+           tid, g_tu_pipeline.slots[0].stage, active0[0], shadow0[0],
+           d->dst_region == &r, d->dst_host == shadow0,
+           g_tu_pipeline.current_cycle, g_tu_dma.current_cycle);
+    tu_pipeline_advance();
+    printf("PIPE_AFTER stage=%d completed=%d desc_cycles=%" PRIu64 " pipe_cycle=%" PRIu64 " dma_cycle=%" PRIu64 " active=%02x shadow=%02x swapped=%d dirty=%d\n",
+           g_tu_pipeline.slots[0].stage, d->completed, d->cycles_completed,
+           g_tu_pipeline.current_cycle, g_tu_dma.current_cycle,
+           tu_sram_get_active_ptr(&r)[0], tu_sram_get_shadow_ptr(&r)[0],
+           g_tu_pipeline.slots[0].swapped, tu_sram_is_shadow_dirty(&r));
+    CHECK(d->dst_region == &r && d->dst_host == shadow0, "both destinations retained");
+    CHECK(tu_sram_get_active_ptr(&r)[0] == 0x22 && tu_sram_get_shadow_ptr(&r)[0] == 0x7a,
+          "descriptor wrote active then swap exposed stale shadow");
+    CHECK(tu_sram_is_shadow_dirty(&r), "post-swap notify marks old active shadow dirty");
+
+    tu_pipeline_sync();
+    tu_pipeline_stats_t ps;
+    tu_pipeline_get_stats(&ps);
+    printf("PIPE_LEDGER tiles=%u load=%" PRIu64 " compute=%" PRIu64 " seq=%" PRIu64 " piped=%" PRIu64 " saved=%" PRIu64 " speedup=%.6f pipe_cycle=%" PRIu64 "\n",
+           ps.total_tiles, ps.total_load_cycles, ps.total_compute_cycles,
+           ps.sequential_total, ps.pipelined_total, tu_pipeline_get_saved_cycles(),
+           ps.speedup, g_tu_pipeline.current_cycle);
+    CHECK(ps.sequential_total == 8 && ps.pipelined_total == 7 && ps.total_tiles == 1,
+          "single tile ledger");
+
+    tu_pipeline_destroy();
+    tu_dma_desc_destroy(d);
+    tu_sram_destroy(&r);
+
+    tu_sram_region_t seq;
+    tu_sram_init(&seq, 64, "depth1-noload");
+    tu_sram_set_bw_modeling(&seq, false);
+    memset(tu_sram_get_active_ptr(&seq), 0x55, 64);
+    CHECK(tu_sram_enable_double_buffer(&seq) == 0, "depth1 enable");
+    tu_pipeline_init(1, NULL);
+    int seq_id = tu_pipeline_submit_tile(NULL, NULL, 3, 9, &seq);
+    tu_pipeline_advance();
+    printf("PIPE_DEPTH1_NOLOAD tid=%d active=%02x shadow=%02x swaps=%" PRIu64
+           " dirty=%d stage=%d\n", seq_id,
+           tu_sram_get_active_ptr(&seq)[0], tu_sram_get_shadow_ptr(&seq)[0],
+           seq.db->swap_count, seq.db->shadow_dirty ? 1 : 0,
+           g_tu_pipeline.slots[0].stage);
+    CHECK(tu_sram_get_active_ptr(&seq)[0] == 0x00 &&
+          tu_sram_get_shadow_ptr(&seq)[0] == 0x55 && seq.db->swap_count == 1,
+          "depth1 no-load swaps stale shadow active");
+    tu_pipeline_sync();
+    tu_pipeline_stats_t seq_stats;
+    tu_pipeline_get_stats(&seq_stats);
+    printf("PIPE_DEPTH1_LEDGER seq=%" PRIu64 " piped=%" PRIu64
+           " saved=%" PRIu64 " speedup=%.6f\n",
+           seq_stats.sequential_total, seq_stats.pipelined_total,
+           tu_pipeline_get_saved_cycles(), seq_stats.speedup);
+    CHECK(seq_stats.sequential_total == 5 && seq_stats.pipelined_total == 3 &&
+          tu_pipeline_get_saved_cycles() == 0 && seq_stats.speedup > 1.66,
+          "depth1 baseline-only absent-DMA speedup");
+    tu_pipeline_destroy();
+    tu_sram_destroy(&seq);
+
+    tu_pipeline_init(2, NULL);
+    int empty_id = tu_pipeline_submit_tile(NULL, NULL, 5, 10, NULL);
+    tu_pipeline_sync();
+    tu_pipeline_stats_t empty;
+    tu_pipeline_get_stats(&empty);
+    printf("PIPE_EMPTY tid=%d seq=%" PRIu64 " piped=%" PRIu64
+           " saved=%" PRIu64 " speedup=%.6f overlap_load=%" PRIu64
+           " overlap_store=%" PRIu64 "\n", empty_id,
+           empty.sequential_total, empty.pipelined_total,
+           tu_pipeline_get_saved_cycles(), empty.speedup,
+           empty.overlapped_load_cycles, empty.overlapped_store_cycles);
+    CHECK(empty.sequential_total == 7 && empty.pipelined_total == 0 &&
+          tu_pipeline_get_saved_cycles() == 0,
+          "depth2 initial compute skips compute ledger and divides by zero");
+    tu_pipeline_destroy();
+    tu_dma_destroy();
+}
+
+static void reset_contract(void) {
+    tu_pipeline_init(2, NULL);
+    tu_pipeline_reset();
+    printf("PIPE_RESET initialized=%d depth=%u slots_null=%d free_slots=%d\n",
+           g_tu_pipeline.initialized, g_tu_pipeline.depth,
+           g_tu_pipeline.slots == NULL, tu_pipeline_free_slots());
+    CHECK(!g_tu_pipeline.initialized && g_tu_pipeline.depth == 2 &&
+          g_tu_pipeline.slots == NULL && tu_pipeline_free_slots() == 1,
+          "reset destroys without reinit");
+    int tid = tu_pipeline_submit_tile(NULL, NULL, 1, 123, NULL);
+    printf("PIPE_AFTER_RESET_SUBMIT tid=%d depth=%u initialized=%d stored_cmd=%u\n",
+           tid, g_tu_pipeline.depth, g_tu_pipeline.initialized,
+           g_tu_pipeline.slots[0].cmd_id);
+    CHECK(tid == 0 && g_tu_pipeline.depth == 1 && g_tu_pipeline.slots[0].cmd_id == 123,
+          "submit auto-inits depth one and stores cmd only");
+    tu_pipeline_destroy();
+}
+
+static void lifecycle_contracts(void) {
+    tu_sram_region_t reinit;
+    tu_sram_init(&reinit, 64, "reinit");
+    CHECK(tu_sram_enable_double_buffer(&reinit) == 0, "enable reinit db");
+    uint8_t *lost_primary = reinit.banks.data;
+    tu_sram_bw_bank_t *lost_meter = reinit.banks.bw_banks;
+    tu_double_buffer_t *lost_db = reinit.db;
+    uint8_t *lost_shadow = reinit.db->shadow_data;
+    tu_sram_init(&reinit, 32, "reinit-new");
+    printf("SRAM_REINIT primary_replaced=%d meter_replaced=%d db_lost=%d new_size=%u\n",
+           reinit.banks.data != lost_primary,
+           reinit.banks.bw_banks != lost_meter,
+           reinit.db == NULL, reinit.total_size);
+    CHECK(reinit.banks.data != lost_primary && reinit.banks.bw_banks != lost_meter &&
+          reinit.db == NULL && reinit.total_size == 32,
+          "live reinit overwrites allocation ownership");
+    /* Recover pointers made unreachable by the pinned re-init implementation. */
+    free(lost_shadow);
+    free(lost_db);
+    free(lost_primary);
+    free(lost_meter);
+    tu_sram_destroy(&reinit);
+
+    fflush(NULL);
+    pid_t child = fork();
+    CHECK(child >= 0, "fork context probe");
+    if (child == 0) {
+        tu_runtime_config_t rt = tu_runtime_config_default();
+        tu_core_t *core = tu_core_create(&rt);
+        tu_ctx_manager_config_t cfg = {
+            .max_contexts = 2,
+            .sched_policy = TU_CTX_SCHED_ROUND_ROBIN,
+            .switch_overhead = 1,
+        };
+        tu_ctx_manager_t *mgr = core ? tu_ctx_manager_create(core, &cfg) : NULL;
+        int cid0 = mgr ? tu_ctx_alloc(mgr) : -1;
+        int cid1 = mgr ? tu_ctx_alloc(mgr) : -1;
+        tu_sram_region_t *cw = core ? tu_core_get_sram_w(core) : NULL;
+        int erc = cw ? tu_sram_enable_double_buffer(cw) : -1;
+        int src = (mgr && cid0 == 0 && cid1 == 1) ? tu_ctx_save(mgr) : -1;
+        int rc = (src == 0) ? tu_ctx_restore(mgr, 1) : -1;
+        int ok = core && cw && erc == 0 && cid0 == 0 && cid1 == 1 &&
+                 src == 0 && rc == 0 &&
+                 cw->db == NULL && cw->banks.data != NULL;
+        printf("CTX_RESTORE ids=%d,%d save_rc=%d restore_rc=%d db_lost=%d primary_live=%d\n",
+               cid0, cid1, src, rc, cw ? cw->db == NULL : 0,
+               cw ? cw->banks.data != NULL : 0);
+        fflush(stdout);
+        /* Exit without cleanup: the pinned restore has made the old DB
+         * allocations unreachable and ordinary destruction is not a recovery
+         * protocol. The parent gates the semantic observation. */
+        _Exit(ok ? 0 : 1);
+    }
+    if (child > 0) {
+        int status = 0;
+        CHECK(waitpid(child, &status, 0) == child, "wait context probe");
+        CHECK(WIFEXITED(status) && WEXITSTATUS(status) == 0,
+              "context child observed ownership loss");
+    }
+}
+
+int main(void) {
+    standalone_state();
+    shared_bank_meter();
+    disable_preserves_active();
+    pipeline_bridge();
+    reset_contract();
+    lifecycle_contracts();
+    printf("CH16_PROBE SUMMARY failures=%d\n", failures);
+    return failures ? 1 : 0;
+}

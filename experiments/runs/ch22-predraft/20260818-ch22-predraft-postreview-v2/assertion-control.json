@@ -1,0 +1,7 @@
+{
+  "normal_ast_diagnostic": true,
+  "normal_returncode": 1,
+  "optimized_ast_diagnostic": true,
+  "optimized_returncode": 1,
+  "passed": true
+}

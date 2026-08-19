@@ -1,0 +1,240 @@
+{
+  "baseline_errors": [],
+  "baseline_passed": true,
+  "cases": [
+    {
+      "detected": true,
+      "errors": [
+        "claim-completeness",
+        "family-binding",
+        "recurring-register",
+        "report-binding"
+      ],
+      "expected_error": "claim-completeness",
+      "name": "drop-semantic-claim"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "report-universe"
+      ],
+      "expected_error": "report-universe",
+      "name": "drop-report"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "inventory-binding"
+      ],
+      "expected_error": "inventory-binding",
+      "name": "corrupt-inventory-hash"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "inventory-binding",
+        "inventory-universe",
+        "report-universe"
+      ],
+      "expected_error": "inventory-universe",
+      "name": "count-preserving-inventory-substitution"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "evidence-hash"
+      ],
+      "expected_error": "evidence-hash",
+      "name": "corrupt-source-hash"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "manifest-hash"
+      ],
+      "expected_error": "manifest-hash",
+      "name": "corrupt-manifest-hash"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "manifest-locator"
+      ],
+      "expected_error": "manifest-locator",
+      "name": "corrupt-manifest-locator"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "disposition-binding"
+      ],
+      "expected_error": "disposition-binding",
+      "name": "invalid-disposition"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "objective-tags"
+      ],
+      "expected_error": "objective-tags",
+      "name": "garbage-objective"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "metric-boundary"
+      ],
+      "expected_error": "metric-boundary",
+      "name": "compose-metric-domains"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "metric-boundary",
+        "report-binding"
+      ],
+      "expected_error": "metric-boundary",
+      "name": "count-preserving-domain-reassign"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "mandatory-open"
+      ],
+      "expected_error": "mandatory-open",
+      "name": "close-open-outcome"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "mandatory-open"
+      ],
+      "expected_error": "mandatory-open",
+      "name": "manufacture-local-dominance"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "decision-semantic-binding"
+      ],
+      "expected_error": "decision-semantic-binding",
+      "name": "erase-alternative-binding"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "decision-semantic-binding"
+      ],
+      "expected_error": "decision-semantic-binding",
+      "name": "erase-missing-dimension-binding"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "decision-semantic-binding"
+      ],
+      "expected_error": "decision-semantic-binding",
+      "name": "erase-safe-replacement"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "decision-semantic-binding"
+      ],
+      "expected_error": "decision-semantic-binding",
+      "name": "erase-limitation"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "family-bound"
+      ],
+      "expected_error": "family-bound",
+      "name": "eight-families"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "report-binding"
+      ],
+      "expected_error": "report-binding",
+      "name": "break-report-claim-membership"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "mandatory-contradiction-closure"
+      ],
+      "expected_error": "mandatory-contradiction-closure",
+      "name": "drop-mandatory-contradiction"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "mandatory-contradiction-closure"
+      ],
+      "expected_error": "mandatory-contradiction-closure",
+      "name": "reaffirm-mandatory-contradiction"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "conflict-reverse-link"
+      ],
+      "expected_error": "conflict-reverse-link",
+      "name": "break-conflict-reverse"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "recurring-register"
+      ],
+      "expected_error": "recurring-register",
+      "name": "close-derived-register"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "reconciliation-matrix"
+      ],
+      "expected_error": "reconciliation-matrix",
+      "name": "drop-reconciliation-row"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "reconciliation"
+      ],
+      "expected_error": "reconciliation",
+      "name": "drop-reconciliation-domain"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "reconciliation-log-hash"
+      ],
+      "expected_error": "reconciliation-log-hash",
+      "name": "corrupt-log-hash"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "scheduler-matrix"
+      ],
+      "expected_error": "scheduler-matrix",
+      "name": "mutate-scheduler-observation"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "reconciliation"
+      ],
+      "expected_error": "reconciliation",
+      "name": "lose-source-preservation"
+    }
+  ],
+  "detected": 28,
+  "passed": true,
+  "schema": "ch22-predraft-mutation-v3",
+  "total": 28
+}

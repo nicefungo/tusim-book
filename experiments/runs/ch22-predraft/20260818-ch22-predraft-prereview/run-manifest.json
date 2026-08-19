@@ -1,0 +1,19 @@
+{
+  "schema": "ch22-predraft-run-manifest-v1",
+  "run_id": "20260818-ch22-predraft-prereview",
+  "created_at": "2026-08-18T18:05:41+08:00",
+  "purpose": "Prereview six-domain reconciliation and mutation-tested claim/register gate",
+  "book_base_ancestor": "88cba9bf9a26b2ae2c3079e6c57446803ab76df0",
+  "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25",
+  "tusim_checkout": {
+    "detached": true,
+    "clean": true,
+    "read_only_policy": true
+  },
+  "source_materialization": "git archive --format=tar exact pin into a disposable directory",
+  "report_count": 46,
+  "claim_count": 1281,
+  "family_count": 6,
+  "mutation_result": "10/10 detected; zero baseline errors",
+  "prose_authorized": false
+}

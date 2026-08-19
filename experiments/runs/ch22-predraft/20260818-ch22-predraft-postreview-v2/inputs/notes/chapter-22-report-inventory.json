@@ -1,0 +1,244 @@
+{
+  "excluded_nonreport": [
+    {
+      "path": "docs/exploration/IMPLEMENTATION_BACKLOG.md",
+      "reason": "portfolio index/backlog, not an exploration report",
+      "sha256": "1ec08ad3336d0a9d5fee4f6dab633aecf769b94b7d8bfc22012085f0bd3442f1"
+    }
+  ],
+  "report_count": 46,
+  "reports": [
+    {
+      "lines": 125,
+      "path": "docs/exploration/aspect-ratio-alignment-sweep.md",
+      "sha256": "05739576b3f6f98b194122c569abf78aa18d7d3cb23f55590ffa9d8cbaf448ed"
+    },
+    {
+      "lines": 86,
+      "path": "docs/exploration/attention-engine-sweep.md",
+      "sha256": "9ebaf6ab33c507f25e0ff737b3c2bf04d2dcb4cf296e40b3f62245e25407b720"
+    },
+    {
+      "lines": 115,
+      "path": "docs/exploration/bitmap-weight-compression.md",
+      "sha256": "5232b44ae6089b8da5e56c90a91747e38ba609edeef2c0e9567bf481526bfc84"
+    },
+    {
+      "lines": 122,
+      "path": "docs/exploration/broadcast-dma-multicore-scaling.md",
+      "sha256": "ef201048b687c5ccb11d0bb808bcb98e633e1da95c6999ae8df4f5884b768fcd"
+    },
+    {
+      "lines": 116,
+      "path": "docs/exploration/bus-width-sweep-gemm128.md",
+      "sha256": "d3e6c490e78c52d647b90749d819da5a8f8b87882cdaa2f41a96eba785d16de1"
+    },
+    {
+      "lines": 86,
+      "path": "docs/exploration/context-switch-state-scope.md",
+      "sha256": "ae8b49e3b31e0172f69869d406c70996609f295f584357107847186259c80230"
+    },
+    {
+      "lines": 81,
+      "path": "docs/exploration/conv-group-sweep.md",
+      "sha256": "af46ede7e2d1311ad23415eb397b1ae76dc7db598ab8e4ffb294537ebfc1277c"
+    },
+    {
+      "lines": 104,
+      "path": "docs/exploration/conv-pool-cascade.md",
+      "sha256": "c9a766a326cc2d05506be59a962791eb59ce8829ae09ef57f576d6ea14713c90"
+    },
+    {
+      "lines": 61,
+      "path": "docs/exploration/convolution-kernel-stride-sweep.md",
+      "sha256": "a4ab7bb03a944c8ee7afbee17d26761b3fea6e8b800781e46236084ab0b1e009"
+    },
+    {
+      "lines": 102,
+      "path": "docs/exploration/dataflow-comparison-gemm128.md",
+      "sha256": "5884c943eadf6b92021c901d8c694be66ba89bd5f1e2190a33d6fdede0a2646d"
+    },
+    {
+      "lines": 99,
+      "path": "docs/exploration/dataflow-pe-interaction.md",
+      "sha256": "87a728d00ec60ce988878f26708a25a20f415f811c8c3d43b4d17800e6119968"
+    },
+    {
+      "lines": 71,
+      "path": "docs/exploration/dataflow-rs-comparison-gemm128.md",
+      "sha256": "a2e0824dd548540e5df6021296fe41f3203f8081f133cf4ab62bbecb84041e00"
+    },
+    {
+      "lines": 181,
+      "path": "docs/exploration/db-pe-size-goldilocks.md",
+      "sha256": "81a9f6edc4e6bb2405470d3ff07215fa768dae399dca9419e66b2bf86a3c4b02"
+    },
+    {
+      "lines": 214,
+      "path": "docs/exploration/dma-channel-queue-sweep.md",
+      "sha256": "bfb6861be4b2425e97c80cad5c31f76fb28c8bbe86825f084c2d924cc00bb271"
+    },
+    {
+      "lines": 187,
+      "path": "docs/exploration/double-buffer-mtiling-recovery.md",
+      "sha256": "19b3a5b97e3b0dcc869f353e3b2e16fbf2e712643b8bbed372f977cfbb16b9a1"
+    },
+    {
+      "lines": 149,
+      "path": "docs/exploration/dram-type-clock-sweep.md",
+      "sha256": "5b706f0146bbd9323776b8273922b8ee64158727f91d68fa25e954e148780065"
+    },
+    {
+      "lines": 78,
+      "path": "docs/exploration/gbuf-sizing-sweep.md",
+      "sha256": "e7255f53d149cbc5a1383603d283f08b428420d7ecd973c350862268cb7fdb1f"
+    },
+    {
+      "lines": 70,
+      "path": "docs/exploration/int8-quantization-throughput.md",
+      "sha256": "f647f7a2b260133cd789bc049f3076c04a8a05ee2171a795385781a42f001958"
+    },
+    {
+      "lines": 94,
+      "path": "docs/exploration/interconnect-contention-traffic-matrix.md",
+      "sha256": "6e20ca4908446609dbcc265d15c702e3bfa441a812022e24fede2f36b34e629c"
+    },
+    {
+      "lines": 88,
+      "path": "docs/exploration/interconnect-mesh-routing-order.md",
+      "sha256": "fdf869c066d27c77f005d42cc6680ff90e7d9ca4597cadc8b68cac100c585ae6"
+    },
+    {
+      "lines": 81,
+      "path": "docs/exploration/interconnect-switching-modes.md",
+      "sha256": "c2a28844527aca8c6afed9111da810e54a6825f82f1362b2b1369f8507dd529b"
+    },
+    {
+      "lines": 130,
+      "path": "docs/exploration/interconnect-topology-sweep.md",
+      "sha256": "60754c76d3655835e52869d5da05305a5c8a8dfb185cb0bc4eed396222310315"
+    },
+    {
+      "lines": 160,
+      "path": "docs/exploration/k-sweep-dma-crossover.md",
+      "sha256": "df60e89b51b934011e1ed0ea24add7fc726e4f77f1a1c479eb49ee85349f0be5"
+    },
+    {
+      "lines": 128,
+      "path": "docs/exploration/mac-density-dma-bound.md",
+      "sha256": "5d47403633d6db10f0158d9c1782edfee29d114b416e7c645b5b943fcd44135b"
+    },
+    {
+      "lines": 87,
+      "path": "docs/exploration/mma-fused-activation-overhead.md",
+      "sha256": "a3567ea837004f7bdda20d5c56b908d4bfa0d79505fbefd1c2d3f28b574deb06"
+    },
+    {
+      "lines": 85,
+      "path": "docs/exploration/multicore-scaling-gemm256.md",
+      "sha256": "7bdf0ddac330db3734df92824106c21976f3e95d192972bb0c8aeb49fcef4682"
+    },
+    {
+      "lines": 80,
+      "path": "docs/exploration/norm-after-attention-pipeline.md",
+      "sha256": "65529ebad6e501e66c2ebd5ea601d56e4b1f3acab65e33c639fb62c95a892737"
+    },
+    {
+      "lines": 50,
+      "path": "docs/exploration/norm-mode-comparison.md",
+      "sha256": "7c08dc30d609a97df140580fcdb1e2ddd4a89bd348535ceb14ff178606f7bcfb"
+    },
+    {
+      "lines": 78,
+      "path": "docs/exploration/pe-array-sweep-gemm128.md",
+      "sha256": "de4bd331639c6fa5c4392d15ff1d016182201c9e3bb55ceadbb607a0b82e2e51"
+    },
+    {
+      "lines": 112,
+      "path": "docs/exploration/pipeline-depth-dataflow-interaction.md",
+      "sha256": "5738dc7daf6d269072c10361d06166a1fe88d49b2d72de6d00a2539ad55bc6e0"
+    },
+    {
+      "lines": 89,
+      "path": "docs/exploration/pipeline-depth-sweep-gemm128.md",
+      "sha256": "584a995330409269d37244ab24120c6bd54db4f58b2016db054f1288dc590f65"
+    },
+    {
+      "lines": 125,
+      "path": "docs/exploration/pipeline-depth-workload-interaction.md",
+      "sha256": "57ab0041897ccb1be487a9b0dbaa5a5cd961063e313833bfb5e8dcf99063d9a1"
+    },
+    {
+      "lines": 91,
+      "path": "docs/exploration/pooling-config-sweep.md",
+      "sha256": "1a95ce3c4fccd58ffd695c5d27061d82071d9484399a5fbf21661b0f0dc3327f"
+    },
+    {
+      "lines": 144,
+      "path": "docs/exploration/precision-sweep-gemm128.md",
+      "sha256": "37bdadfa91fe2148640c0bca430dbb8d477112854914bcde865840e34881fa57"
+    },
+    {
+      "lines": 47,
+      "path": "docs/exploration/rounding-mode-accuracy-sweep.md",
+      "sha256": "0e91d7d02835c88abf7157b1f729c6f20539bcd7fcb8fc9cd4a20602096d1dad"
+    },
+    {
+      "lines": 119,
+      "path": "docs/exploration/rs-pipeline-depth-sweep.md",
+      "sha256": "2105d56dbb84e92f23b2b12b5d118538342e3a55e1e80651e45e842a2f26137f"
+    },
+    {
+      "lines": 61,
+      "path": "docs/exploration/scheduler-policy-sweep.md",
+      "sha256": "5709e70e2b0100c30b164503413b002b6e58b1631597d47880d449cbbc0e3baa"
+    },
+    {
+      "lines": 80,
+      "path": "docs/exploration/softmax-after-attention-pipeline.md",
+      "sha256": "080e9cf0b358fac2cadbbc9bcecf9744b973abc1affe5710097ea64f391f5c67"
+    },
+    {
+      "lines": 51,
+      "path": "docs/exploration/softmax-mode-comparison.md",
+      "sha256": "bd90594756c735d556147208681c0c352990b55c09e359a2063306ec005feda6"
+    },
+    {
+      "lines": 70,
+      "path": "docs/exploration/sram-arbitration-sweep.md",
+      "sha256": "f003fdbd73a32b42f8932b17c880dcb904d8daff05e3efe3cced2ec027df00d3"
+    },
+    {
+      "lines": 142,
+      "path": "docs/exploration/sram-obuffer-tiling-threshold.md",
+      "sha256": "b55a3418a7f2913b7d64089c6b4c6869fb3266f34c5532cbce59214f634e502d"
+    },
+    {
+      "lines": 115,
+      "path": "docs/exploration/sram-wa-buffer-sizing.md",
+      "sha256": "ff8de6c0ace93c6f0dd82c7b090238aa2038b5aa1982d3f72a1cfbd780027527"
+    },
+    {
+      "lines": 55,
+      "path": "docs/exploration/structured-2of4-sweep.md",
+      "sha256": "25299480d42a360b1ea20371d220b3bd2536d576fe573e36fbed65c0098dde28"
+    },
+    {
+      "lines": 120,
+      "path": "docs/exploration/weight-compression-rle-sweep.md",
+      "sha256": "71fcaa2b2ce6079622309a3a7d2b3a1b7d43a6fe8e27779dd49d21da002267b0"
+    },
+    {
+      "lines": 129,
+      "path": "docs/exploration/weight-decoder-throughput.md",
+      "sha256": "8300413868c6418ebdb4742b0c7e4ad8d39dea0680f00b969d38ddc60807357e"
+    },
+    {
+      "lines": 159,
+      "path": "docs/exploration/workload-scaling-pe-optimal.md",
+      "sha256": "7926f8c6b4f17355fe276c8e0ab41eef47a765f7ffb86dd02452c8c0283c4816"
+    }
+  ],
+  "schema": "ch22-report-inventory-v1",
+  "source_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+}

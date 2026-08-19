@@ -1,0 +1,28 @@
+=== repeat 1/1 ===
+tu_db: db-probe double-buffered (64 bytes ×2 = 128 total)
+tu_db: meter double-buffered (128 bytes ×2 = 256 total)
+tu_db: disable double-buffered (64 bytes ×2 = 128 total)
+tu_db: pipeline double-buffered (4096 bytes ×2 = 8192 total)
+tu_db: depth1-noload double-buffered (64 bytes ×2 = 128 total)
+tu_db: reinit double-buffered (64 bytes ×2 = 128 total)
+DB_INIT active_idx=0 active=11 shadow=00 dirty=0 swaps=0 size=64
+DB_CLEAN_SWAP count=1 active_idx=1 active=00 shadow=11 dirty=0
+DB_WRITTEN_SWAP count=2 active_idx=0 active=33 shadow=00 dirty=0 bytes=16 dma_cycles=5
+DB_NOTIFY_ONLY shadow_before=00 shadow_after=00 dirty=1 bytes=1016 dma_cycles=82
+DB_SHARED_METER first=0 second=2 active_value=00000000 bank0_words=0
+DB_DISABLE enabled=0 primary=44 db_null=1
+PIPE_BEFORE tid=0 stage=1 active=11 shadow=22 dst_region=1 dst_host_shadow=1 pipe_cycle=0 dma_cycle=0
+PIPE_AFTER stage=2 completed=1 desc_cycles=53 pipe_cycle=0 dma_cycle=1 active=22 shadow=7a swapped=1 dirty=1
+PIPE_LEDGER tiles=1 load=2 compute=5 seq=8 piped=7 saved=0 speedup=1.142857 pipe_cycle=6
+PIPE_DEPTH1_NOLOAD tid=0 active=00 shadow=55 swaps=1 dirty=0 stage=2
+PIPE_DEPTH1_LEDGER seq=5 piped=3 saved=0 speedup=1.666667
+PIPE_EMPTY tid=0 seq=7 piped=0 saved=0 speedup=inf overlap_load=0 overlap_store=0
+PIPE_RESET initialized=0 depth=2 slots_null=1 free_slots=1
+PIPE_AFTER_RESET_SUBMIT tid=0 depth=1 initialized=1 stored_cmd=123
+SRAM_REINIT primary_replaced=1 meter_replaced=1 db_lost=1 new_size=32
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+tu_db: W-buf double-buffered (131072 bytes ×2 = 262144 total)
+CTX_RESTORE ids=0,1 save_rc=0 restore_rc=0 db_lost=1 primary_live=1
+CH16_PROBE SUMMARY failures=0

@@ -1,0 +1,27 @@
+=== repeat 1/1 ===
+
+=== TU Scheduler Policy Sweep ===
+
+Comparing ASAP, ALAP, BALANCED across 5 workload topologies.
+DMA channel: flags&3 -> 0=W,1=A,2=O.  MMA: reads W+A, writes O.
+
+Topology             Policy       Cycles  Barrier   Hoist     Len
+--------             ------       ------  -------   -----     ---
+  All-Independent      ASAP             16        0       0       4
+  All-Independent      ALAP             16        0       0       4
+  All-Independent      BALANCED         16        0       0       4
+  Serial-Chain         ASAP             10        0       0       4
+  Serial-Chain         ALAP             10        0       0       4
+  Serial-Chain         BALANCED         10        0       0       4
+  Fan-Out              ASAP             21        0       0       6
+  Fan-Out              ALAP             21        0       0       6
+  Fan-Out              BALANCED         21        0       0       6
+  Fan-In               ASAP             12        0       0       6
+  Fan-In               ALAP             12        0       0       6
+  Fan-In               BALANCED         12        0       0       6
+  Pipeline-Tiles       ASAP             28        0       0      13
+  Pipeline-Tiles       ALAP             28        0       0      13
+  Pipeline-Tiles       BALANCED         28        0       0      13
+
+=== Sweep Complete ===
+

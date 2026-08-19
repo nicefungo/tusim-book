@@ -1,0 +1,102 @@
+{
+  "book_branch": "main",
+  "candidate_register_sha256": "3cf3f06e0a173e73b5cefddabd33d9e61f833b0f4912520a0752adc033defbf1",
+  "claim_register_sha256": "a1a7c63a11458830e8dc33d176bbca2e18f267eb7d93753afc551daa3736c8ae",
+  "frozen_inputs": [
+    {
+      "path": "experiments/ch22_predraft_audit.py",
+      "sha256": "733ca5002cf3da5b89c441ca0a10bba94292503d9f3a2ffc318a40891320d40b"
+    },
+    {
+      "path": "experiments/run_ch22_predraft_evidence_audit.sh",
+      "sha256": "e550e82333f032437c502cb68e6ed8d4910cf05a0af809487de1642685a7eb58"
+    },
+    {
+      "path": "experiments/ch22_focused_reconciliation.py",
+      "sha256": "7b4c6653111f6f2126fdfbcb7fd427fbac60eaf6ca4e613e39b8e72934127eaf"
+    },
+    {
+      "path": "experiments/ch22_build_claim_register.py",
+      "sha256": "7a50935d605bbc5d3896a90b929d01d243ecc2e29010e5eafecef81264e20d2d"
+    },
+    {
+      "path": "experiments/ch22_build_predraft_registers.py",
+      "sha256": "613cb7564ff15ce1aafea383a77855e336f8b62002f85fa70dfb3cdb302ede4b"
+    },
+    {
+      "path": "experiments/ch22_predraft_validate.py",
+      "sha256": "a27596986ca8231ffdaa0b8a907c82f163dca7621d200864fe63cebbeee8bf40"
+    },
+    {
+      "path": "experiments/ch21_sweep_probe.c",
+      "sha256": "07ee51fee066008e9097fed43d2c4d4da20747043acb451a1187a697ab0fb27b"
+    },
+    {
+      "path": "experiments/ch16_double_buffer_probe.c",
+      "sha256": "99a42fbc838c206735705aab4501b1251e49d6a77b6a4f02a057fd85bb8e0a89"
+    },
+    {
+      "path": "experiments/ch13_weight_stream_probe.c",
+      "sha256": "38fa785e09752b15e6caa56f979197d0b5208b26ed0b6a19e6290d65805e289c"
+    },
+    {
+      "path": "experiments/ch14_compute_engines_probe.c",
+      "sha256": "4b785286aa1fa162e2d29c43a4f60489f1dd227b753cf59ddf58c63b03ec2595"
+    },
+    {
+      "path": "experiments/ch12_multicore_interconnect_probe.c",
+      "sha256": "b65d21365081f1a4a2932ddf781f1a782cd47636607c3c2b72462c0205a0bef5"
+    },
+    {
+      "path": "notes/chapter-22-report-inventory.json",
+      "sha256": "69dd1bfc6baae41c9b59a89c63c7259e2d68feaee3a21f53c16ced54d7dd3a5e"
+    },
+    {
+      "path": "notes/chapter-22-claim-register.json",
+      "sha256": "a1a7c63a11458830e8dc33d176bbca2e18f267eb7d93753afc551daa3736c8ae"
+    },
+    {
+      "path": "notes/chapter-22-reviewed-claim-manifest-geometry-memory.md",
+      "sha256": "773d402518b506705c0ecfeb01e9c9e19f82e77b6e89b4cf920065611f0e473f"
+    },
+    {
+      "path": "notes/chapter-22-reviewed-claim-manifest-numerics-operators.md",
+      "sha256": "c85987cb7d7042c64e90c3fc51910a2cb8400da38d76d7b3be526b597d761c89"
+    },
+    {
+      "path": "notes/chapter-22-reviewed-claim-manifest-sharing-policy.md",
+      "sha256": "e83bc09d8b805cea0c516bb2212ec51c988f4bf9dc6cde51720d5015b06cdfee"
+    },
+    {
+      "path": "notes/chapter-22-skeptical-review-dispositions.md",
+      "sha256": "6e33fdbb18922fcf76b2332b440d942dfe08e953007fbdbd2f310c1c21c68650"
+    },
+    {
+      "path": "notes/chapter-22-framing-and-evidence-plan.md",
+      "sha256": "b3d589bc239c2c50154cd8f5c0d8c7fa007a234ad43f2abc860d0c3d0e2e653e"
+    },
+    {
+      "path": "notes/chapter-22-framing-review-dispositions.md",
+      "sha256": "33ca250af107f3860d6e575a65e5f634deb5f804632bb983528c1dec8bf7cbcb"
+    },
+    {
+      "path": "references/ch22-predraft-method-primary-sources.md",
+      "sha256": "0df6ce453d282b6a7c08acbe40f132d2b8b92d2da196185355b5a62b6ea7347c"
+    },
+    {
+      "path": "references/ch21-sweep-method-primary-sources.md",
+      "sha256": "018ecdee678256cb1096f2ed6300a8caf82bb8792260688a8abd08c5c6f26cfb"
+    }
+  ],
+  "generated_claim_register_sha256": "a1a7c63a11458830e8dc33d176bbca2e18f267eb7d93753afc551daa3736c8ae",
+  "input_book_commit": "afe3cff6a1503194fd59f95a5574c2cd0142d602",
+  "mutation_sha256": "d07347437fec246b7a37dd708134829dc394773f342bf67dabc4ef4c9ca54b9c",
+  "prose_authorized_at_execute": false,
+  "reconciliation_sha256": "72b2b961c9fbfa3cbdc8c848a035e5a6a9327ec152a652b7f95a2ef0030b869d",
+  "required_baseline": "88cba9bf9a26b2ae2c3079e6c57446803ab76df0",
+  "review_dispositions_sha256": "6e33fdbb18922fcf76b2332b440d942dfe08e953007fbdbd2f310c1c21c68650",
+  "run_id": "20260818-ch22-predraft-postreview-v2",
+  "schema": "ch22-postreview-run-v1",
+  "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25",
+  "tusim_detached_clean_required": true
+}

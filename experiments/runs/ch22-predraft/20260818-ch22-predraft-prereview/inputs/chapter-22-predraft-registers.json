@@ -1,0 +1,679 @@
+{
+  "alternatives_tradeoff_register": [
+    {
+      "alternatives": [
+        {
+          "costs": "lower peak parallelism",
+          "gain_regime": "better edge fit and lower fill/drain exposure",
+          "option": "small-or-square-array"
+        },
+        {
+          "costs": "more idle lanes, fill/drain, area and verification cost",
+          "gain_regime": "higher peak work on fitting shapes",
+          "option": "larger-or-asymmetric-array"
+        },
+        {
+          "costs": "control, buffering, routing and validation complexity",
+          "gain_regime": "can recover utilization without resizing",
+          "option": "dataflow-or-tiling-switch"
+        }
+      ],
+      "family": "F1-shape-fit",
+      "metric_domains": [
+        "MD:aspect-ratio-alignment-sweep",
+        "MD:bus-width-sweep-gemm128",
+        "MD:dataflow-comparison-gemm128",
+        "MD:dataflow-pe-interaction",
+        "MD:dataflow-rs-comparison-gemm128",
+        "MD:pe-array-sweep-gemm128",
+        "MD:workload-scaling-pe-optimal"
+      ],
+      "missing_decisive_dimensions": [
+        "calibrated_frequency",
+        "area",
+        "power",
+        "full-workload_distribution",
+        "layout_constraints"
+      ],
+      "noncomposable_across_domains": true,
+      "outcome": "open"
+    },
+    {
+      "alternatives": [
+        {
+          "costs": "area, power, floorplan and leakage cost",
+          "gain_regime": "reduces modeled supply pressure",
+          "option": "provision-bandwidth-or-capacity"
+        },
+        {
+          "costs": "extra storage, stale-state risk and lifecycle complexity",
+          "gain_regime": "can hide supply latency",
+          "option": "overlap-or-double-buffer"
+        },
+        {
+          "costs": "compiler/runtime policy and verification cost",
+          "gain_regime": "reduces live set or transfers",
+          "option": "retile-or-reorder"
+        }
+      ],
+      "family": "F2-supply-visibility",
+      "metric_domains": [
+        "MD:db-pe-size-goldilocks",
+        "MD:dma-channel-queue-sweep",
+        "MD:double-buffer-mtiling-recovery",
+        "MD:dram-type-clock-sweep",
+        "MD:gbuf-sizing-sweep",
+        "MD:k-sweep-dma-crossover",
+        "MD:mac-density-dma-bound",
+        "MD:pipeline-depth-dataflow-interaction",
+        "MD:pipeline-depth-sweep-gemm128",
+        "MD:pipeline-depth-workload-interaction",
+        "MD:rs-pipeline-depth-sweep",
+        "MD:sram-arbitration-sweep",
+        "MD:sram-obuffer-tiling-threshold",
+        "MD:sram-wa-buffer-sizing"
+      ],
+      "missing_decisive_dimensions": [
+        "physical_SRAM_timing",
+        "bank_port_cost",
+        "DRAM_controller_calibration",
+        "FIFO_backpressure",
+        "area",
+        "power"
+      ],
+      "noncomposable_across_domains": true,
+      "outcome": "open"
+    },
+    {
+      "alternatives": [
+        {
+          "costs": "higher traffic, storage, and compute cost",
+          "gain_regime": "simple exact transport and compute",
+          "option": "raw-or-wide"
+        },
+        {
+          "costs": "accuracy, calibration and accumulator risk",
+          "gain_regime": "lower traffic and potentially higher throughput",
+          "option": "quantized-or-low-precision"
+        },
+        {
+          "costs": "decoder, metadata, irregularity and verification cost",
+          "gain_regime": "reduces payload/work in suitable distributions",
+          "option": "compressed-or-structured-sparse"
+        }
+      ],
+      "family": "F3-representation",
+      "metric_domains": [
+        "MD:bitmap-weight-compression",
+        "MD:int8-quantization-throughput",
+        "MD:precision-sweep-gemm128",
+        "MD:rounding-mode-accuracy-sweep",
+        "MD:structured-2of4-sweep",
+        "MD:weight-compression-rle-sweep",
+        "MD:weight-decoder-throughput"
+      ],
+      "missing_decisive_dimensions": [
+        "application_accuracy",
+        "calibrated_decoder_area",
+        "decoder_energy",
+        "finite_FIFO_backpressure",
+        "direct_compressed_feed_cost"
+      ],
+      "noncomposable_across_domains": true,
+      "outcome": "open"
+    },
+    {
+      "alternatives": [
+        {
+          "costs": "area, power, inflexibility and verification",
+          "gain_regime": "high modeled throughput in target regime",
+          "option": "dedicated-operator-engine"
+        },
+        {
+          "costs": "tiling, scratch, fill/drain and control cost",
+          "gain_regime": "reuses datapath",
+          "option": "shared-array-lowering"
+        },
+        {
+          "costs": "larger coupled validation surface and scheduling complexity",
+          "gain_regime": "can avoid intermediate traffic",
+          "option": "hybrid-or-fused-path"
+        }
+      ],
+      "family": "F4-operator",
+      "metric_domains": [
+        "MD:attention-engine-sweep",
+        "MD:conv-group-sweep",
+        "MD:conv-pool-cascade",
+        "MD:convolution-kernel-stride-sweep",
+        "MD:mma-fused-activation-overhead",
+        "MD:norm-after-attention-pipeline",
+        "MD:norm-mode-comparison",
+        "MD:pooling-config-sweep",
+        "MD:softmax-after-attention-pipeline",
+        "MD:softmax-mode-comparison"
+      ],
+      "missing_decisive_dimensions": [
+        "model_level_accuracy",
+        "calibrated_special_function_cost",
+        "layout_transform_cost",
+        "end_to_end_operator_fusion",
+        "area",
+        "power"
+      ],
+      "noncomposable_across_domains": true,
+      "outcome": "open"
+    },
+    {
+      "alternatives": [
+        {
+          "costs": "serialization and contention",
+          "gain_regime": "low implementation cost at small scale",
+          "option": "shared-fabric-or-ring"
+        },
+        {
+          "costs": "router/link area, power and routing complexity",
+          "gain_regime": "more path diversity and scale",
+          "option": "mesh-or-richer-topology"
+        },
+        {
+          "costs": "storage, consistency and invalidation cost",
+          "gain_regime": "can reduce repeated traffic",
+          "option": "broadcast-or-local-replication"
+        }
+      ],
+      "family": "F5-sharing",
+      "metric_domains": [
+        "MD:broadcast-dma-multicore-scaling",
+        "MD:interconnect-contention-traffic-matrix",
+        "MD:interconnect-mesh-routing-order",
+        "MD:interconnect-switching-modes",
+        "MD:interconnect-topology-sweep",
+        "MD:multicore-scaling-gemm256"
+      ],
+      "missing_decisive_dimensions": [
+        "physical_NoC_timing",
+        "router_buffering",
+        "coherence_or_consistency",
+        "real_traffic_distribution",
+        "area",
+        "power"
+      ],
+      "noncomposable_across_domains": true,
+      "outcome": "open"
+    },
+    {
+      "alternatives": [
+        {
+          "costs": "less adaptability and code/config proliferation",
+          "gain_regime": "simple predictable execution",
+          "option": "static-specialization"
+        },
+        {
+          "costs": "state, control and validation complexity",
+          "gain_regime": "adapts to arrivals and local state",
+          "option": "runtime-policy"
+        },
+        {
+          "costs": "boundary contracts and reversal testing burden",
+          "gain_regime": "retains static defaults with selected adaptation",
+          "option": "hybrid-guarded-policy"
+        }
+      ],
+      "family": "F6-policy-boundary",
+      "metric_domains": [
+        "MD:context-switch-state-scope",
+        "MD:scheduler-policy-sweep"
+      ],
+      "missing_decisive_dimensions": [
+        "compiler_integration",
+        "runtime_arrival_distribution",
+        "preemption_safety",
+        "state_completeness",
+        "physical_context_bandwidth"
+      ],
+      "noncomposable_across_domains": true,
+      "outcome": "open"
+    }
+  ],
+  "claim_register_sha256": "1dbffc4cbc507047bbe579a5956eaadbf89c617132ea055a40307b30dee0a11e",
+  "constraint_first": true,
+  "dispositions_are_evidence_filters_not_spine": true,
+  "limitation_register": [
+    {
+      "closure_test": "Reopen if linked execution, a changed shape distribution, or calibrated implementation cost changes the local ordering.",
+      "effect": "Blocks cross-domain decision closure and any inferred physical metric.",
+      "family": "F1-shape-fit",
+      "id": "LIM-F1-shape-fit",
+      "mandatory_outcome": "open",
+      "missing": [
+        "calibrated_frequency",
+        "area",
+        "power",
+        "full-workload_distribution",
+        "layout_constraints"
+      ]
+    },
+    {
+      "closure_test": "Reopen if calibrated memory timing, banking, finite queues, or corrected overlap visibility changes the bottleneck or ordering.",
+      "effect": "Blocks cross-domain decision closure and any inferred physical metric.",
+      "family": "F2-supply-visibility",
+      "id": "LIM-F2-supply-visibility",
+      "mandatory_outcome": "open",
+      "missing": [
+        "physical_SRAM_timing",
+        "bank_port_cost",
+        "DRAM_controller_calibration",
+        "FIFO_backpressure",
+        "area",
+        "power"
+      ]
+    },
+    {
+      "closure_test": "Reopen if application accuracy, decoder throughput/cost, value distribution, or exact rounding scope differs from the measured regime.",
+      "effect": "Blocks cross-domain decision closure and any inferred physical metric.",
+      "family": "F3-representation",
+      "id": "LIM-F3-representation",
+      "mandatory_outcome": "open",
+      "missing": [
+        "application_accuracy",
+        "calibrated_decoder_area",
+        "decoder_energy",
+        "finite_FIFO_backpressure",
+        "direct_compressed_feed_cost"
+      ]
+    },
+    {
+      "closure_test": "Reopen if functional correctness, layout, fused boundaries, workload shapes, or calibrated special-function cost changes.",
+      "effect": "Blocks cross-domain decision closure and any inferred physical metric.",
+      "family": "F4-operator",
+      "id": "LIM-F4-operator",
+      "mandatory_outcome": "open",
+      "missing": [
+        "model_level_accuracy",
+        "calibrated_special_function_cost",
+        "layout_transform_cost",
+        "end_to_end_operator_fusion",
+        "area",
+        "power"
+      ]
+    },
+    {
+      "closure_test": "Reopen if traffic shape, placement, routing order, synchronization, or calibrated network cost changes.",
+      "effect": "Blocks cross-domain decision closure and any inferred physical metric.",
+      "family": "F5-sharing",
+      "id": "LIM-F5-sharing",
+      "mandatory_outcome": "open",
+      "missing": [
+        "physical_NoC_timing",
+        "router_buffering",
+        "coherence_or_consistency",
+        "real_traffic_distribution",
+        "area",
+        "power"
+      ]
+    },
+    {
+      "closure_test": "Reopen if ownership boundaries, saved-state coverage, runtime arrivals, or compiler/runtime integration is implemented and measured.",
+      "effect": "Blocks cross-domain decision closure and any inferred physical metric.",
+      "family": "F6-policy-boundary",
+      "id": "LIM-F6-policy-boundary",
+      "mandatory_outcome": "open",
+      "missing": [
+        "compiler_integration",
+        "runtime_arrival_distribution",
+        "preemption_safety",
+        "state_completeness",
+        "physical_context_bandwidth"
+      ]
+    },
+    {
+      "closure_test": "Supply calibrated, commensurate objective vectors and declared preference/weighting rules inside one domain.",
+      "effect": "Blocks portfolio scalarization and physical architecture ranking.",
+      "family": "global",
+      "id": "LIM-global-01",
+      "mandatory_outcome": "open",
+      "missing": [
+        "calibrated physical timing/area/power/energy",
+        "application-level accuracy",
+        "representative workload weights"
+      ]
+    },
+    {
+      "closure_test": "Implement and validate the bridge with exact input/output and ownership boundaries.",
+      "effect": "Blocks composition claims beyond the linked C-model boundaries.",
+      "family": "global",
+      "id": "LIM-global-02",
+      "mandatory_outcome": "open",
+      "missing": [
+        "executable compiler/runtime/ONNX composition bridge"
+      ]
+    }
+  ],
+  "negative_evidence_register": [
+    {
+      "claim_links": [
+        "C22-0287"
+      ],
+      "evidence": {
+        "domain": "geometry",
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "finding": "A requested dataflow label need not be the linked active route on an already-created core.",
+      "id": "NE-01"
+    },
+    {
+      "claim_links": [
+        "C22-0448"
+      ],
+      "evidence": {
+        "domain": "memory_overlap",
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "finding": "Reported overlap speedup can coexist with saved=0; the empty case can report infinity.",
+      "id": "NE-02"
+    },
+    {
+      "claim_links": [
+        "C22-1183"
+      ],
+      "evidence": {
+        "domain": "numerics_representation",
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "finding": "Structured sparsity is slower than dense under a narrow decoder.",
+      "id": "NE-03"
+    },
+    {
+      "claim_links": [
+        "C22-0992"
+      ],
+      "evidence": {
+        "domain": "numerics_representation",
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "finding": "Stochastic rounding is seed- and invocation-order-sensitive unless seed scope is made permutation-stable.",
+      "id": "NE-04"
+    },
+    {
+      "claim_links": [
+        "C22-0076"
+      ],
+      "evidence": {
+        "domain": "operators",
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "finding": "Attention output deviates from the local golden result and the error changes across identical process repeats.",
+      "id": "NE-05"
+    },
+    {
+      "claim_links": [
+        "C22-0549"
+      ],
+      "evidence": {
+        "domain": "sharing_topology",
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "finding": "Topology and deterministic routing winners reverse with traffic transpose; the combined heuristic is not an exact network latency.",
+      "id": "NE-06"
+    },
+    {
+      "claim_links": [
+        "C22-1044"
+      ],
+      "evidence": {
+        "domain": "runtime_static_policy",
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "finding": "Scheduler policy labels produce no metric distinction in the five-workload linked sweep.",
+      "id": "NE-07"
+    },
+    {
+      "claim_links": [
+        "C22-0170"
+      ],
+      "evidence": {
+        "domain": "runtime_static_policy",
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "finding": "Context save scope and state bandwidth change modeled switch cost by orders of magnitude, so a single context cost is not portable.",
+      "id": "NE-08"
+    }
+  ],
+  "recurring_regime_register": [
+    {
+      "decision_outcome": "open",
+      "evidence_filter": "Treat geometry or dataflow winners as report-local until linked routing and representative shape distributions are fixed.",
+      "family": "F1-shape-fit",
+      "id": "RR-F1-shape-fit",
+      "recurring_regime": "alignment, tile-count, fill/drain, and useful-work fit change the preferred geometry by workload shape",
+      "reports": [
+        "docs/exploration/aspect-ratio-alignment-sweep.md",
+        "docs/exploration/bus-width-sweep-gemm128.md",
+        "docs/exploration/dataflow-comparison-gemm128.md",
+        "docs/exploration/dataflow-pe-interaction.md",
+        "docs/exploration/dataflow-rs-comparison-gemm128.md",
+        "docs/exploration/pe-array-sweep-gemm128.md",
+        "docs/exploration/workload-scaling-pe-optimal.md"
+      ],
+      "reversal_condition": "Reopen if linked execution, a changed shape distribution, or calibrated implementation cost changes the local ordering."
+    },
+    {
+      "decision_outcome": "open",
+      "evidence_filter": "Do not equate a modeled speedup field with observed overlap; retain counter and lifecycle defects as negative evidence.",
+      "family": "F2-supply-visibility",
+      "id": "RR-F2-supply-visibility",
+      "recurring_regime": "bandwidth, capacity, banking, and overlap help only while the named supply or visibility constraint dominates",
+      "reports": [
+        "docs/exploration/db-pe-size-goldilocks.md",
+        "docs/exploration/dma-channel-queue-sweep.md",
+        "docs/exploration/double-buffer-mtiling-recovery.md",
+        "docs/exploration/dram-type-clock-sweep.md",
+        "docs/exploration/gbuf-sizing-sweep.md",
+        "docs/exploration/k-sweep-dma-crossover.md",
+        "docs/exploration/mac-density-dma-bound.md",
+        "docs/exploration/pipeline-depth-dataflow-interaction.md",
+        "docs/exploration/pipeline-depth-sweep-gemm128.md",
+        "docs/exploration/pipeline-depth-workload-interaction.md",
+        "docs/exploration/rs-pipeline-depth-sweep.md",
+        "docs/exploration/sram-arbitration-sweep.md",
+        "docs/exploration/sram-obuffer-tiling-threshold.md",
+        "docs/exploration/sram-wa-buffer-sizing.md"
+      ],
+      "reversal_condition": "Reopen if calibrated memory timing, banking, finite queues, or corrected overlap visibility changes the bottleneck or ordering."
+    },
+    {
+      "decision_outcome": "open",
+      "evidence_filter": "Payload-only and local-error winners remain open without decoder and application-accuracy closure.",
+      "family": "F3-representation",
+      "id": "RR-F3-representation",
+      "recurring_regime": "reduced payload or arithmetic work wins only when decode, metadata, rounding scope, and accuracy remain acceptable",
+      "reports": [
+        "docs/exploration/bitmap-weight-compression.md",
+        "docs/exploration/int8-quantization-throughput.md",
+        "docs/exploration/precision-sweep-gemm128.md",
+        "docs/exploration/rounding-mode-accuracy-sweep.md",
+        "docs/exploration/structured-2of4-sweep.md",
+        "docs/exploration/weight-compression-rle-sweep.md",
+        "docs/exploration/weight-decoder-throughput.md"
+      ],
+      "reversal_condition": "Reopen if application accuracy, decoder throughput/cost, value distribution, or exact rounding scope differs from the measured regime."
+    },
+    {
+      "decision_outcome": "open",
+      "evidence_filter": "No performance ordering survives a failed or non-reproducible functional boundary.",
+      "family": "F4-operator",
+      "id": "RR-F4-operator",
+      "recurring_regime": "operator shape, scratch footprint, special functions, and functional correctness can dominate nominal array throughput",
+      "reports": [
+        "docs/exploration/attention-engine-sweep.md",
+        "docs/exploration/conv-group-sweep.md",
+        "docs/exploration/conv-pool-cascade.md",
+        "docs/exploration/convolution-kernel-stride-sweep.md",
+        "docs/exploration/mma-fused-activation-overhead.md",
+        "docs/exploration/norm-after-attention-pipeline.md",
+        "docs/exploration/norm-mode-comparison.md",
+        "docs/exploration/pooling-config-sweep.md",
+        "docs/exploration/softmax-after-attention-pipeline.md",
+        "docs/exploration/softmax-mode-comparison.md"
+      ],
+      "reversal_condition": "Reopen if functional correctness, layout, fused boundaries, workload shapes, or calibrated special-function cost changes."
+    },
+    {
+      "decision_outcome": "open",
+      "evidence_filter": "No universal topology or sharing winner; compare only within the exact traffic matrix and heuristic domain.",
+      "family": "F5-sharing",
+      "id": "RR-F5-sharing",
+      "recurring_regime": "topology and sharing reverse with traffic shape, route order, placement, and scale",
+      "reports": [
+        "docs/exploration/broadcast-dma-multicore-scaling.md",
+        "docs/exploration/interconnect-contention-traffic-matrix.md",
+        "docs/exploration/interconnect-mesh-routing-order.md",
+        "docs/exploration/interconnect-switching-modes.md",
+        "docs/exploration/interconnect-topology-sweep.md",
+        "docs/exploration/multicore-scaling-gemm256.md"
+      ],
+      "reversal_condition": "Reopen if traffic shape, placement, routing order, synchronization, or calibrated network cost changes."
+    },
+    {
+      "decision_outcome": "open",
+      "evidence_filter": "Do not imply compiler/runtime composition; identical counters mean policy preference stays open.",
+      "family": "F6-policy-boundary",
+      "id": "RR-F6-policy-boundary",
+      "recurring_regime": "static/runtime choices become visible only when modeled policy changes schedule or state movement",
+      "reports": [
+        "docs/exploration/context-switch-state-scope.md",
+        "docs/exploration/scheduler-policy-sweep.md"
+      ],
+      "reversal_condition": "Reopen if ownership boundaries, saved-state coverage, runtime arrivals, or compiler/runtime integration is implemented and measured."
+    }
+  ],
+  "schema": "ch22-predraft-registers-v1",
+  "source_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25",
+  "stale_conclusion_register": [
+    {
+      "counterevidence": {
+        "domain": "operators",
+        "observed": {
+          "operator_attention_golden_errors": [
+            0.53,
+            0.532,
+            0.687
+          ],
+          "operator_error_repeat_stable": false,
+          "operator_repeat_count": 3,
+          "scope": "Differences across repeats are retained as negative reproducibility evidence, not averaged."
+        },
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "id": "SC-01",
+      "prior_claim_id": "C22-0076",
+      "reason": "The linked operator probe produces incorrect attention output and repeat-varying golden error; throughput cannot authorize a universal operator choice.",
+      "status": "retired-as-universal"
+    },
+    {
+      "counterevidence": {
+        "domain": "geometry",
+        "observation": "requested OS; effective core WS; linked WS/OS/RS cycles 81920/20480/50176",
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "id": "SC-02",
+      "prior_claim_id": "C22-0287",
+      "reason": "The process-global output-stationary request leaves an existing core on weight-stationary, and explicit linked WS/OS/RS execution differs materially.",
+      "status": "retired-for-linked-current-model"
+    },
+    {
+      "counterevidence": {
+        "domain": "memory_overlap",
+        "observation": "seq/piped 8/7 saved=0; empty speedup=inf; db_lost=1",
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "id": "SC-03",
+      "prior_claim_id": "C22-0448",
+      "reason": "The focused linked probe reports nonzero speedup but saved=0, an infinite empty-pipeline speedup, and state loss across reinitialization/context restore.",
+      "status": "narrowed-to-analytical-report-domain"
+    },
+    {
+      "counterevidence": {
+        "domain": "numerics_representation",
+        "observation": "dense_total=34307 versus sparse_total=77312 in narrow regime",
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "id": "SC-04",
+      "prior_claim_id": "C22-0098",
+      "reason": "Retain the follow-up decoder-aware conclusion: narrow decode can reverse payload-only ordering; no end-to-end compression winner follows from bytes.",
+      "status": "superseded-payload-only-ordering"
+    },
+    {
+      "counterevidence": {
+        "domain": "runtime_static_policy",
+        "observation": "ASAP=ALAP=BALANCED for every tested topology",
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "id": "SC-05",
+      "prior_claim_id": "C22-1044",
+      "reason": "All three policies remain exactly identical in cycles, barriers, hoists, and length across all five focused workloads.",
+      "status": "confirmed-open"
+    },
+    {
+      "counterevidence": {
+        "domain": "sharing_topology",
+        "observation": "606/222 reverses to 222/606; heuristic estimate 158 versus isolated 94 and bottleneck 128",
+        "path": "experiments/runs/ch22-predraft/20260818-ch22-predraft-prereview/reconciliation.json",
+        "sha256": "b3b26f0d10daf565bed0dde1114f78b82815a2d067091f928bf776f72e482fa3",
+        "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25"
+      },
+      "id": "SC-06",
+      "prior_claim_id": "C22-0549",
+      "reason": "Route-order transpose reverses the winner and a disjoint-route case disproves global-max composition as an exact estimator.",
+      "status": "retained-and-strengthened"
+    },
+    {
+      "id": "SC-07",
+      "prior_claim_external": {
+        "line": 62,
+        "path": "references/ch21-sweep-method-primary-sources.md",
+        "sha256": "018ecdee678256cb1096f2ed6300a8caf82bb8792260688a8abd08c5c6f26cfb",
+        "text": "- Chapter 22 alone owns preference rules, Pareto selection across the portfolio, and portfolio-wide conclusions about preferable Tusim architecture regimes."
+      },
+      "reason": "Chapter 22 may compare only inside explicit compatible metric domains; it will not construct a portfolio-wide Pareto frontier.",
+      "status": "retired-by-closed-framing"
+    }
+  ],
+  "summary": {
+    "all_register_outcomes_open": true,
+    "alternative_families": 6,
+    "families": 6,
+    "limitations": 8,
+    "negative_findings": 8,
+    "recurring_regimes": 6,
+    "reports_assigned_once": 46,
+    "stale_or_narrowed": 7
+  }
+}

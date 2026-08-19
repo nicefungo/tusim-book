@@ -1,0 +1,93 @@
+{
+  "baseline_errors": [],
+  "baseline_passed": true,
+  "cases": [
+    {
+      "detected": true,
+      "errors": [
+        "claim-completeness"
+      ],
+      "expected_error": "claim-completeness",
+      "name": "drop-eligible-claim"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "claim-completeness",
+        "decision-card-fields"
+      ],
+      "expected_error": "decision-card-fields",
+      "name": "remove-decision-card-regime"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "decision-card-content"
+      ],
+      "expected_error": "decision-card-content",
+      "name": "remove-alternatives"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "metric-boundary"
+      ],
+      "expected_error": "metric-boundary",
+      "name": "compose-incompatible-domain"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "mandatory-open"
+      ],
+      "expected_error": "mandatory-open",
+      "name": "close-with-missing-dimension"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "local-dominance-eligibility"
+      ],
+      "expected_error": "local-dominance-eligibility",
+      "name": "false-local-dominance-eligibility"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "family-bound",
+        "register-open-boundary"
+      ],
+      "expected_error": "family-bound",
+      "name": "eight-family-manuscript"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "metric-domain-coverage",
+        "report-universe"
+      ],
+      "expected_error": "report-universe",
+      "name": "drop-report"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "evidence-hash"
+      ],
+      "expected_error": "evidence-hash",
+      "name": "corrupt-evidence-hash"
+    },
+    {
+      "detected": true,
+      "errors": [
+        "register-open-boundary"
+      ],
+      "expected_error": "register-open-boundary",
+      "name": "close-register-outcome"
+    }
+  ],
+  "detected": 10,
+  "passed": true,
+  "schema": "ch22-predraft-mutation-v1",
+  "total": 10
+}

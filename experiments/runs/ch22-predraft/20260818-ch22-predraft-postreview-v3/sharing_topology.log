@@ -1,0 +1,100 @@
+=== repeat 1/1 ===
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] created
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] created
+[       0] CORE  [1;32mINFO [0m tu_cluster_t created: 4 cores, topology=ring
+[       0] CORE  [1;32mINFO [0m tu_core_t [0] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [1] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [2] destroyed
+[       0] CORE  [1;32mINFO [0m tu_core_t [3] destroyed
+[       0] CORE  [1;32mINFO [0m tu_cluster_t destroyed
+CHECK PASS: full multicore JSON parses and validates
+CHECK PASS: full config retains enable, count, and mesh request
+CHECK PASS: runtime converter retains five ICC fields
+CHECK PASS: cluster count and topology come from explicit constructor arguments
+CHECK PASS: cluster consumes five converted ICC fields
+CONFIG parsed_enabled=1 parsed_cores=8 parsed_topology=2 cluster_cores=4 cluster_topology=1 sw=2 contention=1 route=1 link=32 router=7
+CHECK PASS: three switching equations match exact three-hop values
+CHECK PASS: zero-byte estimate is zero
+CHECK PASS: hand-built zero link width is retained and rejected by estimator
+EQUATIONS legacy=15 cut=79 store=207
+CHECK PASS: send cluster created
+CHECK PASS: send performs immediate byte-identical O-SRAM copy
+CHECK PASS: send leaves tag, false blocking flag, and latency field unchanged
+CHECK PASS: send accumulates exact message byte and isolated-cycle stats
+CHECK PASS: send adds estimate only to destination core
+SEND blocking=0 descriptor_latency=999 stats_messages=1 stats_bytes=16 stats_cycles=15 dst_delta=15
+CHECK PASS: same directed link exposes shared serialization heuristic
+CHECK PASS: disjoint directed links retain isolated maximum
+CHECK PASS: ideal-parallel ignores shared-link accumulation
+TRAFFIC same=133 disjoint=69 ideal=69 bottleneck=128 link=0->1
+CHECK PASS: disjoint long route proves combined global-max sum is only a heuristic
+HEURISTIC_COUNTEREXAMPLE isolated=94 bottleneck=128 estimated=158 shared_pair_term=133 link=0->1
+CHECK PASS: XY first pattern estimated
+CHECK PASS: YX first pattern estimated
+CHECK PASS: XY rotated pattern estimated
+CHECK PASS: YX rotated pattern estimated
+CHECK PASS: 90-degree counterclockwise rotation reverses deterministic route-order winner
+ROUTES patternA_XY=606 patternA_YX=222 patternB_XY=222 patternB_YX=606
+CHECK PASS: collective cluster created
+CHECK PASS: broadcast returns success
+CHECK PASS: broadcast bytes reach destination
+CHECK PASS: broadcast bytes reach destination
+CHECK PASS: broadcast bytes reach destination
+CHECK PASS: broadcast stats sum three immediate sends
+CHECK PASS: all-reduce returns success
+CHECK PASS: all-reduce host sum written to each core
+CHECK PASS: all-reduce host sum written to each core
+CHECK PASS: all-reduce host sum written to each core
+CHECK PASS: all-reduce host sum written to each core
+CHECK PASS: all-reduce counts gather messages/bytes but no cycles
+CHECK PASS: all-reduce adds no per-core estimated cycles
+CHECK PASS: barrier returns success
+CHECK PASS: barrier adds fixed twice-router-latency, updates stats, and leaves lifecycle counter zero
+COLLECTIVES broadcast_messages=3 broadcast_bytes=24 broadcast_cycles=23 allreduce_message_delta=3 allreduce_byte_delta=36 allreduce_cycle_delta=0 barrier_delta=10 barrier_state=0
+CH12_PROBE SUMMARY failures=0

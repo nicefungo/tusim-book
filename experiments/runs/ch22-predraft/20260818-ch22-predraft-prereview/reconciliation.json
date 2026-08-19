@@ -1,0 +1,167 @@
+{
+  "all_checks_passed": true,
+  "archive_method": "git archive exact pin",
+  "checks": {
+    "geometry": [
+      {
+        "matched": true,
+        "pattern": "DATAFLOW_LINKED_EXEC active=weight_stationary .* cycles=81920"
+      },
+      {
+        "matched": true,
+        "pattern": "active=output_stationary .* cycles=20480"
+      },
+      {
+        "matched": true,
+        "pattern": "active=row_stationary .* cycles=50176"
+      }
+    ],
+    "memory_overlap": [
+      {
+        "matched": true,
+        "pattern": "PIPE_LEDGER .* seq=8 piped=7 saved=0"
+      },
+      {
+        "matched": true,
+        "pattern": "PIPE_DEPTH1_LEDGER seq=5 piped=3 saved=0"
+      },
+      {
+        "matched": true,
+        "pattern": "CH16_PROBE SUMMARY failures=0"
+      }
+    ],
+    "numerics_representation": [
+      {
+        "matched": true,
+        "pattern": "SPARSITY est128 .* selected=7811"
+      },
+      {
+        "matched": true,
+        "pattern": "SPARSITY estNarrow dense_total=34307 sparse_total=77312"
+      },
+      {
+        "matched": true,
+        "pattern": "CH13_PROBE SUMMARY failures=0"
+      },
+      {
+        "log": "geometry.log",
+        "matched": true,
+        "pattern": "ROUNDING_AXIS .* rne=0x3c01 rtz=0x3c00 .* changed_seed_diff=1"
+      },
+      {
+        "log": "geometry.log",
+        "matched": true,
+        "pattern": "ROUNDING_ORDER stable_case_seed_permutation_equal=1 single_seed_permutation_diff=1"
+      }
+    ],
+    "operators": [
+      {
+        "matched": true,
+        "pattern": "ATTN diff golden_err=0\\.[0-9]+ deviates=1 scales_equal=1"
+      },
+      {
+        "matched": true,
+        "pattern": "PIPE depth2 sequential_total=402 saved=200"
+      },
+      {
+        "matched": true,
+        "pattern": "CH14_PROBE SUMMARY failures=0"
+      }
+    ],
+    "runtime_static_policy": [
+      {
+        "matched": true,
+        "pattern": "All-Independent"
+      },
+      {
+        "matched": true,
+        "pattern": "Serial-Chain"
+      },
+      {
+        "matched": true,
+        "pattern": "Pipeline-Tiles"
+      },
+      {
+        "matched": true,
+        "pattern": "Sweep Complete"
+      },
+      {
+        "log": "geometry.log",
+        "matched": true,
+        "pattern": "CONTEXT_EXEC full256=16484 live25_256=4196 control256=100 full256_bw16=32868 full256_bw64=8292"
+      }
+    ],
+    "sharing_topology": [
+      {
+        "matched": true,
+        "pattern": "ROUTES patternA_XY=606 patternA_YX=222 patternB_XY=222 patternB_YX=606"
+      },
+      {
+        "matched": true,
+        "pattern": "HEURISTIC_COUNTEREXAMPLE isolated=94 bottleneck=128 estimated=158"
+      },
+      {
+        "matched": true,
+        "pattern": "CH12_PROBE SUMMARY failures=0"
+      }
+    ]
+  },
+  "domains": {
+    "geometry": {
+      "log": "geometry.log",
+      "log_sha256": "7715cba52e843f912fbf23d02728707b9a2d9ae82a34a39aa40019e3967ef599",
+      "repeats": 1,
+      "source": "experiments/ch21_sweep_probe.c",
+      "source_sha256": "07ee51fee066008e9097fed43d2c4d4da20747043acb451a1187a697ab0fb27b"
+    },
+    "memory_overlap": {
+      "log": "memory_overlap.log",
+      "log_sha256": "47ca1dd09d7239c928682b27a5554e8574ebe3d80359da5379d6cb6cb2709efd",
+      "repeats": 1,
+      "source": "experiments/ch16_double_buffer_probe.c",
+      "source_sha256": "99a42fbc838c206735705aab4501b1251e49d6a77b6a4f02a057fd85bb8e0a89"
+    },
+    "numerics_representation": {
+      "log": "numerics_representation.log",
+      "log_sha256": "c6c4115fc3b95991454b7029739e08317b7d1aab8c856b2d91bc967fd6a7925b",
+      "repeats": 1,
+      "source": "experiments/ch13_weight_stream_probe.c",
+      "source_sha256": "38fa785e09752b15e6caa56f979197d0b5208b26ed0b6a19e6290d65805e289c"
+    },
+    "operators": {
+      "log": "operators.log",
+      "log_sha256": "ace9adbc794b19b0682fd4573282f79576cafee192466b067f561e443f69d9fb",
+      "repeats": 3,
+      "source": "experiments/ch14_compute_engines_probe.c",
+      "source_sha256": "4b785286aa1fa162e2d29c43a4f60489f1dd227b753cf59ddf58c63b03ec2595"
+    },
+    "runtime_static_policy": {
+      "log": "runtime_static_policy.log",
+      "log_sha256": "2726e51680a66bf62b1514df8aad91c5e5235d3b4c5a4b0b60144539ea3dcab9",
+      "repeats": 1,
+      "source": "tests/test_scheduler_sweep.c",
+      "source_sha256": "9a56f263e42dcd7e5573868e388849a4ced6c65576b8f437aaff12f51be9e940"
+    },
+    "sharing_topology": {
+      "log": "sharing_topology.log",
+      "log_sha256": "c182adb97999b3aed6b3c8e29e95b8ba500210f648b5266be8763f3c019fce8e",
+      "repeats": 1,
+      "source": "experiments/ch12_multicore_interconnect_probe.c",
+      "source_sha256": "b65d21365081f1a4a2932ddf781f1a782cd47636607c3c2b72462c0205a0bef5"
+    }
+  },
+  "failed_checks": [],
+  "observations": {
+    "operator_attention_golden_errors": [
+      0.53,
+      0.532,
+      0.687
+    ],
+    "operator_error_repeat_stable": false,
+    "operator_repeat_count": 3,
+    "scope": "Differences across repeats are retained as negative reproducibility evidence, not averaged."
+  },
+  "schema": "ch22-focused-reconciliation-v1",
+  "tusim_commit": "e918c80b6fce833cd1fcae97730fa841c2176f25",
+  "tusim_source_clean": true
+}

@@ -1,0 +1,108 @@
+=== repeat 1/3 ===
+tu_softmax_validate: null data_sram
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m Attention auto-tile: tile_m=16, tile_n=16 (head_dim=2, Q_len=1, KV_len=1)
+[       0] CORE  [1;32mINFO [0m Attention: M=1 N=1 d=2 scale=1.000000 tile_m=16 tile_n=16 Q=64B K=64B KT=64B S=1024B O=128B
+[       0] CORE  [1;32mINFO [0m Attention complete: DMA=16 B, MMA tiles=2, FLOPs=8, cycles=147 (compute=145, dma=2), util=0.99
+[       0] CORE  [1;32mINFO [0m Attention auto-tile: tile_m=16, tile_n=16 (head_dim=8, Q_len=2, KV_len=3)
+[       0] CORE  [1;32mINFO [0m Attention: M=2 N=3 d=8 scale=0.500000 tile_m=16 tile_n=16 Q=256B K=256B KT=256B S=1024B O=512B
+[       0] CORE  [1;32mINFO [0m Attention complete: DMA=160 B, MMA tiles=2, FLOPs=192, cycles=277 (compute=261, dma=16), util=0.94
+[       0] CORE  [1;32mINFO [0m Attention auto-tile: tile_m=16, tile_n=16 (head_dim=8, Q_len=2, KV_len=3)
+[       0] CORE  [1;32mINFO [0m Attention: M=2 N=3 d=8 scale=2.000000 tile_m=16 tile_n=16 Q=256B K=256B KT=256B S=1024B O=512B
+[       0] CORE  [1;32mINFO [0m Attention complete: DMA=160 B, MMA tiles=2, FLOPs=192, cycles=327 (compute=283, dma=44), util=0.87
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+CH14_PROBE start
+CONV dims oh=3 ow=3 im2col_rows=3 im2col_cols=9
+CONV direct out00=6.000000 out01=6.000000 out10=6.000000 out11=6.000000
+CONV im2col_gemm out00=6.000000 out01=6.000000 out10=6.000000 out11=6.000000
+CONV estimate_cycles=69
+SOFTMAX zeros 0.250000 0.250000 0.250000 0.250000 max=0.000000 stall=8
+SOFTMAX census40 stall=96
+SOFTMAX invalid=18446744073709551615
+NORM layernorm 0.000000 0.000000 0.000000 0.000000 mean=1.000000 var=0.000000 stall=8
+NORM rmsnorm 0.999995 0.999995 0.999995 0.999995 var=1.000000 stall=8
+NORM census40 stall=80
+EW chain 0.000000 3.000000 7.000000 stall=2
+EW census40 stall=40
+POOL max 6.000000 8.000000 14.000000 16.000000 cycles=18
+POOL avg 3.500000 5.500000 11.500000 13.500000 cycles=34
+ATTN tiny rc=0 out=0.099976 0.199951 dma=16 tiles=2 flops=8 cc=145 dc=2 tc=147 u=0.9864
+ATTN corrupt 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+ATTN diff golden_err=0.530 deviates=1 scales_equal=1
+PIPE depth1 sequential_total=204 saved=0 stalls=0
+PIPE depth2 sequential_total=402 saved=200 stalls=0 active=0
+CH14_PROBE SUMMARY failures=0
+=== repeat 2/3 ===
+tu_softmax_validate: null data_sram
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m Attention auto-tile: tile_m=16, tile_n=16 (head_dim=2, Q_len=1, KV_len=1)
+[       0] CORE  [1;32mINFO [0m Attention: M=1 N=1 d=2 scale=1.000000 tile_m=16 tile_n=16 Q=64B K=64B KT=64B S=1024B O=128B
+[       0] CORE  [1;32mINFO [0m Attention complete: DMA=16 B, MMA tiles=2, FLOPs=8, cycles=147 (compute=145, dma=2), util=0.99
+[       0] CORE  [1;32mINFO [0m Attention auto-tile: tile_m=16, tile_n=16 (head_dim=8, Q_len=2, KV_len=3)
+[       0] CORE  [1;32mINFO [0m Attention: M=2 N=3 d=8 scale=0.500000 tile_m=16 tile_n=16 Q=256B K=256B KT=256B S=1024B O=512B
+[       0] CORE  [1;32mINFO [0m Attention complete: DMA=160 B, MMA tiles=2, FLOPs=192, cycles=277 (compute=261, dma=16), util=0.94
+[       0] CORE  [1;32mINFO [0m Attention auto-tile: tile_m=16, tile_n=16 (head_dim=8, Q_len=2, KV_len=3)
+[       0] CORE  [1;32mINFO [0m Attention: M=2 N=3 d=8 scale=2.000000 tile_m=16 tile_n=16 Q=256B K=256B KT=256B S=1024B O=512B
+[       0] CORE  [1;32mINFO [0m Attention complete: DMA=160 B, MMA tiles=2, FLOPs=192, cycles=327 (compute=283, dma=44), util=0.87
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+CH14_PROBE start
+CONV dims oh=3 ow=3 im2col_rows=3 im2col_cols=9
+CONV direct out00=6.000000 out01=6.000000 out10=6.000000 out11=6.000000
+CONV im2col_gemm out00=6.000000 out01=6.000000 out10=6.000000 out11=6.000000
+CONV estimate_cycles=69
+SOFTMAX zeros 0.250000 0.250000 0.250000 0.250000 max=0.000000 stall=8
+SOFTMAX census40 stall=96
+SOFTMAX invalid=18446744073709551615
+NORM layernorm 0.000000 0.000000 0.000000 0.000000 mean=1.000000 var=0.000000 stall=8
+NORM rmsnorm 0.999995 0.999995 0.999995 0.999995 var=1.000000 stall=8
+NORM census40 stall=80
+EW chain 0.000000 3.000000 7.000000 stall=2
+EW census40 stall=40
+POOL max 6.000000 8.000000 14.000000 16.000000 cycles=18
+POOL avg 3.500000 5.500000 11.500000 13.500000 cycles=34
+ATTN tiny rc=0 out=0.099976 0.199951 dma=16 tiles=2 flops=8 cc=145 dc=2 tc=147 u=0.9864
+ATTN corrupt 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+ATTN diff golden_err=0.532 deviates=1 scales_equal=1
+PIPE depth1 sequential_total=204 saved=0 stalls=0
+PIPE depth2 sequential_total=402 saved=200 stalls=0 active=0
+CH14_PROBE SUMMARY failures=0
+=== repeat 3/3 ===
+tu_softmax_validate: null data_sram
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+[       0] CORE  [1;32mINFO [0m Attention auto-tile: tile_m=16, tile_n=16 (head_dim=2, Q_len=1, KV_len=1)
+[       0] CORE  [1;32mINFO [0m Attention: M=1 N=1 d=2 scale=1.000000 tile_m=16 tile_n=16 Q=64B K=64B KT=64B S=1024B O=128B
+[       0] CORE  [1;32mINFO [0m Attention complete: DMA=16 B, MMA tiles=2, FLOPs=8, cycles=147 (compute=145, dma=2), util=0.99
+[       0] CORE  [1;32mINFO [0m Attention auto-tile: tile_m=16, tile_n=16 (head_dim=8, Q_len=2, KV_len=3)
+[       0] CORE  [1;32mINFO [0m Attention: M=2 N=3 d=8 scale=0.500000 tile_m=16 tile_n=16 Q=256B K=256B KT=256B S=1024B O=512B
+[       0] CORE  [1;32mINFO [0m Attention complete: DMA=160 B, MMA tiles=2, FLOPs=192, cycles=277 (compute=261, dma=16), util=0.94
+[       0] CORE  [1;32mINFO [0m Attention auto-tile: tile_m=16, tile_n=16 (head_dim=8, Q_len=2, KV_len=3)
+[       0] CORE  [1;32mINFO [0m Attention: M=2 N=3 d=8 scale=2.000000 tile_m=16 tile_n=16 Q=256B K=256B KT=256B S=1024B O=512B
+[       0] CORE  [1;32mINFO [0m Attention complete: DMA=160 B, MMA tiles=2, FLOPs=192, cycles=327 (compute=283, dma=44), util=0.87
+[       0] CORE  [1;32mINFO [0m TinyTU CModel initializing...
+[       0] CORE  [1;32mINFO [0m Initialized: 16×16 PE, 256 KB SRAM, dataflow=weight_stationary
+CH14_PROBE start
+CONV dims oh=3 ow=3 im2col_rows=3 im2col_cols=9
+CONV direct out00=6.000000 out01=6.000000 out10=6.000000 out11=6.000000
+CONV im2col_gemm out00=6.000000 out01=6.000000 out10=6.000000 out11=6.000000
+CONV estimate_cycles=69
+SOFTMAX zeros 0.250000 0.250000 0.250000 0.250000 max=0.000000 stall=8
+SOFTMAX census40 stall=96
+SOFTMAX invalid=18446744073709551615
+NORM layernorm 0.000000 0.000000 0.000000 0.000000 mean=1.000000 var=0.000000 stall=8
+NORM rmsnorm 0.999995 0.999995 0.999995 0.999995 var=1.000000 stall=8
+NORM census40 stall=80
+EW chain 0.000000 3.000000 7.000000 stall=2
+EW census40 stall=40
+POOL max 6.000000 8.000000 14.000000 16.000000 cycles=18
+POOL avg 3.500000 5.500000 11.500000 13.500000 cycles=34
+ATTN tiny rc=0 out=0.099976 0.199951 dma=16 tiles=2 flops=8 cc=145 dc=2 tc=147 u=0.9864
+ATTN corrupt 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+ATTN diff golden_err=0.687 deviates=1 scales_equal=1
+PIPE depth1 sequential_total=204 saved=0 stalls=0
+PIPE depth2 sequential_total=402 saved=200 stalls=0 active=0
+CH14_PROBE SUMMARY failures=0
