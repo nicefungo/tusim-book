@@ -1,0 +1,23 @@
+SOURCE_STATE before pin=e918c80b6fce833cd1fcae97730fa841c2176f25 detached=1 tracked_dirty=0 ignored_entries=47 ignored_sha256=55cee6bf897c58ee52931706ac6be61adacb18d4d7b3b12f388952a9f79a0485
+HASH_SET PASS files=34
+PATH_CONFIG geometry=complete_to_runtime dataflow=parsed_then_dropped pipeline=parsed_then_dropped dma_width=parsed_then_dropped
+PATH_PLUGIN declared_ids=4 linked_registered_consumed=3 missing_registered_id=no_local_reuse registry_capacity=8 ownership=global_registry_core_pointer duplicate_policy=keep_first_free_new capacity_overflow=silent_return_without_free production_consumer=tu_mma_and_attention_to_dispatcher_to_vtable production_call_files=2 production_call_sites=3 production_callers=tu_cmodel.c,attention_engine.c unregistered_fallback=weight_stationary success_status=1
+PATH_OPCODE declared_explicit=59 queue_dispatch=8 dispatch_set=TU_CMD_BARRIER,TU_CMD_DMA_LOAD,TU_CMD_DMA_STORE,TU_CMD_ELEMENTWISE,TU_CMD_HALT,TU_CMD_MMA,TU_CMD_NOP,TU_CMD_SYNC pool_alias_without_dispatch=1 adjacent_analysis_consumers=scheduler,liveness composed_execution=0
+PATH_MODULE cycle_model_source=1 library_member=0 make_rule=0 focused_source=1 production_reachability=0 exhaustive_external_non_test_call_files=0
+PATH_SWEEP source=1 make_target=1 aggregate_owner=0 fixed_workload=1 fixed_seed=1 local_formula=1 mismatch_changes_status=0 docs_claim_validation=1 effective_core_routes=WS,WS,WS labeled_routes=WS,OS,RS
+PATH_BINDING python_source=1 config_path_stored_not_consumed=1 direct_ctypes_mma=1 perf_stub=1 power_stub=1 make_ci_owner=0
+COMPILER_TRIGGER contained_models=2 generator=1 generated_link_status_suppressed=1 far_boundary_oracle=0 nontrivial_link_run_verify=0 boundary=negative
+COMPILER_PROMOTION_GATE compile=0 link=0 run=0 independent_oracle=0 full=0 required_full=1
+DOC_CONFLICT runtime_config_claims_all_parameters=1 conversion_subset=1 dataflow_docs_ids=4 registered=3 expanded_isa_declared=59 queue_dispatch=8
+ARCHIVE_BUILD rc=0
+FOCUSED test-config rc=2 classification=red stack_smashing=1 reproducibility=layout_sensitive_root_cause_open
+FOCUSED test-dataflow rc=0 classification=green marker=9_passed,_0_failed
+FOCUSED test-isa rc=0 classification=green marker=9/9_passed
+FOCUSED test-cmdq rc=0 classification=green marker=9/9_tests_passed
+FOCUSED test-dataflow-sweep rc=0 classification=green_status_but_fail_open_oracle fixed_rows=1
+FOCUSED python-binding rc=0 identity_gemm=PASS config_path_exercised=0 reports_exercised=0
+COMPILER_SMOKE status=environment_blocked rc=1 generated=0
+READER_DECISION require_contract_card=declaration,ingress,retention,consumer,observable,verification,ownership,documentation weakest_missing_edge_blocks_integrated_claim=1
+TOOLCHAIN machine=aarch64 python=3.11.15 make=True cc=True
+SOURCE_STATE after pin=e918c80b6fce833cd1fcae97730fa841c2176f25 detached=1 tracked_dirty=0 ignored_entries=47 ignored_sha256=55cee6bf897c58ee52931706ac6be61adacb18d4d7b3b12f388952a9f79a0485
+CH23_EXTENSION_RECON PASS hashes=34 path_families=7 focused_green=5 focused_red=1 compiler_boundary=negative

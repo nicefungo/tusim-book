@@ -1,0 +1,6 @@
+AST_ASSERT_CONTROL PASS count=0
+POSITIVE_CONTROL mode=normal rc=0 marker=1
+POSITIVE_CONTROL mode=optimized rc=0 marker=1
+SOURCE_MUTATION_CONTROL mode=normal rejected=1
+SOURCE_MUTATION_CONTROL mode=optimized rejected=1
+CH23_EVIDENCE_CONTROLS PASS positive=2 mutation=2 ast_assert=0

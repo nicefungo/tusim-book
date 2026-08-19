@@ -1,0 +1,9 @@
+{
+  "compiler_runtime_onnx_boundary": "negative",
+  "decision": "extension-contract-card/weakest-missing-edge",
+  "mode": "provisional",
+  "retained_manifest_sha256": "8567838cddf7dff5bdeb50b37d37d60eadc7c8b1a97fafae19b14cfd1d33a8d0",
+  "schema": "tusim-book/ch23-predraft-seal/v1",
+  "source_pin": "e918c80b6fce833cd1fcae97730fa841c2176f25",
+  "validation": "PASS"
+}
