@@ -1,0 +1,18 @@
+{
+  "tu": {
+    "compute": {
+      "pe_array": {
+        "rows": 4,
+        "cols": 4,
+        "dataflow": "output_stationary"
+      }
+    },
+    "memory": {
+      "sram": {
+        "w_buffer_kb": 8,
+        "a_buffer_kb": 8,
+        "o_buffer_kb": 8
+      }
+    }
+  }
+}
